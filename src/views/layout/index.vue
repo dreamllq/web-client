@@ -31,7 +31,6 @@ import { ElMessageBox } from 'element-plus';
 import { clearToken } from '@/services/token';
 import { toLogin } from '@/services/session';
 import { cloneDeep } from 'lodash';
-import { MenuItem } from 'lc-vue-pro-layout/dist/types';
 
 const router = useRouter();
 const route = useRoute();
@@ -51,8 +50,8 @@ const avatar = reactive({
 const layoutRef = ref();
 
 watchEffect(() => {
-  const findMatchedMenu = (menuData: MenuItem[]) => {
-    let matchedMenu: MenuItem | undefined;
+  const findMatchedMenu = (menuData) => {
+    let matchedMenu;
     menuData.forEach(item => {
       if (route.name === item.key || (Array.isArray(item.subPages) && item.subPages.includes(route.name as string))) {
         matchedMenu = cloneDeep(item);
