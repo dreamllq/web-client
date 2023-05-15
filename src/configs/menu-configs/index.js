@@ -109,47 +109,5 @@ export default [
         'label': '客户端'
       }
     ]
-  },
-  {
-    'key': 'DEMO',
-    'label': 'DEMO',
-    'icon': 'Setting',
-    'children': [
-      {
-        'key': 'demo-socket',
-        'label': 'socket'
-      },
-      {
-        'key': 'demo-sms',
-        'label': '短信'
-      },
-      {
-        'key': 'demo-code-login',
-        'label': 'code登录'
-      },
-      {
-        'key': 'demo-upload',
-        'label': '上传'
-      },
-      {
-        'key': 'demo-formily',
-        'label': 'formily'
-      },
-      {
-        'key': 'demo-biz-assemble',
-        'label': '业务组装',
-        'icon': null,
-        'children': [
-          {
-            'key': 'demo-biz-assemble-form',
-            'label': 'form'
-          },
-          {
-            'key': 'demo-biz-assemble-dialog',
-            'label': 'dialog'
-          }
-        ]
-      }
-    ]
   }
 ];

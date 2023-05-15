@@ -1,6 +1,6 @@
-import { SessionService } from './api';
+import { SessionService, User } from './api';
 
-let user: object | null = null;
+let user: User | null = null;
 
 
 export const init = async () => {

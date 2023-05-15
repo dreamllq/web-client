@@ -4,7 +4,7 @@
       <template #logo>
         <weixin-select
           :filter='{type:"mp"}'
-          :model-value='officialAccountId'
+          :model-value='officialAccountId!'
           placeholder='请选择小程序'
           @update:model-value='onIdChange' />
       </template>
