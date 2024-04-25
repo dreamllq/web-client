@@ -52,6 +52,6 @@ const routeData = () => ({ query: { wid: officialAccountId.value } });
 
 <route>
   {
-    "name":"mini-program-management"
+    "name":"mini-program-management1"
   }
 </route>

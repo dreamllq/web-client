@@ -3,7 +3,7 @@
     <el-form label-position='top'>
       <el-form-item label='平台选择'>
         <el-radio-group v-model='form.platform' class='ml-4'>
-          <el-radio label='aliyun'>
+          <el-radio value='aliyun'>
             阿里云
           </el-radio>
         </el-radio-group>
