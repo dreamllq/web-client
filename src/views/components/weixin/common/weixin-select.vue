@@ -1,5 +1,6 @@
 <template>
   <biz-select
+    style='width: 200px;'
     :multiple='multiple'
     :placeholder='placeholder'
     :fetch-data='fetchData'
