@@ -19,3 +19,4 @@ export type WeixinOfficialAccountConfig = {
      */
     updateDate: string;
 };
+

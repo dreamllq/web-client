@@ -8,3 +8,4 @@ export type WeixinPlatformUserPaginatePage = {
     count: number;
     list: Array<WeixinPlatformUser>;
 };
+

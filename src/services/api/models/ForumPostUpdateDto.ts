@@ -7,3 +7,4 @@ export type ForumPostUpdateDto = {
     content: string;
     images: Array<string>;
 };
+

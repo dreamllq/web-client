@@ -15,14 +15,14 @@ export class AddressService {
 
     /**
      * 当前登录用户添加地址
-     * @returns SuccessResult 
+     * @returns SuccessResult
      * @throws ApiError
      */
     public static createSession({
-requestBody,
-}: {
-requestBody: AddressCreateSessionDto,
-}): CancelablePromise<SuccessResult> {
+        requestBody,
+    }: {
+        requestBody: AddressCreateSessionDto,
+    }): CancelablePromise<SuccessResult> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/api/address/create/session',
@@ -33,7 +33,7 @@ requestBody: AddressCreateSessionDto,
 
     /**
      * 获取当前登录用户地址列表
-     * @returns AddressGetAllSessionResponse 
+     * @returns AddressGetAllSessionResponse
      * @throws ApiError
      */
     public static getAllSession(): CancelablePromise<AddressGetAllSessionResponse> {
@@ -45,14 +45,14 @@ requestBody: AddressCreateSessionDto,
 
     /**
      * 删除登录用户指定id地址
-     * @returns SuccessResult 
+     * @returns SuccessResult
      * @throws ApiError
      */
     public static removeSession({
-id,
-}: {
-id: any,
-}): CancelablePromise<SuccessResult> {
+        id,
+    }: {
+        id: any,
+    }): CancelablePromise<SuccessResult> {
         return __request(OpenAPI, {
             method: 'DELETE',
             url: '/api/address/{id}/session',
@@ -64,16 +64,16 @@ id: any,
 
     /**
      * 更新登录用户指定id地址
-     * @returns SuccessResult 
+     * @returns SuccessResult
      * @throws ApiError
      */
     public static updateSession({
-id,
-requestBody,
-}: {
-id: any,
-requestBody: AddressUpdateSessionDto,
-}): CancelablePromise<SuccessResult> {
+        id,
+        requestBody,
+    }: {
+        id: any,
+        requestBody: AddressUpdateSessionDto,
+    }): CancelablePromise<SuccessResult> {
         return __request(OpenAPI, {
             method: 'PUT',
             url: '/api/address/{id}/session',
@@ -87,14 +87,14 @@ requestBody: AddressUpdateSessionDto,
 
     /**
      * 获取指定id地址数据
-     * @returns AddressGetResponse 
+     * @returns AddressGetResponse
      * @throws ApiError
      */
     public static get({
-id,
-}: {
-id: any,
-}): CancelablePromise<AddressGetResponse> {
+        id,
+    }: {
+        id: any,
+    }): CancelablePromise<AddressGetResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/api/address/{id}',

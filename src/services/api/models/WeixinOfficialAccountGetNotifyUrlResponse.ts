@@ -6,3 +6,4 @@ export type WeixinOfficialAccountGetNotifyUrlResponse = {
     code: number;
     data: string;
 };
+

@@ -10,3 +10,4 @@ export type WeixinPayUpdateDto = {
     notifyUrl: string;
     spbillCreateIp: string;
 };
+

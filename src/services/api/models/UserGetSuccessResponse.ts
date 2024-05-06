@@ -8,3 +8,4 @@ export type UserGetSuccessResponse = {
     code: number;
     data: User;
 };
+

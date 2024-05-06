@@ -17,7 +17,7 @@ export class AuthService {
 
     /**
      * 验证auth
-     * @returns AuthVerifyResponse 
+     * @returns AuthVerifyResponse
      * @throws ApiError
      */
     public static verify(): CancelablePromise<AuthVerifyResponse> {
@@ -29,7 +29,7 @@ export class AuthService {
 
     /**
      * 注销登录用户
-     * @returns SuccessResult 
+     * @returns SuccessResult
      * @throws ApiError
      */
     public static cancellation(): CancelablePromise<SuccessResult> {
@@ -41,14 +41,14 @@ export class AuthService {
 
     /**
      * 用户名密码登录
-     * @returns AuthLoginSuccessResponse 
+     * @returns AuthLoginSuccessResponse
      * @throws ApiError
      */
     public static login({
-requestBody,
-}: {
-requestBody: LoginDto,
-}): CancelablePromise<AuthLoginSuccessResponse> {
+        requestBody,
+    }: {
+        requestBody: LoginDto,
+    }): CancelablePromise<AuthLoginSuccessResponse> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/api/auth/login',
@@ -59,14 +59,14 @@ requestBody: LoginDto,
 
     /**
      * 手机验证码登录
-     * @returns AuthLoginSuccessResponse 
+     * @returns AuthLoginSuccessResponse
      * @throws ApiError
      */
     public static loginBySmsCode({
-requestBody,
-}: {
-requestBody: LoginBySmsCodeDto,
-}): CancelablePromise<AuthLoginSuccessResponse> {
+        requestBody,
+    }: {
+        requestBody: LoginBySmsCodeDto,
+    }): CancelablePromise<AuthLoginSuccessResponse> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/api/auth/loginBySmsCode',
@@ -77,14 +77,14 @@ requestBody: LoginBySmsCodeDto,
 
     /**
      * 微信登录
-     * @returns AuthLoginSuccessResponse 
+     * @returns AuthLoginSuccessResponse
      * @throws ApiError
      */
     public static loginByWeixin({
-requestBody,
-}: {
-requestBody: LoginByWeixinDto,
-}): CancelablePromise<AuthLoginSuccessResponse> {
+        requestBody,
+    }: {
+        requestBody: LoginByWeixinDto,
+    }): CancelablePromise<AuthLoginSuccessResponse> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/api/auth/loginByWeixin',
@@ -95,14 +95,14 @@ requestBody: LoginByWeixinDto,
 
     /**
      * 微信小程序手机号登录
-     * @returns AuthLoginSuccessResponse 
+     * @returns AuthLoginSuccessResponse
      * @throws ApiError
      */
     public static loginByWeixinMobile({
-requestBody,
-}: {
-requestBody: LoginByWeixinDto,
-}): CancelablePromise<AuthLoginSuccessResponse> {
+        requestBody,
+    }: {
+        requestBody: LoginByWeixinDto,
+    }): CancelablePromise<AuthLoginSuccessResponse> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/api/auth/loginByWeixinMobile',
@@ -113,14 +113,14 @@ requestBody: LoginByWeixinDto,
 
     /**
      * 类似oauth2的code登录
-     * @returns any 
+     * @returns any
      * @throws ApiError
      */
     public static loginByCode({
-requestBody,
-}: {
-requestBody: LoginByCodeDto,
-}): CancelablePromise<any> {
+        requestBody,
+    }: {
+        requestBody: LoginByCodeDto,
+    }): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/api/auth/loginByCode',
@@ -131,7 +131,7 @@ requestBody: LoginByCodeDto,
 
     /**
      * 生成登录code
-     * @returns any 
+     * @returns any
      * @throws ApiError
      */
     public static generateLoginCode(): CancelablePromise<any> {

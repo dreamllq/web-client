@@ -16,3 +16,4 @@ export type CreateRolesDto = {
      */
     resourceIds: Array<string>;
 };
+

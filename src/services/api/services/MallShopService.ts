@@ -16,14 +16,14 @@ export class MallShopService {
 
     /**
      * 创建店铺
-     * @returns SuccessResult 
+     * @returns SuccessResult
      * @throws ApiError
      */
     public static create({
-requestBody,
-}: {
-requestBody: MallShopCreateDto,
-}): CancelablePromise<SuccessResult> {
+        requestBody,
+    }: {
+        requestBody: MallShopCreateDto,
+    }): CancelablePromise<SuccessResult> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/api/mall/shop',
@@ -34,7 +34,7 @@ requestBody: MallShopCreateDto,
 
     /**
      * 获取所有店铺
-     * @returns MallShopGetAllResponse 
+     * @returns MallShopGetAllResponse
      * @throws ApiError
      */
     public static getAll(): CancelablePromise<MallShopGetAllResponse> {
@@ -46,14 +46,14 @@ requestBody: MallShopCreateDto,
 
     /**
      * 删除店铺
-     * @returns SuccessResult 
+     * @returns SuccessResult
      * @throws ApiError
      */
     public static remove({
-id,
-}: {
-id: any,
-}): CancelablePromise<SuccessResult> {
+        id,
+    }: {
+        id: any,
+    }): CancelablePromise<SuccessResult> {
         return __request(OpenAPI, {
             method: 'DELETE',
             url: '/api/mall/shop/{id}',
@@ -65,16 +65,16 @@ id: any,
 
     /**
      * 更新店铺
-     * @returns SuccessResult 
+     * @returns SuccessResult
      * @throws ApiError
      */
     public static update({
-id,
-requestBody,
-}: {
-id: any,
-requestBody: MallShopUpdateDto,
-}): CancelablePromise<SuccessResult> {
+        id,
+        requestBody,
+    }: {
+        id: any,
+        requestBody: MallShopUpdateDto,
+    }): CancelablePromise<SuccessResult> {
         return __request(OpenAPI, {
             method: 'PUT',
             url: '/api/mall/shop/{id}',
@@ -88,14 +88,14 @@ requestBody: MallShopUpdateDto,
 
     /**
      * 获取单个店铺
-     * @returns MallShopGetResponse 
+     * @returns MallShopGetResponse
      * @throws ApiError
      */
     public static get({
-id,
-}: {
-id: any,
-}): CancelablePromise<MallShopGetResponse> {
+        id,
+    }: {
+        id: any,
+    }): CancelablePromise<MallShopGetResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/api/mall/shop/{id}',
@@ -107,18 +107,18 @@ id: any,
 
     /**
      * 获取分页数据
-     * @returns MallShopPaginateResponse 
+     * @returns MallShopPaginateResponse
      * @throws ApiError
      */
     public static paginate({
-pageNo,
-pageSize,
-name,
-}: {
-pageNo: number,
-pageSize: number,
-name: string,
-}): CancelablePromise<MallShopPaginateResponse> {
+        pageNo,
+        pageSize,
+        name,
+    }: {
+        pageNo: number,
+        pageSize: number,
+        name: string,
+    }): CancelablePromise<MallShopPaginateResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/api/mall/shop/paginate',

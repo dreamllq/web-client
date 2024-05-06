@@ -8,3 +8,4 @@ export type WeixinPlatformUserPaginateResponse = {
     code: number;
     data: WeixinPlatformUserPaginatePage;
 };
+

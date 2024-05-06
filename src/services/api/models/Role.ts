@@ -3,6 +3,7 @@
 /* eslint-disable */
 
 import type { Resource } from './Resource';
+import type { User } from './User';
 
 export type Role = {
     /**
@@ -21,6 +22,7 @@ export type Role = {
      * 资源列表
      */
     resources: Array<Resource>;
+    creator: User;
     /**
      * 创建时间
      */
@@ -30,3 +32,4 @@ export type Role = {
      */
     updateDate: string;
 };
+

@@ -22,3 +22,4 @@ export type MallOrder = {
      */
     updateDate: string;
 };
+

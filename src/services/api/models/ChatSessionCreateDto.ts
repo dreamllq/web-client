@@ -5,3 +5,4 @@
 export type ChatSessionCreateDto = {
     contactsId: string;
 };
+

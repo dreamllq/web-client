@@ -22,7 +22,7 @@ export class UsersService {
 
     /**
      * 获取所有用户数据
-     * @returns UserGetAllSuccessResponse 
+     * @returns UserGetAllSuccessResponse
      * @throws ApiError
      */
     public static getAll(): CancelablePromise<UserGetAllSuccessResponse> {
@@ -34,14 +34,14 @@ export class UsersService {
 
     /**
      * 创建用户
-     * @returns InsertSuccessResult 
+     * @returns InsertSuccessResult
      * @throws ApiError
      */
     public static create({
-requestBody,
-}: {
-requestBody: CreateUsersDto,
-}): CancelablePromise<InsertSuccessResult> {
+        requestBody,
+    }: {
+        requestBody: CreateUsersDto,
+    }): CancelablePromise<InsertSuccessResult> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/api/users',
@@ -52,26 +52,26 @@ requestBody: CreateUsersDto,
 
     /**
      * 获取分页用户数据
-     * @returns UsersPaginateSuccessResponse 
+     * @returns UsersPaginateSuccessResponse
      * @throws ApiError
      */
     public static paginate({
-pageNo,
-pageSize,
-username,
-isActive,
-}: {
-pageNo: number,
-pageSize: number,
-/**
- * 用户名
- */
-username?: string,
-/**
- * 是否活跃
- */
-isActive?: string,
-}): CancelablePromise<UsersPaginateSuccessResponse> {
+        pageNo,
+        pageSize,
+        username,
+        isActive,
+    }: {
+        pageNo: number,
+        pageSize: number,
+        /**
+         * 用户名
+         */
+        username?: string,
+        /**
+         * 是否活跃
+         */
+        isActive?: string,
+    }): CancelablePromise<UsersPaginateSuccessResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/api/users/page',
@@ -86,14 +86,14 @@ isActive?: string,
 
     /**
      * 删除用户
-     * @returns DeleteSuccessResult 
+     * @returns DeleteSuccessResult
      * @throws ApiError
      */
     public static remove({
-id,
-}: {
-id: any,
-}): CancelablePromise<DeleteSuccessResult> {
+        id,
+    }: {
+        id: any,
+    }): CancelablePromise<DeleteSuccessResult> {
         return __request(OpenAPI, {
             method: 'DELETE',
             url: '/api/users/{id}',
@@ -105,14 +105,14 @@ id: any,
 
     /**
      * 获取指定id的用户数据
-     * @returns UserGetSuccessResponse 
+     * @returns UserGetSuccessResponse
      * @throws ApiError
      */
     public static get({
-id,
-}: {
-id: any,
-}): CancelablePromise<UserGetSuccessResponse> {
+        id,
+    }: {
+        id: any,
+    }): CancelablePromise<UserGetSuccessResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/api/users/{id}',
@@ -124,16 +124,16 @@ id: any,
 
     /**
      * 修改指定id的用户数据
-     * @returns UpdateSuccessResult 
+     * @returns UpdateSuccessResult
      * @throws ApiError
      */
     public static update({
-id,
-requestBody,
-}: {
-id: any,
-requestBody: UserUpdateDto,
-}): CancelablePromise<UpdateSuccessResult> {
+        id,
+        requestBody,
+    }: {
+        id: any,
+        requestBody: UserUpdateDto,
+    }): CancelablePromise<UpdateSuccessResult> {
         return __request(OpenAPI, {
             method: 'PUT',
             url: '/api/users/{id}',
@@ -147,7 +147,7 @@ requestBody: UserUpdateDto,
 
     /**
      * 当前登录用户注销账号
-     * @returns SuccessResult 
+     * @returns SuccessResult
      * @throws ApiError
      */
     public static removeSession(): CancelablePromise<SuccessResult> {
@@ -159,14 +159,14 @@ requestBody: UserUpdateDto,
 
     /**
      * 绑定微信用户
-     * @returns SuccessResult 
+     * @returns SuccessResult
      * @throws ApiError
      */
     public static bindWeixinSession({
-requestBody,
-}: {
-requestBody: UsersBindWeixinDto,
-}): CancelablePromise<SuccessResult> {
+        requestBody,
+    }: {
+        requestBody: UsersBindWeixinDto,
+    }): CancelablePromise<SuccessResult> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/api/users/bindWeixinSession',
@@ -177,14 +177,14 @@ requestBody: UsersBindWeixinDto,
 
     /**
      * 绑定手机号
-     * @returns SuccessResult 
+     * @returns SuccessResult
      * @throws ApiError
      */
     public static bindMobileSession({
-requestBody,
-}: {
-requestBody: UsersBindMobileDto,
-}): CancelablePromise<SuccessResult> {
+        requestBody,
+    }: {
+        requestBody: UsersBindMobileDto,
+    }): CancelablePromise<SuccessResult> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/api/users/bindMobileSession',
@@ -195,14 +195,14 @@ requestBody: UsersBindMobileDto,
 
     /**
      * 绑定小程序手机号
-     * @returns SuccessResult 
+     * @returns SuccessResult
      * @throws ApiError
      */
     public static bindMpMobileSession({
-requestBody,
-}: {
-requestBody: UsersBindWeixinDto,
-}): CancelablePromise<SuccessResult> {
+        requestBody,
+    }: {
+        requestBody: UsersBindWeixinDto,
+    }): CancelablePromise<SuccessResult> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/api/users/bindMpMobileSession',
@@ -213,14 +213,14 @@ requestBody: UsersBindWeixinDto,
 
     /**
      * 绑定用户名
-     * @returns SuccessResult 
+     * @returns SuccessResult
      * @throws ApiError
      */
     public static bindUsernameSession({
-requestBody,
-}: {
-requestBody: UsersBindUsernameDto,
-}): CancelablePromise<SuccessResult> {
+        requestBody,
+    }: {
+        requestBody: UsersBindUsernameDto,
+    }): CancelablePromise<SuccessResult> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/api/users/bindUsernameSession',

@@ -8,3 +8,4 @@ export type WeixinPaginateResult = {
     list: Array<Weixin>;
     count: number;
 };
+

@@ -8,3 +8,4 @@ export type ForumCommentGetAllResponse = {
     code: number;
     data: Array<ForumComment>;
 };
+

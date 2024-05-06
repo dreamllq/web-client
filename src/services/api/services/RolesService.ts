@@ -18,7 +18,7 @@ export class RolesService {
 
     /**
      * 获取所有角色数据
-     * @returns RoleGetAllSuccessResponse 
+     * @returns RoleGetAllSuccessResponse
      * @throws ApiError
      */
     public static getAll(): CancelablePromise<RoleGetAllSuccessResponse> {
@@ -30,14 +30,14 @@ export class RolesService {
 
     /**
      * 创建角色
-     * @returns InsertSuccessResult 
+     * @returns InsertSuccessResult
      * @throws ApiError
      */
     public static create({
-requestBody,
-}: {
-requestBody: CreateRolesDto,
-}): CancelablePromise<InsertSuccessResult> {
+        requestBody,
+    }: {
+        requestBody: CreateRolesDto,
+    }): CancelablePromise<InsertSuccessResult> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/api/roles',
@@ -48,21 +48,21 @@ requestBody: CreateRolesDto,
 
     /**
      * 获取分页角色数据
-     * @returns RolesPaginateSuccessResponse 
+     * @returns RolesPaginateSuccessResponse
      * @throws ApiError
      */
     public static paginate({
-pageNo,
-pageSize,
-name,
-}: {
-pageNo: number,
-pageSize: number,
-/**
- * 角色名
- */
-name?: string,
-}): CancelablePromise<RolesPaginateSuccessResponse> {
+        pageNo,
+        pageSize,
+        name,
+    }: {
+        pageNo: number,
+        pageSize: number,
+        /**
+         * 角色名
+         */
+        name?: string,
+    }): CancelablePromise<RolesPaginateSuccessResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/api/roles/page',
@@ -76,14 +76,14 @@ name?: string,
 
     /**
      * 删除角色
-     * @returns DeleteSuccessResult 
+     * @returns DeleteSuccessResult
      * @throws ApiError
      */
     public static remove({
-id,
-}: {
-id: any,
-}): CancelablePromise<DeleteSuccessResult> {
+        id,
+    }: {
+        id: any,
+    }): CancelablePromise<DeleteSuccessResult> {
         return __request(OpenAPI, {
             method: 'DELETE',
             url: '/api/roles/{id}',
@@ -95,14 +95,14 @@ id: any,
 
     /**
      * 获取指定id角色信息
-     * @returns RoleGetSuccessResponse 
+     * @returns RoleGetSuccessResponse
      * @throws ApiError
      */
     public static get({
-id,
-}: {
-id: any,
-}): CancelablePromise<RoleGetSuccessResponse> {
+        id,
+    }: {
+        id: any,
+    }): CancelablePromise<RoleGetSuccessResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/api/roles/{id}',
@@ -114,16 +114,16 @@ id: any,
 
     /**
      * 更新指定id角色数据
-     * @returns UpdateSuccessResult 
+     * @returns UpdateSuccessResult
      * @throws ApiError
      */
     public static update({
-id,
-requestBody,
-}: {
-id: any,
-requestBody: UpdateRoleDto,
-}): CancelablePromise<UpdateSuccessResult> {
+        id,
+        requestBody,
+    }: {
+        id: any,
+        requestBody: UpdateRoleDto,
+    }): CancelablePromise<UpdateSuccessResult> {
         return __request(OpenAPI, {
             method: 'PUT',
             url: '/api/roles/{id}',

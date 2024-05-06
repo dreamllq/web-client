@@ -16,14 +16,14 @@ export class MallGoodTagService {
 
     /**
      * 创建标签
-     * @returns SuccessResult 
+     * @returns SuccessResult
      * @throws ApiError
      */
     public static create({
-requestBody,
-}: {
-requestBody: MallGoodTagCreateDto,
-}): CancelablePromise<SuccessResult> {
+        requestBody,
+    }: {
+        requestBody: MallGoodTagCreateDto,
+    }): CancelablePromise<SuccessResult> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/api/mall/good-tag',
@@ -34,7 +34,7 @@ requestBody: MallGoodTagCreateDto,
 
     /**
      * 获取所有标签
-     * @returns MallGoodTabGetAllResponse 
+     * @returns MallGoodTabGetAllResponse
      * @throws ApiError
      */
     public static getAll(): CancelablePromise<MallGoodTabGetAllResponse> {
@@ -46,14 +46,14 @@ requestBody: MallGoodTagCreateDto,
 
     /**
      * 删除标签
-     * @returns SuccessResult 
+     * @returns SuccessResult
      * @throws ApiError
      */
     public static remove({
-id,
-}: {
-id: any,
-}): CancelablePromise<SuccessResult> {
+        id,
+    }: {
+        id: any,
+    }): CancelablePromise<SuccessResult> {
         return __request(OpenAPI, {
             method: 'DELETE',
             url: '/api/mall/good-tag/{id}',
@@ -65,16 +65,16 @@ id: any,
 
     /**
      * 更新标签
-     * @returns SuccessResult 
+     * @returns SuccessResult
      * @throws ApiError
      */
     public static remove1({
-id,
-requestBody,
-}: {
-id: any,
-requestBody: MallGoodTagUpdateDto,
-}): CancelablePromise<SuccessResult> {
+        id,
+        requestBody,
+    }: {
+        id: any,
+        requestBody: MallGoodTagUpdateDto,
+    }): CancelablePromise<SuccessResult> {
         return __request(OpenAPI, {
             method: 'PUT',
             url: '/api/mall/good-tag/{id}',
@@ -88,14 +88,14 @@ requestBody: MallGoodTagUpdateDto,
 
     /**
      * 获取标签
-     * @returns MallGoodTagGetResponse 
+     * @returns MallGoodTagGetResponse
      * @throws ApiError
      */
     public static get({
-id,
-}: {
-id: any,
-}): CancelablePromise<MallGoodTagGetResponse> {
+        id,
+    }: {
+        id: any,
+    }): CancelablePromise<MallGoodTagGetResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/api/mall/good-tag/{id}',
@@ -107,16 +107,16 @@ id: any,
 
     /**
      * 标签分页
-     * @returns MallGoodTagPaginateResponse 
+     * @returns MallGoodTagPaginateResponse
      * @throws ApiError
      */
     public static paginate({
-pageNo,
-pageSize,
-}: {
-pageNo: number,
-pageSize: number,
-}): CancelablePromise<MallGoodTagPaginateResponse> {
+        pageNo,
+        pageSize,
+    }: {
+        pageNo: number,
+        pageSize: number,
+    }): CancelablePromise<MallGoodTagPaginateResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/api/mall/good-tag/page',

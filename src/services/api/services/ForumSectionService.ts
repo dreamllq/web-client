@@ -16,7 +16,7 @@ export class ForumSectionService {
 
     /**
      * 获取所有论坛版块信息
-     * @returns ForumSectionGetAllResponse 
+     * @returns ForumSectionGetAllResponse
      * @throws ApiError
      */
     public static getAll(): CancelablePromise<ForumSectionGetAllResponse> {
@@ -28,14 +28,14 @@ export class ForumSectionService {
 
     /**
      * 创建板块
-     * @returns SuccessResult 
+     * @returns SuccessResult
      * @throws ApiError
      */
     public static create({
-requestBody,
-}: {
-requestBody: ForumSectionCreateDto,
-}): CancelablePromise<SuccessResult> {
+        requestBody,
+    }: {
+        requestBody: ForumSectionCreateDto,
+    }): CancelablePromise<SuccessResult> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/api/forum/section',
@@ -46,14 +46,14 @@ requestBody: ForumSectionCreateDto,
 
     /**
      * 获取指定id论坛版块信息
-     * @returns ForumSectionGetResponse 
+     * @returns ForumSectionGetResponse
      * @throws ApiError
      */
     public static get({
-id,
-}: {
-id: any,
-}): CancelablePromise<ForumSectionGetResponse> {
+        id,
+    }: {
+        id: any,
+    }): CancelablePromise<ForumSectionGetResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/api/forum/section/{id}',
@@ -65,14 +65,14 @@ id: any,
 
     /**
      * 删除指定id板块
-     * @returns SuccessResult 
+     * @returns SuccessResult
      * @throws ApiError
      */
     public static remove({
-id,
-}: {
-id: any,
-}): CancelablePromise<SuccessResult> {
+        id,
+    }: {
+        id: any,
+    }): CancelablePromise<SuccessResult> {
         return __request(OpenAPI, {
             method: 'DELETE',
             url: '/api/forum/section/{id}',
@@ -84,16 +84,16 @@ id: any,
 
     /**
      * 更新指定id板块
-     * @returns SuccessResult 
+     * @returns SuccessResult
      * @throws ApiError
      */
     public static update({
-id,
-requestBody,
-}: {
-id: any,
-requestBody: ForumSectionUpdateDto,
-}): CancelablePromise<SuccessResult> {
+        id,
+        requestBody,
+    }: {
+        id: any,
+        requestBody: ForumSectionUpdateDto,
+    }): CancelablePromise<SuccessResult> {
         return __request(OpenAPI, {
             method: 'PUT',
             url: '/api/forum/section/{id}',
@@ -107,18 +107,18 @@ requestBody: ForumSectionUpdateDto,
 
     /**
      * 板块分页数据
-     * @returns ForumSectionPaginateResponse 
+     * @returns ForumSectionPaginateResponse
      * @throws ApiError
      */
     public static paginate({
-pageNo,
-pageSize,
-name,
-}: {
-pageNo: number,
-pageSize: number,
-name?: string,
-}): CancelablePromise<ForumSectionPaginateResponse> {
+        pageNo,
+        pageSize,
+        name,
+    }: {
+        pageNo: number,
+        pageSize: number,
+        name?: string,
+    }): CancelablePromise<ForumSectionPaginateResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/api/forum/section/page/all',
@@ -132,18 +132,18 @@ name?: string,
 
     /**
      * 登录人的板块分页数据
-     * @returns ForumSectionPaginateResponse 
+     * @returns ForumSectionPaginateResponse
      * @throws ApiError
      */
     public static paginateSession({
-pageNo,
-pageSize,
-name,
-}: {
-pageNo: number,
-pageSize: number,
-name?: string,
-}): CancelablePromise<ForumSectionPaginateResponse> {
+        pageNo,
+        pageSize,
+        name,
+    }: {
+        pageNo: number,
+        pageSize: number,
+        name?: string,
+    }): CancelablePromise<ForumSectionPaginateResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/api/forum/section/page/session',

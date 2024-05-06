@@ -9,3 +9,4 @@ export type MallGoodGroupGetTreeResponse = {
     message: string;
     data: Array<MallGoodGroup>;
 };
+

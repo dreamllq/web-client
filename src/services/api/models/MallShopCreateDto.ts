@@ -7,3 +7,4 @@ export type MallShopCreateDto = {
     desc: string;
     headimg: string;
 };
+

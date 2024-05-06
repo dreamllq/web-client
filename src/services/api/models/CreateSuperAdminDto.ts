@@ -12,3 +12,4 @@ export type CreateSuperAdminDto = {
      */
     password: string;
 };
+

@@ -12,3 +12,4 @@ export type MallGoodCreateDto = {
     detail: string;
     shopId: string;
 };
+

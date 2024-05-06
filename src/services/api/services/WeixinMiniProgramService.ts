@@ -12,16 +12,16 @@ export class WeixinMiniProgramService {
 
     /**
      * 获取手机号
-     * @returns GetPhoneNumberResponse 
+     * @returns GetPhoneNumberResponse
      * @throws ApiError
      */
     public static getPhoneNumber({
-code,
-appid,
-}: {
-code: any,
-appid: any,
-}): CancelablePromise<GetPhoneNumberResponse> {
+        code,
+        appid,
+    }: {
+        code: any,
+        appid: any,
+    }): CancelablePromise<GetPhoneNumberResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/api/weixin-platform/mini-program/getPhoneNumber/{appid}',
@@ -36,16 +36,16 @@ appid: any,
 
     /**
      * code2Session
-     * @returns WeixinMiniProgramCodeToSessionResponse 
+     * @returns WeixinMiniProgramCodeToSessionResponse
      * @throws ApiError
      */
     public static code2Session({
-code,
-appid,
-}: {
-code: any,
-appid: any,
-}): CancelablePromise<WeixinMiniProgramCodeToSessionResponse> {
+        code,
+        appid,
+    }: {
+        code: any,
+        appid: any,
+    }): CancelablePromise<WeixinMiniProgramCodeToSessionResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/api/weixin-platform/mini-program/code2Session/{appid}',

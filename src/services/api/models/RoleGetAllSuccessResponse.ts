@@ -8,3 +8,4 @@ export type RoleGetAllSuccessResponse = {
     code: number;
     data: Array<Role>;
 };
+

@@ -9,3 +9,4 @@ export type MallCartGetAllResponse = {
     message: string;
     data: Array<MallCart>;
 };
+

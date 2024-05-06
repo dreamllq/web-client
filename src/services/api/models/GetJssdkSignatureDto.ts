@@ -7,3 +7,4 @@ export type GetJssdkSignatureDto = {
     url: string;
     jsApiList: Array<string>;
 };
+

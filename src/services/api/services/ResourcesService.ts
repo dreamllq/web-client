@@ -18,7 +18,7 @@ export class ResourcesService {
 
     /**
      * 获取资源所有数据
-     * @returns ResourceGetAllSuccessResult 
+     * @returns ResourceGetAllSuccessResult
      * @throws ApiError
      */
     public static getAll(): CancelablePromise<ResourceGetAllSuccessResult> {
@@ -30,14 +30,14 @@ export class ResourcesService {
 
     /**
      * 创建资源
-     * @returns InsertSuccessResult 
+     * @returns InsertSuccessResult
      * @throws ApiError
      */
     public static create({
-requestBody,
-}: {
-requestBody: CreateResourceDto,
-}): CancelablePromise<InsertSuccessResult> {
+        requestBody,
+    }: {
+        requestBody: CreateResourceDto,
+    }): CancelablePromise<InsertSuccessResult> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/api/resources',
@@ -48,21 +48,21 @@ requestBody: CreateResourceDto,
 
     /**
      * 获取资源分页数据
-     * @returns ResourcePaginateSuccessResult 
+     * @returns ResourcePaginateSuccessResult
      * @throws ApiError
      */
     public static paginate({
-pageNo,
-pageSize,
-name,
-}: {
-pageNo: number,
-pageSize: number,
-/**
- * 资源名
- */
-name?: string,
-}): CancelablePromise<ResourcePaginateSuccessResult> {
+        pageNo,
+        pageSize,
+        name,
+    }: {
+        pageNo: number,
+        pageSize: number,
+        /**
+         * 资源名
+         */
+        name?: string,
+    }): CancelablePromise<ResourcePaginateSuccessResult> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/api/resources/page',
@@ -76,17 +76,17 @@ name?: string,
 
     /**
      * 获取指定id资源数据
-     * @returns ResourceGetSuccessResult 
+     * @returns ResourceGetSuccessResult
      * @throws ApiError
      */
     public static get({
-id,
-}: {
-/**
- * 资源id
- */
-id: any,
-}): CancelablePromise<ResourceGetSuccessResult> {
+        id,
+    }: {
+        /**
+         * 资源id
+         */
+        id: any,
+    }): CancelablePromise<ResourceGetSuccessResult> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/api/resources/{id}',
@@ -98,17 +98,17 @@ id: any,
 
     /**
      * 删除资源
-     * @returns DeleteSuccessResult 
+     * @returns DeleteSuccessResult
      * @throws ApiError
      */
     public static remove({
-id,
-}: {
-/**
- * 资源id
- */
-id: any,
-}): CancelablePromise<DeleteSuccessResult> {
+        id,
+    }: {
+        /**
+         * 资源id
+         */
+        id: any,
+    }): CancelablePromise<DeleteSuccessResult> {
         return __request(OpenAPI, {
             method: 'DELETE',
             url: '/api/resources/{id}',
@@ -120,19 +120,19 @@ id: any,
 
     /**
      * 更新指定资源的所有数据
-     * @returns UpdateSuccessResult 
+     * @returns UpdateSuccessResult
      * @throws ApiError
      */
     public static update({
-id,
-requestBody,
-}: {
-/**
- * 资源id
- */
-id: any,
-requestBody: UpdateResourceDto,
-}): CancelablePromise<UpdateSuccessResult> {
+        id,
+        requestBody,
+    }: {
+        /**
+         * 资源id
+         */
+        id: any,
+        requestBody: UpdateResourceDto,
+    }): CancelablePromise<UpdateSuccessResult> {
         return __request(OpenAPI, {
             method: 'PUT',
             url: '/api/resources/{id}',

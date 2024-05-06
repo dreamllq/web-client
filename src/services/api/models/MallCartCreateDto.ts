@@ -6,3 +6,4 @@ export type MallCartCreateDto = {
     goodId: string;
     count: number;
 };
+

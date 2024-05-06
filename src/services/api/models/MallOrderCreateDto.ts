@@ -8,3 +8,4 @@ export type MallOrderCreateDto = {
     addressId: string;
     goods: Array<GoodInfo>;
 };
+

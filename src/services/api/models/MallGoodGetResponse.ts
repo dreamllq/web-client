@@ -9,3 +9,4 @@ export type MallGoodGetResponse = {
     message: string;
     data: MallGood;
 };
+

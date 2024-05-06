@@ -8,3 +8,4 @@ export type ForumCommentPaginatePage = {
     list: Array<ForumComment>;
     count: number;
 };
+

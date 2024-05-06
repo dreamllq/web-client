@@ -6,3 +6,4 @@ export type UsersBindUsernameDto = {
     username: string;
     password: string;
 };
+

@@ -11,3 +11,4 @@ export type MallGoodUpdateDto = {
     images: Array<string>;
     detail: string;
 };
+

@@ -8,3 +8,4 @@ export type SessionGetUserResponse = {
     code: number;
     data: User;
 };
+

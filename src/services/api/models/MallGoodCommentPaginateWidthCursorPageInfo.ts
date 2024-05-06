@@ -8,3 +8,4 @@ export type MallGoodCommentPaginateWidthCursorPageInfo = {
     list: Array<MallGoodComment>;
     count: number;
 };
+

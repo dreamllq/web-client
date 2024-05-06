@@ -6,3 +6,4 @@ export type AuthVerifyResponse = {
     code: number;
     data: boolean;
 };
+

@@ -8,3 +8,4 @@ export type WeixinOfficialAccountGetAccessTokenResponse = {
     code: number;
     data: AccessToken;
 };
+

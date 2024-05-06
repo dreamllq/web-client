@@ -8,3 +8,4 @@ export type UsersPaginateResult = {
     list: Array<User>;
     count: number;
 };
+

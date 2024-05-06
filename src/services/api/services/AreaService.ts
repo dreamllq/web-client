@@ -12,14 +12,14 @@ export class AreaService {
 
     /**
      * 获取省份列表
-     * @returns AreaResponse 
+     * @returns AreaResponse
      * @throws ApiError
      */
     public static getProvinces({
-countryId,
-}: {
-countryId: any,
-}): CancelablePromise<AreaResponse> {
+        countryId,
+    }: {
+        countryId: any,
+    }): CancelablePromise<AreaResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/api/area/provinces',
@@ -31,14 +31,14 @@ countryId: any,
 
     /**
      * 获取城市列表
-     * @returns AreaResponse 
+     * @returns AreaResponse
      * @throws ApiError
      */
     public static getCities({
-provinceId,
-}: {
-provinceId: any,
-}): CancelablePromise<AreaResponse> {
+        provinceId,
+    }: {
+        provinceId: any,
+    }): CancelablePromise<AreaResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/api/area/cities',
@@ -50,14 +50,14 @@ provinceId: any,
 
     /**
      * 获取区列表
-     * @returns AreaResponse 
+     * @returns AreaResponse
      * @throws ApiError
      */
     public static getRegions({
-cityId,
-}: {
-cityId: any,
-}): CancelablePromise<AreaResponse> {
+        cityId,
+    }: {
+        cityId: any,
+    }): CancelablePromise<AreaResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/api/area/regions',
@@ -69,7 +69,7 @@ cityId: any,
 
     /**
      * 获取省市区结构
-     * @returns TreeDataResponse 
+     * @returns TreeDataResponse
      * @throws ApiError
      */
     public static getTreeData(): CancelablePromise<TreeDataResponse> {

@@ -16,3 +16,4 @@ export type CreateResourceDto = {
      */
     desc?: string;
 };
+

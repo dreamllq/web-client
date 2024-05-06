@@ -8,3 +8,4 @@ export type WeixinOfficialAccountConfigGetByWeixinSuccessResponse = {
     code: number;
     data: WeixinOfficialAccountConfig;
 };
+

@@ -18,3 +18,4 @@ export type WeixinPlatformUser = {
      */
     updateDate: string;
 };
+

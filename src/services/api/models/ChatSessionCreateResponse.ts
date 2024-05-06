@@ -9,3 +9,4 @@ export type ChatSessionCreateResponse = {
     message: string;
     data: ChatSession;
 };
+

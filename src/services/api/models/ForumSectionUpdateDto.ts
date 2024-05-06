@@ -6,3 +6,4 @@ export type ForumSectionUpdateDto = {
     name: string;
     desc: string;
 };
+

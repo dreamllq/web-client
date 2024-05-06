@@ -13,14 +13,14 @@ export class WeixinOfficialAccountConfigService {
 
     /**
      * 通过weixinId获取公众号配置
-     * @returns WeixinOfficialAccountConfigGetByWeixinSuccessResponse 
+     * @returns WeixinOfficialAccountConfigGetByWeixinSuccessResponse
      * @throws ApiError
      */
     public static getAndCreateByWeixin({
-weixinId,
-}: {
-weixinId: string,
-}): CancelablePromise<WeixinOfficialAccountConfigGetByWeixinSuccessResponse> {
+        weixinId,
+    }: {
+        weixinId: string,
+    }): CancelablePromise<WeixinOfficialAccountConfigGetByWeixinSuccessResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/api/weixin/official-account-config/weixin/{weixinId}',
@@ -32,16 +32,16 @@ weixinId: string,
 
     /**
      * 更新指定id的公众号配置
-     * @returns SuccessResult 
+     * @returns SuccessResult
      * @throws ApiError
      */
     public static update({
-id,
-requestBody,
-}: {
-id: string,
-requestBody: WeixinOfficialAccountConfigUpdateDto,
-}): CancelablePromise<SuccessResult> {
+        id,
+        requestBody,
+    }: {
+        id: string,
+        requestBody: WeixinOfficialAccountConfigUpdateDto,
+    }): CancelablePromise<SuccessResult> {
         return __request(OpenAPI, {
             method: 'PUT',
             url: '/api/weixin/official-account-config/{id}',

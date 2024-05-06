@@ -6,3 +6,4 @@ export type Watermark = {
     timestamp: number;
     appid: string;
 };
+

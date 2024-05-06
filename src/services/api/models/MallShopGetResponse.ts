@@ -9,3 +9,4 @@ export type MallShopGetResponse = {
     message: string;
     data: MallShop;
 };
+

@@ -9,3 +9,4 @@ export type MallGoodTabGetAllResponse = {
     message: string;
     data: Array<MallGoodTag>;
 };
+

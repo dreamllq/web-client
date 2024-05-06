@@ -8,3 +8,4 @@ export type WeixinGetAllResponse = {
     code: number;
     data: Array<Weixin>;
 };
+

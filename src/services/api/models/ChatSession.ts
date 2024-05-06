@@ -18,3 +18,4 @@ export type ChatSession = {
      */
     updateDate: string;
 };
+

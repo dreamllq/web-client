@@ -9,3 +9,4 @@ export type MallGoodGroupGetAllResponse = {
     message: string;
     data: Array<MallGoodGroup>;
 };
+

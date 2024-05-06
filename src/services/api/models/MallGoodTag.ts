@@ -15,3 +15,4 @@ export type MallGoodTag = {
      */
     updateDate: string;
 };
+

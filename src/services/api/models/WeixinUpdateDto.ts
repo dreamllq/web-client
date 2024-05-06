@@ -6,3 +6,4 @@ export type WeixinUpdateDto = {
     appSecret: string;
     appType: string;
 };
+

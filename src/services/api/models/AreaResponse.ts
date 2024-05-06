@@ -8,3 +8,4 @@ export type AreaResponse = {
     code: number;
     data: Array<Area>;
 };
+

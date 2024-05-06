@@ -8,3 +8,4 @@ export type ForumSectionPaginateResponse = {
     code: number;
     data: ForumSectionPaginatePage;
 };
+

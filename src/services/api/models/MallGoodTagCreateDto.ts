@@ -6,3 +6,4 @@ export type MallGoodTagCreateDto = {
     name: string;
     desc: string;
 };
+

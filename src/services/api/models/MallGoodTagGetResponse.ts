@@ -9,3 +9,4 @@ export type MallGoodTagGetResponse = {
     message: string;
     data: MallGoodTag;
 };
+

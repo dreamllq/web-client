@@ -12,3 +12,4 @@ export type LoginDto = {
      */
     password: string;
 };
+

@@ -109,5 +109,16 @@ export default [
         'label': '客户端'
       }
     ]
+  },
+  {
+    'key': 'ai',
+    'label': 'AI',
+    'icon': 'ChatRound',
+    'children': [
+      {
+        'key': 'ai-baidu-account',
+        'label': '百度账号'
+      }
+    ]
   }
 ];

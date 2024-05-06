@@ -6,3 +6,4 @@ export type MallCartUpdateDto = {
     count?: number;
     checked?: boolean;
 };
+

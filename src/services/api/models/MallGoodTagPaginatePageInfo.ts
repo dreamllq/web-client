@@ -8,3 +8,4 @@ export type MallGoodTagPaginatePageInfo = {
     list: Array<MallGoodTag>;
     count: number;
 };
+

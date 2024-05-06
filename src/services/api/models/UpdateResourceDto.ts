@@ -12,3 +12,4 @@ export type UpdateResourceDto = {
      */
     desc: string;
 };
+

@@ -9,3 +9,4 @@ export type WeixinPayPaginateResponse = {
     message: string;
     data: WeixinPayPaginatePageInfo;
 };
+

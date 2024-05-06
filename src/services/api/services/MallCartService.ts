@@ -15,14 +15,14 @@ export class MallCartService {
 
     /**
      * 添加购物车
-     * @returns SuccessResult 
+     * @returns SuccessResult
      * @throws ApiError
      */
     public static add({
-requestBody,
-}: {
-requestBody: MallCartCreateDto,
-}): CancelablePromise<SuccessResult> {
+        requestBody,
+    }: {
+        requestBody: MallCartCreateDto,
+    }): CancelablePromise<SuccessResult> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/api/mall/cart',
@@ -33,7 +33,7 @@ requestBody: MallCartCreateDto,
 
     /**
      * 获取用户购物车
-     * @returns MallCartGetAllResponse 
+     * @returns MallCartGetAllResponse
      * @throws ApiError
      */
     public static getAll(): CancelablePromise<MallCartGetAllResponse> {
@@ -45,14 +45,14 @@ requestBody: MallCartCreateDto,
 
     /**
      * 删除购物车
-     * @returns SuccessResult 
+     * @returns SuccessResult
      * @throws ApiError
      */
     public static remove({
-id,
-}: {
-id: any,
-}): CancelablePromise<SuccessResult> {
+        id,
+    }: {
+        id: any,
+    }): CancelablePromise<SuccessResult> {
         return __request(OpenAPI, {
             method: 'DELETE',
             url: '/api/mall/cart/{id}',
@@ -64,16 +64,16 @@ id: any,
 
     /**
      * 更新购物车
-     * @returns SuccessResult 
+     * @returns SuccessResult
      * @throws ApiError
      */
     public static update({
-id,
-requestBody,
-}: {
-id: any,
-requestBody: MallCartUpdateDto,
-}): CancelablePromise<SuccessResult> {
+        id,
+        requestBody,
+    }: {
+        id: any,
+        requestBody: MallCartUpdateDto,
+    }): CancelablePromise<SuccessResult> {
         return __request(OpenAPI, {
             method: 'PUT',
             url: '/api/mall/cart/{id}',
@@ -87,14 +87,14 @@ requestBody: MallCartUpdateDto,
 
     /**
      * 批量更新购物车
-     * @returns SuccessResult 
+     * @returns SuccessResult
      * @throws ApiError
      */
     public static batchUpdate({
-requestBody,
-}: {
-requestBody: MallCartBatchUpdateDto,
-}): CancelablePromise<SuccessResult> {
+        requestBody,
+    }: {
+        requestBody: MallCartBatchUpdateDto,
+    }): CancelablePromise<SuccessResult> {
         return __request(OpenAPI, {
             method: 'PUT',
             url: '/api/mall/cart/batch',

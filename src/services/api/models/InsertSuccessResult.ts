@@ -6,3 +6,4 @@ export type InsertSuccessResult = {
     code: number;
     data: any;
 };
+

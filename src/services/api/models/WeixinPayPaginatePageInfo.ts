@@ -8,3 +8,4 @@ export type WeixinPayPaginatePageInfo = {
     list: Array<WeixinPay>;
     count: number;
 };
+

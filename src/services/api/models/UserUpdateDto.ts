@@ -12,3 +12,4 @@ export type UserUpdateDto = {
     mobile?: string;
     headimg?: string;
 };
+

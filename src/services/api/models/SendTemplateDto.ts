@@ -7,3 +7,4 @@ export type SendTemplateDto = {
     openId: string;
     data: any;
 };
+

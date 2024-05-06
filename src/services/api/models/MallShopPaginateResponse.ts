@@ -9,3 +9,4 @@ export type MallShopPaginateResponse = {
     message: string;
     data: MallShopPaginatePage;
 };
+

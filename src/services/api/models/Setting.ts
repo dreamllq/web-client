@@ -15,3 +15,4 @@ export type Setting = {
      */
     updateDate: string;
 };
+

@@ -12,3 +12,4 @@ export type UpdateRoleDto = {
      */
     resourceIds: Array<string>;
 };
+

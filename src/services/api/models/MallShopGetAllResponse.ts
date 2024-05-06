@@ -9,3 +9,4 @@ export type MallShopGetAllResponse = {
     message: string;
     data: Array<MallShop>;
 };
+

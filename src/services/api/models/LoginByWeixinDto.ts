@@ -6,3 +6,4 @@ export type LoginByWeixinDto = {
     appid: string;
     code: string;
 };
+

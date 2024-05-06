@@ -8,3 +8,4 @@ export type ResourceGetAllSuccessResult = {
     code: number;
     data: Array<Resource>;
 };
+

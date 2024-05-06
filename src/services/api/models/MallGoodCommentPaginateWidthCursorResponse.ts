@@ -9,3 +9,4 @@ export type MallGoodCommentPaginateWidthCursorResponse = {
     message: string;
     data: MallGoodCommentPaginateWidthCursorPageInfo;
 };
+

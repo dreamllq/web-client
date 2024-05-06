@@ -8,3 +8,4 @@ export type RolesPaginateSuccessResponse = {
     code: number;
     data: RolesPaginateResult;
 };
+

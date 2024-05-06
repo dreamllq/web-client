@@ -13,14 +13,14 @@ export class MallGoodRelationService {
 
     /**
      * 创建关系
-     * @returns SuccessResult 
+     * @returns SuccessResult
      * @throws ApiError
      */
     public static create({
-requestBody,
-}: {
-requestBody: MallGoodRelationCreateDto,
-}): CancelablePromise<SuccessResult> {
+        requestBody,
+    }: {
+        requestBody: MallGoodRelationCreateDto,
+    }): CancelablePromise<SuccessResult> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/api/mall/good-relation',
@@ -31,14 +31,14 @@ requestBody: MallGoodRelationCreateDto,
 
     /**
      * 删除关系
-     * @returns SuccessResult 
+     * @returns SuccessResult
      * @throws ApiError
      */
     public static remove({
-id,
-}: {
-id: any,
-}): CancelablePromise<SuccessResult> {
+        id,
+    }: {
+        id: any,
+    }): CancelablePromise<SuccessResult> {
         return __request(OpenAPI, {
             method: 'DELETE',
             url: '/api/mall/good-relation/{id}',
@@ -50,18 +50,18 @@ id: any,
 
     /**
      * 筛选一个关系
-     * @returns MallGoodRelationGetResponse 
+     * @returns MallGoodRelationGetResponse
      * @throws ApiError
      */
     public static getWidthFilter({
-userId,
-goodId,
-type,
-}: {
-userId: string,
-goodId: string,
-type: any,
-}): CancelablePromise<MallGoodRelationGetResponse> {
+        userId,
+        goodId,
+        type,
+    }: {
+        userId: string,
+        goodId: string,
+        type: any,
+    }): CancelablePromise<MallGoodRelationGetResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/api/mall/good-relation/item',

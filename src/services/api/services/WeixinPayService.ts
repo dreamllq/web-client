@@ -15,14 +15,14 @@ export class WeixinPayService {
 
     /**
      * 创建支付配置
-     * @returns SuccessResult 
+     * @returns SuccessResult
      * @throws ApiError
      */
     public static create({
-requestBody,
-}: {
-requestBody: WeixinPayCreateDto,
-}): CancelablePromise<SuccessResult> {
+        requestBody,
+    }: {
+        requestBody: WeixinPayCreateDto,
+    }): CancelablePromise<SuccessResult> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/api/weixin/pay',
@@ -33,7 +33,7 @@ requestBody: WeixinPayCreateDto,
 
     /**
      * 获取所有数据
-     * @returns WeixinPayGetResponse 
+     * @returns WeixinPayGetResponse
      * @throws ApiError
      */
     public static getAll(): CancelablePromise<WeixinPayGetResponse> {
@@ -45,14 +45,14 @@ requestBody: WeixinPayCreateDto,
 
     /**
      * 删除支付配置
-     * @returns SuccessResult 
+     * @returns SuccessResult
      * @throws ApiError
      */
     public static remove({
-id,
-}: {
-id: any,
-}): CancelablePromise<SuccessResult> {
+        id,
+    }: {
+        id: any,
+    }): CancelablePromise<SuccessResult> {
         return __request(OpenAPI, {
             method: 'DELETE',
             url: '/api/weixin/pay/{id}',
@@ -64,16 +64,16 @@ id: any,
 
     /**
      * 更新支付配置
-     * @returns SuccessResult 
+     * @returns SuccessResult
      * @throws ApiError
      */
     public static update({
-id,
-requestBody,
-}: {
-id: any,
-requestBody: WeixinPayUpdateDto,
-}): CancelablePromise<SuccessResult> {
+        id,
+        requestBody,
+    }: {
+        id: any,
+        requestBody: WeixinPayUpdateDto,
+    }): CancelablePromise<SuccessResult> {
         return __request(OpenAPI, {
             method: 'PUT',
             url: '/api/weixin/pay/{id}',
@@ -87,14 +87,14 @@ requestBody: WeixinPayUpdateDto,
 
     /**
      * id数据
-     * @returns WeixinPayGetResponse 
+     * @returns WeixinPayGetResponse
      * @throws ApiError
      */
     public static get({
-id,
-}: {
-id: any,
-}): CancelablePromise<WeixinPayGetResponse> {
+        id,
+    }: {
+        id: any,
+    }): CancelablePromise<WeixinPayGetResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/api/weixin/pay/{id}',
@@ -106,16 +106,16 @@ id: any,
 
     /**
      * 分页
-     * @returns WeixinPayPaginateResponse 
+     * @returns WeixinPayPaginateResponse
      * @throws ApiError
      */
     public static paginate({
-pageNo,
-pageSize,
-}: {
-pageNo: number,
-pageSize: number,
-}): CancelablePromise<WeixinPayPaginateResponse> {
+        pageNo,
+        pageSize,
+    }: {
+        pageNo: number,
+        pageSize: number,
+    }): CancelablePromise<WeixinPayPaginateResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/api/weixin/pay/page',

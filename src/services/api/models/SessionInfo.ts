@@ -7,3 +7,4 @@ export type SessionInfo = {
     unionid: string;
     session_key: string;
 };
+

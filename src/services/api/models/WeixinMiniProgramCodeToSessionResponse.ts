@@ -8,3 +8,4 @@ export type WeixinMiniProgramCodeToSessionResponse = {
     code: number;
     data: SessionInfo;
 };
+

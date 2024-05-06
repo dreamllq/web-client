@@ -8,3 +8,4 @@ export type ForumSectionGetAllResponse = {
     code: number;
     data: Array<ForumSection>;
 };
+

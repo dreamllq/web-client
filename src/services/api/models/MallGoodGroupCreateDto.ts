@@ -7,3 +7,4 @@ export type MallGoodGroupCreateDto = {
     headimg: string;
     parentId?: string;
 };
+

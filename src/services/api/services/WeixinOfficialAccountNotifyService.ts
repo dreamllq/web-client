@@ -8,14 +8,14 @@ import { request as __request } from '../core/request';
 export class WeixinOfficialAccountNotifyService {
 
     /**
-     * @returns any 
+     * @returns any
      * @throws ApiError
      */
     public static weixinOfficialAccountNotifyControllerNotify({
-appid,
-}: {
-appid: any,
-}): CancelablePromise<any> {
+        appid,
+    }: {
+        appid: any,
+    }): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/api/weixin-platform/official-account/notify/{appid}',
@@ -26,14 +26,14 @@ appid: any,
     }
 
     /**
-     * @returns any 
+     * @returns any
      * @throws ApiError
      */
     public static weixinOfficialAccountNotifyControllerCheckSignature({
-appid,
-}: {
-appid: any,
-}): CancelablePromise<any> {
+        appid,
+    }: {
+        appid: any,
+    }): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/api/weixin-platform/official-account/notify/{appid}',

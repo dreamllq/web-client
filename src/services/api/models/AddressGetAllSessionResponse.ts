@@ -8,3 +8,4 @@ export type AddressGetAllSessionResponse = {
     code: number;
     data: Array<Address>;
 };
+

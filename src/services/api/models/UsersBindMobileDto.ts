@@ -6,3 +6,4 @@ export type UsersBindMobileDto = {
     mobile: string;
     code: string;
 };
+

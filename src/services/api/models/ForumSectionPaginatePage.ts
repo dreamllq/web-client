@@ -8,3 +8,4 @@ export type ForumSectionPaginatePage = {
     list: Array<ForumSection>;
     count: number;
 };
+

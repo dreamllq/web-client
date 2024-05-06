@@ -8,3 +8,4 @@ export type ForumPostGetResponse = {
     code: number;
     data: ForumPost;
 };
+

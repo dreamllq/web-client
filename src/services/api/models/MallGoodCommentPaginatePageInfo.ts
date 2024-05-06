@@ -8,3 +8,4 @@ export type MallGoodCommentPaginatePageInfo = {
     list: Array<MallGoodComment>;
     count: number;
 };
+

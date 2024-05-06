@@ -15,14 +15,14 @@ export class MallOrderService {
 
     /**
      * 创建订单
-     * @returns SuccessResult 
+     * @returns SuccessResult
      * @throws ApiError
      */
     public static create({
-requestBody,
-}: {
-requestBody: MallOrderCreateDto,
-}): CancelablePromise<SuccessResult> {
+        requestBody,
+    }: {
+        requestBody: MallOrderCreateDto,
+    }): CancelablePromise<SuccessResult> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/api/mall/order',
@@ -33,16 +33,16 @@ requestBody: MallOrderCreateDto,
 
     /**
      * 订单登录用户游标分页
-     * @returns MallOrderPageWidthCursorResponse 
+     * @returns MallOrderPageWidthCursorResponse
      * @throws ApiError
      */
     public static paginateWidthCursorSession({
-count,
-afterId,
-}: {
-count: number,
-afterId: string,
-}): CancelablePromise<MallOrderPageWidthCursorResponse> {
+        count,
+        afterId,
+    }: {
+        count: number,
+        afterId: string,
+    }): CancelablePromise<MallOrderPageWidthCursorResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/api/mall/order/pageByCursor/session',
@@ -55,16 +55,16 @@ afterId: string,
 
     /**
      * 订单分页
-     * @returns MallOrderPaginateResponse 
+     * @returns MallOrderPaginateResponse
      * @throws ApiError
      */
     public static paginate({
-pageNo,
-pageSize,
-}: {
-pageNo: number,
-pageSize: number,
-}): CancelablePromise<MallOrderPaginateResponse> {
+        pageNo,
+        pageSize,
+    }: {
+        pageNo: number,
+        pageSize: number,
+    }): CancelablePromise<MallOrderPaginateResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/api/mall/order/page',
@@ -77,14 +77,14 @@ pageSize: number,
 
     /**
      * 获取订单
-     * @returns MallOrderGetResponse 
+     * @returns MallOrderGetResponse
      * @throws ApiError
      */
     public static get({
-id,
-}: {
-id: any,
-}): CancelablePromise<MallOrderGetResponse> {
+        id,
+    }: {
+        id: any,
+    }): CancelablePromise<MallOrderGetResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/api/mall/order/{id}',

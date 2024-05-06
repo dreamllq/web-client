@@ -9,3 +9,4 @@ export type MallOrderPaginateResponse = {
     message: string;
     data: MallOrderPaginatePageInfo;
 };
+

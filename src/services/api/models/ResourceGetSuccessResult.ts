@@ -8,3 +8,4 @@ export type ResourceGetSuccessResult = {
     code: number;
     data: Resource;
 };
+

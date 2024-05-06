@@ -8,3 +8,4 @@ export type RolesPaginateResult = {
     list: Array<Role>;
     count: number;
 };
+

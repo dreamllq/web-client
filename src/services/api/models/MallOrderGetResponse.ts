@@ -9,3 +9,4 @@ export type MallOrderGetResponse = {
     message: string;
     data: MallOrder;
 };
+

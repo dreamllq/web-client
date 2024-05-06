@@ -8,3 +8,4 @@ export type ForumPostRelationGetAllResponse = {
     code: number;
     data: Array<ForumPostRelation>;
 };
+

@@ -8,3 +8,4 @@ export type ResourcePaginateSuccessResult = {
     code: number;
     data: ResourcePaginateResult;
 };
+

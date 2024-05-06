@@ -8,3 +8,4 @@ export type ResourcePaginateResult = {
     list: Array<Resource>;
     count: number;
 };
+

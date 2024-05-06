@@ -9,3 +9,4 @@ export type MallOrderPageWidthCursorResponse = {
     message: string;
     data: MallOrderPageWidthCursorPageInfo;
 };
+

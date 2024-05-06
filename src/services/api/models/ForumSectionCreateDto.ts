@@ -6,3 +6,4 @@ export type ForumSectionCreateDto = {
     name: string;
     desc: string;
 };
+

@@ -16,14 +16,14 @@ export class MallGoodGroupService {
 
     /**
      * 创建商品分组
-     * @returns SuccessResult 
+     * @returns SuccessResult
      * @throws ApiError
      */
     public static create({
-requestBody,
-}: {
-requestBody: MallGoodGroupCreateDto,
-}): CancelablePromise<SuccessResult> {
+        requestBody,
+    }: {
+        requestBody: MallGoodGroupCreateDto,
+    }): CancelablePromise<SuccessResult> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/api/mall/good-group',
@@ -34,7 +34,7 @@ requestBody: MallGoodGroupCreateDto,
 
     /**
      * 获取平铺商品分组数据
-     * @returns MallGoodGroupGetAllResponse 
+     * @returns MallGoodGroupGetAllResponse
      * @throws ApiError
      */
     public static getAll(): CancelablePromise<MallGoodGroupGetAllResponse> {
@@ -46,14 +46,14 @@ requestBody: MallGoodGroupCreateDto,
 
     /**
      * 删除商品分组
-     * @returns SuccessResult 
+     * @returns SuccessResult
      * @throws ApiError
      */
     public static remove({
-id,
-}: {
-id: any,
-}): CancelablePromise<SuccessResult> {
+        id,
+    }: {
+        id: any,
+    }): CancelablePromise<SuccessResult> {
         return __request(OpenAPI, {
             method: 'DELETE',
             url: '/api/mall/good-group/{id}',
@@ -65,16 +65,16 @@ id: any,
 
     /**
      * 更新商品分组
-     * @returns SuccessResult 
+     * @returns SuccessResult
      * @throws ApiError
      */
     public static update({
-id,
-requestBody,
-}: {
-id: any,
-requestBody: MallGoodGroupUpdateDto,
-}): CancelablePromise<SuccessResult> {
+        id,
+        requestBody,
+    }: {
+        id: any,
+        requestBody: MallGoodGroupUpdateDto,
+    }): CancelablePromise<SuccessResult> {
         return __request(OpenAPI, {
             method: 'PUT',
             url: '/api/mall/good-group/{id}',
@@ -88,14 +88,14 @@ requestBody: MallGoodGroupUpdateDto,
 
     /**
      * 获取商品分组
-     * @returns MallGoodGroupGetResponse 
+     * @returns MallGoodGroupGetResponse
      * @throws ApiError
      */
     public static get({
-id,
-}: {
-id: any,
-}): CancelablePromise<MallGoodGroupGetResponse> {
+        id,
+    }: {
+        id: any,
+    }): CancelablePromise<MallGoodGroupGetResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/api/mall/good-group/{id}',
@@ -107,7 +107,7 @@ id: any,
 
     /**
      * 获取商品分组树
-     * @returns MallGoodGroupGetTreeResponse 
+     * @returns MallGoodGroupGetTreeResponse
      * @throws ApiError
      */
     public static getTree(): CancelablePromise<MallGoodGroupGetTreeResponse> {

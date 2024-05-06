@@ -8,3 +8,4 @@ export type WeixinCreateDto = {
     appSecret: string;
     appType: string;
 };
+

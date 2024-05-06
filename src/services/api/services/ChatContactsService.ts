@@ -14,14 +14,14 @@ export class ChatContactsService {
 
     /**
      * 添加联系人
-     * @returns SuccessResult 
+     * @returns SuccessResult
      * @throws ApiError
      */
     public static create({
-requestBody,
-}: {
-requestBody: ChatContactsCreateDto,
-}): CancelablePromise<SuccessResult> {
+        requestBody,
+    }: {
+        requestBody: ChatContactsCreateDto,
+    }): CancelablePromise<SuccessResult> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/api/chat/contacts',
@@ -32,7 +32,7 @@ requestBody: ChatContactsCreateDto,
 
     /**
      * 获取所有联系人
-     * @returns ChatContactsGetResponse 
+     * @returns ChatContactsGetResponse
      * @throws ApiError
      */
     public static get(): CancelablePromise<ChatContactsGetResponse> {
@@ -44,14 +44,14 @@ requestBody: ChatContactsCreateDto,
 
     /**
      * 删除联系人
-     * @returns SuccessResult 
+     * @returns SuccessResult
      * @throws ApiError
      */
     public static remove({
-id,
-}: {
-id: any,
-}): CancelablePromise<SuccessResult> {
+        id,
+    }: {
+        id: any,
+    }): CancelablePromise<SuccessResult> {
         return __request(OpenAPI, {
             method: 'DELETE',
             url: '/api/chat/contacts/{id}',
@@ -63,16 +63,16 @@ id: any,
 
     /**
      * 更新联系人
-     * @returns SuccessResult 
+     * @returns SuccessResult
      * @throws ApiError
      */
     public static updateStatus({
-id,
-requestBody,
-}: {
-id: any,
-requestBody: ChatContactsUpdateDto,
-}): CancelablePromise<SuccessResult> {
+        id,
+        requestBody,
+    }: {
+        id: any,
+        requestBody: ChatContactsUpdateDto,
+    }): CancelablePromise<SuccessResult> {
         return __request(OpenAPI, {
             method: 'PUT',
             url: '/api/chat/contacts/{id}',

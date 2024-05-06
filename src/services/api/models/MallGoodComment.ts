@@ -20,3 +20,4 @@ export type MallGoodComment = {
      */
     updateDate: string;
 };
+

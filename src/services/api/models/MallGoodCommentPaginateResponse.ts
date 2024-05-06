@@ -9,3 +9,4 @@ export type MallGoodCommentPaginateResponse = {
     message: string;
     data: MallGoodCommentPaginatePageInfo;
 };
+

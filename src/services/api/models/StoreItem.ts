@@ -6,3 +6,4 @@ export type StoreItem = {
     key: string;
     value: string;
 };
+

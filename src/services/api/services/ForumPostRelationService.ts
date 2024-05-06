@@ -15,14 +15,14 @@ export class ForumPostRelationService {
 
     /**
      * 创建用户和帖子的关系
-     * @returns SuccessResult 
+     * @returns SuccessResult
      * @throws ApiError
      */
     public static create({
-requestBody,
-}: {
-requestBody: ForumPostRelationCreateDto,
-}): CancelablePromise<SuccessResult> {
+        requestBody,
+    }: {
+        requestBody: ForumPostRelationCreateDto,
+    }): CancelablePromise<SuccessResult> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/api/forum/post-relation',
@@ -33,16 +33,16 @@ requestBody: ForumPostRelationCreateDto,
 
     /**
      * 获取所有用户和帖子的关系
-     * @returns ForumPostRelationGetAllResponse 
+     * @returns ForumPostRelationGetAllResponse
      * @throws ApiError
      */
     public static getAll({
-type,
-postId,
-}: {
-type?: 'unknown' | 'zan' | 'collect',
-postId?: string,
-}): CancelablePromise<ForumPostRelationGetAllResponse> {
+        type,
+        postId,
+    }: {
+        type?: 'unknown' | 'zan' | 'collect',
+        postId?: string,
+    }): CancelablePromise<ForumPostRelationGetAllResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/api/forum/post-relation',
@@ -55,14 +55,14 @@ postId?: string,
 
     /**
      * 删除用户和帖子的关系
-     * @returns SuccessResult 
+     * @returns SuccessResult
      * @throws ApiError
      */
     public static remove({
-id,
-}: {
-id: any,
-}): CancelablePromise<SuccessResult> {
+        id,
+    }: {
+        id: any,
+    }): CancelablePromise<SuccessResult> {
         return __request(OpenAPI, {
             method: 'DELETE',
             url: '/api/forum/post-relation/{id}',
@@ -74,14 +74,14 @@ id: any,
 
     /**
      * 获取指定id的用户和帖子的关系
-     * @returns SuccessResult 
+     * @returns SuccessResult
      * @throws ApiError
      */
     public static get({
-id,
-}: {
-id: any,
-}): CancelablePromise<SuccessResult> {
+        id,
+    }: {
+        id: any,
+    }): CancelablePromise<SuccessResult> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/api/forum/post-relation/{id}',
@@ -93,16 +93,16 @@ id: any,
 
     /**
      * 获取登录用户的所有用户和帖子的关系
-     * @returns ForumPostRelationGetAllResponse 
+     * @returns ForumPostRelationGetAllResponse
      * @throws ApiError
      */
     public static getAllSession({
-type,
-postId,
-}: {
-type?: 'unknown' | 'zan' | 'collect',
-postId?: string,
-}): CancelablePromise<ForumPostRelationGetAllResponse> {
+        type,
+        postId,
+    }: {
+        type?: 'unknown' | 'zan' | 'collect',
+        postId?: string,
+    }): CancelablePromise<ForumPostRelationGetAllResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/api/forum/post-relation/session/info',
@@ -115,20 +115,20 @@ postId?: string,
 
     /**
      * 获取用户和帖子的关系的分页数据
-     * @returns ForumPostRelationPaginateResponse 
+     * @returns ForumPostRelationPaginateResponse
      * @throws ApiError
      */
     public static paginate({
-pageNo,
-pageSize,
-type,
-postId,
-}: {
-pageNo: number,
-pageSize: number,
-type?: 'unknown' | 'zan' | 'collect',
-postId?: string,
-}): CancelablePromise<ForumPostRelationPaginateResponse> {
+        pageNo,
+        pageSize,
+        type,
+        postId,
+    }: {
+        pageNo: number,
+        pageSize: number,
+        type?: 'unknown' | 'zan' | 'collect',
+        postId?: string,
+    }): CancelablePromise<ForumPostRelationPaginateResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/api/forum/post-relation/page/all',
@@ -143,20 +143,20 @@ postId?: string,
 
     /**
      * 获取登录用户的用户和帖子的关系的分页数据
-     * @returns ForumPostRelationPaginateResponse 
+     * @returns ForumPostRelationPaginateResponse
      * @throws ApiError
      */
     public static paginateSession({
-pageNo,
-pageSize,
-type,
-postId,
-}: {
-pageNo: number,
-pageSize: number,
-type?: 'unknown' | 'zan' | 'collect',
-postId?: string,
-}): CancelablePromise<ForumPostRelationPaginateResponse> {
+        pageNo,
+        pageSize,
+        type,
+        postId,
+    }: {
+        pageNo: number,
+        pageSize: number,
+        type?: 'unknown' | 'zan' | 'collect',
+        postId?: string,
+    }): CancelablePromise<ForumPostRelationPaginateResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/api/forum/post-relation/page/session',
@@ -171,16 +171,16 @@ postId?: string,
 
     /**
      * 获取用户和帖子的关系的数量
-     * @returns ForumPostRelationGetCountResponse 
+     * @returns ForumPostRelationGetCountResponse
      * @throws ApiError
      */
     public static getCount({
-type,
-postId,
-}: {
-type?: 'unknown' | 'zan' | 'collect',
-postId?: string,
-}): CancelablePromise<ForumPostRelationGetCountResponse> {
+        type,
+        postId,
+    }: {
+        type?: 'unknown' | 'zan' | 'collect',
+        postId?: string,
+    }): CancelablePromise<ForumPostRelationGetCountResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/api/forum/post-relation/count/all',
@@ -193,16 +193,16 @@ postId?: string,
 
     /**
      * 获取登录用户的用户和帖子的关系的数量
-     * @returns ForumPostRelationGetCountResponse 
+     * @returns ForumPostRelationGetCountResponse
      * @throws ApiError
      */
     public static getCountSession({
-type,
-postId,
-}: {
-type?: 'unknown' | 'zan' | 'collect',
-postId?: string,
-}): CancelablePromise<ForumPostRelationGetCountResponse> {
+        type,
+        postId,
+    }: {
+        type?: 'unknown' | 'zan' | 'collect',
+        postId?: string,
+    }): CancelablePromise<ForumPostRelationGetCountResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/api/forum/post-relation/count/session',

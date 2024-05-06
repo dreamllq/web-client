@@ -16,14 +16,14 @@ export class ForumCommentService {
 
     /**
      * 创建评论
-     * @returns SuccessResult 
+     * @returns SuccessResult
      * @throws ApiError
      */
     public static create({
-requestBody,
-}: {
-requestBody: ForumCommentCreateDto,
-}): CancelablePromise<SuccessResult> {
+        requestBody,
+    }: {
+        requestBody: ForumCommentCreateDto,
+    }): CancelablePromise<SuccessResult> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/api/forum/comment',
@@ -34,14 +34,14 @@ requestBody: ForumCommentCreateDto,
 
     /**
      * 获取帖子下所有评论
-     * @returns ForumCommentGetAllResponse 
+     * @returns ForumCommentGetAllResponse
      * @throws ApiError
      */
     public static getAll({
-postId,
-}: {
-postId: any,
-}): CancelablePromise<ForumCommentGetAllResponse> {
+        postId,
+    }: {
+        postId: any,
+    }): CancelablePromise<ForumCommentGetAllResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/api/forum/comment',
@@ -53,14 +53,14 @@ postId: any,
 
     /**
      * 删除指定id评论
-     * @returns SuccessResult 
+     * @returns SuccessResult
      * @throws ApiError
      */
     public static remove({
-id,
-}: {
-id: any,
-}): CancelablePromise<SuccessResult> {
+        id,
+    }: {
+        id: any,
+    }): CancelablePromise<SuccessResult> {
         return __request(OpenAPI, {
             method: 'DELETE',
             url: '/api/forum/comment/{id}',
@@ -72,14 +72,14 @@ id: any,
 
     /**
      * 获取指定id评论
-     * @returns ForumCommentGetResponse 
+     * @returns ForumCommentGetResponse
      * @throws ApiError
      */
     public static get({
-id,
-}: {
-id: any,
-}): CancelablePromise<ForumCommentGetResponse> {
+        id,
+    }: {
+        id: any,
+    }): CancelablePromise<ForumCommentGetResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/api/forum/comment/{id}',
@@ -91,20 +91,20 @@ id: any,
 
     /**
      * 获取帖子下分页评论
-     * @returns ForumCommentPaginateResponse 
+     * @returns ForumCommentPaginateResponse
      * @throws ApiError
      */
     public static paginate({
-pageNo,
-pageSize,
-postId,
-content,
-}: {
-pageNo: number,
-pageSize: number,
-postId?: string,
-content?: string,
-}): CancelablePromise<ForumCommentPaginateResponse> {
+        pageNo,
+        pageSize,
+        postId,
+        content,
+    }: {
+        pageNo: number,
+        pageSize: number,
+        postId?: string,
+        content?: string,
+    }): CancelablePromise<ForumCommentPaginateResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/api/forum/comment/page/all',
@@ -119,20 +119,20 @@ content?: string,
 
     /**
      * 获取帖子下登录用户的分页评论
-     * @returns ForumCommentPaginateResponse 
+     * @returns ForumCommentPaginateResponse
      * @throws ApiError
      */
     public static paginateSession({
-pageNo,
-pageSize,
-postId,
-content,
-}: {
-pageNo: number,
-pageSize: number,
-postId?: string,
-content?: string,
-}): CancelablePromise<ForumCommentPaginateResponse> {
+        pageNo,
+        pageSize,
+        postId,
+        content,
+    }: {
+        pageNo: number,
+        pageSize: number,
+        postId?: string,
+        content?: string,
+    }): CancelablePromise<ForumCommentPaginateResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/api/forum/comment/page/session',
@@ -147,14 +147,14 @@ content?: string,
 
     /**
      * 获取帖子下评论数量
-     * @returns ForumCommentGetCountResponse 
+     * @returns ForumCommentGetCountResponse
      * @throws ApiError
      */
     public static getCount({
-postId,
-}: {
-postId: any,
-}): CancelablePromise<ForumCommentGetCountResponse> {
+        postId,
+    }: {
+        postId: any,
+    }): CancelablePromise<ForumCommentGetCountResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/api/forum/comment/count/all',
@@ -166,14 +166,14 @@ postId: any,
 
     /**
      * 获取帖子下当前登录用户的评论数量
-     * @returns ForumCommentGetCountResponse 
+     * @returns ForumCommentGetCountResponse
      * @throws ApiError
      */
     public static getCountSession({
-postId,
-}: {
-postId: any,
-}): CancelablePromise<ForumCommentGetCountResponse> {
+        postId,
+    }: {
+        postId: any,
+    }): CancelablePromise<ForumCommentGetCountResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/api/forum/comment/count/session',

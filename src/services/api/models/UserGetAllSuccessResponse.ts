@@ -8,3 +8,4 @@ export type UserGetAllSuccessResponse = {
     code: number;
     data: Array<User>;
 };
+

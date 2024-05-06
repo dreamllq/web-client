@@ -9,3 +9,4 @@ export type WeixinPayGetResponse = {
     message: string;
     data: WeixinPay;
 };
+

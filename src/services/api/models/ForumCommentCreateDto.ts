@@ -8,3 +8,4 @@ export type ForumCommentCreateDto = {
     images: Array<string>;
     toCommentId?: string;
 };
+

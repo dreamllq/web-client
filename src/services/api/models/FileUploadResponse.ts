@@ -9,3 +9,4 @@ export type FileUploadResponse = {
     message: string;
     data: UploadFileInfo;
 };
+

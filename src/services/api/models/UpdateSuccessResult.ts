@@ -6,3 +6,4 @@ export type UpdateSuccessResult = {
     code: number;
     data: any;
 };
+

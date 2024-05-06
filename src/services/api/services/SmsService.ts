@@ -11,14 +11,14 @@ export class SmsService {
 
     /**
      * sms测试
-     * @returns any 
+     * @returns any
      * @throws ApiError
      */
     public static test({
-requestBody,
-}: {
-requestBody: SmsTestDto,
-}): CancelablePromise<any> {
+        requestBody,
+    }: {
+        requestBody: SmsTestDto,
+    }): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/api/sms/test',
@@ -29,16 +29,16 @@ requestBody: SmsTestDto,
 
     /**
      * 发送验证码
-     * @returns any 
+     * @returns any
      * @throws ApiError
      */
     public static sendCode({
-type,
-phone,
-}: {
-type: 'login' | 'bind-mobile',
-phone: any,
-}): CancelablePromise<any> {
+        type,
+        phone,
+    }: {
+        type: 'login' | 'bind-mobile',
+        phone: any,
+    }): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/api/sms/{type}/{phone}',

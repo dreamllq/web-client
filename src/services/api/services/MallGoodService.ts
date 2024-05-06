@@ -16,14 +16,14 @@ export class MallGoodService {
 
     /**
      * 创建商品
-     * @returns SuccessResult 
+     * @returns SuccessResult
      * @throws ApiError
      */
     public static create({
-requestBody,
-}: {
-requestBody: MallGoodCreateDto,
-}): CancelablePromise<SuccessResult> {
+        requestBody,
+    }: {
+        requestBody: MallGoodCreateDto,
+    }): CancelablePromise<SuccessResult> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/api/mall/good',
@@ -34,14 +34,14 @@ requestBody: MallGoodCreateDto,
 
     /**
      * 获取所有商品数据
-     * @returns MallGoodGetAllResponse 
+     * @returns MallGoodGetAllResponse
      * @throws ApiError
      */
     public static getAll({
-shopId,
-}: {
-shopId: string,
-}): CancelablePromise<MallGoodGetAllResponse> {
+        shopId,
+    }: {
+        shopId: string,
+    }): CancelablePromise<MallGoodGetAllResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/api/mall/good',
@@ -53,14 +53,14 @@ shopId: string,
 
     /**
      * 删除商品
-     * @returns SuccessResult 
+     * @returns SuccessResult
      * @throws ApiError
      */
     public static remove({
-id,
-}: {
-id: any,
-}): CancelablePromise<SuccessResult> {
+        id,
+    }: {
+        id: any,
+    }): CancelablePromise<SuccessResult> {
         return __request(OpenAPI, {
             method: 'DELETE',
             url: '/api/mall/good/{id}',
@@ -72,16 +72,16 @@ id: any,
 
     /**
      * 更新商品
-     * @returns SuccessResult 
+     * @returns SuccessResult
      * @throws ApiError
      */
     public static update({
-id,
-requestBody,
-}: {
-id: any,
-requestBody: MallGoodUpdateDto,
-}): CancelablePromise<SuccessResult> {
+        id,
+        requestBody,
+    }: {
+        id: any,
+        requestBody: MallGoodUpdateDto,
+    }): CancelablePromise<SuccessResult> {
         return __request(OpenAPI, {
             method: 'PUT',
             url: '/api/mall/good/{id}',
@@ -95,14 +95,14 @@ requestBody: MallGoodUpdateDto,
 
     /**
      * 获取id商品数据
-     * @returns MallGoodGetResponse 
+     * @returns MallGoodGetResponse
      * @throws ApiError
      */
     public static get({
-id,
-}: {
-id: any,
-}): CancelablePromise<MallGoodGetResponse> {
+        id,
+    }: {
+        id: any,
+    }): CancelablePromise<MallGoodGetResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/api/mall/good/{id}',
@@ -114,20 +114,20 @@ id: any,
 
     /**
      * 获取分页商品数据
-     * @returns MallGoodPaginateResponse 
+     * @returns MallGoodPaginateResponse
      * @throws ApiError
      */
     public static paginate({
-pageNo,
-pageSize,
-shopId,
-title,
-}: {
-pageNo: number,
-pageSize: number,
-shopId?: string,
-title?: string,
-}): CancelablePromise<MallGoodPaginateResponse> {
+        pageNo,
+        pageSize,
+        shopId,
+        title,
+    }: {
+        pageNo: number,
+        pageSize: number,
+        shopId?: string,
+        title?: string,
+    }): CancelablePromise<MallGoodPaginateResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/api/mall/good/paginate',

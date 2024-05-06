@@ -13,14 +13,14 @@ export class ChatMessageService {
 
     /**
      * 发送聊天
-     * @returns SuccessResult 
+     * @returns SuccessResult
      * @throws ApiError
      */
     public static create({
-requestBody,
-}: {
-requestBody: ChatMessageCreateDto,
-}): CancelablePromise<SuccessResult> {
+        requestBody,
+    }: {
+        requestBody: ChatMessageCreateDto,
+    }): CancelablePromise<SuccessResult> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/api/chat/message',
@@ -31,18 +31,18 @@ requestBody: ChatMessageCreateDto,
 
     /**
      * 游标分页
-     * @returns ChatMessageGetResponse 
+     * @returns ChatMessageGetResponse
      * @throws ApiError
      */
     public static findWithCursor({
-contactsId,
-direction,
-fromId,
-}: {
-contactsId: string,
-direction: 'forward' | 'backward',
-fromId?: string,
-}): CancelablePromise<ChatMessageGetResponse> {
+        contactsId,
+        direction,
+        fromId,
+    }: {
+        contactsId: string,
+        direction: 'forward' | 'backward',
+        fromId?: string,
+    }): CancelablePromise<ChatMessageGetResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/api/chat/message/cursor',

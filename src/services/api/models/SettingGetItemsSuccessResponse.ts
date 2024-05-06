@@ -8,3 +8,4 @@ export type SettingGetItemsSuccessResponse = {
     code: number;
     data: Array<Setting>;
 };
+

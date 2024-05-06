@@ -14,14 +14,14 @@ export class ChatSessionService {
 
     /**
      * 添加聊天会话
-     * @returns ChatSessionCreateResponse 
+     * @returns ChatSessionCreateResponse
      * @throws ApiError
      */
     public static create({
-requestBody,
-}: {
-requestBody: ChatSessionCreateDto,
-}): CancelablePromise<ChatSessionCreateResponse> {
+        requestBody,
+    }: {
+        requestBody: ChatSessionCreateDto,
+    }): CancelablePromise<ChatSessionCreateResponse> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/api/chat/session',
@@ -32,7 +32,7 @@ requestBody: ChatSessionCreateDto,
 
     /**
      * 获取所有联系人
-     * @returns ChatSessionGetResponse 
+     * @returns ChatSessionGetResponse
      * @throws ApiError
      */
     public static get(): CancelablePromise<ChatSessionGetResponse> {
@@ -44,14 +44,14 @@ requestBody: ChatSessionCreateDto,
 
     /**
      * 删除聊天会话
-     * @returns SuccessResult 
+     * @returns SuccessResult
      * @throws ApiError
      */
     public static remove({
-id,
-}: {
-id: any,
-}): CancelablePromise<SuccessResult> {
+        id,
+    }: {
+        id: any,
+    }): CancelablePromise<SuccessResult> {
         return __request(OpenAPI, {
             method: 'DELETE',
             url: '/api/chat/session/{id}',

@@ -29,3 +29,4 @@ export type MallGood = {
      */
     updateDate: string;
 };
+

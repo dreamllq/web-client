@@ -20,3 +20,4 @@ export type MallCart = {
      */
     updateDate: string;
 };
+

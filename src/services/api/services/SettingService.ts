@@ -13,14 +13,14 @@ export class SettingService {
 
     /**
      * 批量获取配置key值
-     * @returns SettingGetItemsSuccessResponse 
+     * @returns SettingGetItemsSuccessResponse
      * @throws ApiError
      */
     public static getItems({
-keys,
-}: {
-keys: any,
-}): CancelablePromise<SettingGetItemsSuccessResponse> {
+        keys,
+    }: {
+        keys: any,
+    }): CancelablePromise<SettingGetItemsSuccessResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/api/setting/{keys}',
@@ -32,14 +32,14 @@ keys: any,
 
     /**
      * 设置获取配置key值
-     * @returns SuccessResult 
+     * @returns SuccessResult
      * @throws ApiError
      */
     public static setItems({
-requestBody,
-}: {
-requestBody: SettingSetDto,
-}): CancelablePromise<SuccessResult> {
+        requestBody,
+    }: {
+        requestBody: SettingSetDto,
+    }): CancelablePromise<SuccessResult> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/api/setting',

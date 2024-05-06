@@ -8,3 +8,4 @@ export type ForumPostCreateDto = {
     images: Array<string>;
     sectionId: string;
 };
+

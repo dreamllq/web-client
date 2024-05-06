@@ -6,3 +6,4 @@ export type ForumPostRelationGetCountResponse = {
     code: number;
     data: number;
 };
+

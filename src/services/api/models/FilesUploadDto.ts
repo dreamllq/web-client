@@ -5,3 +5,4 @@
 export type FilesUploadDto = {
     files: Array<Blob>;
 };
+

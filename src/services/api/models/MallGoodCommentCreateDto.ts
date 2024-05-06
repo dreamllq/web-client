@@ -7,3 +7,4 @@ export type MallGoodCommentCreateDto = {
     content: string;
     images: Array<string>;
 };
+

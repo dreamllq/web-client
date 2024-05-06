@@ -10,3 +10,4 @@ export type PhoneInfo = {
     countryCode: number;
     watermark: Watermark;
 };
+

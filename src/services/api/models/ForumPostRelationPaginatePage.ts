@@ -8,3 +8,4 @@ export type ForumPostRelationPaginatePage = {
     list: Array<ForumPostRelation>;
     count: number;
 };
+

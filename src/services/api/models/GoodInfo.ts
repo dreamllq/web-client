@@ -6,3 +6,4 @@ export type GoodInfo = {
     goodId: string;
     count: number;
 };
+

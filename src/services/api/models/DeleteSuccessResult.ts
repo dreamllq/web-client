@@ -6,3 +6,4 @@ export type DeleteSuccessResult = {
     code: number;
     data: any;
 };
+

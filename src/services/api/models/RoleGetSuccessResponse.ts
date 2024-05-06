@@ -8,3 +8,4 @@ export type RoleGetSuccessResponse = {
     code: number;
     data: Role;
 };
+

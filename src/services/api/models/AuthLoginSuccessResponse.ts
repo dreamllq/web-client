@@ -8,3 +8,4 @@ export type AuthLoginSuccessResponse = {
     code: number;
     data: Token;
 };
+

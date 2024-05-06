@@ -10,18 +10,18 @@ import { request as __request } from '../core/request';
 export class WeixinPlatformUserService {
 
     /**
-     * @returns WeixinPlatformUserPaginateResponse 
+     * @returns WeixinPlatformUserPaginateResponse
      * @throws ApiError
      */
     public static paginate({
-pageNo,
-pageSize,
-weixinId,
-}: {
-pageNo: number,
-pageSize: number,
-weixinId: string,
-}): CancelablePromise<WeixinPlatformUserPaginateResponse> {
+        pageNo,
+        pageSize,
+        weixinId,
+    }: {
+        pageNo: number,
+        pageSize: number,
+        weixinId: string,
+    }): CancelablePromise<WeixinPlatformUserPaginateResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/api/weixin-platform-user/paginate',

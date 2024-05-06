@@ -10,8 +10,8 @@ export type ForumComment = {
     content: string;
     images: Array<string>;
     to: ForumComment;
-    creator: User;
     post: ForumPost;
+    creator: User;
     /**
      * 创建时间
      */
@@ -21,3 +21,4 @@ export type ForumComment = {
      */
     updateDate: string;
 };
+

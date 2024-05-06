@@ -8,7 +8,7 @@ import { request as __request } from '../core/request';
 export class DefaultService {
 
     /**
-     * @returns any 
+     * @returns any
      * @throws ApiError
      */
     public static staticControllerView(): CancelablePromise<any> {
@@ -19,7 +19,7 @@ export class DefaultService {
     }
 
     /**
-     * @returns any 
+     * @returns any
      * @throws ApiError
      */
     public static weixinPayCenterNotifyControllerCommonPay(): CancelablePromise<any> {
@@ -30,7 +30,7 @@ export class DefaultService {
     }
 
     /**
-     * @returns any 
+     * @returns any
      * @throws ApiError
      */
     public static weixinPayCenterNotifyControllerNativePay(): CancelablePromise<any> {
@@ -41,7 +41,7 @@ export class DefaultService {
     }
 
     /**
-     * @returns any 
+     * @returns any
      * @throws ApiError
      */
     public static weixinPayCenterNotifyControllerRefund(): CancelablePromise<any> {

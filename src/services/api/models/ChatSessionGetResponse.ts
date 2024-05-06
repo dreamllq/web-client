@@ -9,3 +9,4 @@ export type ChatSessionGetResponse = {
     message: string;
     data: Array<ChatSession>;
 };
+

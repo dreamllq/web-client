@@ -11,7 +11,7 @@ export class SessionService {
 
     /**
      * 获取当前登录人用户信息
-     * @returns SessionGetUserResponse 
+     * @returns SessionGetUserResponse
      * @throws ApiError
      */
     public static getUser(): CancelablePromise<SessionGetUserResponse> {
@@ -23,7 +23,7 @@ export class SessionService {
 
     /**
      * 获取当前登录人有权限的资源
-     * @returns any 
+     * @returns any
      * @throws ApiError
      */
     public static getResources(): CancelablePromise<any> {

@@ -8,3 +8,4 @@ export type MallOrderPageWidthCursorPageInfo = {
     list: Array<MallOrder>;
     count: number;
 };
+

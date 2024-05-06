@@ -12,14 +12,14 @@ export class InitializationService {
 
     /**
      * 创建超级管理员
-     * @returns InsertSuccessResult 
+     * @returns InsertSuccessResult
      * @throws ApiError
      */
     public static createSuperAdmin({
-requestBody,
-}: {
-requestBody: CreateSuperAdminDto,
-}): CancelablePromise<InsertSuccessResult> {
+        requestBody,
+    }: {
+        requestBody: CreateSuperAdminDto,
+    }): CancelablePromise<InsertSuccessResult> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/api/initialization/create-super-admin',

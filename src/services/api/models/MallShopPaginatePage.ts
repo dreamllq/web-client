@@ -8,3 +8,4 @@ export type MallShopPaginatePage = {
     count: number;
     list: Array<MallShop>;
 };
+

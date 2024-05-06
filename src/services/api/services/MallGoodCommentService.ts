@@ -14,14 +14,14 @@ export class MallGoodCommentService {
 
     /**
      * 评论
-     * @returns SuccessResult 
+     * @returns SuccessResult
      * @throws ApiError
      */
     public static create({
-requestBody,
-}: {
-requestBody: MallGoodCommentCreateDto,
-}): CancelablePromise<SuccessResult> {
+        requestBody,
+    }: {
+        requestBody: MallGoodCommentCreateDto,
+    }): CancelablePromise<SuccessResult> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/api/mall/good-comment',
@@ -32,14 +32,14 @@ requestBody: MallGoodCommentCreateDto,
 
     /**
      * 删除评论
-     * @returns SuccessResult 
+     * @returns SuccessResult
      * @throws ApiError
      */
     public static remove({
-id,
-}: {
-id: any,
-}): CancelablePromise<SuccessResult> {
+        id,
+    }: {
+        id: any,
+    }): CancelablePromise<SuccessResult> {
         return __request(OpenAPI, {
             method: 'DELETE',
             url: '/api/mall/good-comment/{id}',
@@ -51,18 +51,18 @@ id: any,
 
     /**
      * 游标分页
-     * @returns MallGoodCommentPaginateWidthCursorResponse 
+     * @returns MallGoodCommentPaginateWidthCursorResponse
      * @throws ApiError
      */
     public static paginateWidthCursor({
-count,
-afterId,
-goodId,
-}: {
-count: number,
-afterId: string,
-goodId: string,
-}): CancelablePromise<MallGoodCommentPaginateWidthCursorResponse> {
+        count,
+        afterId,
+        goodId,
+    }: {
+        count: number,
+        afterId: string,
+        goodId: string,
+    }): CancelablePromise<MallGoodCommentPaginateWidthCursorResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/api/mall/good-comment/pageByCursor',
@@ -76,18 +76,18 @@ goodId: string,
 
     /**
      * 分页
-     * @returns MallGoodCommentPaginateResponse 
+     * @returns MallGoodCommentPaginateResponse
      * @throws ApiError
      */
     public static paginate({
-pageNo,
-pageSize,
-goodId,
-}: {
-pageNo: number,
-pageSize: number,
-goodId: string,
-}): CancelablePromise<MallGoodCommentPaginateResponse> {
+        pageNo,
+        pageSize,
+        goodId,
+    }: {
+        pageNo: number,
+        pageSize: number,
+        goodId: string,
+    }): CancelablePromise<MallGoodCommentPaginateResponse> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/api/mall/good-comment/page',

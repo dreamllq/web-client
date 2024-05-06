@@ -9,3 +9,4 @@ export type MallGoodTagPaginateResponse = {
     message: string;
     data: MallGoodTagPaginatePageInfo;
 };
+
