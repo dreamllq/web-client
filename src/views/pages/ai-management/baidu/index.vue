@@ -1,22 +1,17 @@
 <template>
   <el-container direction='vertical'>
     <el-aside>
-      <biz-filter @search='onSearch' />
-    </el-aside>
-    <el-aside style='margin-top: 24px'>
-      <el-button @click='onAdd'>
-        创建
-      </el-button>
-      <el-button type='primary' @click='onOpenWeb'>
-        百度千帆平台<el-icon class='el-icon--right'>
-          <e-view />
-        </el-icon>
-      </el-button>
+      <el-tabs
+        v-model='activeName'
+        type='card'
+      >
+        <el-tab-pane label='账号管理' name='account' />
+        <el-tab-pane label='模型管理' name='model' />
+      </el-tabs>
     </el-aside>
     <el-container style='margin-top: 16px;'>
       <el-main style='padding: 0'>
-        <biz-table ref='bizTableRef' />
-        <biz-add-dialog ref='bizAdd' />
+        <baidu-account v-if='activeName === "account"' />
       </el-main>
     </el-container>
   </el-container>
@@ -24,33 +19,11 @@
 
 <script setup lang="ts">
 import { ref } from 'vue';
-import BizFilter from '@/views/components/ai-management/baidu/filter.vue';
-import BizTable from '@/views/components/ai-management/baidu/table.vue';
-import BizAddDialog from '@/views/components/ai-management/baidu/add-dialog.vue';
-import { View as EView } from '@element-plus/icons-vue';
-const bizTableRef = ref();
-const bizAdd = ref();
+import BaiduAccount from '@/views/components/ai-management/baidu/account/index.vue';
 
-const onSearch = (filter) => {
-  bizTableRef.value.filter(filter);
-};
-
-const onAdd = async () => {
-  await bizAdd.value.create();
-  bizTableRef.value.refresh();
-};
-
-const onOpenWeb = () => {
-  window.open('https://console.bce.baidu.com/qianfan/overview', '_blank');
-};
+const activeName = ref('account');
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 
 </style>
-
-<route>
-  {
-    "name":"ai-baidu-account"
-  }
-</route>

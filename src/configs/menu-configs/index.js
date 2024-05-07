@@ -116,8 +116,8 @@ export default [
     'icon': 'ChatRound',
     'children': [
       {
-        'key': 'ai-baidu-account',
-        'label': '百度账号'
+        'key': 'ai-baidu',
+        'label': '百度'
       }
     ]
   }
