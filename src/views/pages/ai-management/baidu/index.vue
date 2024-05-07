@@ -6,12 +6,13 @@
         type='card'
       >
         <el-tab-pane label='账号管理' name='account' />
-        <el-tab-pane label='模型管理' name='model' />
+        <el-tab-pane label='服务管理' name='service' />
       </el-tabs>
     </el-aside>
     <el-container style='margin-top: 16px;'>
       <el-main style='padding: 0'>
         <baidu-account v-if='activeName === "account"' />
+        <baidu-service v-if='activeName === "service"' />
       </el-main>
     </el-container>
   </el-container>
@@ -20,6 +21,7 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import BaiduAccount from '@/views/components/ai-management/baidu/account/index.vue';
+import BaiduService from '@/views/components/ai-management/baidu/service/index.vue';
 
 const activeName = ref('account');
 </script>

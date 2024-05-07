@@ -1,54 +1,54 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-import type { AiBaiduAccountGetAllResponse } from '../models/AiBaiduAccountGetAllResponse';
-import type { AiBaiduAccountGetResponse } from '../models/AiBaiduAccountGetResponse';
-import type { AiBaiduAccountPaginateResponse } from '../models/AiBaiduAccountPaginateResponse';
-import type { CreateAiBaiduAccountDto } from '../models/CreateAiBaiduAccountDto';
+import type { AiBaiduServiceGetAllResponse } from '../models/AiBaiduServiceGetAllResponse';
+import type { AiBaiduServiceGetResponse } from '../models/AiBaiduServiceGetResponse';
+import type { AiBaiduServicePaginateResponse } from '../models/AiBaiduServicePaginateResponse';
+import type { CreateAiBaiduServiceDto } from '../models/CreateAiBaiduServiceDto';
 import type { DeleteSuccessResult } from '../models/DeleteSuccessResult';
 import type { InsertSuccessResult } from '../models/InsertSuccessResult';
-import type { UpdateAiBaiduAccountDto } from '../models/UpdateAiBaiduAccountDto';
+import type { UpdateAiBaiduServiceDto } from '../models/UpdateAiBaiduServiceDto';
 import type { UpdateSuccessResult } from '../models/UpdateSuccessResult';
 
 import type { CancelablePromise } from '../core/CancelablePromise';
 import { OpenAPI } from '../core/OpenAPI';
 import { request as __request } from '../core/request';
 
-export class AiBaiduAccountService {
+export class AiBaiduServiceService {
 
     /**
-     * 新增百度账号信息
+     * 新增服务
      * @returns InsertSuccessResult
      * @throws ApiError
      */
     public static create({
         requestBody,
     }: {
-        requestBody: CreateAiBaiduAccountDto,
+        requestBody: CreateAiBaiduServiceDto,
     }): CancelablePromise<InsertSuccessResult> {
         return __request(OpenAPI, {
             method: 'POST',
-            url: '/api/ai/baidu/account',
+            url: '/api/ai/baidu/service',
             body: requestBody,
             mediaType: 'application/json',
         });
     }
 
     /**
-     * 获取所有百度账号信息
-     * @returns AiBaiduAccountGetAllResponse
+     * 获取所有服务
+     * @returns AiBaiduServiceGetAllResponse
      * @throws ApiError
      */
-    public static getAll(): CancelablePromise<AiBaiduAccountGetAllResponse> {
+    public static getAll(): CancelablePromise<AiBaiduServiceGetAllResponse> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/api/ai/baidu/account',
+            url: '/api/ai/baidu/service',
         });
     }
 
     /**
-     * 获取分页百度账号信息
-     * @returns AiBaiduAccountPaginateResponse
+     * 获取分页服务
+     * @returns AiBaiduServicePaginateResponse
      * @throws ApiError
      */
     public static paginate({
@@ -57,10 +57,10 @@ export class AiBaiduAccountService {
     }: {
         pageNo: number,
         pageSize: number,
-    }): CancelablePromise<AiBaiduAccountPaginateResponse> {
+    }): CancelablePromise<AiBaiduServicePaginateResponse> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/api/ai/baidu/account/paginate',
+            url: '/api/ai/baidu/service/paginate',
             query: {
                 'pageNo': pageNo,
                 'pageSize': pageSize,
@@ -69,18 +69,18 @@ export class AiBaiduAccountService {
     }
 
     /**
-     * 获取指定id百度账号信息
-     * @returns AiBaiduAccountGetResponse
+     * 获取指定id服务
+     * @returns AiBaiduServiceGetResponse
      * @throws ApiError
      */
     public static get({
         id,
     }: {
         id: string,
-    }): CancelablePromise<AiBaiduAccountGetResponse> {
+    }): CancelablePromise<AiBaiduServiceGetResponse> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/api/ai/baidu/account/{id}',
+            url: '/api/ai/baidu/service/{id}',
             path: {
                 'id': id,
             },
@@ -88,7 +88,7 @@ export class AiBaiduAccountService {
     }
 
     /**
-     * 更新指定id百度账号信息
+     * 更新指定id服务
      * @returns UpdateSuccessResult
      * @throws ApiError
      */
@@ -97,11 +97,11 @@ export class AiBaiduAccountService {
         requestBody,
     }: {
         id: string,
-        requestBody: UpdateAiBaiduAccountDto,
+        requestBody: UpdateAiBaiduServiceDto,
     }): CancelablePromise<UpdateSuccessResult> {
         return __request(OpenAPI, {
             method: 'PATCH',
-            url: '/api/ai/baidu/account/{id}',
+            url: '/api/ai/baidu/service/{id}',
             path: {
                 'id': id,
             },
@@ -111,7 +111,7 @@ export class AiBaiduAccountService {
     }
 
     /**
-     * 删除百度账号信息
+     * 删除服务
      * @returns DeleteSuccessResult
      * @throws ApiError
      */
@@ -122,7 +122,7 @@ export class AiBaiduAccountService {
     }): CancelablePromise<DeleteSuccessResult> {
         return __request(OpenAPI, {
             method: 'DELETE',
-            url: '/api/ai/baidu/account/{id}',
+            url: '/api/ai/baidu/service/{id}',
             path: {
                 'id': id,
             },
