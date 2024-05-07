@@ -27,3 +27,9 @@ const activeName = ref('account');
 <style scoped>
 
 </style>
+
+<route>
+  {
+    "name":"ai-baidu"
+  }
+</route>

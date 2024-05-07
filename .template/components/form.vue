@@ -31,7 +31,7 @@ const props = defineProps({
 });
 
 const form = reactive({
-  name: '',
+  name: props.defaultData?.name || '',
 });
 
 const rules = reactive<FormRules>({
@@ -43,9 +43,6 @@ const rules = reactive<FormRules>({
   ],
 });
 
-onBeforeMount(() => {
-  form.name = props.defaultData?.name || '';
-});
 
 const formRef = ref<FormInstance>();
 

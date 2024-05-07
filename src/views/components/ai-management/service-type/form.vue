@@ -4,14 +4,8 @@
     :model='form'
     label-position='top'
     :rules='rules'>
-    <el-form-item label='名称' prop='name'>
-      <el-input v-model='form.name' placeholder='请输入名称' />
-    </el-form-item>
-    <el-form-item label='accessKey' prop='accessKey'>
-      <el-input v-model='form.accessKey' placeholder='请输入accessKey' />
-    </el-form-item>
-    <el-form-item label='secretKey' prop='secretKey'>
-      <el-input v-model='form.secretKey' placeholder='请输入secretKey' />
+    <el-form-item label='服务类型名称' prop='name'>
+      <el-input v-model='form.name' placeholder='请输入服务类型名称' />
     </el-form-item>
   </el-form>
 </template>
@@ -36,29 +30,13 @@ const props = defineProps({
   }
 });
 
-const form = reactive({
-  name: props.defaultData?.name || '',
-  accessKey: props.defaultData?.accessKey || '',
-  secretKey: props.defaultData?.secretKey || '' 
-});
+const form = reactive({ name: props.defaultData?.name || '' });
 
 const rules = reactive<FormRules>({
   name: [
     {
       required: true,
-      message: '请输入资源名称' 
-    }
-  ],
-  accessKey: [
-    {
-      required: true,
-      message: '请输入accessKey' 
-    }
-  ],
-  secretKey: [
-    {
-      required: true,
-      message: '请输入secretKey' 
+      message: '请输入服务类型名称' 
     }
   ]
 });

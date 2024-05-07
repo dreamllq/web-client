@@ -116,6 +116,10 @@ export default [
     'icon': 'ChatRound',
     'children': [
       {
+        'key': 'ai-service-type',
+        'label': '服务类型'
+      },
+      {
         'key': 'ai-baidu',
         'label': '百度'
       }
