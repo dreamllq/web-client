@@ -8,6 +8,10 @@ export type CreateAiBaiduSessionDto = {
      */
     name: string;
     /**
+     * 账号
+     */
+    accountId: string;
+    /**
      * 服务
      */
     serviceId: string;

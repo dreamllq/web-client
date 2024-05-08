@@ -43,7 +43,8 @@ const onSubmit = async () => {
     id,
     requestBody: {
       name: data.name,
-      serviceId: data.serviceId
+      serviceId: data.serviceId,
+      accountId: data.accountId
     } 
   });
   success = true;
@@ -58,7 +59,8 @@ const onClosed = () => {
 
 const editDefaultData = reactive({
   name: '',
-  serviceId: ''
+  serviceId: '',
+  accountId: ''
 });
 const loadingDataFlag = ref(false);
 
@@ -73,6 +75,7 @@ const edit = async (data:{ id:string }) => {
   const res = await AiBaiduSessionService.get({ id });
   editDefaultData.name = res.data.name;
   editDefaultData.serviceId = res.data.service.id;
+  editDefaultData.accountId = res.data.account.id;
 
   loadingDataFlag.value = false;
   return deferred.promise;

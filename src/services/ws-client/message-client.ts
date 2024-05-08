@@ -23,6 +23,18 @@ export const useMessageSocketClient = createGlobalState(
       messageObservable.next(data);
     });
 
-    return { messageObservable };
+    const joinRoom = (roomId:string) => {
+      socket.emit('join-room', { roomId });
+    };
+
+    const leaveRoom = (roomId:string) => {
+      socket.emit('leave-room', { roomId });
+    };
+
+    return {
+      messageObservable,
+      joinRoom,
+      leaveRoom
+    };
   }
 );

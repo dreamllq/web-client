@@ -35,7 +35,8 @@ const onSubmit = async () => {
   await AiBaiduSessionService.create({
     requestBody: {
       name: data.name,
-      serviceId: data.serviceId
+      serviceId: data.serviceId,
+      accountId: data.accountId
     } 
   });
   success = true;

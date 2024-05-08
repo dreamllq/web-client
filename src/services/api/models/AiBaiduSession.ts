@@ -2,6 +2,7 @@
 /* tslint:disable */
 /* eslint-disable */
 
+import type { AiBaiduAccount } from './AiBaiduAccount';
 import type { AiBaiduService } from './AiBaiduService';
 import type { User } from './User';
 
@@ -11,6 +12,7 @@ export type AiBaiduSession = {
      * 会话名称
      */
     name: string;
+    account: AiBaiduAccount;
     service: AiBaiduService;
     creator: User;
     /**

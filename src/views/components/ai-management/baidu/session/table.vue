@@ -23,10 +23,14 @@
                 <el-button link type='danger' @click='onDelete(row)'>
                   删除
                 </el-button>
+                <el-button link type='primary' @click='onChat(row)'>
+                  聊天
+                </el-button>
               </template>
             </el-table-column>
           </el-table>
           <biz-edit-dialog ref='bizEdit' />
+          <chat-dialog ref='chatDialogRef' />
         </template>
       </auto-height-wrapper> 
     </template>
@@ -40,6 +44,7 @@ import { ref, onMounted } from 'vue';
 import { ElMessageBox, ElMessage } from 'element-plus';
 import BizEditDialog from './edit-dialog.vue';
 import { AiBaiduSessionService } from '@/services/api';
+import ChatDialog from './chat/index.vue';
 
 let filterData = {};
 const paginationRef = ref();
@@ -65,6 +70,11 @@ const onDelete = async ({ id }) => {
   await AiBaiduSessionService.remove({ id });
   ElMessage.success('删除成功');
   refresh();
+};
+
+const chatDialogRef = ref();
+const onChat = (row) => {
+  chatDialogRef.value.show({ sessionId: row.id });
 };
 
 const filter = (data) => {

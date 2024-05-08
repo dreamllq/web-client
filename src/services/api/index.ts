@@ -46,6 +46,7 @@ export type { ChatSessionCreateDto } from './models/ChatSessionCreateDto';
 export type { ChatSessionCreateResponse } from './models/ChatSessionCreateResponse';
 export type { ChatSessionGetResponse } from './models/ChatSessionGetResponse';
 export type { CreateAiBaiduAccountDto } from './models/CreateAiBaiduAccountDto';
+export type { CreateAiBaiduMessageDto } from './models/CreateAiBaiduMessageDto';
 export type { CreateAiBaiduServiceDto } from './models/CreateAiBaiduServiceDto';
 export type { CreateAiBaiduSessionDto } from './models/CreateAiBaiduSessionDto';
 export type { CreateAiServiceTypeDto } from './models/CreateAiServiceTypeDto';
@@ -214,6 +215,7 @@ export type { WeixinUpdateDto } from './models/WeixinUpdateDto';
 
 export { AddressService } from './services/AddressService';
 export { AiBaiduAccountService } from './services/AiBaiduAccountService';
+export { AiBaiduMessageService } from './services/AiBaiduMessageService';
 export { AiBaiduServiceService } from './services/AiBaiduServiceService';
 export { AiBaiduSessionService } from './services/AiBaiduSessionService';
 export { AiCommonServiceTypeService } from './services/AiCommonServiceTypeService';
