@@ -35,38 +35,6 @@
       </flex>
     </flex>
   </flex>
-  <!-- <div ref='contentBlockRef' class='content-block'>
-      <div ref='contentContainerRef'>
-        <template v-for='(item,index) in messageList' :key='index'>
-          <p
-            class='content'
-            :class='{
-              "f-right": item.role === "user"
-            }'>
-            <template v-if='item.status ==="done"'>
-              <span class='content-inner'>
-                {{ item.content }}
-              </span>
-            </template>
-            <template v-else>
-              <span class='content-inner'>...</span>
-            </template>
-          </p>
-        </template>
-      </div>
-    </div> -->
-  <!-- <div>
-      <el-row :gutter='12' @keyup.enter='send'>
-        <el-col :span='20'>
-          <el-input v-model='content' />
-        </el-col>
-        <el-col :span='4'>
-          <el-button type='primary' @click='send'>
-            发送
-          </el-button>
-        </el-col>
-      </el-row>
-    </div> -->
 </template>
 
 <script setup lang="ts">
@@ -94,7 +62,7 @@ const messageList = ref<any[]>([]);
 const contentBlockRef = ref();
 const contentContainerRef = ref();
 
-const { toBottom } = useWindowScrollHook(contentContainerRef, contentBlockRef);
+useWindowScrollHook(contentContainerRef, contentBlockRef);
 
 useBaiduMessageNotify(props.sessionId, {
   messageCb: (message) => {
