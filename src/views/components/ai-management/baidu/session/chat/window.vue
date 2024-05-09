@@ -6,11 +6,11 @@
         <p
           class='content'
           :class='{
-            "f-right": item.data.role === "user"
+            "f-right": item.role === "user"
           }'>
-          <template v-if='item.data.status ==="done"'>
+          <template v-if='item.status ==="done"'>
             <span class='content-inner'>
-              {{ item.data.content }}
+              {{ item.content }}
             </span>
           </template>
           <template v-else>
@@ -37,7 +37,7 @@
 <script setup lang="ts">
 import { AiBaiduMessageService } from '@/services/api';
 import { useMessageSocketClient } from '@/services/ws-client/message-client';
-import { onUnmounted, ref } from 'vue';
+import { onMounted, onUnmounted, ref } from 'vue';
 import { useBaiduMessageNotify } from './notify-hook';
 
 const { joinRoom, leaveRoom } = useMessageSocketClient();
@@ -59,15 +59,37 @@ const messageList = ref<any[]>([]);
 
 useBaiduMessageNotify(props.sessionId, {
   messageCb: (message) => {
-    messageList.value.push(message);
+    messageList.value.push({
+      id: message.data.id,
+      role: message.data.role,
+      status: message.data.status,
+      content: message.data.content
+    });
   },
   messageChangeCb: (message) => {
     messageList.value.forEach((item, index) => {
-      if (item.data.id === message.data.id) {
-        messageList.value[index] = message;
+      if (item.id === message.data.id) {
+        messageList.value[index] = {
+          id: message.data.id,
+          role: message.data.role,
+          status: message.data.status,
+          content: message.data.content
+        };
       }
     });
   }
+});
+
+onMounted(async() => {
+  const res = await AiBaiduMessageService.getHistory({ sessionId: props.sessionId });
+  res.data.forEach(item => {
+    messageList.value.push({
+      id: item.id,
+      role: item.role,
+      status: item.status,
+      content: item.content
+    });
+  });
 });
 
 const send = async () => {
