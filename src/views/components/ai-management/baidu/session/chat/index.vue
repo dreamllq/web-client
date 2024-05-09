@@ -4,7 +4,9 @@
     title='会话'
     width='900px'
   >
-    <chat-window v-if='dialogVisible' :session-id='sessionId' />
+    <div style='height: 450px'>
+      <chat-window v-if='dialogVisible' :session-id='sessionId' />
+    </div>
   </el-dialog>
 </template>
 

@@ -21,12 +21,20 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref, watch } from 'vue';
 import BaiduAccount from '@/views/components/ai-management/baidu/account/index.vue';
 import BaiduService from '@/views/components/ai-management/baidu/service/index.vue';
 import BaiduSession from '@/views/components/ai-management/baidu/session/index.vue';
+import { useRoute, useRouter } from 'vue-router';
 
-const activeName = ref('account');
+const { replace } = useRouter();
+const { query } = useRoute();
+
+const activeName = ref(query.biz || 'account');
+
+watch(() => activeName.value, () => {
+  replace({ query: { biz: activeName.value } });
+});
 </script>
 
 <style scoped>

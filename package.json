@@ -30,6 +30,7 @@
     "lc-vue-auto-height-wrapper": "^1.1.14",
     "lc-vue-auto-pagination": "^1.0.11",
     "lc-vue-biz-select": "^1.1.8",
+    "lc-vue-flex": "^1.0.1",
     "lc-vue-form-filter": "^1.1.2",
     "lc-vue-pro-layout": "^1.1.6",
     "lodash": "^4.17.21",

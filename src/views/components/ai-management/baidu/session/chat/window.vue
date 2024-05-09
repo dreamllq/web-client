@@ -1,26 +1,62 @@
 <template>
-  <div>
-    <div class='content-block'>
-      {{ sessionId }}
-      <template v-for='(item,index) in messageList' :key='index'>
-        <p
-          class='content'
-          :class='{
-            "f-right": item.role === "user"
-          }'>
-          <template v-if='item.status ==="done"'>
-            <span class='content-inner'>
-              {{ item.content }}
-            </span>
+  <flex
+    fit
+    :direction="'column'">
+    <flex flex='1'>
+      <div ref='contentBlockRef' class='content-block'>
+        <div ref='contentContainerRef'>
+          <template v-for='(item,index) in messageList' :key='index'>
+            <p
+              class='content'
+              :class='{
+                "f-right": item.role === "user"
+              }'>
+              <template v-if='item.status ==="done"'>
+                <span class='content-inner'>
+                  {{ item.content }}
+                </span>
+              </template>
+              <template v-else>
+                <span class='content-inner'>...</span>
+              </template>
+            </p>
           </template>
-          <template v-else>
-            <span class='content-inner'>...</span>
-          </template>
-        </p>
-      </template>
-    </div>
-    <div>
-      <el-row :gutter='12'>
+        </div>
+      </div>
+    </flex>
+    <flex @keyup.enter='send'>
+      <flex flex='1'>
+        <el-input v-model='content' />
+      </flex>
+      <flex>
+        <el-button type='primary' @click='send'>
+          发送
+        </el-button>
+      </flex>
+    </flex>
+  </flex>
+  <!-- <div ref='contentBlockRef' class='content-block'>
+      <div ref='contentContainerRef'>
+        <template v-for='(item,index) in messageList' :key='index'>
+          <p
+            class='content'
+            :class='{
+              "f-right": item.role === "user"
+            }'>
+            <template v-if='item.status ==="done"'>
+              <span class='content-inner'>
+                {{ item.content }}
+              </span>
+            </template>
+            <template v-else>
+              <span class='content-inner'>...</span>
+            </template>
+          </p>
+        </template>
+      </div>
+    </div> -->
+  <!-- <div>
+      <el-row :gutter='12' @keyup.enter='send'>
         <el-col :span='20'>
           <el-input v-model='content' />
         </el-col>
@@ -30,18 +66,17 @@
           </el-button>
         </el-col>
       </el-row>
-    </div>
-  </div>
+    </div> -->
 </template>
 
 <script setup lang="ts">
 import { AiBaiduMessageService } from '@/services/api';
 import { useMessageSocketClient } from '@/services/ws-client/message-client';
-import { onMounted, onUnmounted, ref } from 'vue';
+import { nextTick, onMounted, onUnmounted, ref } from 'vue';
 import { useBaiduMessageNotify } from './notify-hook';
-
+import { useWindowScrollHook } from './window-scroll-hook';
 const { joinRoom, leaveRoom } = useMessageSocketClient();
-
+import { Flex } from 'lc-vue-flex';
 const props = defineProps({
   sessionId: {
     type: String,
@@ -56,6 +91,10 @@ onUnmounted(() => {
 
 const content = ref('');
 const messageList = ref<any[]>([]);
+const contentBlockRef = ref();
+const contentContainerRef = ref();
+
+const { toBottom } = useWindowScrollHook(contentContainerRef, contentBlockRef);
 
 useBaiduMessageNotify(props.sessionId, {
   messageCb: (message) => {
@@ -93,20 +132,20 @@ onMounted(async() => {
 });
 
 const send = async () => {
+  content.value = '';
   await AiBaiduMessageService.create({
     requestBody: {
       content: content.value,
       sessionId: props.sessionId 
     } 
   });
-  content.value = '';
 };
 </script>
 
 <style scoped lang="scss">
 .content-block{
-  height: 400px;
   overflow: auto;
+  height: 100%;
   .content{
     padding-right: 100px;
     .content-inner{
