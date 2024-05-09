@@ -25,7 +25,7 @@
       </div>
     </flex>
     <flex @keyup.enter='send'>
-      <flex flex='1'>
+      <flex flex='1' style='padding-right: 8px;'>
         <el-input v-model='content' />
       </flex>
       <flex>
@@ -100,10 +100,11 @@ onMounted(async() => {
 });
 
 const send = async () => {
+  const c = content.value;
   content.value = '';
   await AiBaiduMessageService.create({
     requestBody: {
-      content: content.value,
+      content: c,
       sessionId: props.sessionId 
     } 
   });
