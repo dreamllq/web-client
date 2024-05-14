@@ -122,6 +122,10 @@ export default [
       {
         'key': 'ai-baidu',
         'label': '百度'
+      },
+      {
+        'key': 'ai-aliyun',
+        'label': '阿里云'
       }
     ]
   }
