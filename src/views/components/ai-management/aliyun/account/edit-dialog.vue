@@ -27,7 +27,7 @@ import { ref, reactive } from 'vue';
 import BizForm from './form.vue';
 import Deferred from 'simple-deferred2';
 import { ElMessage } from 'element-plus';
-import { AiBaiduAccountService } from '@/services/api';
+import { AiAliyunAccountService } from '@/services/api';
 
 const dialogVisible = ref(false);
 const formRef = ref<InstanceType<typeof BizForm> | null>(null);
@@ -39,7 +39,7 @@ const onSubmit = async () => {
   const data = await formRef.value!.getData();
 
   // TODO 接口调用
-  await AiBaiduAccountService.update({
+  await AiAliyunAccountService.update({
     id,
     requestBody: {
       accessKey: data.accessKey,
@@ -72,7 +72,7 @@ const edit = async (data:{ id:string }) => {
   dialogVisible.value = true;
 
   // TODO 接口调用
-  const res = await AiBaiduAccountService.get({ id });
+  const res = await AiAliyunAccountService.get({ id });
   editDefaultData.name = res.data.name;
   editDefaultData.accessKey = res.data.accessKey;
   editDefaultData.secretKey = res.data.secretKey;

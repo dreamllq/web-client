@@ -22,7 +22,7 @@ import { ref } from 'vue';
 import BizForm from './form.vue';
 import Deferred from 'simple-deferred2';
 import { ElMessage } from 'element-plus';
-import { AiBaiduAccountService } from '@/services/api';
+import { AiAliyunAccountService } from '@/services/api';
 
 const dialogVisible = ref(false);
 const formRef = ref<InstanceType<typeof BizForm> | null>(null);
@@ -32,7 +32,7 @@ let success = false;
 const onSubmit = async () => {
   const data = await formRef.value!.getData();
   // TODO 接口调用
-  await AiBaiduAccountService.create({
+  await AiAliyunAccountService.create({
     requestBody: {
       accessKey: data.accessKey,
       name: data.name,

@@ -45,14 +45,14 @@ import { AutoHeightWrapper } from 'lc-vue-auto-height-wrapper';
 import { ref, onMounted } from 'vue';
 import { ElMessageBox, ElMessage } from 'element-plus';
 import BizEditDialog from './edit-dialog.vue';
-import { AiBaiduAccountService } from '@/services/api';
+import { AiAliyunAccountService } from '@/services/api';
 
 
 let filterData = {};
 const paginationRef = ref();
 
 const fetchData = async (option: { pageNo:number, pageSize:number }) => {
-  const res = await AiBaiduAccountService.paginate({
+  const res = await AiAliyunAccountService.paginate({
     pageNo: option.pageNo,
     pageSize: option.pageSize 
   });
@@ -71,7 +71,7 @@ const onEdit = async ({ id }) => {
 
 const onDelete = async ({ id }) => {
   await ElMessageBox.confirm('确认删除吗?', '删除');
-  await AiBaiduAccountService.remove({ id });
+  await AiAliyunAccountService.remove({ id });
   ElMessage.success('删除成功');
   refresh();
 };

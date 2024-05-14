@@ -1,7 +1,9 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
+import type { CreateAiAliyunOcrDto } from '../models/CreateAiAliyunOcrDto';
 import type { CreateAiSessionDto } from '../models/CreateAiSessionDto';
+import type { UpdateAiAliyunOcrDto } from '../models/UpdateAiAliyunOcrDto';
 import type { UpdateAiSessionDto } from '../models/UpdateAiSessionDto';
 
 import type { CancelablePromise } from '../core/CancelablePromise';
@@ -134,6 +136,92 @@ export class DefaultService {
         return __request(OpenAPI, {
             method: 'DELETE',
             url: '/api/ai-session/{id}',
+            path: {
+                'id': id,
+            },
+        });
+    }
+
+    /**
+     * @returns any
+     * @throws ApiError
+     */
+    public static aiAliyunOcrControllerCreate({
+        requestBody,
+    }: {
+        requestBody: CreateAiAliyunOcrDto,
+    }): CancelablePromise<any> {
+        return __request(OpenAPI, {
+            method: 'POST',
+            url: '/api/ai-aliyun-ocr',
+            body: requestBody,
+            mediaType: 'application/json',
+        });
+    }
+
+    /**
+     * @returns any
+     * @throws ApiError
+     */
+    public static aiAliyunOcrControllerFindAll(): CancelablePromise<any> {
+        return __request(OpenAPI, {
+            method: 'GET',
+            url: '/api/ai-aliyun-ocr',
+        });
+    }
+
+    /**
+     * @returns any
+     * @throws ApiError
+     */
+    public static aiAliyunOcrControllerFindOne({
+        id,
+    }: {
+        id: string,
+    }): CancelablePromise<any> {
+        return __request(OpenAPI, {
+            method: 'GET',
+            url: '/api/ai-aliyun-ocr/{id}',
+            path: {
+                'id': id,
+            },
+        });
+    }
+
+    /**
+     * @returns any
+     * @throws ApiError
+     */
+    public static aiAliyunOcrControllerUpdate({
+        id,
+        requestBody,
+    }: {
+        id: string,
+        requestBody: UpdateAiAliyunOcrDto,
+    }): CancelablePromise<any> {
+        return __request(OpenAPI, {
+            method: 'PATCH',
+            url: '/api/ai-aliyun-ocr/{id}',
+            path: {
+                'id': id,
+            },
+            body: requestBody,
+            mediaType: 'application/json',
+        });
+    }
+
+    /**
+     * @returns any
+     * @throws ApiError
+     */
+    public static aiAliyunOcrControllerRemove({
+        id,
+    }: {
+        id: string,
+    }): CancelablePromise<any> {
+        return __request(OpenAPI, {
+            method: 'DELETE',
+            url: '/api/ai-aliyun-ocr/{id}',
             path: {
                 'id': id,
             },
