@@ -40,12 +40,28 @@
                 />
               </template>
             </el-table-column>
-            <el-table-column
-              prop='createDate'
-              label='创建时间' />
+            <el-table-column label='操作'>
+              <template #default='{row}'>
+                <el-button
+                  v-if='row.recognizeAllText.result'
+                  link
+                  type='primary'
+                  @click='onResultView(row)'>
+                  识别结果
+                </el-button>
+                <el-button
+                  v-else
+                  link
+                  type='primary'
+                  @click='onOperate(row)'>
+                  ocr识别
+                </el-button>
+              </template>
+            </el-table-column>
           </el-table>
         </template>
       </auto-height-wrapper> 
+      <result-view-dialog ref='resultViewDialogRef' />
     </template>
   </auto-pagination>
 </template>
@@ -55,8 +71,8 @@ import { AutoPagination } from 'lc-vue-auto-pagination';
 import { AutoHeightWrapper } from 'lc-vue-auto-height-wrapper';
 import { ref, onMounted } from 'vue';
 import { ElMessageBox, ElMessage } from 'element-plus';
-import { AiAliyunOcrService } from '@/services/api';
-
+import { AiAliyunOcr, AiAliyunOcrService } from '@/services/api';
+import ResultViewDialog from './result-view-dialog.vue';
 
 let filterData = {};
 const paginationRef = ref();
@@ -81,6 +97,17 @@ const filter = (data) => {
 
 const refresh = () => {
   paginationRef.value.refresh();
+};
+
+const onOperate = async (row:AiAliyunOcr) => {
+  await AiAliyunOcrService.operate({ id: row.id });
+  ElMessage.success('操作成功');
+  refresh();
+};
+
+const resultViewDialogRef = ref();
+const onResultView = async(row:AiAliyunOcr) => {
+  resultViewDialogRef.value.show({ result: JSON.stringify(JSON.parse(row.recognizeAllText.result), null, 2) });
 };
 
 defineExpose({ 

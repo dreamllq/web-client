@@ -6,6 +6,7 @@ import type { AiAliyunOcrGetResponse } from '../models/AiAliyunOcrGetResponse';
 import type { AiAliyunOcrPaginateResponse } from '../models/AiAliyunOcrPaginateResponse';
 import type { CreateAiAliyunOcrDto } from '../models/CreateAiAliyunOcrDto';
 import type { InsertSuccessResult } from '../models/InsertSuccessResult';
+import type { UpdateSuccessResult } from '../models/UpdateSuccessResult';
 
 import type { CancelablePromise } from '../core/CancelablePromise';
 import { OpenAPI } from '../core/OpenAPI';
@@ -77,6 +78,25 @@ export class AiAliyunOcrService {
     }): CancelablePromise<AiAliyunOcrGetResponse> {
         return __request(OpenAPI, {
             method: 'GET',
+            url: '/api/ai/aliyun/ocr/{id}',
+            path: {
+                'id': id,
+            },
+        });
+    }
+
+    /**
+     * 执行指定id ocr任务
+     * @returns UpdateSuccessResult
+     * @throws ApiError
+     */
+    public static operate({
+        id,
+    }: {
+        id: string,
+    }): CancelablePromise<UpdateSuccessResult> {
+        return __request(OpenAPI, {
+            method: 'PUT',
             url: '/api/ai/aliyun/ocr/{id}',
             path: {
                 'id': id,

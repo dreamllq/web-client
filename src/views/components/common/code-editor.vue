@@ -45,6 +45,10 @@ const props = defineProps({
   defaultValue: {
     type: String,
     default: ''
+  }, 
+  readOnly: {
+    type: Boolean,
+    default: false
   }
 });
 
@@ -67,7 +71,8 @@ onMounted(() => {
     value: props.defaultValue,
     language: props.language,
     automaticLayout: true,
-    theme: 'vs-dark'
+    theme: 'vs-dark',
+    readOnly: props.readOnly
   });
 });
 

@@ -8,6 +8,10 @@ import type { User } from './User';
 
 export type AiAliyunOcr = {
     id: string;
+    /**
+     * ocr任务名称
+     */
+    name: string;
     account: AiAliyunAccount;
     /**
      * 图片类型
