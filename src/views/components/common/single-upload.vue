@@ -30,7 +30,7 @@ const props = defineProps({
   }
 });
 
-const emit = defineEmits(['update:modelValue']);
+const emit = defineEmits(['update:modelValue', 'update:fileId']);
 
 const imageUrl = ref('');
 const uploading = ref(false);
@@ -47,6 +47,7 @@ const handleAvatarSuccess: UploadProps['onSuccess'] = (response) => {
   imageUrl.value = response.data.url;
   uploading.value = false;
   emit('update:modelValue', imageUrl.value);
+  emit('update:fileId', response.data.fileId);
 };
 
 const handleError: UploadProps['onError'] = (error) => {

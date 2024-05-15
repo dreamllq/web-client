@@ -11,7 +11,8 @@
     </el-aside>
     <el-container style='margin-top: 16px;'>
       <el-main style='padding: 0'>
-        <baidu-account v-if='activeName === "account"' />
+        <aliyun-account v-if='activeName === "account"' />
+        <aliyun-ocr v-else-if='activeName === "ocr"' />
       </el-main>
     </el-container>
   </el-container>
@@ -19,7 +20,9 @@
 
 <script setup lang="ts">
 import { ref, watch } from 'vue';
-import BaiduAccount from '@/views/components/ai-management/aliyun/account/index.vue';
+import AliyunAccount from '@/views/components/ai-management/aliyun/account/index.vue';
+import AliyunOcr from '@/views/components/ai-management/aliyun/ocr/index.vue';
+
 import { useRoute, useRouter } from 'vue-router';
 
 const { replace } = useRouter();
