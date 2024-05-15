@@ -2,11 +2,8 @@
 /* tslint:disable */
 /* eslint-disable */
 
-import type { FileBuffer } from './FileBuffer';
-
-export type File = {
+export type FileBuffer = {
     id: string;
-    content: FileBuffer;
     /**
      * 创建时间
      */

@@ -74,6 +74,7 @@ export type { CreateSuperAdminDto } from './models/CreateSuperAdminDto';
 export type { CreateUsersDto } from './models/CreateUsersDto';
 export type { DeleteSuccessResult } from './models/DeleteSuccessResult';
 export type { File } from './models/File';
+export type { FileBuffer } from './models/FileBuffer';
 export type { FilesUploadDto } from './models/FilesUploadDto';
 export type { FileUploadDto } from './models/FileUploadDto';
 export type { FileUploadResponse } from './models/FileUploadResponse';

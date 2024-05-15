@@ -12,7 +12,7 @@ export type AiAliyunOcrRecognizeAllText = {
      */
     type: string;
     /**
-     * 图片类型
+     * ocr识别结果
      */
     result: string;
     /**

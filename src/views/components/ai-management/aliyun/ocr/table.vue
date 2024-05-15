@@ -13,11 +13,33 @@
               prop='name'
               label='名称' />
             <el-table-column
-              prop='accessKey'
-              label='accessKey' />
+              label='账号'>
+              <template #default='{row}'>
+                {{ row.account.name }}
+              </template>
+            </el-table-column>
             <el-table-column
-              prop='secretKey'
-              label='secretKey' />
+              label='ocr操作'>
+              <template #default='{row}'>
+                {{ row.type }}-{{ row.recognizeAllText.type }}
+              </template>
+            </el-table-column>
+            <el-table-column
+              label='图片'>
+              <template #default='{row}'>
+                <el-image
+                  style='width: 30px; height: 30px'
+                  :src='`/api/file/static/${row.recognizeAllText.file.id}`'
+                  :zoom-rate='1.2'
+                  :max-scale='7'
+                  :min-scale='0.2'
+                  :preview-src-list='[`/api/file/static/${row.recognizeAllText.file.id}`]'
+                  :initial-index='4'
+                  fit='cover'
+                  preview-teleported
+                />
+              </template>
+            </el-table-column>
             <el-table-column
               prop='createDate'
               label='创建时间' />
