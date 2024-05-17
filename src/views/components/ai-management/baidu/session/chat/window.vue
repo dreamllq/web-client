@@ -13,7 +13,8 @@
               }'>
               <template v-if='item.status ==="done"'>
                 <span class='content-inner'>
-                  {{ item.content }}
+                  <!-- {{ item.content }} -->
+                  <md-view :md='item.content' />
                 </span>
               </template>
               <template v-else>
@@ -45,6 +46,7 @@ import { useBaiduMessageNotify } from './notify-hook';
 import { useWindowScrollHook } from './window-scroll-hook';
 const { joinRoom, leaveRoom } = useMessageSocketClient();
 import { Flex } from 'lc-vue-flex';
+import MdView from './md-view.vue';
 const props = defineProps({
   sessionId: {
     type: String,
@@ -123,7 +125,7 @@ const send = async () => {
       color: #333;
       font-size: 12px;
       line-height: 1.4;
-      padding: 8px;
+      padding: 0 8px;
       border-radius: 4px;
       display: inline-block;
     }

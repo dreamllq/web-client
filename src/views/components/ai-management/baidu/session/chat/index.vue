@@ -2,7 +2,7 @@
   <el-dialog
     v-model='dialogVisible'
     title='会话'
-    width='900px'
+    width='90%'
   >
     <div style='height: 450px'>
       <chat-window v-if='dialogVisible' :session-id='sessionId' />
