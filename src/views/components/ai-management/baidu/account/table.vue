@@ -29,10 +29,14 @@
                 <el-button link type='danger' @click='onDelete(row)'>
                   删除
                 </el-button>
+                <el-button link type='primary' @click='onPromptTemplate(row)'>
+                  prompt模板
+                </el-button>
               </template>
             </el-table-column>
           </el-table>
           <biz-edit-dialog ref='bizEdit' />
+          <prompt-template-dialog ref='promptTemplateDialogRef' />
         </template>
       </auto-height-wrapper> 
     </template>
@@ -46,6 +50,7 @@ import { ref, onMounted } from 'vue';
 import { ElMessageBox, ElMessage } from 'element-plus';
 import BizEditDialog from './edit-dialog.vue';
 import { AiBaiduAccountService } from '@/services/api';
+import PromptTemplateDialog from './prompt-template-dialog.vue';
 
 
 let filterData = {};
@@ -74,6 +79,11 @@ const onDelete = async ({ id }) => {
   await AiBaiduAccountService.remove({ id });
   ElMessage.success('删除成功');
   refresh();
+};
+
+const promptTemplateDialogRef = ref();
+const onPromptTemplate = async ({ id }) => {
+  promptTemplateDialogRef.value.show({ accountId: id });
 };
 
 const filter = (data) => {

@@ -117,6 +117,8 @@ const send = async () => {
 .content-block{
   overflow: auto;
   height: 100%;
+  width: 100%;
+  
   .content{
     padding-right: 100px;
     .content-inner{
