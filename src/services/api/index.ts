@@ -49,6 +49,7 @@ export type { Area } from './models/Area';
 export type { AreaResponse } from './models/AreaResponse';
 export type { AuthLoginSuccessResponse } from './models/AuthLoginSuccessResponse';
 export type { AuthVerifyResponse } from './models/AuthVerifyResponse';
+export type { Buffer } from './models/Buffer';
 export { ChatContacts } from './models/ChatContacts';
 export type { ChatContactsCreateDto } from './models/ChatContactsCreateDto';
 export type { ChatContactsGetResponse } from './models/ChatContactsGetResponse';

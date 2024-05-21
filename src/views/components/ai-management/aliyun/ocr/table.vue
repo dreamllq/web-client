@@ -25,9 +25,10 @@
               </template>
             </el-table-column>
             <el-table-column
-              label='图片'>
+              label='文件'>
               <template #default='{row}'>
                 <el-image
+                  v-if='row.recognizeAllText.file.ext === "png" || row.recognizeAllText.file.ext ==="jpg" || row.recognizeAllText.file.ext === "jpeg" || row.recognizeAllText.file.ext ==="gif"'
                   style='width: 30px; height: 30px'
                   :src='`/api/file/static/${row.recognizeAllText.file.id}`'
                   :zoom-rate='1.2'
@@ -38,6 +39,15 @@
                   fit='cover'
                   preview-teleported
                 />
+                <el-button
+                  v-else
+                  link
+                  tag='a'
+                  type='primary'
+                  :href='`/api/file/static/${row.recognizeAllText.file.id}`'
+                  target='_blank'>
+                  查看
+                </el-button>
               </template>
             </el-table-column>
             <el-table-column label='操作'>
@@ -73,6 +83,7 @@ import { ref, onMounted } from 'vue';
 import { ElMessageBox, ElMessage } from 'element-plus';
 import { AiAliyunOcr, AiAliyunOcrService } from '@/services/api';
 import ResultViewDialog from './result-view-dialog.vue';
+import { ro } from 'element-plus/es/locale';
 
 let filterData = {};
 const paginationRef = ref();

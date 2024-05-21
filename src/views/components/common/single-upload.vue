@@ -10,7 +10,12 @@
     <el-icon v-if='uploading' class='avatar-uploader-icon is-loading'>
       <loading />
     </el-icon>
-    <img v-else-if='imageUrl' :src='imageUrl' class='avatar'>
+    <template v-else-if='file'>
+      <img v-if='file.ext === "png" || file.ext ==="jpg" || file.ext === "jpeg" || file.ext ==="gif"' :src='`/api/file/static/${file.id}`' class='avatar'>
+      <div v-else class='avatar'>
+        <span>{{ file.ext }}</span>
+      </div>
+    </template>
     <el-icon v-else class='avatar-uploader-icon'>
       <plus />
     </el-icon>
@@ -18,15 +23,16 @@
 </template>
 
 <script lang="ts" setup>
-import { ref, watchEffect } from 'vue';
+import { PropType, ref, watchEffect } from 'vue';
 import { Plus, Loading } from '@element-plus/icons-vue';
 import type { UploadProps, UploadRequestOptions } from 'element-plus';
-import { FileService } from '@/services/api';
+import { File, FileService } from '@/services/api';
+import { cloneDeep } from 'lodash';
 
 const props = defineProps({
   modelValue: {
-    type: String,
-    default: ''
+    type: Object as PropType<File>,
+    default: undefined
   }
 });
 
@@ -34,19 +40,22 @@ const emit = defineEmits(['update:modelValue', 'update:fileId']);
 
 const imageUrl = ref('');
 const uploading = ref(false);
+const file = ref<File>();
 
 
 watchEffect(() => {
-  imageUrl.value = props.modelValue;
+  // imageUrl.value = props.modelValue;
+  file.value = props.modelValue;
 });
 
 
 const httpRequest = async (options: UploadRequestOptions) => await FileService.uploadFile({ formData: { file: options.file } });
 
 const handleAvatarSuccess: UploadProps['onSuccess'] = (response) => {
-  imageUrl.value = response.data.url;
+  // imageUrl.value = response.data.url;
   uploading.value = false;
-  emit('update:modelValue', imageUrl.value);
+  file.value = response.data.entity;
+  emit('update:modelValue', cloneDeep(imageUrl.value));
   emit('update:fileId', response.data.fileId);
 };
 
