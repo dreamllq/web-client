@@ -39,7 +39,7 @@
 </template>
 
 <script setup lang="ts">
-import { AiBaiduMessageService } from '@/services/api';
+import { AiAliyunMessageService } from '@/services/api';
 import { useMessageSocketClient } from '@/services/ws-client/message-client';
 import { nextTick, onMounted, onUnmounted, ref } from 'vue';
 import { useBaiduMessageNotify } from './notify-hook';
@@ -90,7 +90,7 @@ useBaiduMessageNotify(props.sessionId, {
 });
 
 onMounted(async() => {
-  const res = await AiBaiduMessageService.getHistory({ sessionId: props.sessionId });
+  const res = await AiAliyunMessageService.getHistory({ sessionId: props.sessionId });
   res.data.forEach(item => {
     messageList.value.push({
       id: item.id,
@@ -104,7 +104,7 @@ onMounted(async() => {
 const send = async () => {
   const c = content.value;
   content.value = '';
-  await AiBaiduMessageService.create({
+  await AiAliyunMessageService.create({
     requestBody: {
       content: c,
       sessionId: props.sessionId 

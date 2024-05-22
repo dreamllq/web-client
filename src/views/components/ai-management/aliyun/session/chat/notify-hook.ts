@@ -8,7 +8,7 @@ export const useBaiduMessageNotify = (sessionId:string, options:{messageCb?: (da
   const messageChangeObservable = new Subject();
 
   const subscription = socketMessageObservable.subscribe((data: any) => {
-    if (data.module !== 'aiBaiduMessage') return;
+    if (data.module !== 'aiAliyunMessage') return;
     if (data.data.sessionId !== sessionId) return;
 
     if (data.command === 'message') {
