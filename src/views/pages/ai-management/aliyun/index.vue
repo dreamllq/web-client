@@ -8,6 +8,7 @@
         <el-tab-pane label='账号管理' name='account' />
         <el-tab-pane label='OCR' name='ocr' />
         <el-tab-pane label='通义服务' name='service' />
+        <el-tab-pane label='会话' name='session' />
       </el-tabs>
     </el-aside>
     <el-container style='margin-top: 16px;'>
@@ -15,6 +16,7 @@
         <aliyun-account v-if='activeName === "account"' />
         <aliyun-ocr v-else-if='activeName === "ocr"' />
         <aliyun-service v-else-if='activeName === "service"' />
+        <aliyun-session v-else-if='activeName === "session"' />
       </el-main>
     </el-container>
   </el-container>
@@ -25,6 +27,7 @@ import { ref, watch } from 'vue';
 import AliyunAccount from '@/views/components/ai-management/aliyun/account/index.vue';
 import AliyunOcr from '@/views/components/ai-management/aliyun/ocr/index.vue';
 import AliyunService from '@/views/components/ai-management/aliyun/service/index.vue';
+import AliyunSession from '@/views/components/ai-management/aliyun/session/index.vue';
 
 import { useRoute, useRouter } from 'vue-router';
 
