@@ -16,6 +16,10 @@ export type UpdateAiAliyunServiceDto = {
      */
     path?: string;
     /**
+     * model
+     */
+    model?: string;
+    /**
      * 服务类型
      */
     typeId?: string;

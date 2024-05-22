@@ -19,6 +19,10 @@ export type AiAliyunService = {
      * 接口path
      */
     path: string;
+    /**
+     * model
+     */
+    model: string;
     type: AiServiceType;
     creator: User;
     /**
