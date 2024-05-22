@@ -19,6 +19,9 @@
               prop='secretKey'
               label='secretKey' />
             <el-table-column
+              prop='dashscopeApiKey'
+              label='dashscopeApiKey' />
+            <el-table-column
               prop='createDate'
               label='创建时间' />
             <el-table-column label='操作'>

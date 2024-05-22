@@ -13,6 +13,9 @@
     <el-form-item label='secretKey' prop='secretKey'>
       <el-input v-model='form.secretKey' placeholder='请输入secretKey' />
     </el-form-item>
+    <el-form-item label='dashscopeApiKey' prop='dashscopeApiKey'>
+      <el-input v-model='form.dashscopeApiKey' placeholder='请输入dashscopeApiKey' />
+    </el-form-item>
   </el-form>
 </template>
 
@@ -39,7 +42,8 @@ const props = defineProps({
 const form = reactive({
   name: props.defaultData?.name || '',
   accessKey: props.defaultData?.accessKey || '',
-  secretKey: props.defaultData?.secretKey || '' 
+  secretKey: props.defaultData?.secretKey || '',
+  dashscopeApiKey: props.defaultData?.dashscopeApiKey || ''
 });
 
 const rules = reactive<FormRules>({

@@ -15,5 +15,9 @@ export type CreateAiAliyunAccountDto = {
      * Secret Key
      */
     secretKey: string;
+    /**
+     * Secret Key
+     */
+    dashscopeApiKey?: string;
 };
 

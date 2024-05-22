@@ -15,5 +15,9 @@ export type UpdateAiAliyunAccountDto = {
      * Secret Key
      */
     secretKey?: string;
+    /**
+     * Secret Key
+     */
+    dashscopeApiKey?: string;
 };
 

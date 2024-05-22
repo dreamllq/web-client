@@ -44,7 +44,8 @@ const onSubmit = async () => {
     requestBody: {
       accessKey: data.accessKey,
       name: data.name,
-      secretKey: data.secretKey
+      secretKey: data.secretKey,
+      dashscopeApiKey: data.dashscopeApiKey
     } 
   });
   success = true;
@@ -60,7 +61,8 @@ const onClosed = () => {
 const editDefaultData = reactive({
   name: '',
   accessKey: '',
-  secretKey: '' 
+  secretKey: '',
+  dashscopeApiKey: ''
 });
 const loadingDataFlag = ref(false);
 
@@ -76,6 +78,7 @@ const edit = async (data:{ id:string }) => {
   editDefaultData.name = res.data.name;
   editDefaultData.accessKey = res.data.accessKey;
   editDefaultData.secretKey = res.data.secretKey;
+  editDefaultData.dashscopeApiKey = res.data.dashscopeApiKey;
 
   loadingDataFlag.value = false;
   return deferred.promise;

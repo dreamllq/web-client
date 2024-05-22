@@ -36,7 +36,8 @@ const onSubmit = async () => {
     requestBody: {
       accessKey: data.accessKey,
       name: data.name,
-      secretKey: data.secretKey
+      secretKey: data.secretKey,
+      dashscopeApiKey: data.dashscopeApiKey
     } 
   });
   success = true;

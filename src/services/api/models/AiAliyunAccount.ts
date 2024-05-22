@@ -18,6 +18,10 @@ export type AiAliyunAccount = {
      * Secret Key
      */
     secretKey: string;
+    /**
+     * Dashscope Api Key
+     */
+    dashscopeApiKey: string;
     creator: User;
     /**
      * 创建时间
