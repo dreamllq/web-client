@@ -3,8 +3,10 @@
     v-model='dialogVisible'
     title='会话'
     width='90%'
+    class='max-height'
+    append-to-body
   >
-    <div style='height: 450px'>
+    <div style='height: 100%'>
       <chat-window v-if='dialogVisible' :session-id='sessionId' />
     </div>
   </el-dialog>

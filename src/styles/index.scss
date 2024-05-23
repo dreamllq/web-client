@@ -16,3 +16,18 @@
   height: 100%;
   overflow: hidden;
 }
+
+
+.el-dialog.max-height{
+  --el-dialog-margin-top: 20px;
+  height: calc(100% - var(--el-dialog-margin-top) - 50px);
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+
+  .el-dialog__body{
+    flex: 1;
+    overflow: hidden;
+  }
+}

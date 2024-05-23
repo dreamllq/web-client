@@ -7,6 +7,9 @@
     <el-form-item label='服务类型名称' prop='name'>
       <el-input v-model='form.name' placeholder='请输入服务类型名称' />
     </el-form-item>
+    <el-form-item label='服务类型值' prop='value'>
+      <el-input v-model='form.value' placeholder='服务类型值' />
+    </el-form-item>
   </el-form>
 </template>
 
@@ -30,13 +33,22 @@ const props = defineProps({
   }
 });
 
-const form = reactive({ name: props.defaultData?.name || '' });
+const form = reactive({
+  name: props.defaultData?.name || '',
+  value: props.defaultData?.value || '' 
+});
 
 const rules = reactive<FormRules>({
   name: [
     {
       required: true,
       message: '请输入服务类型名称' 
+    }
+  ],
+  value: [
+    {
+      required: true,
+      message: '请输入服务类型值' 
     }
   ]
 });

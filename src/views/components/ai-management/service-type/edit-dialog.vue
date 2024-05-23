@@ -41,7 +41,10 @@ const onSubmit = async () => {
   // TODO 接口调用
   await AiCommonServiceTypeService.update({
     id,
-    requestBody: { name: data.name } 
+    requestBody: {
+      name: data.name,
+      value: data.value 
+    } 
   });
   success = true;
   dialogVisible.value = false;
@@ -53,7 +56,10 @@ const onClosed = () => {
   deferred = null;
 };
 
-const editDefaultData = reactive({ name: '' });
+const editDefaultData = reactive({
+  name: '',
+  value: '' 
+});
 const loadingDataFlag = ref(false);
 
 const edit = async (data:{ id:string }) => {
@@ -66,6 +72,7 @@ const edit = async (data:{ id:string }) => {
   // TODO 接口调用
   const res = await AiCommonServiceTypeService.get({ id });
   editDefaultData.name = res.data.name;
+  editDefaultData.value = res.data.value;
 
   loadingDataFlag.value = false;
   return deferred.promise;

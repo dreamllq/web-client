@@ -9,6 +9,10 @@ export type AiServiceType = {
      */
     name: string;
     /**
+     * 值
+     */
+    value: string;
+    /**
      * 创建时间
      */
     createDate: string;

@@ -32,7 +32,12 @@ let success = false;
 const onSubmit = async () => {
   const data = await formRef.value!.getData();
   // TODO 接口调用
-  await AiCommonServiceTypeService.create({ requestBody: { name: data.name } });
+  await AiCommonServiceTypeService.create({
+    requestBody: {
+      name: data.name,
+      value: data.value 
+    } 
+  });
   success = true;
   dialogVisible.value = false;
   ElMessage.success('创建成功');
