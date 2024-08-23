@@ -33,6 +33,11 @@ export default [
     ]
   },
   {
+    key: 'bi',
+    label: 'BI',
+    icon: 'Setting'
+  },
+  {
     'key': 'weixin',
     'label': '微信运营',
     'icon': 'ChatDotRound',
