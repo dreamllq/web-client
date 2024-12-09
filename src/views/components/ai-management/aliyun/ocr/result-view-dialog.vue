@@ -4,7 +4,7 @@
     title='结果查看'
     width='900px'
   >
-    <div style='height: 500px'>
+    <div v-if='dialogVisible' style='height: 500px'>
       <code-editor :default-value='result' read-only />
     </div>
     <template #footer>
