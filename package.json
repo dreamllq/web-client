@@ -33,6 +33,7 @@
     "lc-vue-flex": "^1.0.1",
     "lc-vue-form-filter": "^1.1.2",
     "lc-vue-pro-layout": "^1.1.6",
+    "lc-vue-text-tip": "^1.2.1",
     "lodash": "^4.17.21",
     "marked": "^12.0.2",
     "moment": "^2.24.0",
@@ -46,7 +47,8 @@
     "uuid": "^9.0.0",
     "validator": "^13.7.0",
     "vue": "^3.4.23",
-    "vue-router": "^4.1.6"
+    "vue-router": "^4.1.6",
+    "vue3-menus": "^1.1.2"
   },
   "devDependencies": {
     "@types/crypto-js": "^4.1.1",

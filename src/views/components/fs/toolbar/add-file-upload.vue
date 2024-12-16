@@ -8,14 +8,10 @@
     :on-error='handleError'
   >
     <template #trigger>
-      <el-button type='primary'>
-        select file
-      </el-button>
-    </template>
-    <template #tip>
-      <div class='el-upload__tip text-red'>
-        {{ fileInfo }}
-      </div>
+      <el-button
+        type='primary'
+        :icon='DocumentAdd'
+        text />
     </template>
   </el-upload>
 </template>
@@ -23,14 +19,29 @@
 <script setup lang="ts">
 import { ref, watchEffect } from 'vue';
 import type { UploadProps, UploadRequestOptions } from 'element-plus';
-import { FileService } from '@/services/api';
+import { FileService, FsService, PathType } from '@/services/api';
+import { DocumentAdd } from '@element-plus/icons-vue';
+import { usePathState } from '../store/path';
 
+const { currentFPathId, getPathInfoById } = usePathState();
 const upload = ref();
 const emit = defineEmits(['update:modelValue']);
 const fileInfo = ref();
 
 
-const httpRequest = async (options: UploadRequestOptions) => await FileService.uploadFile({ formData: { file: options.file } });
+const httpRequest = async (options: UploadRequestOptions) => {
+  const res = await FileService.uploadFile({ formData: { file: options.file } });
+  await FsService.create({
+    requestBody: {
+      fileDetail: { fileId: res.data.fileId },
+      name: res.data.entity.originFileName,
+      parentId: currentFPathId.value!,
+      pathType: PathType.FILE
+    }
+  });
+  getPathInfoById(currentFPathId.value!);
+  return res;
+};
 const handleAvatarSuccess: UploadProps['onSuccess'] = (response) => {
   fileInfo.value = response.data;
   emit('update:modelValue', response.data);

@@ -2,22 +2,22 @@
 /* tslint:disable */
 /* eslint-disable */
 
-import type { AiAliyunAccount } from './AiAliyunAccount';
-import type { AiAliyunOcrRecognizeAllText } from './AiAliyunOcrRecognizeAllText';
+import type { AiBaiduAccount } from './AiBaiduAccount';
+import type { AiBaiduOrcGeneralScenarios } from './AiBaiduOrcGeneralScenarios';
 import type { User } from './User';
 
-export type AiAliyunOcr = {
+export type AiBaiduOcr = {
     id: string;
     /**
      * ocr任务名称
      */
     name: string;
-    account: AiAliyunAccount;
+    account: AiBaiduAccount;
     /**
      * 操作类型
      */
     type: string;
-    recognizeAllText: AiAliyunOcrRecognizeAllText;
+    generalScenarios: AiBaiduOrcGeneralScenarios;
     creator: User;
     /**
      * 创建时间

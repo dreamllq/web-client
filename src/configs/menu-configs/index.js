@@ -33,6 +33,11 @@ export default [
     ]
   },
   {
+    key: 'fs',
+    label: 'FS',
+    icon: 'FolderOpened'
+  },
+  {
     key: 'bi',
     label: 'BI',
     icon: 'Setting'
