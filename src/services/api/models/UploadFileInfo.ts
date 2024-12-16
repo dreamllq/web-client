@@ -2,8 +2,11 @@
 /* tslint:disable */
 /* eslint-disable */
 
+import type { File } from './File';
+
 export type UploadFileInfo = {
     url: string;
     fileId: string;
+    entity: File;
 };
 

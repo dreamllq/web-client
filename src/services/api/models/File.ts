@@ -7,6 +7,14 @@ import type { FileBuffer } from './FileBuffer';
 export type File = {
     id: string;
     /**
+     * 名称
+     */
+    name: string;
+    /**
+     * 文件原名
+     */
+    originFileName: string;
+    /**
      * 扩展名
      */
     ext: string;
