@@ -1,3 +1,4 @@
+/* generated using openapi-typescript-codegen -- do not edit */
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
@@ -8,13 +9,10 @@ import type { LoginBySmsCodeDto } from '../models/LoginBySmsCodeDto';
 import type { LoginByWeixinDto } from '../models/LoginByWeixinDto';
 import type { LoginDto } from '../models/LoginDto';
 import type { SuccessResult } from '../models/SuccessResult';
-
 import type { CancelablePromise } from '../core/CancelablePromise';
 import { OpenAPI } from '../core/OpenAPI';
 import { request as __request } from '../core/request';
-
 export class AuthService {
-
     /**
      * 验证auth
      * @returns AuthVerifyResponse
@@ -26,7 +24,6 @@ export class AuthService {
             url: '/api/auth/verify',
         });
     }
-
     /**
      * 注销登录用户
      * @returns SuccessResult
@@ -38,7 +35,6 @@ export class AuthService {
             url: '/api/auth/cancellation',
         });
     }
-
     /**
      * 用户名密码登录
      * @returns AuthLoginSuccessResponse
@@ -56,7 +52,6 @@ export class AuthService {
             mediaType: 'application/json',
         });
     }
-
     /**
      * 手机验证码登录
      * @returns AuthLoginSuccessResponse
@@ -74,7 +69,6 @@ export class AuthService {
             mediaType: 'application/json',
         });
     }
-
     /**
      * 微信登录
      * @returns AuthLoginSuccessResponse
@@ -92,7 +86,6 @@ export class AuthService {
             mediaType: 'application/json',
         });
     }
-
     /**
      * 微信小程序手机号登录
      * @returns AuthLoginSuccessResponse
@@ -110,7 +103,6 @@ export class AuthService {
             mediaType: 'application/json',
         });
     }
-
     /**
      * 类似oauth2的code登录
      * @returns any
@@ -128,7 +120,6 @@ export class AuthService {
             mediaType: 'application/json',
         });
     }
-
     /**
      * 生成登录code
      * @returns any
@@ -140,5 +131,4 @@ export class AuthService {
             url: '/api/auth/authenticate',
         });
     }
-
 }

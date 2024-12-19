@@ -1,3 +1,4 @@
+/* generated using openapi-typescript-codegen -- do not edit */
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
@@ -8,13 +9,10 @@ import type { ForumPostGetResponse } from '../models/ForumPostGetResponse';
 import type { ForumPostPaginateResponse } from '../models/ForumPostPaginateResponse';
 import type { ForumPostUpdateDto } from '../models/ForumPostUpdateDto';
 import type { SuccessResult } from '../models/SuccessResult';
-
 import type { CancelablePromise } from '../core/CancelablePromise';
 import { OpenAPI } from '../core/OpenAPI';
 import { request as __request } from '../core/request';
-
 export class ForumPostService {
-
     /**
      * 创建帖子
      * @returns SuccessResult
@@ -32,7 +30,6 @@ export class ForumPostService {
             mediaType: 'application/json',
         });
     }
-
     /**
      * 获取所有帖子
      * @returns ForumPostGetAllResponse
@@ -51,7 +48,6 @@ export class ForumPostService {
             },
         });
     }
-
     /**
      * 删除帖子
      * @returns SuccessResult
@@ -70,7 +66,6 @@ export class ForumPostService {
             },
         });
     }
-
     /**
      * 更新指定id帖子
      * @returns SuccessResult
@@ -93,7 +88,6 @@ export class ForumPostService {
             mediaType: 'application/json',
         });
     }
-
     /**
      * 获取指定id帖子
      * @returns ForumPostGetResponse
@@ -126,7 +120,6 @@ export class ForumPostService {
             },
         });
     }
-
     /**
      * 帖子分页数据
      * @returns ForumPostPaginateResponse
@@ -166,7 +159,6 @@ export class ForumPostService {
             },
         });
     }
-
     /**
      * 当前用户帖子分页数据
      * @returns ForumPostPaginateResponse
@@ -206,7 +198,6 @@ export class ForumPostService {
             },
         });
     }
-
     /**
      * 帖子分页数据(游标)
      * @returns ForumPostPaginateResponse
@@ -243,7 +234,6 @@ export class ForumPostService {
             },
         });
     }
-
     /**
      * 获取帖子数量
      * @returns ForumPostGetCountResponse
@@ -262,7 +252,6 @@ export class ForumPostService {
             },
         });
     }
-
     /**
      * 获取登录用户帖子数量
      * @returns ForumPostGetCountResponse
@@ -281,5 +270,4 @@ export class ForumPostService {
             },
         });
     }
-
 }

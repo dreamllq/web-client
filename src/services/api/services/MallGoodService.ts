@@ -1,3 +1,4 @@
+/* generated using openapi-typescript-codegen -- do not edit */
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
@@ -7,13 +8,10 @@ import type { MallGoodGetResponse } from '../models/MallGoodGetResponse';
 import type { MallGoodPaginateResponse } from '../models/MallGoodPaginateResponse';
 import type { MallGoodUpdateDto } from '../models/MallGoodUpdateDto';
 import type { SuccessResult } from '../models/SuccessResult';
-
 import type { CancelablePromise } from '../core/CancelablePromise';
 import { OpenAPI } from '../core/OpenAPI';
 import { request as __request } from '../core/request';
-
 export class MallGoodService {
-
     /**
      * 创建商品
      * @returns SuccessResult
@@ -31,7 +29,6 @@ export class MallGoodService {
             mediaType: 'application/json',
         });
     }
-
     /**
      * 获取所有商品数据
      * @returns MallGoodGetAllResponse
@@ -50,7 +47,6 @@ export class MallGoodService {
             },
         });
     }
-
     /**
      * 删除商品
      * @returns SuccessResult
@@ -69,7 +65,6 @@ export class MallGoodService {
             },
         });
     }
-
     /**
      * 更新商品
      * @returns SuccessResult
@@ -92,7 +87,6 @@ export class MallGoodService {
             mediaType: 'application/json',
         });
     }
-
     /**
      * 获取id商品数据
      * @returns MallGoodGetResponse
@@ -111,7 +105,6 @@ export class MallGoodService {
             },
         });
     }
-
     /**
      * 获取分页商品数据
      * @returns MallGoodPaginateResponse
@@ -139,5 +132,4 @@ export class MallGoodService {
             },
         });
     }
-
 }

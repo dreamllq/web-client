@@ -1,10 +1,9 @@
+/* generated using openapi-typescript-codegen -- do not edit */
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-
 import type { ForumPost } from './ForumPost';
 import type { User } from './User';
-
 export type ForumComment = {
     id: string;
     content: string;

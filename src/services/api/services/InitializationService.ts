@@ -1,15 +1,13 @@
+/* generated using openapi-typescript-codegen -- do not edit */
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
 import type { CreateSuperAdminDto } from '../models/CreateSuperAdminDto';
 import type { InsertSuccessResult } from '../models/InsertSuccessResult';
-
 import type { CancelablePromise } from '../core/CancelablePromise';
 import { OpenAPI } from '../core/OpenAPI';
 import { request as __request } from '../core/request';
-
 export class InitializationService {
-
     /**
      * 创建超级管理员
      * @returns InsertSuccessResult
@@ -27,5 +25,4 @@ export class InitializationService {
             mediaType: 'application/json',
         });
     }
-
 }

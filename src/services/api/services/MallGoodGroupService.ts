@@ -1,3 +1,4 @@
+/* generated using openapi-typescript-codegen -- do not edit */
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
@@ -7,13 +8,10 @@ import type { MallGoodGroupGetResponse } from '../models/MallGoodGroupGetRespons
 import type { MallGoodGroupGetTreeResponse } from '../models/MallGoodGroupGetTreeResponse';
 import type { MallGoodGroupUpdateDto } from '../models/MallGoodGroupUpdateDto';
 import type { SuccessResult } from '../models/SuccessResult';
-
 import type { CancelablePromise } from '../core/CancelablePromise';
 import { OpenAPI } from '../core/OpenAPI';
 import { request as __request } from '../core/request';
-
 export class MallGoodGroupService {
-
     /**
      * 创建商品分组
      * @returns SuccessResult
@@ -31,7 +29,6 @@ export class MallGoodGroupService {
             mediaType: 'application/json',
         });
     }
-
     /**
      * 获取平铺商品分组数据
      * @returns MallGoodGroupGetAllResponse
@@ -43,7 +40,6 @@ export class MallGoodGroupService {
             url: '/api/mall/good-group',
         });
     }
-
     /**
      * 删除商品分组
      * @returns SuccessResult
@@ -62,7 +58,6 @@ export class MallGoodGroupService {
             },
         });
     }
-
     /**
      * 更新商品分组
      * @returns SuccessResult
@@ -85,7 +80,6 @@ export class MallGoodGroupService {
             mediaType: 'application/json',
         });
     }
-
     /**
      * 获取商品分组
      * @returns MallGoodGroupGetResponse
@@ -104,7 +98,6 @@ export class MallGoodGroupService {
             },
         });
     }
-
     /**
      * 获取商品分组树
      * @returns MallGoodGroupGetTreeResponse
@@ -116,5 +109,4 @@ export class MallGoodGroupService {
             url: '/api/mall/good-group/tree',
         });
     }
-
 }

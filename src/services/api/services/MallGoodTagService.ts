@@ -1,3 +1,4 @@
+/* generated using openapi-typescript-codegen -- do not edit */
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
@@ -7,13 +8,10 @@ import type { MallGoodTagGetResponse } from '../models/MallGoodTagGetResponse';
 import type { MallGoodTagPaginateResponse } from '../models/MallGoodTagPaginateResponse';
 import type { MallGoodTagUpdateDto } from '../models/MallGoodTagUpdateDto';
 import type { SuccessResult } from '../models/SuccessResult';
-
 import type { CancelablePromise } from '../core/CancelablePromise';
 import { OpenAPI } from '../core/OpenAPI';
 import { request as __request } from '../core/request';
-
 export class MallGoodTagService {
-
     /**
      * 创建标签
      * @returns SuccessResult
@@ -31,7 +29,6 @@ export class MallGoodTagService {
             mediaType: 'application/json',
         });
     }
-
     /**
      * 获取所有标签
      * @returns MallGoodTabGetAllResponse
@@ -43,7 +40,6 @@ export class MallGoodTagService {
             url: '/api/mall/good-tag',
         });
     }
-
     /**
      * 删除标签
      * @returns SuccessResult
@@ -62,7 +58,6 @@ export class MallGoodTagService {
             },
         });
     }
-
     /**
      * 更新标签
      * @returns SuccessResult
@@ -85,7 +80,6 @@ export class MallGoodTagService {
             mediaType: 'application/json',
         });
     }
-
     /**
      * 获取标签
      * @returns MallGoodTagGetResponse
@@ -104,7 +98,6 @@ export class MallGoodTagService {
             },
         });
     }
-
     /**
      * 标签分页
      * @returns MallGoodTagPaginateResponse
@@ -126,5 +119,4 @@ export class MallGoodTagService {
             },
         });
     }
-
 }

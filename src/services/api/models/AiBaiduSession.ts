@@ -1,11 +1,10 @@
+/* generated using openapi-typescript-codegen -- do not edit */
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-
 import type { AiBaiduAccount } from './AiBaiduAccount';
 import type { AiBaiduService } from './AiBaiduService';
 import type { User } from './User';
-
 export type AiBaiduSession = {
     id: string;
     /**

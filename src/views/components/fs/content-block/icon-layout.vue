@@ -45,6 +45,7 @@ import { useNavigationState } from '../store/navigation';
 import { Folder } from '@element-plus/icons-vue';
 import { F, PathType } from '@/services/api';
 import { TextTip } from 'lc-vue-text-tip';
+
 const { childrenMap, currentFPathId, selectF, currentFId, enterF } = usePathState();
 const { push } = useNavigationState();
 
@@ -61,6 +62,7 @@ const onEnterF = (f:F) => {
   display: flex;
   flex-wrap: wrap;
   width: 100%;
+  overflow: auto;
 
   .icon-layout-item{
     width: 100px;

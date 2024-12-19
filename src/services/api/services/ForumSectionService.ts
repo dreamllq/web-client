@@ -1,3 +1,4 @@
+/* generated using openapi-typescript-codegen -- do not edit */
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
@@ -7,13 +8,10 @@ import type { ForumSectionGetResponse } from '../models/ForumSectionGetResponse'
 import type { ForumSectionPaginateResponse } from '../models/ForumSectionPaginateResponse';
 import type { ForumSectionUpdateDto } from '../models/ForumSectionUpdateDto';
 import type { SuccessResult } from '../models/SuccessResult';
-
 import type { CancelablePromise } from '../core/CancelablePromise';
 import { OpenAPI } from '../core/OpenAPI';
 import { request as __request } from '../core/request';
-
 export class ForumSectionService {
-
     /**
      * 获取所有论坛版块信息
      * @returns ForumSectionGetAllResponse
@@ -25,7 +23,6 @@ export class ForumSectionService {
             url: '/api/forum/section',
         });
     }
-
     /**
      * 创建板块
      * @returns SuccessResult
@@ -43,7 +40,6 @@ export class ForumSectionService {
             mediaType: 'application/json',
         });
     }
-
     /**
      * 获取指定id论坛版块信息
      * @returns ForumSectionGetResponse
@@ -62,7 +58,6 @@ export class ForumSectionService {
             },
         });
     }
-
     /**
      * 删除指定id板块
      * @returns SuccessResult
@@ -81,7 +76,6 @@ export class ForumSectionService {
             },
         });
     }
-
     /**
      * 更新指定id板块
      * @returns SuccessResult
@@ -104,7 +98,6 @@ export class ForumSectionService {
             mediaType: 'application/json',
         });
     }
-
     /**
      * 板块分页数据
      * @returns ForumSectionPaginateResponse
@@ -129,7 +122,6 @@ export class ForumSectionService {
             },
         });
     }
-
     /**
      * 登录人的板块分页数据
      * @returns ForumSectionPaginateResponse
@@ -154,5 +146,4 @@ export class ForumSectionService {
             },
         });
     }
-
 }

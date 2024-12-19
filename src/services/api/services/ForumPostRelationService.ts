@@ -1,3 +1,4 @@
+/* generated using openapi-typescript-codegen -- do not edit */
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
@@ -6,13 +7,10 @@ import type { ForumPostRelationGetAllResponse } from '../models/ForumPostRelatio
 import type { ForumPostRelationGetCountResponse } from '../models/ForumPostRelationGetCountResponse';
 import type { ForumPostRelationPaginateResponse } from '../models/ForumPostRelationPaginateResponse';
 import type { SuccessResult } from '../models/SuccessResult';
-
 import type { CancelablePromise } from '../core/CancelablePromise';
 import { OpenAPI } from '../core/OpenAPI';
 import { request as __request } from '../core/request';
-
 export class ForumPostRelationService {
-
     /**
      * 创建用户和帖子的关系
      * @returns SuccessResult
@@ -30,7 +28,6 @@ export class ForumPostRelationService {
             mediaType: 'application/json',
         });
     }
-
     /**
      * 获取所有用户和帖子的关系
      * @returns ForumPostRelationGetAllResponse
@@ -52,7 +49,6 @@ export class ForumPostRelationService {
             },
         });
     }
-
     /**
      * 删除用户和帖子的关系
      * @returns SuccessResult
@@ -71,7 +67,6 @@ export class ForumPostRelationService {
             },
         });
     }
-
     /**
      * 获取指定id的用户和帖子的关系
      * @returns SuccessResult
@@ -90,7 +85,6 @@ export class ForumPostRelationService {
             },
         });
     }
-
     /**
      * 获取登录用户的所有用户和帖子的关系
      * @returns ForumPostRelationGetAllResponse
@@ -112,7 +106,6 @@ export class ForumPostRelationService {
             },
         });
     }
-
     /**
      * 获取用户和帖子的关系的分页数据
      * @returns ForumPostRelationPaginateResponse
@@ -140,7 +133,6 @@ export class ForumPostRelationService {
             },
         });
     }
-
     /**
      * 获取登录用户的用户和帖子的关系的分页数据
      * @returns ForumPostRelationPaginateResponse
@@ -168,7 +160,6 @@ export class ForumPostRelationService {
             },
         });
     }
-
     /**
      * 获取用户和帖子的关系的数量
      * @returns ForumPostRelationGetCountResponse
@@ -190,7 +181,6 @@ export class ForumPostRelationService {
             },
         });
     }
-
     /**
      * 获取登录用户的用户和帖子的关系的数量
      * @returns ForumPostRelationGetCountResponse
@@ -212,5 +202,4 @@ export class ForumPostRelationService {
             },
         });
     }
-
 }

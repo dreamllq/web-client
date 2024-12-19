@@ -1,15 +1,13 @@
+/* generated using openapi-typescript-codegen -- do not edit */
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
 import type { AreaResponse } from '../models/AreaResponse';
 import type { TreeDataResponse } from '../models/TreeDataResponse';
-
 import type { CancelablePromise } from '../core/CancelablePromise';
 import { OpenAPI } from '../core/OpenAPI';
 import { request as __request } from '../core/request';
-
 export class AreaService {
-
     /**
      * 获取省份列表
      * @returns AreaResponse
@@ -28,7 +26,6 @@ export class AreaService {
             },
         });
     }
-
     /**
      * 获取城市列表
      * @returns AreaResponse
@@ -47,7 +44,6 @@ export class AreaService {
             },
         });
     }
-
     /**
      * 获取区列表
      * @returns AreaResponse
@@ -66,7 +62,6 @@ export class AreaService {
             },
         });
     }
-
     /**
      * 获取省市区结构
      * @returns TreeDataResponse
@@ -78,5 +73,4 @@ export class AreaService {
             url: '/api/area/treeData',
         });
     }
-
 }

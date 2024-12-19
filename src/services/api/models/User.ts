@@ -1,12 +1,11 @@
+/* generated using openapi-typescript-codegen -- do not edit */
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-
 import type { Address } from './Address';
 import type { Password } from './Password';
 import type { Role } from './Role';
 import type { WeixinPlatformUser } from './WeixinPlatformUser';
-
 export type User = {
     /**
      * 用户id

@@ -1,13 +1,11 @@
+/* generated using openapi-typescript-codegen -- do not edit */
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-
 export type ChatContactsUpdateDto = {
     status: ChatContactsUpdateDto.status;
 };
-
 export namespace ChatContactsUpdateDto {
-
     export enum status {
         UNKNOWN = 'unknown',
         WAITING_VERIFICATION = 'waiting_verification',
@@ -16,7 +14,5 @@ export namespace ChatContactsUpdateDto {
         REFUSE = 'refuse',
         REFUSED = 'refused',
     }
-
-
 }
 

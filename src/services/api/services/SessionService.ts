@@ -1,14 +1,12 @@
+/* generated using openapi-typescript-codegen -- do not edit */
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
 import type { SessionGetUserResponse } from '../models/SessionGetUserResponse';
-
 import type { CancelablePromise } from '../core/CancelablePromise';
 import { OpenAPI } from '../core/OpenAPI';
 import { request as __request } from '../core/request';
-
 export class SessionService {
-
     /**
      * 获取当前登录人用户信息
      * @returns SessionGetUserResponse
@@ -20,7 +18,6 @@ export class SessionService {
             url: '/api/session/user',
         });
     }
-
     /**
      * 获取当前登录人有权限的资源
      * @returns any
@@ -32,5 +29,4 @@ export class SessionService {
             url: '/api/session/resources',
         });
     }
-
 }

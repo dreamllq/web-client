@@ -1,3 +1,4 @@
+/* generated using openapi-typescript-codegen -- do not edit */
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
@@ -7,13 +8,10 @@ import type { AiAliyunOcrPaginateResponse } from '../models/AiAliyunOcrPaginateR
 import type { CreateAiAliyunOcrDto } from '../models/CreateAiAliyunOcrDto';
 import type { InsertSuccessResult } from '../models/InsertSuccessResult';
 import type { UpdateSuccessResult } from '../models/UpdateSuccessResult';
-
 import type { CancelablePromise } from '../core/CancelablePromise';
 import { OpenAPI } from '../core/OpenAPI';
 import { request as __request } from '../core/request';
-
 export class AiAliyunOcrService {
-
     /**
      * 新增ocr任务
      * @returns InsertSuccessResult
@@ -31,7 +29,6 @@ export class AiAliyunOcrService {
             mediaType: 'application/json',
         });
     }
-
     /**
      * 获取所有ocr任务
      * @returns AiAliyunOcrGetAllResponse
@@ -43,7 +40,6 @@ export class AiAliyunOcrService {
             url: '/api/ai/aliyun/ocr',
         });
     }
-
     /**
      * 获取分页ocr任务
      * @returns AiAliyunOcrPaginateResponse
@@ -65,7 +61,6 @@ export class AiAliyunOcrService {
             },
         });
     }
-
     /**
      * 获取指定id ocr任务
      * @returns AiAliyunOcrGetResponse
@@ -84,7 +79,6 @@ export class AiAliyunOcrService {
             },
         });
     }
-
     /**
      * 执行指定id ocr任务
      * @returns UpdateSuccessResult
@@ -103,5 +97,4 @@ export class AiAliyunOcrService {
             },
         });
     }
-
 }

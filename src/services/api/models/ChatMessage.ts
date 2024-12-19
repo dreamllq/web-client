@@ -1,10 +1,9 @@
+/* generated using openapi-typescript-codegen -- do not edit */
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-
 import type { ChatContacts } from './ChatContacts';
 import type { User } from './User';
-
 export type ChatMessage = {
     id: string;
     contacts: ChatContacts;
@@ -20,14 +19,10 @@ export type ChatMessage = {
      */
     updateDate: string;
 };
-
 export namespace ChatMessage {
-
     export enum type {
         UNKNOWN = 'unknown',
         TEXT = 'text',
     }
-
-
 }
 

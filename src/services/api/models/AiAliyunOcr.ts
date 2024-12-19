@@ -1,11 +1,10 @@
+/* generated using openapi-typescript-codegen -- do not edit */
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-
 import type { AiAliyunAccount } from './AiAliyunAccount';
 import type { AiAliyunOcrRecognizeAllText } from './AiAliyunOcrRecognizeAllText';
 import type { User } from './User';
-
 export type AiAliyunOcr = {
     id: string;
     /**

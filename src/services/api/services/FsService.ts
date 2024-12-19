@@ -1,3 +1,4 @@
+/* generated using openapi-typescript-codegen -- do not edit */
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
@@ -8,13 +9,10 @@ import type { FGetResponse } from '../models/FGetResponse';
 import type { InsertSuccessResult } from '../models/InsertSuccessResult';
 import type { UpdateFDto } from '../models/UpdateFDto';
 import type { UpdateSuccessResult } from '../models/UpdateSuccessResult';
-
 import type { CancelablePromise } from '../core/CancelablePromise';
 import { OpenAPI } from '../core/OpenAPI';
 import { request as __request } from '../core/request';
-
 export class FsService {
-
     /**
      * 新增服务
      * @returns InsertSuccessResult
@@ -32,7 +30,6 @@ export class FsService {
             mediaType: 'application/json',
         });
     }
-
     /**
      * 获取所有服务
      * @returns FGetAllResponse
@@ -44,7 +41,6 @@ export class FsService {
             url: '/api/fs',
         });
     }
-
     /**
      * 获取子节点
      * @returns FGetAllResponse
@@ -63,7 +59,6 @@ export class FsService {
             },
         });
     }
-
     /**
      * 获取指定id服务
      * @returns FGetResponse
@@ -82,7 +77,6 @@ export class FsService {
             },
         });
     }
-
     /**
      * 更新指定id服务
      * @returns UpdateSuccessResult
@@ -105,7 +99,6 @@ export class FsService {
             mediaType: 'application/json',
         });
     }
-
     /**
      * 删除服务
      * @returns DeleteSuccessResult
@@ -124,5 +117,4 @@ export class FsService {
             },
         });
     }
-
 }

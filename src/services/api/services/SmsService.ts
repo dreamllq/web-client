@@ -1,14 +1,12 @@
+/* generated using openapi-typescript-codegen -- do not edit */
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
 import type { SmsTestDto } from '../models/SmsTestDto';
-
 import type { CancelablePromise } from '../core/CancelablePromise';
 import { OpenAPI } from '../core/OpenAPI';
 import { request as __request } from '../core/request';
-
 export class SmsService {
-
     /**
      * sms测试
      * @returns any
@@ -26,7 +24,6 @@ export class SmsService {
             mediaType: 'application/json',
         });
     }
-
     /**
      * 发送验证码
      * @returns any
@@ -48,5 +45,4 @@ export class SmsService {
             },
         });
     }
-
 }

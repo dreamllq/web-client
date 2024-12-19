@@ -70,6 +70,8 @@ type Method = 'get' | 'post' | 'delete' | 'put' | 'patch';
 export default new Proxy(request, {
   get(request: Axios, prop: Method) {
     return (url: string, options:ApiOptions) => {
+      console.log('options', options);
+      
       if (isObject(options.params)) {
         url.match(/{(.*?)}/g)?.forEach((m: string) => url = url.replace(m, String(options.params?.[m.replace(/{(.*?)}/g, '$1')])));
       }

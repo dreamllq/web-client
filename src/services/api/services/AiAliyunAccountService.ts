@@ -1,3 +1,4 @@
+/* generated using openapi-typescript-codegen -- do not edit */
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
@@ -9,13 +10,10 @@ import type { DeleteSuccessResult } from '../models/DeleteSuccessResult';
 import type { InsertSuccessResult } from '../models/InsertSuccessResult';
 import type { UpdateAiAliyunAccountDto } from '../models/UpdateAiAliyunAccountDto';
 import type { UpdateSuccessResult } from '../models/UpdateSuccessResult';
-
 import type { CancelablePromise } from '../core/CancelablePromise';
 import { OpenAPI } from '../core/OpenAPI';
 import { request as __request } from '../core/request';
-
 export class AiAliyunAccountService {
-
     /**
      * 新增阿里云账号信息
      * @returns InsertSuccessResult
@@ -33,7 +31,6 @@ export class AiAliyunAccountService {
             mediaType: 'application/json',
         });
     }
-
     /**
      * 获取所有阿里云账号信息
      * @returns AiAliyunAccountGetAllResponse
@@ -45,7 +42,6 @@ export class AiAliyunAccountService {
             url: '/api/ai/aliyun/account',
         });
     }
-
     /**
      * 获取分页阿里云账号信息
      * @returns AiAliyunAccountPaginateResponse
@@ -67,7 +63,6 @@ export class AiAliyunAccountService {
             },
         });
     }
-
     /**
      * 获取指定id百度账号信息
      * @returns AiAliyunAccountGetResponse
@@ -86,7 +81,6 @@ export class AiAliyunAccountService {
             },
         });
     }
-
     /**
      * 更新指定id阿里云账号信息
      * @returns UpdateSuccessResult
@@ -109,7 +103,6 @@ export class AiAliyunAccountService {
             mediaType: 'application/json',
         });
     }
-
     /**
      * 删除阿里云账号信息
      * @returns DeleteSuccessResult
@@ -128,5 +121,4 @@ export class AiAliyunAccountService {
             },
         });
     }
-
 }

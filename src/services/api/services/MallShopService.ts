@@ -1,3 +1,4 @@
+/* generated using openapi-typescript-codegen -- do not edit */
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
@@ -7,13 +8,10 @@ import type { MallShopGetResponse } from '../models/MallShopGetResponse';
 import type { MallShopPaginateResponse } from '../models/MallShopPaginateResponse';
 import type { MallShopUpdateDto } from '../models/MallShopUpdateDto';
 import type { SuccessResult } from '../models/SuccessResult';
-
 import type { CancelablePromise } from '../core/CancelablePromise';
 import { OpenAPI } from '../core/OpenAPI';
 import { request as __request } from '../core/request';
-
 export class MallShopService {
-
     /**
      * 创建店铺
      * @returns SuccessResult
@@ -31,7 +29,6 @@ export class MallShopService {
             mediaType: 'application/json',
         });
     }
-
     /**
      * 获取所有店铺
      * @returns MallShopGetAllResponse
@@ -43,7 +40,6 @@ export class MallShopService {
             url: '/api/mall/shop',
         });
     }
-
     /**
      * 删除店铺
      * @returns SuccessResult
@@ -62,7 +58,6 @@ export class MallShopService {
             },
         });
     }
-
     /**
      * 更新店铺
      * @returns SuccessResult
@@ -85,7 +80,6 @@ export class MallShopService {
             mediaType: 'application/json',
         });
     }
-
     /**
      * 获取单个店铺
      * @returns MallShopGetResponse
@@ -104,7 +98,6 @@ export class MallShopService {
             },
         });
     }
-
     /**
      * 获取分页数据
      * @returns MallShopPaginateResponse
@@ -129,5 +122,4 @@ export class MallShopService {
             },
         });
     }
-
 }

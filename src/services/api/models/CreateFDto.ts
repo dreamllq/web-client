@@ -1,9 +1,8 @@
+/* generated using openapi-typescript-codegen -- do not edit */
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-
 import type { PathType } from './PathType';
-
 export type CreateFDto = {
     name: string;
     parentId: string;
@@ -11,6 +10,6 @@ export type CreateFDto = {
      * 路径类型
      */
     pathType: PathType;
-    fileDetail: any;
+    fileDetail: Record<string, any>;
 };
 

@@ -1,3 +1,4 @@
+/* generated using openapi-typescript-codegen -- do not edit */
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
@@ -9,13 +10,10 @@ import type { RoleGetSuccessResponse } from '../models/RoleGetSuccessResponse';
 import type { RolesPaginateSuccessResponse } from '../models/RolesPaginateSuccessResponse';
 import type { UpdateRoleDto } from '../models/UpdateRoleDto';
 import type { UpdateSuccessResult } from '../models/UpdateSuccessResult';
-
 import type { CancelablePromise } from '../core/CancelablePromise';
 import { OpenAPI } from '../core/OpenAPI';
 import { request as __request } from '../core/request';
-
 export class RolesService {
-
     /**
      * 获取所有角色数据
      * @returns RoleGetAllSuccessResponse
@@ -27,7 +25,6 @@ export class RolesService {
             url: '/api/roles',
         });
     }
-
     /**
      * 创建角色
      * @returns InsertSuccessResult
@@ -45,7 +42,6 @@ export class RolesService {
             mediaType: 'application/json',
         });
     }
-
     /**
      * 获取分页角色数据
      * @returns RolesPaginateSuccessResponse
@@ -73,7 +69,6 @@ export class RolesService {
             },
         });
     }
-
     /**
      * 删除角色
      * @returns DeleteSuccessResult
@@ -92,7 +87,6 @@ export class RolesService {
             },
         });
     }
-
     /**
      * 获取指定id角色信息
      * @returns RoleGetSuccessResponse
@@ -111,7 +105,6 @@ export class RolesService {
             },
         });
     }
-
     /**
      * 更新指定id角色数据
      * @returns UpdateSuccessResult
@@ -134,5 +127,4 @@ export class RolesService {
             mediaType: 'application/json',
         });
     }
-
 }

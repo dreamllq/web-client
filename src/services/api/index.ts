@@ -1,3 +1,4 @@
+/* generated using openapi-typescript-codegen -- do not edit */
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
@@ -288,6 +289,7 @@ export { ChatMessageService } from './services/ChatMessageService';
 export { ChatSessionService } from './services/ChatSessionService';
 export { DefaultService } from './services/DefaultService';
 export { FileService } from './services/FileService';
+export { FileStaticService } from './services/FileStaticService';
 export { ForumCommentService } from './services/ForumCommentService';
 export { ForumPostService } from './services/ForumPostService';
 export { ForumPostRelationService } from './services/ForumPostRelationService';

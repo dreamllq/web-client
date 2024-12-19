@@ -1,15 +1,13 @@
+/* generated using openapi-typescript-codegen -- do not edit */
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
 import type { GetPhoneNumberResponse } from '../models/GetPhoneNumberResponse';
 import type { WeixinMiniProgramCodeToSessionResponse } from '../models/WeixinMiniProgramCodeToSessionResponse';
-
 import type { CancelablePromise } from '../core/CancelablePromise';
 import { OpenAPI } from '../core/OpenAPI';
 import { request as __request } from '../core/request';
-
 export class WeixinMiniProgramService {
-
     /**
      * 获取手机号
      * @returns GetPhoneNumberResponse
@@ -33,7 +31,6 @@ export class WeixinMiniProgramService {
             },
         });
     }
-
     /**
      * code2Session
      * @returns WeixinMiniProgramCodeToSessionResponse
@@ -57,5 +54,4 @@ export class WeixinMiniProgramService {
             },
         });
     }
-
 }

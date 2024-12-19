@@ -1,10 +1,9 @@
+/* generated using openapi-typescript-codegen -- do not edit */
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-
 import type { MallGood } from './MallGood';
 import type { User } from './User';
-
 export type MallGoodRelation = {
     id: string;
     user: User;
@@ -19,14 +18,10 @@ export type MallGoodRelation = {
      */
     updateDate: string;
 };
-
 export namespace MallGoodRelation {
-
     export enum type {
         UNKNOWN = 'unknown',
         COLLECT = 'collect',
     }
-
-
 }
 

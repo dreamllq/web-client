@@ -1,3 +1,4 @@
+/* generated using openapi-typescript-codegen -- do not edit */
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
@@ -9,13 +10,10 @@ import type { DeleteSuccessResult } from '../models/DeleteSuccessResult';
 import type { InsertSuccessResult } from '../models/InsertSuccessResult';
 import type { UpdateAiBaiduAccountDto } from '../models/UpdateAiBaiduAccountDto';
 import type { UpdateSuccessResult } from '../models/UpdateSuccessResult';
-
 import type { CancelablePromise } from '../core/CancelablePromise';
 import { OpenAPI } from '../core/OpenAPI';
 import { request as __request } from '../core/request';
-
 export class AiBaiduAccountService {
-
     /**
      * 新增百度账号信息
      * @returns InsertSuccessResult
@@ -33,7 +31,6 @@ export class AiBaiduAccountService {
             mediaType: 'application/json',
         });
     }
-
     /**
      * 获取所有百度账号信息
      * @returns AiBaiduAccountGetAllResponse
@@ -45,7 +42,6 @@ export class AiBaiduAccountService {
             url: '/api/ai/baidu/account',
         });
     }
-
     /**
      * 获取分页百度账号信息
      * @returns AiBaiduAccountPaginateResponse
@@ -67,7 +63,6 @@ export class AiBaiduAccountService {
             },
         });
     }
-
     /**
      * 获取指定id百度账号信息
      * @returns AiBaiduAccountGetResponse
@@ -86,7 +81,6 @@ export class AiBaiduAccountService {
             },
         });
     }
-
     /**
      * 更新指定id百度账号信息
      * @returns UpdateSuccessResult
@@ -109,7 +103,6 @@ export class AiBaiduAccountService {
             mediaType: 'application/json',
         });
     }
-
     /**
      * 删除百度账号信息
      * @returns DeleteSuccessResult
@@ -128,5 +121,4 @@ export class AiBaiduAccountService {
             },
         });
     }
-
 }

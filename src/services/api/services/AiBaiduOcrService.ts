@@ -1,3 +1,4 @@
+/* generated using openapi-typescript-codegen -- do not edit */
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
@@ -6,13 +7,10 @@ import type { AiBaiduOcrGetResponse } from '../models/AiBaiduOcrGetResponse';
 import type { AiBaiduOcrPaginateResponse } from '../models/AiBaiduOcrPaginateResponse';
 import type { CreateAiBaiduOcrDto } from '../models/CreateAiBaiduOcrDto';
 import type { InsertSuccessResult } from '../models/InsertSuccessResult';
-
 import type { CancelablePromise } from '../core/CancelablePromise';
 import { OpenAPI } from '../core/OpenAPI';
 import { request as __request } from '../core/request';
-
 export class AiBaiduOcrService {
-
     /**
      * 新增ocr任务
      * @returns InsertSuccessResult
@@ -30,7 +28,6 @@ export class AiBaiduOcrService {
             mediaType: 'application/json',
         });
     }
-
     /**
      * 获取所有ocr任务
      * @returns AiBaiduOcrGetAllResponse
@@ -42,7 +39,6 @@ export class AiBaiduOcrService {
             url: '/api/ai/baidu/ocr',
         });
     }
-
     /**
      * 获取分页ocr任务
      * @returns AiBaiduOcrPaginateResponse
@@ -64,7 +60,6 @@ export class AiBaiduOcrService {
             },
         });
     }
-
     /**
      * 获取指定id ocr任务
      * @returns AiBaiduOcrGetResponse
@@ -83,5 +78,4 @@ export class AiBaiduOcrService {
             },
         });
     }
-
 }

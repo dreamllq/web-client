@@ -1,9 +1,8 @@
+/* generated using openapi-typescript-codegen -- do not edit */
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-
 import type { WeixinPlatformUser } from './WeixinPlatformUser';
-
 export type Weixin = {
     id: string;
     name: string;
@@ -20,16 +19,12 @@ export type Weixin = {
      */
     updateDate: string;
 };
-
 export namespace Weixin {
-
     export enum appType {
         APP = 'app',
         MP = 'mp',
         WEB = 'web',
         OFFICIAL_ACCOUNT = 'official_account',
     }
-
-
 }
 

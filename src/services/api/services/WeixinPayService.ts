@@ -1,3 +1,4 @@
+/* generated using openapi-typescript-codegen -- do not edit */
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
@@ -6,13 +7,10 @@ import type { WeixinPayCreateDto } from '../models/WeixinPayCreateDto';
 import type { WeixinPayGetResponse } from '../models/WeixinPayGetResponse';
 import type { WeixinPayPaginateResponse } from '../models/WeixinPayPaginateResponse';
 import type { WeixinPayUpdateDto } from '../models/WeixinPayUpdateDto';
-
 import type { CancelablePromise } from '../core/CancelablePromise';
 import { OpenAPI } from '../core/OpenAPI';
 import { request as __request } from '../core/request';
-
 export class WeixinPayService {
-
     /**
      * 创建支付配置
      * @returns SuccessResult
@@ -30,7 +28,6 @@ export class WeixinPayService {
             mediaType: 'application/json',
         });
     }
-
     /**
      * 获取所有数据
      * @returns WeixinPayGetResponse
@@ -42,7 +39,6 @@ export class WeixinPayService {
             url: '/api/weixin/pay',
         });
     }
-
     /**
      * 删除支付配置
      * @returns SuccessResult
@@ -61,7 +57,6 @@ export class WeixinPayService {
             },
         });
     }
-
     /**
      * 更新支付配置
      * @returns SuccessResult
@@ -84,7 +79,6 @@ export class WeixinPayService {
             mediaType: 'application/json',
         });
     }
-
     /**
      * id数据
      * @returns WeixinPayGetResponse
@@ -103,7 +97,6 @@ export class WeixinPayService {
             },
         });
     }
-
     /**
      * 分页
      * @returns WeixinPayPaginateResponse
@@ -125,5 +118,4 @@ export class WeixinPayService {
             },
         });
     }
-
 }

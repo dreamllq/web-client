@@ -1,10 +1,9 @@
+/* generated using openapi-typescript-codegen -- do not edit */
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-
 import type { ForumPost } from './ForumPost';
 import type { User } from './User';
-
 export type ForumPostRelation = {
     id: string;
     creator: User;
@@ -19,15 +18,11 @@ export type ForumPostRelation = {
      */
     updateDate: string;
 };
-
 export namespace ForumPostRelation {
-
     export enum type {
         UNKNOWN = 'unknown',
         ZAN = 'zan',
         COLLECT = 'collect',
     }
-
-
 }
 

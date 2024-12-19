@@ -1,3 +1,4 @@
+/* generated using openapi-typescript-codegen -- do not edit */
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
@@ -13,13 +14,10 @@ import type { UsersBindUsernameDto } from '../models/UsersBindUsernameDto';
 import type { UsersBindWeixinDto } from '../models/UsersBindWeixinDto';
 import type { UsersPaginateSuccessResponse } from '../models/UsersPaginateSuccessResponse';
 import type { UserUpdateDto } from '../models/UserUpdateDto';
-
 import type { CancelablePromise } from '../core/CancelablePromise';
 import { OpenAPI } from '../core/OpenAPI';
 import { request as __request } from '../core/request';
-
 export class UsersService {
-
     /**
      * 获取所有用户数据
      * @returns UserGetAllSuccessResponse
@@ -31,7 +29,6 @@ export class UsersService {
             url: '/api/users',
         });
     }
-
     /**
      * 创建用户
      * @returns InsertSuccessResult
@@ -49,7 +46,6 @@ export class UsersService {
             mediaType: 'application/json',
         });
     }
-
     /**
      * 获取分页用户数据
      * @returns UsersPaginateSuccessResponse
@@ -83,7 +79,6 @@ export class UsersService {
             },
         });
     }
-
     /**
      * 删除用户
      * @returns DeleteSuccessResult
@@ -102,7 +97,6 @@ export class UsersService {
             },
         });
     }
-
     /**
      * 获取指定id的用户数据
      * @returns UserGetSuccessResponse
@@ -121,7 +115,6 @@ export class UsersService {
             },
         });
     }
-
     /**
      * 修改指定id的用户数据
      * @returns UpdateSuccessResult
@@ -144,7 +137,6 @@ export class UsersService {
             mediaType: 'application/json',
         });
     }
-
     /**
      * 当前登录用户注销账号
      * @returns SuccessResult
@@ -156,7 +148,6 @@ export class UsersService {
             url: '/api/users/session',
         });
     }
-
     /**
      * 绑定微信用户
      * @returns SuccessResult
@@ -174,7 +165,6 @@ export class UsersService {
             mediaType: 'application/json',
         });
     }
-
     /**
      * 绑定手机号
      * @returns SuccessResult
@@ -192,7 +182,6 @@ export class UsersService {
             mediaType: 'application/json',
         });
     }
-
     /**
      * 绑定小程序手机号
      * @returns SuccessResult
@@ -210,7 +199,6 @@ export class UsersService {
             mediaType: 'application/json',
         });
     }
-
     /**
      * 绑定用户名
      * @returns SuccessResult
@@ -228,5 +216,4 @@ export class UsersService {
             mediaType: 'application/json',
         });
     }
-
 }

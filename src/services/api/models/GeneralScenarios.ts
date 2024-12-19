@@ -1,9 +1,8 @@
+/* generated using openapi-typescript-codegen -- do not edit */
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-
 import type { BaiduGeneralScenariosType } from './BaiduGeneralScenariosType';
-
 export type GeneralScenarios = {
     /**
      * 识别类型

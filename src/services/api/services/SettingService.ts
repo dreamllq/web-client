@@ -1,16 +1,14 @@
+/* generated using openapi-typescript-codegen -- do not edit */
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
 import type { SettingGetItemsSuccessResponse } from '../models/SettingGetItemsSuccessResponse';
 import type { SettingSetDto } from '../models/SettingSetDto';
 import type { SuccessResult } from '../models/SuccessResult';
-
 import type { CancelablePromise } from '../core/CancelablePromise';
 import { OpenAPI } from '../core/OpenAPI';
 import { request as __request } from '../core/request';
-
 export class SettingService {
-
     /**
      * 批量获取配置key值
      * @returns SettingGetItemsSuccessResponse
@@ -29,7 +27,6 @@ export class SettingService {
             },
         });
     }
-
     /**
      * 设置获取配置key值
      * @returns SuccessResult
@@ -47,5 +44,4 @@ export class SettingService {
             mediaType: 'application/json',
         });
     }
-
 }

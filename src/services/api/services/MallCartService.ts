@@ -1,3 +1,4 @@
+/* generated using openapi-typescript-codegen -- do not edit */
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
@@ -6,13 +7,10 @@ import type { MallCartCreateDto } from '../models/MallCartCreateDto';
 import type { MallCartGetAllResponse } from '../models/MallCartGetAllResponse';
 import type { MallCartUpdateDto } from '../models/MallCartUpdateDto';
 import type { SuccessResult } from '../models/SuccessResult';
-
 import type { CancelablePromise } from '../core/CancelablePromise';
 import { OpenAPI } from '../core/OpenAPI';
 import { request as __request } from '../core/request';
-
 export class MallCartService {
-
     /**
      * 添加购物车
      * @returns SuccessResult
@@ -30,7 +28,6 @@ export class MallCartService {
             mediaType: 'application/json',
         });
     }
-
     /**
      * 获取用户购物车
      * @returns MallCartGetAllResponse
@@ -42,7 +39,6 @@ export class MallCartService {
             url: '/api/mall/cart',
         });
     }
-
     /**
      * 删除购物车
      * @returns SuccessResult
@@ -61,7 +57,6 @@ export class MallCartService {
             },
         });
     }
-
     /**
      * 更新购物车
      * @returns SuccessResult
@@ -84,7 +79,6 @@ export class MallCartService {
             mediaType: 'application/json',
         });
     }
-
     /**
      * 批量更新购物车
      * @returns SuccessResult
@@ -102,5 +96,4 @@ export class MallCartService {
             mediaType: 'application/json',
         });
     }
-
 }

@@ -1,16 +1,14 @@
+/* generated using openapi-typescript-codegen -- do not edit */
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
 import type { ChatMessageCreateDto } from '../models/ChatMessageCreateDto';
 import type { ChatMessageGetResponse } from '../models/ChatMessageGetResponse';
 import type { SuccessResult } from '../models/SuccessResult';
-
 import type { CancelablePromise } from '../core/CancelablePromise';
 import { OpenAPI } from '../core/OpenAPI';
 import { request as __request } from '../core/request';
-
 export class ChatMessageService {
-
     /**
      * 发送聊天
      * @returns SuccessResult
@@ -28,7 +26,6 @@ export class ChatMessageService {
             mediaType: 'application/json',
         });
     }
-
     /**
      * 游标分页
      * @returns ChatMessageGetResponse
@@ -53,5 +50,4 @@ export class ChatMessageService {
             },
         });
     }
-
 }

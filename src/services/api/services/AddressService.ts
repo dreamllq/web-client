@@ -1,3 +1,4 @@
+/* generated using openapi-typescript-codegen -- do not edit */
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
@@ -6,13 +7,10 @@ import type { AddressGetAllSessionResponse } from '../models/AddressGetAllSessio
 import type { AddressGetResponse } from '../models/AddressGetResponse';
 import type { AddressUpdateSessionDto } from '../models/AddressUpdateSessionDto';
 import type { SuccessResult } from '../models/SuccessResult';
-
 import type { CancelablePromise } from '../core/CancelablePromise';
 import { OpenAPI } from '../core/OpenAPI';
 import { request as __request } from '../core/request';
-
 export class AddressService {
-
     /**
      * 当前登录用户添加地址
      * @returns SuccessResult
@@ -30,7 +28,6 @@ export class AddressService {
             mediaType: 'application/json',
         });
     }
-
     /**
      * 获取当前登录用户地址列表
      * @returns AddressGetAllSessionResponse
@@ -42,7 +39,6 @@ export class AddressService {
             url: '/api/address/getAll/session',
         });
     }
-
     /**
      * 删除登录用户指定id地址
      * @returns SuccessResult
@@ -61,7 +57,6 @@ export class AddressService {
             },
         });
     }
-
     /**
      * 更新登录用户指定id地址
      * @returns SuccessResult
@@ -84,7 +79,6 @@ export class AddressService {
             mediaType: 'application/json',
         });
     }
-
     /**
      * 获取指定id地址数据
      * @returns AddressGetResponse
@@ -103,5 +97,4 @@ export class AddressService {
             },
         });
     }
-
 }

@@ -1,3 +1,4 @@
+/* generated using openapi-typescript-codegen -- do not edit */
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
@@ -5,13 +6,10 @@ import type { ChatSessionCreateDto } from '../models/ChatSessionCreateDto';
 import type { ChatSessionCreateResponse } from '../models/ChatSessionCreateResponse';
 import type { ChatSessionGetResponse } from '../models/ChatSessionGetResponse';
 import type { SuccessResult } from '../models/SuccessResult';
-
 import type { CancelablePromise } from '../core/CancelablePromise';
 import { OpenAPI } from '../core/OpenAPI';
 import { request as __request } from '../core/request';
-
 export class ChatSessionService {
-
     /**
      * 添加聊天会话
      * @returns ChatSessionCreateResponse
@@ -29,7 +27,6 @@ export class ChatSessionService {
             mediaType: 'application/json',
         });
     }
-
     /**
      * 获取所有联系人
      * @returns ChatSessionGetResponse
@@ -41,7 +38,6 @@ export class ChatSessionService {
             url: '/api/chat/session',
         });
     }
-
     /**
      * 删除聊天会话
      * @returns SuccessResult
@@ -60,5 +56,4 @@ export class ChatSessionService {
             },
         });
     }
-
 }

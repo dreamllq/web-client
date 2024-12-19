@@ -1,3 +1,4 @@
+/* generated using openapi-typescript-codegen -- do not edit */
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
@@ -8,13 +9,10 @@ import type { DeleteSuccessResult } from '../models/DeleteSuccessResult';
 import type { InsertSuccessResult } from '../models/InsertSuccessResult';
 import type { UpdateAiServiceTypeDto } from '../models/UpdateAiServiceTypeDto';
 import type { UpdateSuccessResult } from '../models/UpdateSuccessResult';
-
 import type { CancelablePromise } from '../core/CancelablePromise';
 import { OpenAPI } from '../core/OpenAPI';
 import { request as __request } from '../core/request';
-
 export class AiCommonServiceTypeService {
-
     /**
      * 新增服务类型
      * @returns InsertSuccessResult
@@ -32,7 +30,6 @@ export class AiCommonServiceTypeService {
             mediaType: 'application/json',
         });
     }
-
     /**
      * 获取所有ai服务类型
      * @returns AiServiceTypeGetAllResponse
@@ -44,7 +41,6 @@ export class AiCommonServiceTypeService {
             url: '/api/ai/common/service-type',
         });
     }
-
     /**
      * 获取指定id服务类型
      * @returns AiServiceTypeGetResponse
@@ -63,7 +59,6 @@ export class AiCommonServiceTypeService {
             },
         });
     }
-
     /**
      * 更新指定id服务类型
      * @returns UpdateSuccessResult
@@ -86,7 +81,6 @@ export class AiCommonServiceTypeService {
             mediaType: 'application/json',
         });
     }
-
     /**
      * 删除服务类型
      * @returns DeleteSuccessResult
@@ -105,5 +99,4 @@ export class AiCommonServiceTypeService {
             },
         });
     }
-
 }

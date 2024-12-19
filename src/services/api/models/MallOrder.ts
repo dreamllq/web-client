@@ -1,11 +1,10 @@
+/* generated using openapi-typescript-codegen -- do not edit */
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-
 import type { Address } from './Address';
 import type { MallOrderGood } from './MallOrderGood';
 import type { User } from './User';
-
 export type MallOrder = {
     id: string;
     creator: User;

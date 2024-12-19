@@ -1,3 +1,4 @@
+/* generated using openapi-typescript-codegen -- do not edit */
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
@@ -9,13 +10,10 @@ import type { DeleteSuccessResult } from '../models/DeleteSuccessResult';
 import type { InsertSuccessResult } from '../models/InsertSuccessResult';
 import type { UpdateAiBaiduSessionDto } from '../models/UpdateAiBaiduSessionDto';
 import type { UpdateSuccessResult } from '../models/UpdateSuccessResult';
-
 import type { CancelablePromise } from '../core/CancelablePromise';
 import { OpenAPI } from '../core/OpenAPI';
 import { request as __request } from '../core/request';
-
 export class AiBaiduSessionService {
-
     /**
      * 新增会话
      * @returns InsertSuccessResult
@@ -33,7 +31,6 @@ export class AiBaiduSessionService {
             mediaType: 'application/json',
         });
     }
-
     /**
      * 获取所有会话
      * @returns AiBaiduSessionGetAllResponse
@@ -45,7 +42,6 @@ export class AiBaiduSessionService {
             url: '/api/ai/baidu/session',
         });
     }
-
     /**
      * 获取分页会话
      * @returns AiBaiduSessionPaginateResponse
@@ -67,7 +63,6 @@ export class AiBaiduSessionService {
             },
         });
     }
-
     /**
      * 获取指定id会话
      * @returns AiBaiduSessionGetResponse
@@ -86,7 +81,6 @@ export class AiBaiduSessionService {
             },
         });
     }
-
     /**
      * 更新指定id会话
      * @returns UpdateSuccessResult
@@ -109,7 +103,6 @@ export class AiBaiduSessionService {
             mediaType: 'application/json',
         });
     }
-
     /**
      * 删除服务
      * @returns DeleteSuccessResult
@@ -128,5 +121,4 @@ export class AiBaiduSessionService {
             },
         });
     }
-
 }

@@ -1,16 +1,14 @@
+/* generated using openapi-typescript-codegen -- do not edit */
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
 import type { SuccessResult } from '../models/SuccessResult';
 import type { WeixinOfficialAccountConfigGetByWeixinSuccessResponse } from '../models/WeixinOfficialAccountConfigGetByWeixinSuccessResponse';
 import type { WeixinOfficialAccountConfigUpdateDto } from '../models/WeixinOfficialAccountConfigUpdateDto';
-
 import type { CancelablePromise } from '../core/CancelablePromise';
 import { OpenAPI } from '../core/OpenAPI';
 import { request as __request } from '../core/request';
-
 export class WeixinOfficialAccountConfigService {
-
     /**
      * 通过weixinId获取公众号配置
      * @returns WeixinOfficialAccountConfigGetByWeixinSuccessResponse
@@ -29,7 +27,6 @@ export class WeixinOfficialAccountConfigService {
             },
         });
     }
-
     /**
      * 更新指定id的公众号配置
      * @returns SuccessResult
@@ -52,5 +49,4 @@ export class WeixinOfficialAccountConfigService {
             mediaType: 'application/json',
         });
     }
-
 }

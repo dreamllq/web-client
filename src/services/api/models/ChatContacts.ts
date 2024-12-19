@@ -1,9 +1,8 @@
+/* generated using openapi-typescript-codegen -- do not edit */
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-
 import type { User } from './User';
-
 export type ChatContacts = {
     id: string;
     contacts: User;
@@ -18,9 +17,7 @@ export type ChatContacts = {
      */
     updateDate: string;
 };
-
 export namespace ChatContacts {
-
     export enum status {
         UNKNOWN = 'unknown',
         WAITING_VERIFICATION = 'waiting_verification',
@@ -29,7 +26,5 @@ export namespace ChatContacts {
         REFUSE = 'refuse',
         REFUSED = 'refused',
     }
-
-
 }
 

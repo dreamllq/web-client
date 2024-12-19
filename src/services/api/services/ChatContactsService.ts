@@ -1,3 +1,4 @@
+/* generated using openapi-typescript-codegen -- do not edit */
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
@@ -5,13 +6,10 @@ import type { ChatContactsCreateDto } from '../models/ChatContactsCreateDto';
 import type { ChatContactsGetResponse } from '../models/ChatContactsGetResponse';
 import type { ChatContactsUpdateDto } from '../models/ChatContactsUpdateDto';
 import type { SuccessResult } from '../models/SuccessResult';
-
 import type { CancelablePromise } from '../core/CancelablePromise';
 import { OpenAPI } from '../core/OpenAPI';
 import { request as __request } from '../core/request';
-
 export class ChatContactsService {
-
     /**
      * 添加联系人
      * @returns SuccessResult
@@ -29,7 +27,6 @@ export class ChatContactsService {
             mediaType: 'application/json',
         });
     }
-
     /**
      * 获取所有联系人
      * @returns ChatContactsGetResponse
@@ -41,7 +38,6 @@ export class ChatContactsService {
             url: '/api/chat/contacts',
         });
     }
-
     /**
      * 删除联系人
      * @returns SuccessResult
@@ -60,7 +56,6 @@ export class ChatContactsService {
             },
         });
     }
-
     /**
      * 更新联系人
      * @returns SuccessResult
@@ -83,5 +78,4 @@ export class ChatContactsService {
             mediaType: 'application/json',
         });
     }
-
 }

@@ -1,3 +1,4 @@
+/* generated using openapi-typescript-codegen -- do not edit */
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
@@ -9,13 +10,10 @@ import type { ResourceGetSuccessResult } from '../models/ResourceGetSuccessResul
 import type { ResourcePaginateSuccessResult } from '../models/ResourcePaginateSuccessResult';
 import type { UpdateResourceDto } from '../models/UpdateResourceDto';
 import type { UpdateSuccessResult } from '../models/UpdateSuccessResult';
-
 import type { CancelablePromise } from '../core/CancelablePromise';
 import { OpenAPI } from '../core/OpenAPI';
 import { request as __request } from '../core/request';
-
 export class ResourcesService {
-
     /**
      * 获取资源所有数据
      * @returns ResourceGetAllSuccessResult
@@ -27,7 +25,6 @@ export class ResourcesService {
             url: '/api/resources',
         });
     }
-
     /**
      * 创建资源
      * @returns InsertSuccessResult
@@ -45,7 +42,6 @@ export class ResourcesService {
             mediaType: 'application/json',
         });
     }
-
     /**
      * 获取资源分页数据
      * @returns ResourcePaginateSuccessResult
@@ -73,7 +69,6 @@ export class ResourcesService {
             },
         });
     }
-
     /**
      * 获取指定id资源数据
      * @returns ResourceGetSuccessResult
@@ -95,7 +90,6 @@ export class ResourcesService {
             },
         });
     }
-
     /**
      * 删除资源
      * @returns DeleteSuccessResult
@@ -117,7 +111,6 @@ export class ResourcesService {
             },
         });
     }
-
     /**
      * 更新指定资源的所有数据
      * @returns UpdateSuccessResult
@@ -143,5 +136,4 @@ export class ResourcesService {
             mediaType: 'application/json',
         });
     }
-
 }

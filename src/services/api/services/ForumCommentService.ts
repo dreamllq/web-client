@@ -1,3 +1,4 @@
+/* generated using openapi-typescript-codegen -- do not edit */
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
@@ -7,13 +8,10 @@ import type { ForumCommentGetCountResponse } from '../models/ForumCommentGetCoun
 import type { ForumCommentGetResponse } from '../models/ForumCommentGetResponse';
 import type { ForumCommentPaginateResponse } from '../models/ForumCommentPaginateResponse';
 import type { SuccessResult } from '../models/SuccessResult';
-
 import type { CancelablePromise } from '../core/CancelablePromise';
 import { OpenAPI } from '../core/OpenAPI';
 import { request as __request } from '../core/request';
-
 export class ForumCommentService {
-
     /**
      * 创建评论
      * @returns SuccessResult
@@ -31,7 +29,6 @@ export class ForumCommentService {
             mediaType: 'application/json',
         });
     }
-
     /**
      * 获取帖子下所有评论
      * @returns ForumCommentGetAllResponse
@@ -50,7 +47,6 @@ export class ForumCommentService {
             },
         });
     }
-
     /**
      * 删除指定id评论
      * @returns SuccessResult
@@ -69,7 +65,6 @@ export class ForumCommentService {
             },
         });
     }
-
     /**
      * 获取指定id评论
      * @returns ForumCommentGetResponse
@@ -88,7 +83,6 @@ export class ForumCommentService {
             },
         });
     }
-
     /**
      * 获取帖子下分页评论
      * @returns ForumCommentPaginateResponse
@@ -116,7 +110,6 @@ export class ForumCommentService {
             },
         });
     }
-
     /**
      * 获取帖子下登录用户的分页评论
      * @returns ForumCommentPaginateResponse
@@ -144,7 +137,6 @@ export class ForumCommentService {
             },
         });
     }
-
     /**
      * 获取帖子下评论数量
      * @returns ForumCommentGetCountResponse
@@ -163,7 +155,6 @@ export class ForumCommentService {
             },
         });
     }
-
     /**
      * 获取帖子下当前登录用户的评论数量
      * @returns ForumCommentGetCountResponse
@@ -182,5 +173,4 @@ export class ForumCommentService {
             },
         });
     }
-
 }

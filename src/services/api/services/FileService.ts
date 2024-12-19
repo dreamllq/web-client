@@ -1,16 +1,14 @@
+/* generated using openapi-typescript-codegen -- do not edit */
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
 import type { FilesUploadDto } from '../models/FilesUploadDto';
 import type { FileUploadDto } from '../models/FileUploadDto';
 import type { FileUploadResponse } from '../models/FileUploadResponse';
-
 import type { CancelablePromise } from '../core/CancelablePromise';
 import { OpenAPI } from '../core/OpenAPI';
 import { request as __request } from '../core/request';
-
 export class FileService {
-
     /**
      * @returns FileUploadResponse
      * @throws ApiError
@@ -27,7 +25,6 @@ export class FileService {
             mediaType: 'multipart/form-data',
         });
     }
-
     /**
      * @returns any
      * @throws ApiError
@@ -44,5 +41,4 @@ export class FileService {
             mediaType: 'multipart/form-data',
         });
     }
-
 }

@@ -1,10 +1,9 @@
+/* generated using openapi-typescript-codegen -- do not edit */
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-
 import type { MallGood } from './MallGood';
 import type { MallOrder } from './MallOrder';
-
 export type MallOrderGood = {
     id: string;
     order: MallOrder;

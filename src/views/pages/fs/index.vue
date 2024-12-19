@@ -1,9 +1,7 @@
 <template>
   <div class='fs-layout'>
     <div class='aside'>
-      <div class='top-block'>
-        1
-      </div>
+      <div class='top-block' />
       <div class='aside-content'>
         2
       </div>
@@ -56,6 +54,7 @@ import Operation from '@/views/components/fs/toolbar/operation.vue';
     flex: 1;
     flex-direction: column;
     height: 100%;
+    overflow: hidden;
 
     .fs-header{
       height: 58px;
@@ -67,6 +66,7 @@ import Operation from '@/views/components/fs/toolbar/operation.vue';
 
       .navigation-wrapper{
         flex: 1;
+        overflow: hidden;
       }
 
       .toolbar-wrapper{
@@ -76,6 +76,7 @@ import Operation from '@/views/components/fs/toolbar/operation.vue';
 
     .content-container{
       flex: 1;
+      overflow: hidden;
     }
   }
 }

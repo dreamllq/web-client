@@ -1,3 +1,4 @@
+/* generated using openapi-typescript-codegen -- do not edit */
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
@@ -9,13 +10,10 @@ import type { DeleteSuccessResult } from '../models/DeleteSuccessResult';
 import type { InsertSuccessResult } from '../models/InsertSuccessResult';
 import type { UpdateAiAliyunServiceDto } from '../models/UpdateAiAliyunServiceDto';
 import type { UpdateSuccessResult } from '../models/UpdateSuccessResult';
-
 import type { CancelablePromise } from '../core/CancelablePromise';
 import { OpenAPI } from '../core/OpenAPI';
 import { request as __request } from '../core/request';
-
 export class AiAliyunServiceService {
-
     /**
      * 新增服务
      * @returns InsertSuccessResult
@@ -33,7 +31,6 @@ export class AiAliyunServiceService {
             mediaType: 'application/json',
         });
     }
-
     /**
      * 获取所有服务
      * @returns AiAliyunServiceGetAllResponse
@@ -45,7 +42,6 @@ export class AiAliyunServiceService {
             url: '/api/ai/aliyun/service',
         });
     }
-
     /**
      * 获取分页服务
      * @returns AiAliyunServicePaginateResponse
@@ -67,7 +63,6 @@ export class AiAliyunServiceService {
             },
         });
     }
-
     /**
      * 获取指定id服务
      * @returns AiAliyunServiceGetResponse
@@ -86,7 +81,6 @@ export class AiAliyunServiceService {
             },
         });
     }
-
     /**
      * 更新指定id服务
      * @returns UpdateSuccessResult
@@ -109,7 +103,6 @@ export class AiAliyunServiceService {
             mediaType: 'application/json',
         });
     }
-
     /**
      * 删除服务
      * @returns DeleteSuccessResult
@@ -128,5 +121,4 @@ export class AiAliyunServiceService {
             },
         });
     }
-
 }

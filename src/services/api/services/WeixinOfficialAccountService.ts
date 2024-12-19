@@ -1,3 +1,4 @@
+/* generated using openapi-typescript-codegen -- do not edit */
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
@@ -8,13 +9,10 @@ import type { WeixinOfficialAccountGetAccessTokenResponse } from '../models/Weix
 import type { WeixinOfficialAccountGetNotifyUrlResponse } from '../models/WeixinOfficialAccountGetNotifyUrlResponse';
 import type { WeixinPayCenterGetPayParamsDto } from '../models/WeixinPayCenterGetPayParamsDto';
 import type { WeixinPayCenterGetPayParamsResponse } from '../models/WeixinPayCenterGetPayParamsResponse';
-
 import type { CancelablePromise } from '../core/CancelablePromise';
 import { OpenAPI } from '../core/OpenAPI';
 import { request as __request } from '../core/request';
-
 export class WeixinOfficialAccountService {
-
     /**
      * 获取accessToken
      * @returns WeixinOfficialAccountGetAccessTokenResponse
@@ -33,7 +31,6 @@ export class WeixinOfficialAccountService {
             },
         });
     }
-
     /**
      * 获取公众号接收消息地址
      * @returns WeixinOfficialAccountGetNotifyUrlResponse
@@ -52,7 +49,6 @@ export class WeixinOfficialAccountService {
             },
         });
     }
-
     /**
      * 获取jssdk 认证签名
      * @returns any
@@ -75,7 +71,6 @@ export class WeixinOfficialAccountService {
             mediaType: 'application/json',
         });
     }
-
     /**
      * 获取所有模板列表
      * @returns any
@@ -94,7 +89,6 @@ export class WeixinOfficialAccountService {
             },
         });
     }
-
     /**
      * 删除模板
      * @returns DeleteSuccessResult
@@ -116,7 +110,6 @@ export class WeixinOfficialAccountService {
             },
         });
     }
-
     /**
      * 发送模板
      * @returns any
@@ -139,7 +132,6 @@ export class WeixinOfficialAccountService {
             mediaType: 'application/json',
         });
     }
-
     /**
      * 获取微信JSSDK支付参数(自动下单, 兼容小程序)
      * @returns WeixinPayCenterGetPayParamsResponse
@@ -165,5 +157,4 @@ export class WeixinOfficialAccountService {
             mediaType: 'application/json',
         });
     }
-
 }

@@ -1,3 +1,4 @@
+/* generated using openapi-typescript-codegen -- do not edit */
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
@@ -5,13 +6,10 @@ import type { MallGoodCommentCreateDto } from '../models/MallGoodCommentCreateDt
 import type { MallGoodCommentPaginateResponse } from '../models/MallGoodCommentPaginateResponse';
 import type { MallGoodCommentPaginateWidthCursorResponse } from '../models/MallGoodCommentPaginateWidthCursorResponse';
 import type { SuccessResult } from '../models/SuccessResult';
-
 import type { CancelablePromise } from '../core/CancelablePromise';
 import { OpenAPI } from '../core/OpenAPI';
 import { request as __request } from '../core/request';
-
 export class MallGoodCommentService {
-
     /**
      * 评论
      * @returns SuccessResult
@@ -29,7 +27,6 @@ export class MallGoodCommentService {
             mediaType: 'application/json',
         });
     }
-
     /**
      * 删除评论
      * @returns SuccessResult
@@ -48,7 +45,6 @@ export class MallGoodCommentService {
             },
         });
     }
-
     /**
      * 游标分页
      * @returns MallGoodCommentPaginateWidthCursorResponse
@@ -73,7 +69,6 @@ export class MallGoodCommentService {
             },
         });
     }
-
     /**
      * 分页
      * @returns MallGoodCommentPaginateResponse
@@ -98,5 +93,4 @@ export class MallGoodCommentService {
             },
         });
     }
-
 }

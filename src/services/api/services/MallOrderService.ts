@@ -1,3 +1,4 @@
+/* generated using openapi-typescript-codegen -- do not edit */
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
@@ -6,13 +7,10 @@ import type { MallOrderGetResponse } from '../models/MallOrderGetResponse';
 import type { MallOrderPageWidthCursorResponse } from '../models/MallOrderPageWidthCursorResponse';
 import type { MallOrderPaginateResponse } from '../models/MallOrderPaginateResponse';
 import type { SuccessResult } from '../models/SuccessResult';
-
 import type { CancelablePromise } from '../core/CancelablePromise';
 import { OpenAPI } from '../core/OpenAPI';
 import { request as __request } from '../core/request';
-
 export class MallOrderService {
-
     /**
      * 创建订单
      * @returns SuccessResult
@@ -30,7 +28,6 @@ export class MallOrderService {
             mediaType: 'application/json',
         });
     }
-
     /**
      * 订单登录用户游标分页
      * @returns MallOrderPageWidthCursorResponse
@@ -52,7 +49,6 @@ export class MallOrderService {
             },
         });
     }
-
     /**
      * 订单分页
      * @returns MallOrderPaginateResponse
@@ -74,7 +70,6 @@ export class MallOrderService {
             },
         });
     }
-
     /**
      * 获取订单
      * @returns MallOrderGetResponse
@@ -93,5 +88,4 @@ export class MallOrderService {
             },
         });
     }
-
 }

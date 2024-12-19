@@ -1,26 +1,13 @@
+/* generated using openapi-typescript-codegen -- do not edit */
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
 import type { CreateAiSessionDto } from '../models/CreateAiSessionDto';
 import type { UpdateAiSessionDto } from '../models/UpdateAiSessionDto';
-
 import type { CancelablePromise } from '../core/CancelablePromise';
 import { OpenAPI } from '../core/OpenAPI';
 import { request as __request } from '../core/request';
-
 export class DefaultService {
-
-    /**
-     * @returns any
-     * @throws ApiError
-     */
-    public static staticControllerView(): CancelablePromise<any> {
-        return __request(OpenAPI, {
-            method: 'GET',
-            url: '/api/file/static/{id}',
-        });
-    }
-
     /**
      * @returns any
      * @throws ApiError
@@ -31,7 +18,6 @@ export class DefaultService {
             url: '/api/weixin-platform/pay-center/notify/commonPay/{appid}/{mchid}',
         });
     }
-
     /**
      * @returns any
      * @throws ApiError
@@ -42,7 +28,6 @@ export class DefaultService {
             url: '/api/weixin-platform/pay-center/notify/nativePay/{appid}/{mchid}',
         });
     }
-
     /**
      * @returns any
      * @throws ApiError
@@ -53,7 +38,6 @@ export class DefaultService {
             url: '/api/weixin-platform/pay-center/notify/refund/{appid}/{mchid}',
         });
     }
-
     /**
      * @returns any
      * @throws ApiError
@@ -70,7 +54,6 @@ export class DefaultService {
             mediaType: 'application/json',
         });
     }
-
     /**
      * @returns any
      * @throws ApiError
@@ -81,7 +64,6 @@ export class DefaultService {
             url: '/api/ai-session',
         });
     }
-
     /**
      * @returns any
      * @throws ApiError
@@ -99,7 +81,6 @@ export class DefaultService {
             },
         });
     }
-
     /**
      * @returns any
      * @throws ApiError
@@ -121,7 +102,6 @@ export class DefaultService {
             mediaType: 'application/json',
         });
     }
-
     /**
      * @returns any
      * @throws ApiError
@@ -139,5 +119,4 @@ export class DefaultService {
             },
         });
     }
-
 }

@@ -1,11 +1,10 @@
+/* generated using openapi-typescript-codegen -- do not edit */
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-
 import type { FileDetail } from './FileDetail';
 import type { PathType } from './PathType';
 import type { User } from './User';
-
 export type F = {
     id: string;
     name: string;

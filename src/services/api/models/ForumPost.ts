@@ -1,12 +1,11 @@
+/* generated using openapi-typescript-codegen -- do not edit */
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-
 import type { ForumComment } from './ForumComment';
 import type { ForumPostRelation } from './ForumPostRelation';
 import type { ForumSection } from './ForumSection';
 import type { User } from './User';
-
 export type ForumPost = {
     id: string;
     title: string;
