@@ -106,6 +106,7 @@ export type { FGetResponse } from './models/FGetResponse';
 export type { File } from './models/File';
 export type { FileBuffer } from './models/FileBuffer';
 export type { FileDetail } from './models/FileDetail';
+export type { FileGetResponse } from './models/FileGetResponse';
 export type { FilesUploadDto } from './models/FilesUploadDto';
 export type { FileUploadDto } from './models/FileUploadDto';
 export type { FileUploadResponse } from './models/FileUploadResponse';

@@ -2,6 +2,7 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
+import type { FileGetResponse } from '../models/FileGetResponse';
 import type { FilesUploadDto } from '../models/FilesUploadDto';
 import type { FileUploadDto } from '../models/FileUploadDto';
 import type { FileUploadResponse } from '../models/FileUploadResponse';
@@ -39,6 +40,24 @@ export class FileService {
             url: '/api/file/uploads',
             formData: formData,
             mediaType: 'multipart/form-data',
+        });
+    }
+    /**
+     * 获取id文件信息
+     * @returns FileGetResponse
+     * @throws ApiError
+     */
+    public static get({
+        id,
+    }: {
+        id: any,
+    }): CancelablePromise<FileGetResponse> {
+        return __request(OpenAPI, {
+            method: 'GET',
+            url: '/api/file/{id}',
+            path: {
+                'id': id,
+            },
         });
     }
 }

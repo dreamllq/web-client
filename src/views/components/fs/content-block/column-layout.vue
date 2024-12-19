@@ -59,6 +59,8 @@ import { TextTip } from 'lc-vue-text-tip';
 import * as FileSaver from 'file-saver';
 const { column, currentFPathId, enterF, currentFId, selectF, map } = usePathState();
 const { push } = useNavigationState();
+import mime from 'mime';
+import { Buffer } from 'buffer';
 const onEnterF = (f:F) => {
   push(currentFPathId.value);
   enterF(f);
@@ -70,10 +72,21 @@ const style = computed(() => ({ minWidth: `${301 * column.value.length}px` }));
 const downloadFile = async (f:F) => {
   console.log(f);
   
+  const file = await FileService.get({ id: f.fileDetail.file.id });
   const res = await FileStaticService.view({ id: f.fileDetail.file.id });
-  console.log(res);
-  var blob = new Blob([res], { type: 'text/plain;charset=utf-8' });
-  FileSaver.saveAs(blob, 'a.png', { autoBom: true });
+  console.log(res, file);
+  console.log(mime.getType(file.data.ext));
+  console.log({ type: `${mime.getType(file.data.ext)};charset=utf-8` });
+  const encoder = new TextEncoder();
+  const uint8Array = encoder.encode(res);
+  console.log(uint8Array);
+  // const buffer = Buffer.from(res, 'utf-8');
+  // console.log(buffer);
+  
+  var blob = new Blob([res], { type: `${mime.getType(file.data.ext)}` });
+  console.log(blob);
+  
+  FileSaver.saveAs(blob, file.data.originFileName);
 };
 </script>
 
