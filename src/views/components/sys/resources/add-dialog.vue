@@ -32,7 +32,7 @@ let success = false;
 const onSubmit = async () => {
   const data = await formRef.value.getData();
   await ResourcesService.create({
-    requestBody: {
+    body: {
       key: data.key,
       name: data.name,
       desc: data.desc 

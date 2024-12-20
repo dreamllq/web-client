@@ -40,7 +40,7 @@ const onSubmit = async () => {
 
   await WeixinService.update({
     id,
-    requestBody: {
+    body: {
       appSecret: data.appSecret,
       appType: data.appType
     } 

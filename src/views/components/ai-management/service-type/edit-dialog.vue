@@ -41,7 +41,7 @@ const onSubmit = async () => {
   // TODO 接口调用
   await AiCommonServiceTypeService.update({
     id,
-    requestBody: {
+    body: {
       name: data.name,
       value: data.value 
     } 

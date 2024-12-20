@@ -90,13 +90,15 @@ const paginationRef = ref();
 
 const fetchData = async (option: { pageNo:number, pageSize:number }) => {
   const res = await AiAliyunOcrService.paginate({
-    pageNo: option.pageNo,
-    pageSize: option.pageSize 
+    query: {
+      pageNo: option.pageNo,
+      pageSize: option.pageSize 
+    }
   });
 
   return {
-    list: res.data.list,
-    total: res.data.count
+    list: res.data?.data.list,
+    total: res.data?.data.count
   };
 };
 
@@ -111,7 +113,7 @@ const refresh = () => {
 };
 
 const onOperate = async (row:AiAliyunOcr) => {
-  await AiAliyunOcrService.operate({ id: row.id });
+  await AiAliyunOcrService.operate({ path: { id: row.id } });
   ElMessage.success('操作成功');
   refresh();
 };

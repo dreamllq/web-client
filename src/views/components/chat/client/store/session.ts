@@ -18,7 +18,7 @@ export const useSessionState = createGlobalState(
     };
 
     const startMessageSession = async (contactsId:string) => {
-      const res = await ChatSessionService.create({ requestBody: { contactsId } });
+      const res = await ChatSessionService.create({ body: { contactsId } });
       currentSession.value = res.data;
       await refresh();
     };

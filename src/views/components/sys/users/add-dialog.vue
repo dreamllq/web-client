@@ -32,7 +32,7 @@ let success = false;
 const onSubmit = async () => {
   const data = await formRef.value.getData();
   await UsersService.create({
-    requestBody: {
+    body: {
       username: data.username,
       password: data.password,
       roleIds: data.roleIds,

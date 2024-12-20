@@ -32,7 +32,7 @@ let success = false;
 const onSubmit = async () => {
   const data = await formRef.value.getData();
   await RolesService.create({
-    requestBody: {
+    body: {
       name: data.name,
       desc: data.desc,
       resourceIds: data.resourceIds

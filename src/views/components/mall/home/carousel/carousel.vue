@@ -59,7 +59,7 @@ const onDelete = async (index: number) => {
 
 const onSave = async () => {
   await SettingService.setItems({
-    requestBody: {
+    body: {
       data: [
         {
           key: 'MALL_HOME_CAROUSEL',

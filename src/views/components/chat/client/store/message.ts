@@ -86,7 +86,7 @@ export const useMessageState = createGlobalState(
       if (!content.value.trim()) return;
       const id = uuidv4();
       await ChatMessageService.create({
-        requestBody: {
+        body: {
           contactsId: data.contactsId,
           content: content.value,
           id,

@@ -32,7 +32,7 @@ let success = false;
 const onSubmit = async () => {
   const data = await formRef.value!.getData();
   await ForumPostService.create({
-    requestBody: {
+    body: {
       title: data.title,
       content: data.content,
       sectionId: data.sectionId as string,

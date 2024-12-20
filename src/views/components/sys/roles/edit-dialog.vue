@@ -39,7 +39,7 @@ const onSubmit = async () => {
 
   await RolesService.update({
     id: editDefaultData.value.id,
-    requestBody: {
+    body: {
       resourceIds: data.resourceIds,
       desc: data.desc 
     } 

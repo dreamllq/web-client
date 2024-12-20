@@ -33,7 +33,7 @@ const onSubmit = async () => {
   const data = await formRef.value!.getData();
   // TODO 接口调用
   await AiBaiduSessionService.create({
-    requestBody: {
+    body: {
       name: data.name,
       serviceId: data.serviceId,
       accountId: data.accountId

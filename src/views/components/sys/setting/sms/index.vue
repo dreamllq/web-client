@@ -42,7 +42,7 @@ const onSave = async () => {
   const config = await smsRef.value.getData();
   console.log(config);
   await SettingService.setItems({
-    requestBody: {
+    body: {
       data: [
         {
           key: 'SMS_PLATFORM',

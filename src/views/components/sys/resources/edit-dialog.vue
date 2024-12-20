@@ -40,7 +40,7 @@ const onSubmit = async () => {
   // TODO 接口调用
   await ResourcesService.update({
     id: editDefaultData.value.id,
-    requestBody: {
+    body: {
       desc: data.desc,
       key: data.key 
     }

@@ -105,7 +105,7 @@ const send = async () => {
   const c = content.value;
   content.value = '';
   await AiBaiduMessageService.create({
-    requestBody: {
+    body: {
       content: c,
       sessionId: props.sessionId 
     } 

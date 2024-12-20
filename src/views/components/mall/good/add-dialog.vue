@@ -35,7 +35,7 @@ let success = false;
 const onSubmit = async () => {
   const data = await formRef.value!.getData();
   await MallGoodService.create({
-    requestBody: {
+    body: {
       desc: data.desc,
       detail: data.detail,
       headimg: data.headimg,

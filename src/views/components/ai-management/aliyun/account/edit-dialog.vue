@@ -40,8 +40,8 @@ const onSubmit = async () => {
 
   // TODO 接口调用
   await AiAliyunAccountService.update({
-    id,
-    requestBody: {
+    path: { id },
+    body: {
       accessKey: data.accessKey,
       name: data.name,
       secretKey: data.secretKey,

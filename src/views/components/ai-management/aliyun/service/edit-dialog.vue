@@ -42,7 +42,7 @@ const onSubmit = async () => {
   // TODO 接口调用
   await AiAliyunServiceService.update({
     id,
-    requestBody: {
+    body: {
       name: data.name,
       endpoint: data.endpoint,
       path: data.path,

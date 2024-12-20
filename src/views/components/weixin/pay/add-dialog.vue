@@ -32,7 +32,7 @@ let success = false;
 const onSubmit = async () => {
   const data = await formRef.value!.getData();
   await WeixinPayService.create({
-    requestBody: {
+    body: {
       mchid: data.mchid,
       name: data.name,
       notifyUrl: data.notifyUrl,

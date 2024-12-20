@@ -40,7 +40,7 @@ const onSubmit = async () => {
 
   await ForumPostService.update({
     id,
-    requestBody: {
+    body: {
       title: data.title,
       content: data.content,
       images: data.images

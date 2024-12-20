@@ -73,26 +73,28 @@ const loginSmsCodeForm = reactive({
 
 const onAdminUserSubmit = async () => {
   const res = await AuthService.login({
-    requestBody: {
+    body: {
       password: sha256(adminUserForm.password).toString(),
       username: adminUserForm.username 
     }
   });
-  setToken(res.data.access_token);
+  setToken(res.data?.data.access_token);
   window.location.href = '/web';
 };
 
 const onGetCode = async () => {
   await SmsService.sendCode({
-    phone: loginSmsCodeForm.mobile,
-    type: 'login' 
+    path: {
+      phone: loginSmsCodeForm.mobile,
+      type: 'login' 
+    }
   });
   ElMessage.success('验证码已发送');
 };
 
 const onSmsCodeLogin = async() => {
   const res = await AuthService.loginBySmsCode({
-    requestBody: {
+    body: {
       code: loginSmsCodeForm.code,
       mobile: loginSmsCodeForm.mobile 
     } 

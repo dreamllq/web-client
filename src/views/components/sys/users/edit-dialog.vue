@@ -39,7 +39,7 @@ const onSubmit = async () => {
 
   await UsersService.update({
     id: editDefaultData.value.id,
-    requestBody: {
+    body: {
       roleIds: data.roleIds,
       username: data.username,
       nickName: data.nickName,

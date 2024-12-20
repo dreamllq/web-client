@@ -40,7 +40,7 @@ const onSubmit = async () => {
 
   await ForumSectionService.update({
     id,
-    requestBody: {
+    body: {
       name: data.name,
       desc: data.desc
     }

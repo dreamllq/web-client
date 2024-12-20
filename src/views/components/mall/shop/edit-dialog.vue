@@ -40,7 +40,7 @@ const onSubmit = async () => {
 
   await MallShopService.update({
     id,
-    requestBody: {
+    body: {
       desc: data.desc,
       headimg: data.headimg,
       name: data.name

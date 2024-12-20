@@ -33,7 +33,7 @@ const onSubmit = async () => {
   const data = await formRef.value!.getData();
   // TODO 接口调用
   await AiAliyunAccountService.create({
-    requestBody: {
+    body: {
       accessKey: data.accessKey,
       name: data.name,
       secretKey: data.secretKey,

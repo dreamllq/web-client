@@ -36,7 +36,7 @@ const adminUserForm = reactive({
 
 const onAdminUserSubmit = async () => {
   await InitializationService.createSuperAdmin({
-    requestBody: {
+    body: {
       username: adminUserForm.username,
       password: sha256(adminUserForm.password).toString()
     } 

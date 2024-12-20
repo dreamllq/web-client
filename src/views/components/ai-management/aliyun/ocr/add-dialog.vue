@@ -32,7 +32,7 @@ let success = false;
 const onSubmit = async () => {
   const data = await formRef.value!.getData();
   // TODO 接口调用
-  await AiAliyunOcrService.create({ requestBody: data });
+  await AiAliyunOcrService.create({ body: data });
   success = true;
   dialogVisible.value = false;
   ElMessage.success('创建成功');

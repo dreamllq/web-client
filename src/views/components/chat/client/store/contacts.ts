@@ -20,14 +20,14 @@ export const useContactsState = createGlobalState(
     };
 
     const addContacts = async (contactsId:string) => {
-      await ChatContactsService.create({ requestBody: { contactsId } });
+      await ChatContactsService.create({ body: { contactsId } });
       await refresh();
     };
 
     const agree = async (id:string) => {
       await ChatContactsService.updateStatus({
         id,
-        requestBody: { status: ChatContacts.status.PASSED }
+        body: { status: ChatContacts.status.PASSED }
       });
       await refresh();
     };  
@@ -35,7 +35,7 @@ export const useContactsState = createGlobalState(
     const refuse = async (id:string) => {
       await ChatContactsService.updateStatus({
         id,
-        requestBody: { status: ChatContacts.status.REFUSE }
+        body: { status: ChatContacts.status.REFUSE }
       });
       await refresh();
     };

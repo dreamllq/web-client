@@ -13,7 +13,7 @@ export const useBlockContextMenuState = createGlobalState(() => {
       label: '新建文件夹',
       click: async () => {
         await FsService.create({
-          requestBody: {
+          body: {
             name: '未命名文件夹',
             parentId: currentFPathId.value!,
             pathType: PathType.DIR,

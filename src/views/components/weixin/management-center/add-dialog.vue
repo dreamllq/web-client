@@ -34,7 +34,7 @@ const onSubmit = async () => {
   const data = await formRef.value!.getData();
 
   await WeixinService.create({
-    requestBody: {
+    body: {
       appid: data.appid,
       appSecret: data.appSecret,
       appType: data.appType,

@@ -12,7 +12,7 @@ const { query } = useRoute();
 const { code } = query;
 
 onMounted(async () => {
-  const res = await AuthService.loginByCode({ requestBody: { code: code as string } });
+  const res = await AuthService.loginByCode({ body: { code: code as string } });
   setToken(res.data.access_token);
   window.location.href = '/web';
 });

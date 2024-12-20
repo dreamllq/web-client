@@ -40,7 +40,7 @@ const onSubmit = async () => {
   // TODO 接口调用
   await WeixinOfficialAccountConfigService.update({
     id,
-    requestBody: {
+    body: {
       checkSignature: data.checkSignature,
       encodingAesKey: data.encodingAesKey,
       token: data.token

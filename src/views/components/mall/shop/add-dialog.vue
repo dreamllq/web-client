@@ -32,7 +32,7 @@ let success = false;
 const onSubmit = async () => {
   const data = await formRef.value!.getData();
   await MallShopService.create({
-    requestBody: {
+    body: {
       desc: data.desc,
       headimg: data.headimg,
       name: data.name

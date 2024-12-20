@@ -40,7 +40,7 @@ const onSubmit = async () => {
 
   await MallGoodGroupService.update({
     id,
-    requestBody: {
+    body: {
       headimg: data.headimg,
       name: data.name
     } 

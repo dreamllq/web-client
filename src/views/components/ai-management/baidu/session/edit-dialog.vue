@@ -41,7 +41,7 @@ const onSubmit = async () => {
   // TODO 接口调用
   await AiBaiduSessionService.update({
     id,
-    requestBody: {
+    body: {
       name: data.name,
       serviceId: data.serviceId,
       accountId: data.accountId

@@ -34,7 +34,7 @@ const onSubmit = async () => {
   const data = await formRef.value!.getData();
   // TODO 接口调用
   await MallGoodGroupService.create({
-    requestBody: {
+    body: {
       headimg: data.headimg,
       name: data.name,
       parentId: pid.value

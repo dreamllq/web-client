@@ -41,7 +41,7 @@ const onSubmit = async () => {
   // TODO 接口调用
   await AiBaiduAccountService.update({
     id,
-    requestBody: {
+    body: {
       accessKey: data.accessKey,
       name: data.name,
       secretKey: data.secretKey

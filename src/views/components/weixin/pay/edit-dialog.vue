@@ -40,7 +40,7 @@ const onSubmit = async () => {
 
   await WeixinPayService.update({
     id,
-    requestBody: {
+    body: {
       mchid: data.mchid,
       name: data.name,
       notifyUrl: data.notifyUrl,

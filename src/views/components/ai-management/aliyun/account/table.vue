@@ -56,13 +56,15 @@ const paginationRef = ref();
 
 const fetchData = async (option: { pageNo:number, pageSize:number }) => {
   const res = await AiAliyunAccountService.paginate({
-    pageNo: option.pageNo,
-    pageSize: option.pageSize 
+    query: {
+      pageNo: option.pageNo,
+      pageSize: option.pageSize 
+    }
   });
 
   return {
-    list: res.data.list,
-    total: res.data.count
+    list: res.data?.data.list,
+    total: res.data?.data.count
   };
 };
 
@@ -74,7 +76,7 @@ const onEdit = async ({ id }) => {
 
 const onDelete = async ({ id }) => {
   await ElMessageBox.confirm('确认删除吗?', '删除');
-  await AiAliyunAccountService.remove({ id });
+  await AiAliyunAccountService.remove({ path: { id } });
   ElMessage.success('删除成功');
   refresh();
 };
