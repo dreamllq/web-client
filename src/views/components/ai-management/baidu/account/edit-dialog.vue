@@ -40,7 +40,7 @@ const onSubmit = async () => {
 
   // TODO 接口调用
   await AiBaiduAccountService.update({
-    id,
+    path: { id },
     body: {
       accessKey: data.accessKey,
       name: data.name,
@@ -72,10 +72,10 @@ const edit = async (data:{ id:string }) => {
   dialogVisible.value = true;
 
   // TODO 接口调用
-  const res = await AiBaiduAccountService.get({ id });
-  editDefaultData.name = res.data.name;
-  editDefaultData.accessKey = res.data.accessKey;
-  editDefaultData.secretKey = res.data.secretKey;
+  const res = await AiBaiduAccountService.get({ path: { id } });
+  editDefaultData.name = res.data?.data.name;
+  editDefaultData.accessKey = res.data?.data.accessKey;
+  editDefaultData.secretKey = res.data?.data.secretKey;
 
   loadingDataFlag.value = false;
   return deferred.promise;

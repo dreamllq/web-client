@@ -34,8 +34,8 @@ const smsRef = ref();
 const form = reactive({ platform: 'aliyun' });
 
 onMounted(async () => {
-  const res = await SettingService.getItems({ keys: ['SMS_PLATFORM'] });
-  form.platform = res.data[0]?.value || '';
+  const res = await SettingService.getItems({ path: { keys: ['SMS_PLATFORM'] } });
+  form.platform = res.data?.data[0]?.value || '';
 });
 
 const onSave = async () => {

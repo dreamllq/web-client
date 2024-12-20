@@ -99,7 +99,7 @@ const onSmsCodeLogin = async() => {
       mobile: loginSmsCodeForm.mobile 
     } 
   });
-  setToken(res.data.access_token);
+  setToken(res.data?.data.access_token);
   window.location.href = '/web';
 };
 </script>

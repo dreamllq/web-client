@@ -692,7 +692,7 @@ export type ChatContacts = {
     id: string;
     contacts: User;
     creator: User;
-    status: 'unknown' | 'waiting_verification' | 'can_pass' | 'passed' | 'refuse' | 'refused';
+    status: ChatContactsTypeEnum;
     /**
      * 创建时间
      */
@@ -702,15 +702,6 @@ export type ChatContacts = {
      */
     updateDate: string;
 };
-
-export enum status {
-    UNKNOWN = 'unknown',
-    WAITING_VERIFICATION = 'waiting_verification',
-    CAN_PASS = 'can_pass',
-    PASSED = 'passed',
-    REFUSE = 'refuse',
-    REFUSED = 'refused'
-}
 
 export type ChatContactsCreateDto = {
     contactsId: string;
@@ -722,14 +713,32 @@ export type ChatContactsGetResponse = {
     data: Array<ChatContacts>;
 };
 
+export enum ChatContactsTypeEnum {
+    UNKNOWN = 'unknown',
+    WAITING_VERIFICATION = 'waiting_verification',
+    CAN_PASS = 'can_pass',
+    PASSED = 'passed',
+    REFUSE = 'refuse',
+    REFUSED = 'refused'
+}
+
 export type ChatContactsUpdateDto = {
     status: 'unknown' | 'waiting_verification' | 'can_pass' | 'passed' | 'refuse' | 'refused';
 };
 
+export enum status {
+    UNKNOWN = 'unknown',
+    WAITING_VERIFICATION = 'waiting_verification',
+    CAN_PASS = 'can_pass',
+    PASSED = 'passed',
+    REFUSE = 'refuse',
+    REFUSED = 'refused'
+}
+
 export type ChatMessage = {
     id: string;
     contacts: ChatContacts;
-    type: 'unknown' | 'text';
+    type: ChatMessageTypeEnum;
     content: string;
     creator: User;
     /**
@@ -742,14 +751,9 @@ export type ChatMessage = {
     updateDate: string;
 };
 
-export enum type {
-    UNKNOWN = 'unknown',
-    TEXT = 'text'
-}
-
 export type ChatMessageCreateDto = {
     id: string;
-    type: 'unknown' | 'text';
+    type: ChatMessageTypeEnum;
     content: string;
     contactsId: string;
 };
@@ -759,6 +763,11 @@ export type ChatMessageGetResponse = {
     message: string;
     data: Array<ChatMessage>;
 };
+
+export enum ChatMessageTypeEnum {
+    UNKNOWN = 'unknown',
+    TEXT = 'text'
+}
 
 export type ChatSession = {
     id: string;
@@ -1269,7 +1278,7 @@ export type ForumPostRelation = {
     updateDate: string;
 };
 
-export enum type2 {
+export enum type {
     UNKNOWN = 'unknown',
     ZAN = 'zan',
     COLLECT = 'collect'
@@ -1619,7 +1628,7 @@ export type MallGoodRelation = {
     updateDate: string;
 };
 
-export enum type3 {
+export enum type2 {
     UNKNOWN = 'unknown',
     COLLECT = 'collect'
 }

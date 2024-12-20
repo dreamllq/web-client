@@ -29,7 +29,7 @@ const props = defineProps({
 const fetchData = async () => {
   const res = await UsersService.getAll();
 
-  return res.data.map(item => ({
+  return res.data.data.map(item => ({
     label: item.nickName,
     value: item.id
   }));

@@ -30,11 +30,11 @@ const fileInfo = ref();
 
 
 const httpRequest = async (options: UploadRequestOptions) => {
-  const res = await FileService.uploadFile({ formData: { file: options.file } });
+  const res = await FileService.uploadFile({ body: { file: options.file } });
   await FsService.create({
     body: {
-      fileDetail: { fileId: res.data.fileId },
-      name: res.data.entity.originFileName,
+      fileDetail: { fileId: res.data?.data.fileId },
+      name: res.data?.data.entity.originFileName,
       parentId: currentFPathId.value!,
       pathType: PathType.FILE
     }

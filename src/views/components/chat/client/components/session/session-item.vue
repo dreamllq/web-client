@@ -57,7 +57,7 @@ const onContextMenu = (e : MouseEvent) => {
         label: '删除', 
         onClick: async () => {
           await ElMessageBox.confirm('确认删除吗?', '删除');
-          await ChatSessionService.remove({ id: props.info.id });
+          await ChatSessionService.remove({ path: { id: props.info.id } });
         }
       }
     ]

@@ -29,7 +29,7 @@ const onCurrentChange = (data, node) => {
 
 const refresh = async () => {
   const res = await MallGoodGroupService.getTree();
-  data.value = res.data;
+  data.value = res.data?.data;
 };
 
 defineExpose({ refresh });

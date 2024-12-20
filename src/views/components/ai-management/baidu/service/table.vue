@@ -65,10 +65,10 @@ const fetchData = async (option: { pageNo:number, pageSize:number }) => {
   //   list: res.data.list,
   //   total: res.data.count
   // };
-  const res = await AiBaiduServiceService.paginate(option);
+  const res = await AiBaiduServiceService.paginate({ query: option });
   return {
-    list: res.data.list,
-    total: res.data.count
+    list: res.data?.data.list,
+    total: res.data?.data.count
   };
 };
 
@@ -81,7 +81,7 @@ const onEdit = async ({ id }) => {
 const onDelete = async ({ id }) => {
   await ElMessageBox.confirm('确认删除吗?', '删除');
   // TODO 接口调用
-  await AiBaiduServiceService.remove({ id });
+  await AiBaiduServiceService.remove({ path: { id } });
   ElMessage.success('删除成功');
   refresh();
 };

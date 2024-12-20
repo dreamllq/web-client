@@ -9,7 +9,8 @@ export default defineConfig({
     {
       asClass: true, 
       name: '@hey-api/sdk',
-      operationId: false
+      operationId: false,
+      methodNameBuilder: (options) => options.id!
     },
     {
       enums: 'typescript', 

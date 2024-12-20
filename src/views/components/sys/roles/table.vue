@@ -53,12 +53,14 @@ onMounted(() => {
 
 const fetchData = async (option: { pageNo:number, pageSize:number }) => {
   const res = await RolesService.paginate({
-    ...option,
-    name: filterData.name 
+    query: {
+      ...option,
+      name: filterData.name 
+    }
   });
   return {
-    list: res.data.list,
-    total: res.data.count
+    list: res.data?.data.list,
+    total: res.data?.data.count
   };
 };
 
@@ -70,7 +72,7 @@ const onEdit = async ({ id }) => {
 
 const onDelete = async ({ id }) => {
   await ElMessageBox.confirm('确认删除吗?', '删除');
-  await RolesService.remove({ id });
+  await RolesService.remove({ path: { id } });
   ElMessage.success('删除成功');
   refresh();
 };

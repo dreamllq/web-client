@@ -38,7 +38,7 @@ const onSubmit = async () => {
   const data = await formRef.value.getData();
 
   await RolesService.update({
-    id: editDefaultData.value.id,
+    path: { id: editDefaultData.value.id },
     body: {
       resourceIds: data.resourceIds,
       desc: data.desc 
@@ -71,10 +71,10 @@ const edit = async ({ id }) => {
   dialogVisible.value = true;
 
   // TODO 接口调用
-  let res = await await RolesService.get({ id });
-  editDefaultData.value.name = res.data.name;
-  editDefaultData.value.desc = res.data.desc;
-  editDefaultData.value.resourceIds = res.data.resources.map(item => item.id);
+  let res = await await RolesService.get({ path: { id } });
+  editDefaultData.value.name = res.data?.data.name;
+  editDefaultData.value.desc = res.data?.data.desc;
+  editDefaultData.value.resourceIds = res.data?.data.resources.map(item => item.id);
   loadingDataFlag.value = false;
   return deferred.promise;
 };

@@ -37,7 +37,7 @@ const propsConfig = {
 
 onMounted(async () => {
   const res = await MallGoodGroupService.getTree();
-  data.value = res.data;
+  data.value = res.data?.data;
   ready.value = true;
 
 });

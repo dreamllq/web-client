@@ -13,7 +13,7 @@ const { code } = query;
 
 onMounted(async () => {
   const res = await AuthService.loginByCode({ body: { code: code as string } });
-  setToken(res.data.access_token);
+  setToken(res.data?.data.access_token);
   window.location.href = '/web';
 });
 </script>

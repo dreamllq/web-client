@@ -40,7 +40,7 @@ const onSubmit = async () => {
 
   // TODO 接口调用
   await AiBaiduServiceService.update({
-    id,
+    path: { id },
     body: {
       name: data.name,
       endpoint: data.endpoint,
@@ -74,10 +74,10 @@ const edit = async (data:{ id:string }) => {
   dialogVisible.value = true;
 
   // TODO 接口调用
-  const res = await AiBaiduServiceService.get({ id });
-  editDefaultData.name = res.data.name;  
-  editDefaultData.path = res.data.path;  
-  editDefaultData.typeId = res.data.type.id;  
+  const res = await AiBaiduServiceService.get({ path: { id } });
+  editDefaultData.name = res.data?.data.name;  
+  editDefaultData.path = res.data?.data.path;  
+  editDefaultData.typeId = res.data?.data.type.id;  
 
   loadingDataFlag.value = false;
   return deferred.promise;

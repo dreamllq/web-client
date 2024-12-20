@@ -40,7 +40,7 @@ const onSubmit = async () => {
 
   // TODO 接口调用
   await AiCommonServiceTypeService.update({
-    id,
+    path: { id },
     body: {
       name: data.name,
       value: data.value 
@@ -70,9 +70,9 @@ const edit = async (data:{ id:string }) => {
   dialogVisible.value = true;
 
   // TODO 接口调用
-  const res = await AiCommonServiceTypeService.get({ id });
-  editDefaultData.name = res.data.name;
-  editDefaultData.value = res.data.value;
+  const res = await AiCommonServiceTypeService.get({ path: { id } });
+  editDefaultData.name = res.data?.data.name;
+  editDefaultData.value = res.data?.data.value;
 
   loadingDataFlag.value = false;
   return deferred.promise;

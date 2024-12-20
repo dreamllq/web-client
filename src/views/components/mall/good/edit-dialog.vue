@@ -43,7 +43,7 @@ const onSubmit = async () => {
   const data = await formRef.value!.getData();
 
   await MallGoodService.update({
-    id,
+    path: { id },
     body: {
       desc: data.desc,
       detail: data.detail,
@@ -85,16 +85,16 @@ const edit = async (data:{ id:string }) => {
   dialogVisible.value = true;
 
   // TODO 接口调用
-  const res = await MallGoodService.get({ id });
+  const res = await MallGoodService.get({ path: { id } });
 
-  editDefaultData.title = res.data.title;
-  editDefaultData.desc = res.data.desc;
-  editDefaultData.headimg = res.data.headimg;
-  editDefaultData.groupId = res.data.group?.id;
-  editDefaultData.images = res.data.images;
-  editDefaultData.price = String(res.data.price);
-  editDefaultData.detail = res.data.detail;
-  editDefaultData.shopId = res.data.shop.id;
+  editDefaultData.title = res.data?.data.title;
+  editDefaultData.desc = res.data?.data.desc;
+  editDefaultData.headimg = res.data?.data.headimg;
+  editDefaultData.groupId = res.data?.data.group?.id;
+  editDefaultData.images = res.data?.data.images;
+  editDefaultData.price = String(res.data?.data.price);
+  editDefaultData.detail = res.data?.data.detail;
+  editDefaultData.shopId = res.data?.data.shop.id;
 
   loadingDataFlag.value = false;
   return deferred.promise;

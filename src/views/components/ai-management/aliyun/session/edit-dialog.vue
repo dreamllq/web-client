@@ -40,7 +40,7 @@ const onSubmit = async () => {
 
   // TODO 接口调用
   await AiAliyunSessionService.update({
-    id,
+    path: { id },
     body: {
       name: data.name,
       serviceId: data.serviceId,
@@ -72,10 +72,10 @@ const edit = async (data:{ id:string }) => {
   dialogVisible.value = true;
 
   // TODO 接口调用
-  const res = await AiAliyunSessionService.get({ id });
-  editDefaultData.name = res.data.name;
-  editDefaultData.serviceId = res.data.service.id;
-  editDefaultData.accountId = res.data.account.id;
+  const res = await AiAliyunSessionService.get({ path: { id } });
+  editDefaultData.name = res.data?.data.name;
+  editDefaultData.serviceId = res.data?.data.service.id;
+  editDefaultData.accountId = res.data?.data.account.id;
 
   loadingDataFlag.value = false;
   return deferred.promise;

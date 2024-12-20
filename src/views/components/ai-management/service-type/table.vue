@@ -57,7 +57,7 @@ const fetchData = async () => {
   //   total: res.data.count
   // };
   const res = await AiCommonServiceTypeService.getAll();
-  return { list: res.data };
+  return { list: res.data?.data };
 };
 
 const bizEdit = ref();
@@ -69,7 +69,7 @@ const onEdit = async ({ id }) => {
 const onDelete = async ({ id }) => {
   await ElMessageBox.confirm('确认删除吗?', '删除');
   // TODO 接口调用
-  await AiCommonServiceTypeService.remove({ id });
+  await AiCommonServiceTypeService.remove({ path: { id } });
   ElMessage.success('删除成功');
   refresh();
 };

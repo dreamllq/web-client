@@ -1,12 +1,12 @@
 import { ref } from 'vue';
 import { createGlobalState } from '@vueuse/core';
-import { ChatMessageService, ChatMessageCreateDto, User, ChatContacts } from '@/services/api';
+import { ChatMessageService, User, ChatContacts, ChatMessageTypeEnum } from '@/services/api';
 import { v4 as uuidv4 } from 'uuid';
 
 export interface Message{
   id: string;
   sending: boolean;
-  type: ChatMessageCreateDto.type,
+  type: ChatMessageTypeEnum,
   content: string;
   creator: User,
   contacts: ChatContacts
@@ -18,19 +18,21 @@ export const useMessageState = createGlobalState(
     const loading = ref(false);
     const hasMore = ref(true);
     const list = ref<Message[]>([]);
-    const type = ref<ChatMessageCreateDto.type>(ChatMessageCreateDto.type.TEXT);
+    const type = ref<ChatMessageTypeEnum>(ChatMessageTypeEnum.TEXT);
     const lastMessageMap = ref<{[index: string]: string}>({});
 
     const refresh = async (data:{contactsId: string}) => {
       hasMore.value = true;
       loading.value = true;
       const res = await ChatMessageService.findWithCursor({
-        contactsId: data.contactsId,
-        direction: 'forward'
+        query: {
+          contactsId: data.contactsId,
+          direction: 'forward' 
+        }
       });
 
-      hasMore.value = res.data.length === 20;
-      list.value = res.data.map(item => ({
+      hasMore.value = res.data?.data.length === 20;
+      list.value = res.data?.data.map(item => ({
         id: item.id,
         sending: false,
         type: item.type,
@@ -46,11 +48,13 @@ export const useMessageState = createGlobalState(
       loading.value = true;
       if (direction === 'forward') {
         const res = await ChatMessageService.findWithCursor({
-          contactsId: contactsId,
-          direction: 'forward',
-          fromId: list.value[list.value.length - 1].id
+          query: {
+            contactsId: contactsId,
+            direction: 'forward',
+            fromId: list.value[list.value.length - 1].id
+          }
         });
-        res.data.forEach(item => {
+        res.data?.data.forEach(item => {
           list.value.push({
             id: item.id,
             sending: false,
@@ -60,14 +64,16 @@ export const useMessageState = createGlobalState(
             contacts: item.contacts
           });
         });
-        hasMore.value = res.data.length === 20;
+        hasMore.value = res.data?.data.length === 20;
       } else if (direction === 'backward') {
         const res = await ChatMessageService.findWithCursor({
-          contactsId: contactsId,
-          direction: 'backward',
-          fromId: list.value.length > 0 ? list.value[0].id : undefined
+          query: {
+            contactsId: contactsId,
+            direction: 'backward',
+            fromId: list.value.length > 0 ? list.value[0].id : undefined
+          }
         });
-        res.data.forEach(item => {
+        res.data?.data.forEach(item => {
           list.value.unshift({
             id: item.id,
             sending: false,

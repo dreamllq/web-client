@@ -13,10 +13,10 @@ class UploadAdapter {
   async upload() {
     const file = await this.loader.file;
     console.log(file);
-    const res = await FileService.uploadFile({ formData: { file: file! } });
+    const res = await FileService.uploadFile({ body: { file: file! } });
     this.loader.uploadTotal = 100;
     this.loader.uploaded = 100;
-    return { default: res.data.url };
+    return { default: res.data?.data.url };
     // // Update the loader's progress.
     // server.onUploadProgress(data => {
     //   loader.uploadTotal = data.total;

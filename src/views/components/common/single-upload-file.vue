@@ -30,9 +30,9 @@ const emit = defineEmits(['update:modelValue']);
 const fileInfo = ref();
 
 
-const httpRequest = async (options: UploadRequestOptions) => await FileService.uploadFile({ formData: { file: options.file } });
+const httpRequest = async (options: UploadRequestOptions) => await FileService.uploadFile({ body: { file: options.file } });
 const handleAvatarSuccess: UploadProps['onSuccess'] = (response) => {
-  fileInfo.value = response.data;
+  fileInfo.value = response.data.data;
   emit('update:modelValue', response.data);
   upload.value!.clearFiles();
 };

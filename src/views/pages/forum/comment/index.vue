@@ -54,10 +54,10 @@ const postInfo = ref<ForumPost>();
 
 onMounted(async () => {
   const res = await ForumPostService.get({
-    id: postId.value,
-    relationSection: true
+    path: { id: postId.value },
+    query: { relationSection: true }
   });
-  postInfo.value = res.data;
+  postInfo.value = res.data?.data;
 });
 
 const onSearch = (filter) => {

@@ -13,7 +13,7 @@ const data = reactive({ userInfo: {} });
 
 onMounted(async () => {
   const res = await SessionService.getUser();
-  data.userInfo = res.data;
+  data.userInfo = res.data.data;
 });
 
 </script>

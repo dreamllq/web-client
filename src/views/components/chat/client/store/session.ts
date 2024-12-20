@@ -14,12 +14,12 @@ export const useSessionState = createGlobalState(
 
     const refresh = async () => {
       const res = await ChatSessionService.get();
-      list.value = res.data;
+      list.value = res.data?.data;
     };
 
     const startMessageSession = async (contactsId:string) => {
       const res = await ChatSessionService.create({ body: { contactsId } });
-      currentSession.value = res.data;
+      currentSession.value = res.data?.data;
       await refresh();
     };
 

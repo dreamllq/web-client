@@ -44,14 +44,16 @@ const fetchData = async (option: { pageNo:number, pageSize:number }) => {
   // TODO 接口调用
   // const res: ResourcePaginateSuccessResult = await ResourcesService.paginate(option.pageSize, option.pageNo);
   const res = await WeixinPlatformUserService.paginate({
-    pageNo: option.pageNo,
-    pageSize: option.pageSize,
-    weixinId: route.query.wid
+    query: {
+      pageNo: option.pageNo,
+      pageSize: option.pageSize,
+      weixinId: route.query.wid
+    }
   });
 
   return {
-    list: res.data.list,
-    total: res.data.count
+    list: res.data?.data.list,
+    total: res.data?.data.count
   };
 };
 

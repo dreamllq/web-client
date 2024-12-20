@@ -39,7 +39,7 @@ const onSubmit = async () => {
   const data = await formRef.value!.getData();
 
   await ForumPostService.update({
-    id,
+    path: { id },
     body: {
       title: data.title,
       content: data.content,
@@ -72,13 +72,13 @@ const edit = async (data:{ id:string }) => {
   dialogVisible.value = true;
 
   const res = await ForumPostService.get({
-    id,
-    relationSection: true 
+    path: { id },
+    query: { relationSection: true }
   });
-  editDefaultData.title = res.data.title;
-  editDefaultData.content = res.data.content;
-  editDefaultData.sectionId = res.data.section.id;
-  editDefaultData.images = res.data.images;
+  editDefaultData.title = res.data?.data.title;
+  editDefaultData.content = res.data?.data.content;
+  editDefaultData.sectionId = res.data?.data.section.id;
+  editDefaultData.images = res.data?.data.images;
 
   loadingDataFlag.value = false;
   return deferred.promise;

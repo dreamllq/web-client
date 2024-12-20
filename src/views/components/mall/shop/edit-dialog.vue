@@ -39,7 +39,7 @@ const onSubmit = async () => {
   const data = await formRef.value!.getData();
 
   await MallShopService.update({
-    id,
+    path: { id },
     body: {
       desc: data.desc,
       headimg: data.headimg,
@@ -71,10 +71,10 @@ const edit = async (data:{ id:string }) => {
   dialogVisible.value = true;
 
   // TODO 接口调用
-  const res = await MallShopService.get({ id });
-  editDefaultData.desc = res.data.desc;
-  editDefaultData.headimg = res.data.headimg;
-  editDefaultData.name = res.data.name;
+  const res = await MallShopService.get({ path: { id } });
+  editDefaultData.desc = res.data?.data.desc;
+  editDefaultData.headimg = res.data?.data.headimg;
+  editDefaultData.name = res.data?.data.name;
 
   loadingDataFlag.value = false;
   return deferred.promise;

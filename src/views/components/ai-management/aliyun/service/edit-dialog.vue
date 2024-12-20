@@ -41,7 +41,7 @@ const onSubmit = async () => {
 
   // TODO 接口调用
   await AiAliyunServiceService.update({
-    id,
+    path: { id },
     body: {
       name: data.name,
       endpoint: data.endpoint,
@@ -77,12 +77,12 @@ const edit = async (data:{ id:string }) => {
   dialogVisible.value = true;
 
   // TODO 接口调用
-  const res = await AiAliyunServiceService.get({ id });
-  editDefaultData.name = res.data.name;  
-  editDefaultData.endpoint = res.data.endpoint;  
-  editDefaultData.path = res.data.path;  
-  editDefaultData.model = res.data.model;
-  editDefaultData.typeId = res.data.type.id;  
+  const res = await AiAliyunServiceService.get({ path: { id } });
+  editDefaultData.name = res.data?.data.name;  
+  editDefaultData.endpoint = res.data?.data.endpoint;  
+  editDefaultData.path = res.data?.data.path;  
+  editDefaultData.model = res.data?.data.model;
+  editDefaultData.typeId = res.data?.data.type.id;  
 
   loadingDataFlag.value = false;
   return deferred.promise;

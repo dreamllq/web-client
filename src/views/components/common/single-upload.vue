@@ -49,14 +49,14 @@ watchEffect(() => {
 });
 
 
-const httpRequest = async (options: UploadRequestOptions) => await FileService.uploadFile({ formData: { file: options.file } });
+const httpRequest = async (options: UploadRequestOptions) => await FileService.uploadFile({ body: { file: options.file } });
 
 const handleAvatarSuccess: UploadProps['onSuccess'] = (response) => {
   // imageUrl.value = response.data.url;
   uploading.value = false;
-  file.value = response.data.entity;
+  file.value = response.data.data.entity;
   emit('update:modelValue', cloneDeep(imageUrl.value));
-  emit('update:fileId', response.data.fileId);
+  emit('update:fileId', response.data.data.fileId);
 };
 
 const handleError: UploadProps['onError'] = (error) => {

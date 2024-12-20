@@ -29,18 +29,20 @@ const form = reactive({
 
 onMounted(async () => {
   const res = await SettingService.getItems({
-    keys: [
-      'ALIYUN_SMS_ACCESS_KEY_ID',
-      'ALIYUN_SMS_ACCESS_KEY_SECRET',
-      'ALIYUN_SMS_SIGN_NAME',
-      'ALIYUN_SMS_TEMPLATE_ID'
-    ] 
+    path: {
+      keys: [
+        'ALIYUN_SMS_ACCESS_KEY_ID',
+        'ALIYUN_SMS_ACCESS_KEY_SECRET',
+        'ALIYUN_SMS_SIGN_NAME',
+        'ALIYUN_SMS_TEMPLATE_ID'
+      ]
+    } 
   });
 
-  form.accessKeyId = res.data[0]?.value || '';
-  form.accessKeySecret = res.data[1]?.value || '';
-  form.signName = res.data[2]?.value || '';
-  form.templateId = res.data[3]?.value || '';
+  form.accessKeyId = res.data?.data[0]?.value || '';
+  form.accessKeySecret = res.data?.data[1]?.value || '';
+  form.signName = res.data?.data[2]?.value || '';
+  form.templateId = res.data?.data[3]?.value || '';
 });
 
 const getData = async () => [

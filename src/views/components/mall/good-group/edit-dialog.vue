@@ -39,7 +39,7 @@ const onSubmit = async () => {
   const data = await formRef.value!.getData();
 
   await MallGoodGroupService.update({
-    id,
+    path: { id },
     body: {
       headimg: data.headimg,
       name: data.name
@@ -68,9 +68,9 @@ const edit = async (data:{ id:string }) => {
   deferred = new Deferred();
   dialogVisible.value = true;
 
-  const res = await MallGoodGroupService.get({ id });
-  editDefaultData.name = res.data.name;
-  editDefaultData.headimg = res.data.headimg;
+  const res = await MallGoodGroupService.get({ path: { id } });
+  editDefaultData.name = res.data?.data.name;
+  editDefaultData.headimg = res.data?.data.headimg;
 
   loadingDataFlag.value = false;
   return deferred.promise;

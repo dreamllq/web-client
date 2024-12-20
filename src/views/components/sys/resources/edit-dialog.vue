@@ -39,7 +39,7 @@ const onSubmit = async () => {
 
   // TODO 接口调用
   await ResourcesService.update({
-    id: editDefaultData.value.id,
+    path: { id: editDefaultData.value.id },
     body: {
       desc: data.desc,
       key: data.key 
@@ -70,11 +70,11 @@ const edit = async ({ id }) => {
   dialogVisible.value = true;
 
 
-  let res = await ResourcesService.get({ id });
+  let res = await ResourcesService.get({ path: { id } });
   editDefaultData.value.id = id;
-  editDefaultData.value.name = res.data.name;
-  editDefaultData.value.key = res.data.key;
-  editDefaultData.value.desc = res.data.desc;
+  editDefaultData.value.name = res.data?.data.name;
+  editDefaultData.value.key = res.data?.data.key;
+  editDefaultData.value.desc = res.data?.data.desc;
   loadingDataFlag.value = false;
 
   return deferred.promise;

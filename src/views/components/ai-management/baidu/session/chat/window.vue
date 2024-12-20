@@ -90,8 +90,8 @@ useBaiduMessageNotify(props.sessionId, {
 });
 
 onMounted(async() => {
-  const res = await AiBaiduMessageService.getHistory({ sessionId: props.sessionId });
-  res.data.forEach(item => {
+  const res = await AiBaiduMessageService.getHistory({ query: { sessionId: props.sessionId } });
+  res.data?.data.forEach(item => {
     messageList.value.push({
       id: item.id,
       role: item.role,

@@ -9,7 +9,7 @@ export class AddressService {
     /**
      * 当前登录用户添加地址
      */
-    public static postApiAddressCreateSession<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PostApiAddressCreateSessionData, ThrowOnError>) {
+    public static createSession<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PostApiAddressCreateSessionData, ThrowOnError>) {
         return (options?.client ?? client).post<PostApiAddressCreateSessionResponse, PostApiAddressCreateSessionError, ThrowOnError>({
             ...options,
             url: '/api/address/create/session'
@@ -19,7 +19,7 @@ export class AddressService {
     /**
      * 获取当前登录用户地址列表
      */
-    public static getApiAddressGetAllSession<ThrowOnError extends boolean = false>(options?: OptionsLegacyParser<unknown, ThrowOnError>) {
+    public static getAllSession<ThrowOnError extends boolean = false>(options?: OptionsLegacyParser<unknown, ThrowOnError>) {
         return (options?.client ?? client).get<GetApiAddressGetAllSessionResponse, GetApiAddressGetAllSessionError, ThrowOnError>({
             ...options,
             url: '/api/address/getAll/session'
@@ -29,7 +29,7 @@ export class AddressService {
     /**
      * 删除登录用户指定id地址
      */
-    public static deleteApiAddressByIdSession<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<DeleteApiAddressByIdSessionData, ThrowOnError>) {
+    public static removeSession<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<DeleteApiAddressByIdSessionData, ThrowOnError>) {
         return (options?.client ?? client).delete<DeleteApiAddressByIdSessionResponse, DeleteApiAddressByIdSessionError, ThrowOnError>({
             ...options,
             url: '/api/address/{id}/session'
@@ -39,7 +39,7 @@ export class AddressService {
     /**
      * 更新登录用户指定id地址
      */
-    public static putApiAddressByIdSession<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PutApiAddressByIdSessionData, ThrowOnError>) {
+    public static updateSession<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PutApiAddressByIdSessionData, ThrowOnError>) {
         return (options?.client ?? client).put<PutApiAddressByIdSessionResponse, PutApiAddressByIdSessionError, ThrowOnError>({
             ...options,
             url: '/api/address/{id}/session'
@@ -49,7 +49,7 @@ export class AddressService {
     /**
      * 获取指定id地址数据
      */
-    public static getApiAddressById<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiAddressByIdData, ThrowOnError>) {
+    public static get<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiAddressByIdData, ThrowOnError>) {
         return (options?.client ?? client).get<GetApiAddressByIdResponse, GetApiAddressByIdError, ThrowOnError>({
             ...options,
             url: '/api/address/{id}'
@@ -62,7 +62,7 @@ export class AiAliyunAccountService {
     /**
      * 新增阿里云账号信息
      */
-    public static postApiAiAliyunAccount<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PostApiAiAliyunAccountData, ThrowOnError>) {
+    public static create<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PostApiAiAliyunAccountData, ThrowOnError>) {
         return (options?.client ?? client).post<PostApiAiAliyunAccountResponse, PostApiAiAliyunAccountError, ThrowOnError>({
             ...options,
             url: '/api/ai/aliyun/account'
@@ -72,7 +72,7 @@ export class AiAliyunAccountService {
     /**
      * 获取所有阿里云账号信息
      */
-    public static getApiAiAliyunAccount<ThrowOnError extends boolean = false>(options?: OptionsLegacyParser<unknown, ThrowOnError>) {
+    public static getAll<ThrowOnError extends boolean = false>(options?: OptionsLegacyParser<unknown, ThrowOnError>) {
         return (options?.client ?? client).get<GetApiAiAliyunAccountResponse, GetApiAiAliyunAccountError, ThrowOnError>({
             ...options,
             url: '/api/ai/aliyun/account'
@@ -82,7 +82,7 @@ export class AiAliyunAccountService {
     /**
      * 获取分页阿里云账号信息
      */
-    public static getApiAiAliyunAccountPaginate<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiAiAliyunAccountPaginateData, ThrowOnError>) {
+    public static paginate<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiAiAliyunAccountPaginateData, ThrowOnError>) {
         return (options?.client ?? client).get<GetApiAiAliyunAccountPaginateResponse, GetApiAiAliyunAccountPaginateError, ThrowOnError>({
             ...options,
             url: '/api/ai/aliyun/account/paginate'
@@ -92,7 +92,7 @@ export class AiAliyunAccountService {
     /**
      * 获取指定id百度账号信息
      */
-    public static getApiAiAliyunAccountById<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiAiAliyunAccountByIdData, ThrowOnError>) {
+    public static get<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiAiAliyunAccountByIdData, ThrowOnError>) {
         return (options?.client ?? client).get<GetApiAiAliyunAccountByIdResponse, GetApiAiAliyunAccountByIdError, ThrowOnError>({
             ...options,
             url: '/api/ai/aliyun/account/{id}'
@@ -102,7 +102,7 @@ export class AiAliyunAccountService {
     /**
      * 更新指定id阿里云账号信息
      */
-    public static patchApiAiAliyunAccountById<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PatchApiAiAliyunAccountByIdData, ThrowOnError>) {
+    public static update<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PatchApiAiAliyunAccountByIdData, ThrowOnError>) {
         return (options?.client ?? client).patch<PatchApiAiAliyunAccountByIdResponse, PatchApiAiAliyunAccountByIdError, ThrowOnError>({
             ...options,
             url: '/api/ai/aliyun/account/{id}'
@@ -112,7 +112,7 @@ export class AiAliyunAccountService {
     /**
      * 删除阿里云账号信息
      */
-    public static deleteApiAiAliyunAccountById<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<DeleteApiAiAliyunAccountByIdData, ThrowOnError>) {
+    public static remove<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<DeleteApiAiAliyunAccountByIdData, ThrowOnError>) {
         return (options?.client ?? client).delete<DeleteApiAiAliyunAccountByIdResponse, DeleteApiAiAliyunAccountByIdError, ThrowOnError>({
             ...options,
             url: '/api/ai/aliyun/account/{id}'
@@ -125,7 +125,7 @@ export class AiAliyunMessageService {
     /**
      * 新增消息
      */
-    public static postApiAiAliyunMessage<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PostApiAiAliyunMessageData, ThrowOnError>) {
+    public static create<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PostApiAiAliyunMessageData, ThrowOnError>) {
         return (options?.client ?? client).post<PostApiAiAliyunMessageResponse, PostApiAiAliyunMessageError, ThrowOnError>({
             ...options,
             url: '/api/ai/aliyun/message'
@@ -135,7 +135,7 @@ export class AiAliyunMessageService {
     /**
      * 获取历史消息
      */
-    public static getApiAiAliyunMessage<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiAiAliyunMessageData, ThrowOnError>) {
+    public static getHistory<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiAiAliyunMessageData, ThrowOnError>) {
         return (options?.client ?? client).get<GetApiAiAliyunMessageResponse, GetApiAiAliyunMessageError, ThrowOnError>({
             ...options,
             url: '/api/ai/aliyun/message'
@@ -148,7 +148,7 @@ export class AiAliyunOcrService {
     /**
      * 新增ocr任务
      */
-    public static postApiAiAliyunOcr<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PostApiAiAliyunOcrData, ThrowOnError>) {
+    public static create<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PostApiAiAliyunOcrData, ThrowOnError>) {
         return (options?.client ?? client).post<PostApiAiAliyunOcrResponse, PostApiAiAliyunOcrError, ThrowOnError>({
             ...options,
             url: '/api/ai/aliyun/ocr'
@@ -158,7 +158,7 @@ export class AiAliyunOcrService {
     /**
      * 获取所有ocr任务
      */
-    public static getApiAiAliyunOcr<ThrowOnError extends boolean = false>(options?: OptionsLegacyParser<unknown, ThrowOnError>) {
+    public static getAll<ThrowOnError extends boolean = false>(options?: OptionsLegacyParser<unknown, ThrowOnError>) {
         return (options?.client ?? client).get<GetApiAiAliyunOcrResponse, GetApiAiAliyunOcrError, ThrowOnError>({
             ...options,
             url: '/api/ai/aliyun/ocr'
@@ -168,7 +168,7 @@ export class AiAliyunOcrService {
     /**
      * 获取分页ocr任务
      */
-    public static getApiAiAliyunOcrPaginate<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiAiAliyunOcrPaginateData, ThrowOnError>) {
+    public static paginate<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiAiAliyunOcrPaginateData, ThrowOnError>) {
         return (options?.client ?? client).get<GetApiAiAliyunOcrPaginateResponse, GetApiAiAliyunOcrPaginateError, ThrowOnError>({
             ...options,
             url: '/api/ai/aliyun/ocr/paginate'
@@ -178,7 +178,7 @@ export class AiAliyunOcrService {
     /**
      * 获取指定id ocr任务
      */
-    public static getApiAiAliyunOcrById<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiAiAliyunOcrByIdData, ThrowOnError>) {
+    public static get<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiAiAliyunOcrByIdData, ThrowOnError>) {
         return (options?.client ?? client).get<GetApiAiAliyunOcrByIdResponse, GetApiAiAliyunOcrByIdError, ThrowOnError>({
             ...options,
             url: '/api/ai/aliyun/ocr/{id}'
@@ -188,7 +188,7 @@ export class AiAliyunOcrService {
     /**
      * 执行指定id ocr任务
      */
-    public static putApiAiAliyunOcrById<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PutApiAiAliyunOcrByIdData, ThrowOnError>) {
+    public static operate<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PutApiAiAliyunOcrByIdData, ThrowOnError>) {
         return (options?.client ?? client).put<PutApiAiAliyunOcrByIdResponse, PutApiAiAliyunOcrByIdError, ThrowOnError>({
             ...options,
             url: '/api/ai/aliyun/ocr/{id}'
@@ -201,7 +201,7 @@ export class AiAliyunServiceService {
     /**
      * 新增服务
      */
-    public static postApiAiAliyunService<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PostApiAiAliyunServiceData, ThrowOnError>) {
+    public static create<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PostApiAiAliyunServiceData, ThrowOnError>) {
         return (options?.client ?? client).post<PostApiAiAliyunServiceResponse, PostApiAiAliyunServiceError, ThrowOnError>({
             ...options,
             url: '/api/ai/aliyun/service'
@@ -211,7 +211,7 @@ export class AiAliyunServiceService {
     /**
      * 获取所有服务
      */
-    public static getApiAiAliyunService<ThrowOnError extends boolean = false>(options?: OptionsLegacyParser<unknown, ThrowOnError>) {
+    public static getAll<ThrowOnError extends boolean = false>(options?: OptionsLegacyParser<unknown, ThrowOnError>) {
         return (options?.client ?? client).get<GetApiAiAliyunServiceResponse, GetApiAiAliyunServiceError, ThrowOnError>({
             ...options,
             url: '/api/ai/aliyun/service'
@@ -221,7 +221,7 @@ export class AiAliyunServiceService {
     /**
      * 获取分页服务
      */
-    public static getApiAiAliyunServicePaginate<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiAiAliyunServicePaginateData, ThrowOnError>) {
+    public static paginate<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiAiAliyunServicePaginateData, ThrowOnError>) {
         return (options?.client ?? client).get<GetApiAiAliyunServicePaginateResponse, GetApiAiAliyunServicePaginateError, ThrowOnError>({
             ...options,
             url: '/api/ai/aliyun/service/paginate'
@@ -231,7 +231,7 @@ export class AiAliyunServiceService {
     /**
      * 获取指定id服务
      */
-    public static getApiAiAliyunServiceById<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiAiAliyunServiceByIdData, ThrowOnError>) {
+    public static get<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiAiAliyunServiceByIdData, ThrowOnError>) {
         return (options?.client ?? client).get<GetApiAiAliyunServiceByIdResponse, GetApiAiAliyunServiceByIdError, ThrowOnError>({
             ...options,
             url: '/api/ai/aliyun/service/{id}'
@@ -241,7 +241,7 @@ export class AiAliyunServiceService {
     /**
      * 更新指定id服务
      */
-    public static patchApiAiAliyunServiceById<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PatchApiAiAliyunServiceByIdData, ThrowOnError>) {
+    public static update<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PatchApiAiAliyunServiceByIdData, ThrowOnError>) {
         return (options?.client ?? client).patch<PatchApiAiAliyunServiceByIdResponse, PatchApiAiAliyunServiceByIdError, ThrowOnError>({
             ...options,
             url: '/api/ai/aliyun/service/{id}'
@@ -251,7 +251,7 @@ export class AiAliyunServiceService {
     /**
      * 删除服务
      */
-    public static deleteApiAiAliyunServiceById<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<DeleteApiAiAliyunServiceByIdData, ThrowOnError>) {
+    public static remove<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<DeleteApiAiAliyunServiceByIdData, ThrowOnError>) {
         return (options?.client ?? client).delete<DeleteApiAiAliyunServiceByIdResponse, DeleteApiAiAliyunServiceByIdError, ThrowOnError>({
             ...options,
             url: '/api/ai/aliyun/service/{id}'
@@ -264,7 +264,7 @@ export class AiAliyunSessionService {
     /**
      * 新增会话
      */
-    public static postApiAiAliyunSession<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PostApiAiAliyunSessionData, ThrowOnError>) {
+    public static create<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PostApiAiAliyunSessionData, ThrowOnError>) {
         return (options?.client ?? client).post<PostApiAiAliyunSessionResponse, PostApiAiAliyunSessionError, ThrowOnError>({
             ...options,
             url: '/api/ai/aliyun/session'
@@ -274,7 +274,7 @@ export class AiAliyunSessionService {
     /**
      * 获取所有会话
      */
-    public static getApiAiAliyunSession<ThrowOnError extends boolean = false>(options?: OptionsLegacyParser<unknown, ThrowOnError>) {
+    public static getAll<ThrowOnError extends boolean = false>(options?: OptionsLegacyParser<unknown, ThrowOnError>) {
         return (options?.client ?? client).get<GetApiAiAliyunSessionResponse, GetApiAiAliyunSessionError, ThrowOnError>({
             ...options,
             url: '/api/ai/aliyun/session'
@@ -284,7 +284,7 @@ export class AiAliyunSessionService {
     /**
      * 获取分页会话
      */
-    public static getApiAiAliyunSessionPaginate<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiAiAliyunSessionPaginateData, ThrowOnError>) {
+    public static paginate<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiAiAliyunSessionPaginateData, ThrowOnError>) {
         return (options?.client ?? client).get<GetApiAiAliyunSessionPaginateResponse, GetApiAiAliyunSessionPaginateError, ThrowOnError>({
             ...options,
             url: '/api/ai/aliyun/session/paginate'
@@ -294,7 +294,7 @@ export class AiAliyunSessionService {
     /**
      * 获取指定id会话
      */
-    public static getApiAiAliyunSessionById<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiAiAliyunSessionByIdData, ThrowOnError>) {
+    public static get<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiAiAliyunSessionByIdData, ThrowOnError>) {
         return (options?.client ?? client).get<GetApiAiAliyunSessionByIdResponse, GetApiAiAliyunSessionByIdError, ThrowOnError>({
             ...options,
             url: '/api/ai/aliyun/session/{id}'
@@ -304,7 +304,7 @@ export class AiAliyunSessionService {
     /**
      * 更新指定id会话
      */
-    public static patchApiAiAliyunSessionById<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PatchApiAiAliyunSessionByIdData, ThrowOnError>) {
+    public static update<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PatchApiAiAliyunSessionByIdData, ThrowOnError>) {
         return (options?.client ?? client).patch<PatchApiAiAliyunSessionByIdResponse, PatchApiAiAliyunSessionByIdError, ThrowOnError>({
             ...options,
             url: '/api/ai/aliyun/session/{id}'
@@ -314,7 +314,7 @@ export class AiAliyunSessionService {
     /**
      * 删除服务
      */
-    public static deleteApiAiAliyunSessionById<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<DeleteApiAiAliyunSessionByIdData, ThrowOnError>) {
+    public static remove<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<DeleteApiAiAliyunSessionByIdData, ThrowOnError>) {
         return (options?.client ?? client).delete<DeleteApiAiAliyunSessionByIdResponse, DeleteApiAiAliyunSessionByIdError, ThrowOnError>({
             ...options,
             url: '/api/ai/aliyun/session/{id}'
@@ -327,7 +327,7 @@ export class AiBaiduAccountService {
     /**
      * 新增百度账号信息
      */
-    public static postApiAiBaiduAccount<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PostApiAiBaiduAccountData, ThrowOnError>) {
+    public static create<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PostApiAiBaiduAccountData, ThrowOnError>) {
         return (options?.client ?? client).post<PostApiAiBaiduAccountResponse, PostApiAiBaiduAccountError, ThrowOnError>({
             ...options,
             url: '/api/ai/baidu/account'
@@ -337,7 +337,7 @@ export class AiBaiduAccountService {
     /**
      * 获取所有百度账号信息
      */
-    public static getApiAiBaiduAccount<ThrowOnError extends boolean = false>(options?: OptionsLegacyParser<unknown, ThrowOnError>) {
+    public static getAll<ThrowOnError extends boolean = false>(options?: OptionsLegacyParser<unknown, ThrowOnError>) {
         return (options?.client ?? client).get<GetApiAiBaiduAccountResponse, GetApiAiBaiduAccountError, ThrowOnError>({
             ...options,
             url: '/api/ai/baidu/account'
@@ -347,7 +347,7 @@ export class AiBaiduAccountService {
     /**
      * 获取分页百度账号信息
      */
-    public static getApiAiBaiduAccountPaginate<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiAiBaiduAccountPaginateData, ThrowOnError>) {
+    public static paginate<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiAiBaiduAccountPaginateData, ThrowOnError>) {
         return (options?.client ?? client).get<GetApiAiBaiduAccountPaginateResponse, GetApiAiBaiduAccountPaginateError, ThrowOnError>({
             ...options,
             url: '/api/ai/baidu/account/paginate'
@@ -357,7 +357,7 @@ export class AiBaiduAccountService {
     /**
      * 获取指定id百度账号信息
      */
-    public static getApiAiBaiduAccountById<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiAiBaiduAccountByIdData, ThrowOnError>) {
+    public static get<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiAiBaiduAccountByIdData, ThrowOnError>) {
         return (options?.client ?? client).get<GetApiAiBaiduAccountByIdResponse, GetApiAiBaiduAccountByIdError, ThrowOnError>({
             ...options,
             url: '/api/ai/baidu/account/{id}'
@@ -367,7 +367,7 @@ export class AiBaiduAccountService {
     /**
      * 更新指定id百度账号信息
      */
-    public static patchApiAiBaiduAccountById<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PatchApiAiBaiduAccountByIdData, ThrowOnError>) {
+    public static update<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PatchApiAiBaiduAccountByIdData, ThrowOnError>) {
         return (options?.client ?? client).patch<PatchApiAiBaiduAccountByIdResponse, PatchApiAiBaiduAccountByIdError, ThrowOnError>({
             ...options,
             url: '/api/ai/baidu/account/{id}'
@@ -377,7 +377,7 @@ export class AiBaiduAccountService {
     /**
      * 删除百度账号信息
      */
-    public static deleteApiAiBaiduAccountById<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<DeleteApiAiBaiduAccountByIdData, ThrowOnError>) {
+    public static remove<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<DeleteApiAiBaiduAccountByIdData, ThrowOnError>) {
         return (options?.client ?? client).delete<DeleteApiAiBaiduAccountByIdResponse, DeleteApiAiBaiduAccountByIdError, ThrowOnError>({
             ...options,
             url: '/api/ai/baidu/account/{id}'
@@ -390,7 +390,7 @@ export class AiBaiduMessageService {
     /**
      * 新增百度消息
      */
-    public static postApiAiBaiduMessage<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PostApiAiBaiduMessageData, ThrowOnError>) {
+    public static create<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PostApiAiBaiduMessageData, ThrowOnError>) {
         return (options?.client ?? client).post<PostApiAiBaiduMessageResponse, PostApiAiBaiduMessageError, ThrowOnError>({
             ...options,
             url: '/api/ai/baidu/message'
@@ -400,7 +400,7 @@ export class AiBaiduMessageService {
     /**
      * 获取历史消息
      */
-    public static getApiAiBaiduMessage<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiAiBaiduMessageData, ThrowOnError>) {
+    public static getHistory<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiAiBaiduMessageData, ThrowOnError>) {
         return (options?.client ?? client).get<GetApiAiBaiduMessageResponse, GetApiAiBaiduMessageError, ThrowOnError>({
             ...options,
             url: '/api/ai/baidu/message'
@@ -413,7 +413,7 @@ export class AiBaiduOcrService {
     /**
      * 新增ocr任务
      */
-    public static postApiAiBaiduOcr<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PostApiAiBaiduOcrData, ThrowOnError>) {
+    public static create<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PostApiAiBaiduOcrData, ThrowOnError>) {
         return (options?.client ?? client).post<PostApiAiBaiduOcrResponse, PostApiAiBaiduOcrError, ThrowOnError>({
             ...options,
             url: '/api/ai/baidu/ocr'
@@ -423,7 +423,7 @@ export class AiBaiduOcrService {
     /**
      * 获取所有ocr任务
      */
-    public static getApiAiBaiduOcr<ThrowOnError extends boolean = false>(options?: OptionsLegacyParser<unknown, ThrowOnError>) {
+    public static getAll<ThrowOnError extends boolean = false>(options?: OptionsLegacyParser<unknown, ThrowOnError>) {
         return (options?.client ?? client).get<GetApiAiBaiduOcrResponse, GetApiAiBaiduOcrError, ThrowOnError>({
             ...options,
             url: '/api/ai/baidu/ocr'
@@ -433,7 +433,7 @@ export class AiBaiduOcrService {
     /**
      * 获取分页ocr任务
      */
-    public static getApiAiBaiduOcrPaginate<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiAiBaiduOcrPaginateData, ThrowOnError>) {
+    public static paginate<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiAiBaiduOcrPaginateData, ThrowOnError>) {
         return (options?.client ?? client).get<GetApiAiBaiduOcrPaginateResponse, GetApiAiBaiduOcrPaginateError, ThrowOnError>({
             ...options,
             url: '/api/ai/baidu/ocr/paginate'
@@ -443,7 +443,7 @@ export class AiBaiduOcrService {
     /**
      * 获取指定id ocr任务
      */
-    public static getApiAiBaiduOcrById<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiAiBaiduOcrByIdData, ThrowOnError>) {
+    public static get<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiAiBaiduOcrByIdData, ThrowOnError>) {
         return (options?.client ?? client).get<GetApiAiBaiduOcrByIdResponse, GetApiAiBaiduOcrByIdError, ThrowOnError>({
             ...options,
             url: '/api/ai/baidu/ocr/{id}'
@@ -456,7 +456,7 @@ export class AiBaiduServiceService {
     /**
      * 新增服务
      */
-    public static postApiAiBaiduService<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PostApiAiBaiduServiceData, ThrowOnError>) {
+    public static create<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PostApiAiBaiduServiceData, ThrowOnError>) {
         return (options?.client ?? client).post<PostApiAiBaiduServiceResponse, PostApiAiBaiduServiceError, ThrowOnError>({
             ...options,
             url: '/api/ai/baidu/service'
@@ -466,7 +466,7 @@ export class AiBaiduServiceService {
     /**
      * 获取所有服务
      */
-    public static getApiAiBaiduService<ThrowOnError extends boolean = false>(options?: OptionsLegacyParser<unknown, ThrowOnError>) {
+    public static getAll<ThrowOnError extends boolean = false>(options?: OptionsLegacyParser<unknown, ThrowOnError>) {
         return (options?.client ?? client).get<GetApiAiBaiduServiceResponse, GetApiAiBaiduServiceError, ThrowOnError>({
             ...options,
             url: '/api/ai/baidu/service'
@@ -476,7 +476,7 @@ export class AiBaiduServiceService {
     /**
      * 获取分页服务
      */
-    public static getApiAiBaiduServicePaginate<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiAiBaiduServicePaginateData, ThrowOnError>) {
+    public static paginate<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiAiBaiduServicePaginateData, ThrowOnError>) {
         return (options?.client ?? client).get<GetApiAiBaiduServicePaginateResponse, GetApiAiBaiduServicePaginateError, ThrowOnError>({
             ...options,
             url: '/api/ai/baidu/service/paginate'
@@ -486,7 +486,7 @@ export class AiBaiduServiceService {
     /**
      * 获取指定id服务
      */
-    public static getApiAiBaiduServiceById<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiAiBaiduServiceByIdData, ThrowOnError>) {
+    public static get<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiAiBaiduServiceByIdData, ThrowOnError>) {
         return (options?.client ?? client).get<GetApiAiBaiduServiceByIdResponse, GetApiAiBaiduServiceByIdError, ThrowOnError>({
             ...options,
             url: '/api/ai/baidu/service/{id}'
@@ -496,7 +496,7 @@ export class AiBaiduServiceService {
     /**
      * 更新指定id服务
      */
-    public static patchApiAiBaiduServiceById<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PatchApiAiBaiduServiceByIdData, ThrowOnError>) {
+    public static update<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PatchApiAiBaiduServiceByIdData, ThrowOnError>) {
         return (options?.client ?? client).patch<PatchApiAiBaiduServiceByIdResponse, PatchApiAiBaiduServiceByIdError, ThrowOnError>({
             ...options,
             url: '/api/ai/baidu/service/{id}'
@@ -506,7 +506,7 @@ export class AiBaiduServiceService {
     /**
      * 删除服务
      */
-    public static deleteApiAiBaiduServiceById<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<DeleteApiAiBaiduServiceByIdData, ThrowOnError>) {
+    public static remove<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<DeleteApiAiBaiduServiceByIdData, ThrowOnError>) {
         return (options?.client ?? client).delete<DeleteApiAiBaiduServiceByIdResponse, DeleteApiAiBaiduServiceByIdError, ThrowOnError>({
             ...options,
             url: '/api/ai/baidu/service/{id}'
@@ -519,7 +519,7 @@ export class AiBaiduSessionService {
     /**
      * 新增会话
      */
-    public static postApiAiBaiduSession<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PostApiAiBaiduSessionData, ThrowOnError>) {
+    public static create<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PostApiAiBaiduSessionData, ThrowOnError>) {
         return (options?.client ?? client).post<PostApiAiBaiduSessionResponse, PostApiAiBaiduSessionError, ThrowOnError>({
             ...options,
             url: '/api/ai/baidu/session'
@@ -529,7 +529,7 @@ export class AiBaiduSessionService {
     /**
      * 获取所有会话
      */
-    public static getApiAiBaiduSession<ThrowOnError extends boolean = false>(options?: OptionsLegacyParser<unknown, ThrowOnError>) {
+    public static getAll<ThrowOnError extends boolean = false>(options?: OptionsLegacyParser<unknown, ThrowOnError>) {
         return (options?.client ?? client).get<GetApiAiBaiduSessionResponse, GetApiAiBaiduSessionError, ThrowOnError>({
             ...options,
             url: '/api/ai/baidu/session'
@@ -539,7 +539,7 @@ export class AiBaiduSessionService {
     /**
      * 获取分页会话
      */
-    public static getApiAiBaiduSessionPaginate<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiAiBaiduSessionPaginateData, ThrowOnError>) {
+    public static paginate<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiAiBaiduSessionPaginateData, ThrowOnError>) {
         return (options?.client ?? client).get<GetApiAiBaiduSessionPaginateResponse, GetApiAiBaiduSessionPaginateError, ThrowOnError>({
             ...options,
             url: '/api/ai/baidu/session/paginate'
@@ -549,7 +549,7 @@ export class AiBaiduSessionService {
     /**
      * 获取指定id会话
      */
-    public static getApiAiBaiduSessionById<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiAiBaiduSessionByIdData, ThrowOnError>) {
+    public static get<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiAiBaiduSessionByIdData, ThrowOnError>) {
         return (options?.client ?? client).get<GetApiAiBaiduSessionByIdResponse, GetApiAiBaiduSessionByIdError, ThrowOnError>({
             ...options,
             url: '/api/ai/baidu/session/{id}'
@@ -559,7 +559,7 @@ export class AiBaiduSessionService {
     /**
      * 更新指定id会话
      */
-    public static patchApiAiBaiduSessionById<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PatchApiAiBaiduSessionByIdData, ThrowOnError>) {
+    public static update<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PatchApiAiBaiduSessionByIdData, ThrowOnError>) {
         return (options?.client ?? client).patch<PatchApiAiBaiduSessionByIdResponse, PatchApiAiBaiduSessionByIdError, ThrowOnError>({
             ...options,
             url: '/api/ai/baidu/session/{id}'
@@ -569,7 +569,7 @@ export class AiBaiduSessionService {
     /**
      * 删除服务
      */
-    public static deleteApiAiBaiduSessionById<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<DeleteApiAiBaiduSessionByIdData, ThrowOnError>) {
+    public static remove<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<DeleteApiAiBaiduSessionByIdData, ThrowOnError>) {
         return (options?.client ?? client).delete<DeleteApiAiBaiduSessionByIdResponse, DeleteApiAiBaiduSessionByIdError, ThrowOnError>({
             ...options,
             url: '/api/ai/baidu/session/{id}'
@@ -582,7 +582,7 @@ export class AiCommonServiceTypeService {
     /**
      * 新增服务类型
      */
-    public static postApiAiCommonServiceType<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PostApiAiCommonServiceTypeData, ThrowOnError>) {
+    public static create<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PostApiAiCommonServiceTypeData, ThrowOnError>) {
         return (options?.client ?? client).post<PostApiAiCommonServiceTypeResponse, PostApiAiCommonServiceTypeError, ThrowOnError>({
             ...options,
             url: '/api/ai/common/service-type'
@@ -592,7 +592,7 @@ export class AiCommonServiceTypeService {
     /**
      * 获取所有ai服务类型
      */
-    public static getApiAiCommonServiceType<ThrowOnError extends boolean = false>(options?: OptionsLegacyParser<unknown, ThrowOnError>) {
+    public static getAll<ThrowOnError extends boolean = false>(options?: OptionsLegacyParser<unknown, ThrowOnError>) {
         return (options?.client ?? client).get<GetApiAiCommonServiceTypeResponse, GetApiAiCommonServiceTypeError, ThrowOnError>({
             ...options,
             url: '/api/ai/common/service-type'
@@ -602,7 +602,7 @@ export class AiCommonServiceTypeService {
     /**
      * 获取指定id服务类型
      */
-    public static getApiAiCommonServiceTypeById<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiAiCommonServiceTypeByIdData, ThrowOnError>) {
+    public static get<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiAiCommonServiceTypeByIdData, ThrowOnError>) {
         return (options?.client ?? client).get<GetApiAiCommonServiceTypeByIdResponse, GetApiAiCommonServiceTypeByIdError, ThrowOnError>({
             ...options,
             url: '/api/ai/common/service-type/{id}'
@@ -612,7 +612,7 @@ export class AiCommonServiceTypeService {
     /**
      * 更新指定id服务类型
      */
-    public static patchApiAiCommonServiceTypeById<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PatchApiAiCommonServiceTypeByIdData, ThrowOnError>) {
+    public static update<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PatchApiAiCommonServiceTypeByIdData, ThrowOnError>) {
         return (options?.client ?? client).patch<PatchApiAiCommonServiceTypeByIdResponse, PatchApiAiCommonServiceTypeByIdError, ThrowOnError>({
             ...options,
             url: '/api/ai/common/service-type/{id}'
@@ -622,7 +622,7 @@ export class AiCommonServiceTypeService {
     /**
      * 删除服务类型
      */
-    public static deleteApiAiCommonServiceTypeById<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<DeleteApiAiCommonServiceTypeByIdData, ThrowOnError>) {
+    public static remove<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<DeleteApiAiCommonServiceTypeByIdData, ThrowOnError>) {
         return (options?.client ?? client).delete<DeleteApiAiCommonServiceTypeByIdResponse, DeleteApiAiCommonServiceTypeByIdError, ThrowOnError>({
             ...options,
             url: '/api/ai/common/service-type/{id}'
@@ -635,7 +635,7 @@ export class AreaService {
     /**
      * 获取省份列表
      */
-    public static getApiAreaProvinces<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiAreaProvincesData, ThrowOnError>) {
+    public static getProvinces<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiAreaProvincesData, ThrowOnError>) {
         return (options?.client ?? client).get<GetApiAreaProvincesResponse, GetApiAreaProvincesError, ThrowOnError>({
             ...options,
             url: '/api/area/provinces'
@@ -645,7 +645,7 @@ export class AreaService {
     /**
      * 获取城市列表
      */
-    public static getApiAreaCities<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiAreaCitiesData, ThrowOnError>) {
+    public static getCities<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiAreaCitiesData, ThrowOnError>) {
         return (options?.client ?? client).get<GetApiAreaCitiesResponse, GetApiAreaCitiesError, ThrowOnError>({
             ...options,
             url: '/api/area/cities'
@@ -655,7 +655,7 @@ export class AreaService {
     /**
      * 获取区列表
      */
-    public static getApiAreaRegions<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiAreaRegionsData, ThrowOnError>) {
+    public static getRegions<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiAreaRegionsData, ThrowOnError>) {
         return (options?.client ?? client).get<GetApiAreaRegionsResponse, GetApiAreaRegionsError, ThrowOnError>({
             ...options,
             url: '/api/area/regions'
@@ -665,7 +665,7 @@ export class AreaService {
     /**
      * 获取省市区结构
      */
-    public static getApiAreaTreeData<ThrowOnError extends boolean = false>(options?: OptionsLegacyParser<unknown, ThrowOnError>) {
+    public static getTreeData<ThrowOnError extends boolean = false>(options?: OptionsLegacyParser<unknown, ThrowOnError>) {
         return (options?.client ?? client).get<GetApiAreaTreeDataResponse, GetApiAreaTreeDataError, ThrowOnError>({
             ...options,
             url: '/api/area/treeData'
@@ -678,7 +678,7 @@ export class AuthService {
     /**
      * 验证auth
      */
-    public static getApiAuthVerify<ThrowOnError extends boolean = false>(options?: OptionsLegacyParser<unknown, ThrowOnError>) {
+    public static verify<ThrowOnError extends boolean = false>(options?: OptionsLegacyParser<unknown, ThrowOnError>) {
         return (options?.client ?? client).get<GetApiAuthVerifyResponse, GetApiAuthVerifyError, ThrowOnError>({
             ...options,
             url: '/api/auth/verify'
@@ -688,7 +688,7 @@ export class AuthService {
     /**
      * 注销登录用户
      */
-    public static deleteApiAuthCancellation<ThrowOnError extends boolean = false>(options?: OptionsLegacyParser<unknown, ThrowOnError>) {
+    public static cancellation<ThrowOnError extends boolean = false>(options?: OptionsLegacyParser<unknown, ThrowOnError>) {
         return (options?.client ?? client).delete<DeleteApiAuthCancellationResponse, DeleteApiAuthCancellationError, ThrowOnError>({
             ...options,
             url: '/api/auth/cancellation'
@@ -698,7 +698,7 @@ export class AuthService {
     /**
      * 用户名密码登录
      */
-    public static postApiAuthLogin<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PostApiAuthLoginData, ThrowOnError>) {
+    public static login<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PostApiAuthLoginData, ThrowOnError>) {
         return (options?.client ?? client).post<PostApiAuthLoginResponse, PostApiAuthLoginError, ThrowOnError>({
             ...options,
             url: '/api/auth/login'
@@ -708,7 +708,7 @@ export class AuthService {
     /**
      * 手机验证码登录
      */
-    public static postApiAuthLoginBySmsCode<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PostApiAuthLoginBySmsCodeData, ThrowOnError>) {
+    public static loginBySmsCode<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PostApiAuthLoginBySmsCodeData, ThrowOnError>) {
         return (options?.client ?? client).post<PostApiAuthLoginBySmsCodeResponse, PostApiAuthLoginBySmsCodeError, ThrowOnError>({
             ...options,
             url: '/api/auth/loginBySmsCode'
@@ -718,7 +718,7 @@ export class AuthService {
     /**
      * 微信登录
      */
-    public static postApiAuthLoginByWeixin<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PostApiAuthLoginByWeixinData, ThrowOnError>) {
+    public static loginByWeixin<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PostApiAuthLoginByWeixinData, ThrowOnError>) {
         return (options?.client ?? client).post<PostApiAuthLoginByWeixinResponse, PostApiAuthLoginByWeixinError, ThrowOnError>({
             ...options,
             url: '/api/auth/loginByWeixin'
@@ -728,7 +728,7 @@ export class AuthService {
     /**
      * 微信小程序手机号登录
      */
-    public static postApiAuthLoginByWeixinMobile<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PostApiAuthLoginByWeixinMobileData, ThrowOnError>) {
+    public static loginByWeixinMobile<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PostApiAuthLoginByWeixinMobileData, ThrowOnError>) {
         return (options?.client ?? client).post<PostApiAuthLoginByWeixinMobileResponse, PostApiAuthLoginByWeixinMobileError, ThrowOnError>({
             ...options,
             url: '/api/auth/loginByWeixinMobile'
@@ -738,7 +738,7 @@ export class AuthService {
     /**
      * 类似oauth2的code登录
      */
-    public static postApiAuthLoginByCode<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PostApiAuthLoginByCodeData, ThrowOnError>) {
+    public static loginByCode<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PostApiAuthLoginByCodeData, ThrowOnError>) {
         return (options?.client ?? client).post<PostApiAuthLoginByCodeResponse, PostApiAuthLoginByCodeError, ThrowOnError>({
             ...options,
             url: '/api/auth/loginByCode'
@@ -748,7 +748,7 @@ export class AuthService {
     /**
      * 生成登录code
      */
-    public static getApiAuthAuthenticate<ThrowOnError extends boolean = false>(options?: OptionsLegacyParser<unknown, ThrowOnError>) {
+    public static generateLoginCode<ThrowOnError extends boolean = false>(options?: OptionsLegacyParser<unknown, ThrowOnError>) {
         return (options?.client ?? client).get<GetApiAuthAuthenticateResponse, GetApiAuthAuthenticateError, ThrowOnError>({
             ...options,
             url: '/api/auth/authenticate'
@@ -761,7 +761,7 @@ export class ChatContactsService {
     /**
      * 添加联系人
      */
-    public static postApiChatContacts<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PostApiChatContactsData, ThrowOnError>) {
+    public static create<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PostApiChatContactsData, ThrowOnError>) {
         return (options?.client ?? client).post<PostApiChatContactsResponse, PostApiChatContactsError, ThrowOnError>({
             ...options,
             url: '/api/chat/contacts'
@@ -771,7 +771,7 @@ export class ChatContactsService {
     /**
      * 获取所有联系人
      */
-    public static getApiChatContacts<ThrowOnError extends boolean = false>(options?: OptionsLegacyParser<unknown, ThrowOnError>) {
+    public static get<ThrowOnError extends boolean = false>(options?: OptionsLegacyParser<unknown, ThrowOnError>) {
         return (options?.client ?? client).get<GetApiChatContactsResponse, GetApiChatContactsError, ThrowOnError>({
             ...options,
             url: '/api/chat/contacts'
@@ -781,7 +781,7 @@ export class ChatContactsService {
     /**
      * 删除联系人
      */
-    public static deleteApiChatContactsById<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<DeleteApiChatContactsByIdData, ThrowOnError>) {
+    public static remove<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<DeleteApiChatContactsByIdData, ThrowOnError>) {
         return (options?.client ?? client).delete<DeleteApiChatContactsByIdResponse, DeleteApiChatContactsByIdError, ThrowOnError>({
             ...options,
             url: '/api/chat/contacts/{id}'
@@ -791,7 +791,7 @@ export class ChatContactsService {
     /**
      * 更新联系人
      */
-    public static putApiChatContactsById<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PutApiChatContactsByIdData, ThrowOnError>) {
+    public static updateStatus<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PutApiChatContactsByIdData, ThrowOnError>) {
         return (options?.client ?? client).put<PutApiChatContactsByIdResponse, PutApiChatContactsByIdError, ThrowOnError>({
             ...options,
             url: '/api/chat/contacts/{id}'
@@ -804,7 +804,7 @@ export class ChatMessageService {
     /**
      * 发送聊天
      */
-    public static postApiChatMessage<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PostApiChatMessageData, ThrowOnError>) {
+    public static create<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PostApiChatMessageData, ThrowOnError>) {
         return (options?.client ?? client).post<PostApiChatMessageResponse, PostApiChatMessageError, ThrowOnError>({
             ...options,
             url: '/api/chat/message'
@@ -814,7 +814,7 @@ export class ChatMessageService {
     /**
      * 游标分页
      */
-    public static getApiChatMessageCursor<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiChatMessageCursorData, ThrowOnError>) {
+    public static findWithCursor<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiChatMessageCursorData, ThrowOnError>) {
         return (options?.client ?? client).get<GetApiChatMessageCursorResponse, GetApiChatMessageCursorError, ThrowOnError>({
             ...options,
             url: '/api/chat/message/cursor'
@@ -827,7 +827,7 @@ export class ChatSessionService {
     /**
      * 添加聊天会话
      */
-    public static postApiChatSession<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PostApiChatSessionData, ThrowOnError>) {
+    public static create<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PostApiChatSessionData, ThrowOnError>) {
         return (options?.client ?? client).post<PostApiChatSessionResponse, PostApiChatSessionError, ThrowOnError>({
             ...options,
             url: '/api/chat/session'
@@ -837,7 +837,7 @@ export class ChatSessionService {
     /**
      * 获取所有联系人
      */
-    public static getApiChatSession<ThrowOnError extends boolean = false>(options?: OptionsLegacyParser<unknown, ThrowOnError>) {
+    public static get<ThrowOnError extends boolean = false>(options?: OptionsLegacyParser<unknown, ThrowOnError>) {
         return (options?.client ?? client).get<GetApiChatSessionResponse, GetApiChatSessionError, ThrowOnError>({
             ...options,
             url: '/api/chat/session'
@@ -847,7 +847,7 @@ export class ChatSessionService {
     /**
      * 删除聊天会话
      */
-    public static deleteApiChatSessionById<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<DeleteApiChatSessionByIdData, ThrowOnError>) {
+    public static remove<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<DeleteApiChatSessionByIdData, ThrowOnError>) {
         return (options?.client ?? client).delete<DeleteApiChatSessionByIdResponse, DeleteApiChatSessionByIdError, ThrowOnError>({
             ...options,
             url: '/api/chat/session/{id}'
@@ -857,56 +857,56 @@ export class ChatSessionService {
 }
 
 export class DefaultService {
-    public static postApiWeixinPlatformPayCenterNotifyCommonPayByAppidByMchid<ThrowOnError extends boolean = false>(options?: OptionsLegacyParser<unknown, ThrowOnError>) {
+    public static WeixinPayCenterNotifyController_commonPay<ThrowOnError extends boolean = false>(options?: OptionsLegacyParser<unknown, ThrowOnError>) {
         return (options?.client ?? client).post<PostApiWeixinPlatformPayCenterNotifyCommonPayByAppidByMchidResponse, PostApiWeixinPlatformPayCenterNotifyCommonPayByAppidByMchidError, ThrowOnError>({
             ...options,
             url: '/api/weixin-platform/pay-center/notify/commonPay/{appid}/{mchid}'
         });
     }
     
-    public static postApiWeixinPlatformPayCenterNotifyNativePayByAppidByMchid<ThrowOnError extends boolean = false>(options?: OptionsLegacyParser<unknown, ThrowOnError>) {
+    public static WeixinPayCenterNotifyController_nativePay<ThrowOnError extends boolean = false>(options?: OptionsLegacyParser<unknown, ThrowOnError>) {
         return (options?.client ?? client).post<PostApiWeixinPlatformPayCenterNotifyNativePayByAppidByMchidResponse, PostApiWeixinPlatformPayCenterNotifyNativePayByAppidByMchidError, ThrowOnError>({
             ...options,
             url: '/api/weixin-platform/pay-center/notify/nativePay/{appid}/{mchid}'
         });
     }
     
-    public static postApiWeixinPlatformPayCenterNotifyRefundByAppidByMchid<ThrowOnError extends boolean = false>(options?: OptionsLegacyParser<unknown, ThrowOnError>) {
+    public static WeixinPayCenterNotifyController_refund<ThrowOnError extends boolean = false>(options?: OptionsLegacyParser<unknown, ThrowOnError>) {
         return (options?.client ?? client).post<PostApiWeixinPlatformPayCenterNotifyRefundByAppidByMchidResponse, PostApiWeixinPlatformPayCenterNotifyRefundByAppidByMchidError, ThrowOnError>({
             ...options,
             url: '/api/weixin-platform/pay-center/notify/refund/{appid}/{mchid}'
         });
     }
     
-    public static postApiAiSession<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PostApiAiSessionData, ThrowOnError>) {
+    public static AiSessionController_create<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PostApiAiSessionData, ThrowOnError>) {
         return (options?.client ?? client).post<PostApiAiSessionResponse, PostApiAiSessionError, ThrowOnError>({
             ...options,
             url: '/api/ai-session'
         });
     }
     
-    public static getApiAiSession<ThrowOnError extends boolean = false>(options?: OptionsLegacyParser<unknown, ThrowOnError>) {
+    public static AiSessionController_findAll<ThrowOnError extends boolean = false>(options?: OptionsLegacyParser<unknown, ThrowOnError>) {
         return (options?.client ?? client).get<GetApiAiSessionResponse, GetApiAiSessionError, ThrowOnError>({
             ...options,
             url: '/api/ai-session'
         });
     }
     
-    public static getApiAiSessionById<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiAiSessionByIdData, ThrowOnError>) {
+    public static AiSessionController_findOne<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiAiSessionByIdData, ThrowOnError>) {
         return (options?.client ?? client).get<GetApiAiSessionByIdResponse, GetApiAiSessionByIdError, ThrowOnError>({
             ...options,
             url: '/api/ai-session/{id}'
         });
     }
     
-    public static patchApiAiSessionById<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PatchApiAiSessionByIdData, ThrowOnError>) {
+    public static AiSessionController_update<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PatchApiAiSessionByIdData, ThrowOnError>) {
         return (options?.client ?? client).patch<PatchApiAiSessionByIdResponse, PatchApiAiSessionByIdError, ThrowOnError>({
             ...options,
             url: '/api/ai-session/{id}'
         });
     }
     
-    public static deleteApiAiSessionById<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<DeleteApiAiSessionByIdData, ThrowOnError>) {
+    public static AiSessionController_remove<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<DeleteApiAiSessionByIdData, ThrowOnError>) {
         return (options?.client ?? client).delete<DeleteApiAiSessionByIdResponse, DeleteApiAiSessionByIdError, ThrowOnError>({
             ...options,
             url: '/api/ai-session/{id}'
@@ -916,7 +916,7 @@ export class DefaultService {
 }
 
 export class FileService {
-    public static postApiFileUpload<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PostApiFileUploadData, ThrowOnError>) {
+    public static uploadFile<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PostApiFileUploadData, ThrowOnError>) {
         return (options?.client ?? client).post<PostApiFileUploadResponse, PostApiFileUploadError, ThrowOnError>({
             ...options,
             ...formDataBodySerializer,
@@ -928,7 +928,7 @@ export class FileService {
         });
     }
     
-    public static postApiFileUploads<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PostApiFileUploadsData, ThrowOnError>) {
+    public static uploadFiles<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PostApiFileUploadsData, ThrowOnError>) {
         return (options?.client ?? client).post<PostApiFileUploadsResponse, PostApiFileUploadsError, ThrowOnError>({
             ...options,
             ...formDataBodySerializer,
@@ -943,7 +943,7 @@ export class FileService {
     /**
      * 获取id文件信息
      */
-    public static getApiFileById<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiFileByIdData, ThrowOnError>) {
+    public static get<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiFileByIdData, ThrowOnError>) {
         return (options?.client ?? client).get<GetApiFileByIdResponse, GetApiFileByIdError, ThrowOnError>({
             ...options,
             url: '/api/file/{id}'
@@ -953,7 +953,7 @@ export class FileService {
 }
 
 export class FileStaticService {
-    public static getApiFileStaticById<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiFileStaticByIdData, ThrowOnError>) {
+    public static view<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiFileStaticByIdData, ThrowOnError>) {
         return (options?.client ?? client).get<GetApiFileStaticByIdResponse, GetApiFileStaticByIdError, ThrowOnError>({
             ...options,
             url: '/api/file/static/{id}'
@@ -966,7 +966,7 @@ export class ForumCommentService {
     /**
      * 创建评论
      */
-    public static postApiForumComment<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PostApiForumCommentData, ThrowOnError>) {
+    public static create<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PostApiForumCommentData, ThrowOnError>) {
         return (options?.client ?? client).post<PostApiForumCommentResponse, PostApiForumCommentError, ThrowOnError>({
             ...options,
             url: '/api/forum/comment'
@@ -976,7 +976,7 @@ export class ForumCommentService {
     /**
      * 获取帖子下所有评论
      */
-    public static getApiForumComment<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiForumCommentData, ThrowOnError>) {
+    public static getAll<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiForumCommentData, ThrowOnError>) {
         return (options?.client ?? client).get<GetApiForumCommentResponse, GetApiForumCommentError, ThrowOnError>({
             ...options,
             url: '/api/forum/comment'
@@ -986,7 +986,7 @@ export class ForumCommentService {
     /**
      * 删除指定id评论
      */
-    public static deleteApiForumCommentById<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<DeleteApiForumCommentByIdData, ThrowOnError>) {
+    public static remove<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<DeleteApiForumCommentByIdData, ThrowOnError>) {
         return (options?.client ?? client).delete<DeleteApiForumCommentByIdResponse, DeleteApiForumCommentByIdError, ThrowOnError>({
             ...options,
             url: '/api/forum/comment/{id}'
@@ -996,7 +996,7 @@ export class ForumCommentService {
     /**
      * 获取指定id评论
      */
-    public static getApiForumCommentById<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiForumCommentByIdData, ThrowOnError>) {
+    public static get<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiForumCommentByIdData, ThrowOnError>) {
         return (options?.client ?? client).get<GetApiForumCommentByIdResponse, GetApiForumCommentByIdError, ThrowOnError>({
             ...options,
             url: '/api/forum/comment/{id}'
@@ -1006,7 +1006,7 @@ export class ForumCommentService {
     /**
      * 获取帖子下分页评论
      */
-    public static getApiForumCommentPageAll<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiForumCommentPageAllData, ThrowOnError>) {
+    public static paginate<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiForumCommentPageAllData, ThrowOnError>) {
         return (options?.client ?? client).get<GetApiForumCommentPageAllResponse, GetApiForumCommentPageAllError, ThrowOnError>({
             ...options,
             url: '/api/forum/comment/page/all'
@@ -1016,7 +1016,7 @@ export class ForumCommentService {
     /**
      * 获取帖子下登录用户的分页评论
      */
-    public static getApiForumCommentPageSession<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiForumCommentPageSessionData, ThrowOnError>) {
+    public static paginateSession<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiForumCommentPageSessionData, ThrowOnError>) {
         return (options?.client ?? client).get<GetApiForumCommentPageSessionResponse, GetApiForumCommentPageSessionError, ThrowOnError>({
             ...options,
             url: '/api/forum/comment/page/session'
@@ -1026,7 +1026,7 @@ export class ForumCommentService {
     /**
      * 获取帖子下评论数量
      */
-    public static getApiForumCommentCountAll<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiForumCommentCountAllData, ThrowOnError>) {
+    public static getCount<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiForumCommentCountAllData, ThrowOnError>) {
         return (options?.client ?? client).get<GetApiForumCommentCountAllResponse, GetApiForumCommentCountAllError, ThrowOnError>({
             ...options,
             url: '/api/forum/comment/count/all'
@@ -1036,7 +1036,7 @@ export class ForumCommentService {
     /**
      * 获取帖子下当前登录用户的评论数量
      */
-    public static getApiForumCommentCountSession<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiForumCommentCountSessionData, ThrowOnError>) {
+    public static getCountSession<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiForumCommentCountSessionData, ThrowOnError>) {
         return (options?.client ?? client).get<GetApiForumCommentCountSessionResponse, GetApiForumCommentCountSessionError, ThrowOnError>({
             ...options,
             url: '/api/forum/comment/count/session'
@@ -1049,7 +1049,7 @@ export class ForumPostService {
     /**
      * 创建帖子
      */
-    public static postApiForumPost<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PostApiForumPostData, ThrowOnError>) {
+    public static create<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PostApiForumPostData, ThrowOnError>) {
         return (options?.client ?? client).post<PostApiForumPostResponse, PostApiForumPostError, ThrowOnError>({
             ...options,
             url: '/api/forum/post'
@@ -1059,7 +1059,7 @@ export class ForumPostService {
     /**
      * 获取所有帖子
      */
-    public static getApiForumPost<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiForumPostData, ThrowOnError>) {
+    public static getAll<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiForumPostData, ThrowOnError>) {
         return (options?.client ?? client).get<GetApiForumPostResponse, GetApiForumPostError, ThrowOnError>({
             ...options,
             url: '/api/forum/post'
@@ -1069,7 +1069,7 @@ export class ForumPostService {
     /**
      * 删除帖子
      */
-    public static deleteApiForumPostById<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<DeleteApiForumPostByIdData, ThrowOnError>) {
+    public static remove<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<DeleteApiForumPostByIdData, ThrowOnError>) {
         return (options?.client ?? client).delete<DeleteApiForumPostByIdResponse, DeleteApiForumPostByIdError, ThrowOnError>({
             ...options,
             url: '/api/forum/post/{id}'
@@ -1079,7 +1079,7 @@ export class ForumPostService {
     /**
      * 更新指定id帖子
      */
-    public static putApiForumPostById<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PutApiForumPostByIdData, ThrowOnError>) {
+    public static update<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PutApiForumPostByIdData, ThrowOnError>) {
         return (options?.client ?? client).put<PutApiForumPostByIdResponse, PutApiForumPostByIdError, ThrowOnError>({
             ...options,
             url: '/api/forum/post/{id}'
@@ -1089,7 +1089,7 @@ export class ForumPostService {
     /**
      * 获取指定id帖子
      */
-    public static getApiForumPostById<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiForumPostByIdData, ThrowOnError>) {
+    public static get<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiForumPostByIdData, ThrowOnError>) {
         return (options?.client ?? client).get<GetApiForumPostByIdResponse, GetApiForumPostByIdError, ThrowOnError>({
             ...options,
             url: '/api/forum/post/{id}'
@@ -1099,7 +1099,7 @@ export class ForumPostService {
     /**
      * 帖子分页数据
      */
-    public static getApiForumPostPageAll<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiForumPostPageAllData, ThrowOnError>) {
+    public static paginate<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiForumPostPageAllData, ThrowOnError>) {
         return (options?.client ?? client).get<GetApiForumPostPageAllResponse, GetApiForumPostPageAllError, ThrowOnError>({
             ...options,
             url: '/api/forum/post/page/all'
@@ -1109,7 +1109,7 @@ export class ForumPostService {
     /**
      * 当前用户帖子分页数据
      */
-    public static getApiForumPostPageSession<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiForumPostPageSessionData, ThrowOnError>) {
+    public static paginateSession<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiForumPostPageSessionData, ThrowOnError>) {
         return (options?.client ?? client).get<GetApiForumPostPageSessionResponse, GetApiForumPostPageSessionError, ThrowOnError>({
             ...options,
             url: '/api/forum/post/page/session'
@@ -1119,7 +1119,7 @@ export class ForumPostService {
     /**
      * 帖子分页数据(游标)
      */
-    public static getApiForumPostPageCursorAll<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiForumPostPageCursorAllData, ThrowOnError>) {
+    public static paginateByCursor<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiForumPostPageCursorAllData, ThrowOnError>) {
         return (options?.client ?? client).get<GetApiForumPostPageCursorAllResponse, GetApiForumPostPageCursorAllError, ThrowOnError>({
             ...options,
             url: '/api/forum/post/page/cursor/all'
@@ -1129,7 +1129,7 @@ export class ForumPostService {
     /**
      * 获取帖子数量
      */
-    public static getApiForumPostCountAll<ThrowOnError extends boolean = false>(options?: OptionsLegacyParser<GetApiForumPostCountAllData, ThrowOnError>) {
+    public static getCount<ThrowOnError extends boolean = false>(options?: OptionsLegacyParser<GetApiForumPostCountAllData, ThrowOnError>) {
         return (options?.client ?? client).get<GetApiForumPostCountAllResponse, GetApiForumPostCountAllError, ThrowOnError>({
             ...options,
             url: '/api/forum/post/count/all'
@@ -1139,7 +1139,7 @@ export class ForumPostService {
     /**
      * 获取登录用户帖子数量
      */
-    public static getApiForumPostCountSession<ThrowOnError extends boolean = false>(options?: OptionsLegacyParser<GetApiForumPostCountSessionData, ThrowOnError>) {
+    public static getCountSession<ThrowOnError extends boolean = false>(options?: OptionsLegacyParser<GetApiForumPostCountSessionData, ThrowOnError>) {
         return (options?.client ?? client).get<GetApiForumPostCountSessionResponse, GetApiForumPostCountSessionError, ThrowOnError>({
             ...options,
             url: '/api/forum/post/count/session'
@@ -1152,7 +1152,7 @@ export class ForumPostRelationService {
     /**
      * 创建用户和帖子的关系
      */
-    public static postApiForumPostRelation<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PostApiForumPostRelationData, ThrowOnError>) {
+    public static create<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PostApiForumPostRelationData, ThrowOnError>) {
         return (options?.client ?? client).post<PostApiForumPostRelationResponse, PostApiForumPostRelationError, ThrowOnError>({
             ...options,
             url: '/api/forum/post-relation'
@@ -1162,7 +1162,7 @@ export class ForumPostRelationService {
     /**
      * 获取所有用户和帖子的关系
      */
-    public static getApiForumPostRelation<ThrowOnError extends boolean = false>(options?: OptionsLegacyParser<GetApiForumPostRelationData, ThrowOnError>) {
+    public static getAll<ThrowOnError extends boolean = false>(options?: OptionsLegacyParser<GetApiForumPostRelationData, ThrowOnError>) {
         return (options?.client ?? client).get<GetApiForumPostRelationResponse, GetApiForumPostRelationError, ThrowOnError>({
             ...options,
             url: '/api/forum/post-relation'
@@ -1172,7 +1172,7 @@ export class ForumPostRelationService {
     /**
      * 删除用户和帖子的关系
      */
-    public static deleteApiForumPostRelationById<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<DeleteApiForumPostRelationByIdData, ThrowOnError>) {
+    public static remove<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<DeleteApiForumPostRelationByIdData, ThrowOnError>) {
         return (options?.client ?? client).delete<DeleteApiForumPostRelationByIdResponse, DeleteApiForumPostRelationByIdError, ThrowOnError>({
             ...options,
             url: '/api/forum/post-relation/{id}'
@@ -1182,7 +1182,7 @@ export class ForumPostRelationService {
     /**
      * 获取指定id的用户和帖子的关系
      */
-    public static getApiForumPostRelationById<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiForumPostRelationByIdData, ThrowOnError>) {
+    public static get<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiForumPostRelationByIdData, ThrowOnError>) {
         return (options?.client ?? client).get<GetApiForumPostRelationByIdResponse, GetApiForumPostRelationByIdError, ThrowOnError>({
             ...options,
             url: '/api/forum/post-relation/{id}'
@@ -1192,7 +1192,7 @@ export class ForumPostRelationService {
     /**
      * 获取登录用户的所有用户和帖子的关系
      */
-    public static getApiForumPostRelationSessionInfo<ThrowOnError extends boolean = false>(options?: OptionsLegacyParser<GetApiForumPostRelationSessionInfoData, ThrowOnError>) {
+    public static getAllSession<ThrowOnError extends boolean = false>(options?: OptionsLegacyParser<GetApiForumPostRelationSessionInfoData, ThrowOnError>) {
         return (options?.client ?? client).get<GetApiForumPostRelationSessionInfoResponse, GetApiForumPostRelationSessionInfoError, ThrowOnError>({
             ...options,
             url: '/api/forum/post-relation/session/info'
@@ -1202,7 +1202,7 @@ export class ForumPostRelationService {
     /**
      * 获取用户和帖子的关系的分页数据
      */
-    public static getApiForumPostRelationPageAll<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiForumPostRelationPageAllData, ThrowOnError>) {
+    public static paginate<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiForumPostRelationPageAllData, ThrowOnError>) {
         return (options?.client ?? client).get<GetApiForumPostRelationPageAllResponse, GetApiForumPostRelationPageAllError, ThrowOnError>({
             ...options,
             url: '/api/forum/post-relation/page/all'
@@ -1212,7 +1212,7 @@ export class ForumPostRelationService {
     /**
      * 获取登录用户的用户和帖子的关系的分页数据
      */
-    public static getApiForumPostRelationPageSession<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiForumPostRelationPageSessionData, ThrowOnError>) {
+    public static paginateSession<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiForumPostRelationPageSessionData, ThrowOnError>) {
         return (options?.client ?? client).get<GetApiForumPostRelationPageSessionResponse, GetApiForumPostRelationPageSessionError, ThrowOnError>({
             ...options,
             url: '/api/forum/post-relation/page/session'
@@ -1222,7 +1222,7 @@ export class ForumPostRelationService {
     /**
      * 获取用户和帖子的关系的数量
      */
-    public static getApiForumPostRelationCountAll<ThrowOnError extends boolean = false>(options?: OptionsLegacyParser<GetApiForumPostRelationCountAllData, ThrowOnError>) {
+    public static getCount<ThrowOnError extends boolean = false>(options?: OptionsLegacyParser<GetApiForumPostRelationCountAllData, ThrowOnError>) {
         return (options?.client ?? client).get<GetApiForumPostRelationCountAllResponse, GetApiForumPostRelationCountAllError, ThrowOnError>({
             ...options,
             url: '/api/forum/post-relation/count/all'
@@ -1232,7 +1232,7 @@ export class ForumPostRelationService {
     /**
      * 获取登录用户的用户和帖子的关系的数量
      */
-    public static getApiForumPostRelationCountSession<ThrowOnError extends boolean = false>(options?: OptionsLegacyParser<GetApiForumPostRelationCountSessionData, ThrowOnError>) {
+    public static getCountSession<ThrowOnError extends boolean = false>(options?: OptionsLegacyParser<GetApiForumPostRelationCountSessionData, ThrowOnError>) {
         return (options?.client ?? client).get<GetApiForumPostRelationCountSessionResponse, GetApiForumPostRelationCountSessionError, ThrowOnError>({
             ...options,
             url: '/api/forum/post-relation/count/session'
@@ -1245,7 +1245,7 @@ export class ForumSectionService {
     /**
      * 获取所有论坛版块信息
      */
-    public static getApiForumSection<ThrowOnError extends boolean = false>(options?: OptionsLegacyParser<unknown, ThrowOnError>) {
+    public static getAll<ThrowOnError extends boolean = false>(options?: OptionsLegacyParser<unknown, ThrowOnError>) {
         return (options?.client ?? client).get<GetApiForumSectionResponse, GetApiForumSectionError, ThrowOnError>({
             ...options,
             url: '/api/forum/section'
@@ -1255,7 +1255,7 @@ export class ForumSectionService {
     /**
      * 创建板块
      */
-    public static postApiForumSection<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PostApiForumSectionData, ThrowOnError>) {
+    public static create<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PostApiForumSectionData, ThrowOnError>) {
         return (options?.client ?? client).post<PostApiForumSectionResponse, PostApiForumSectionError, ThrowOnError>({
             ...options,
             url: '/api/forum/section'
@@ -1265,7 +1265,7 @@ export class ForumSectionService {
     /**
      * 获取指定id论坛版块信息
      */
-    public static getApiForumSectionById<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiForumSectionByIdData, ThrowOnError>) {
+    public static get<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiForumSectionByIdData, ThrowOnError>) {
         return (options?.client ?? client).get<GetApiForumSectionByIdResponse, GetApiForumSectionByIdError, ThrowOnError>({
             ...options,
             url: '/api/forum/section/{id}'
@@ -1275,7 +1275,7 @@ export class ForumSectionService {
     /**
      * 删除指定id板块
      */
-    public static deleteApiForumSectionById<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<DeleteApiForumSectionByIdData, ThrowOnError>) {
+    public static remove<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<DeleteApiForumSectionByIdData, ThrowOnError>) {
         return (options?.client ?? client).delete<DeleteApiForumSectionByIdResponse, DeleteApiForumSectionByIdError, ThrowOnError>({
             ...options,
             url: '/api/forum/section/{id}'
@@ -1285,7 +1285,7 @@ export class ForumSectionService {
     /**
      * 更新指定id板块
      */
-    public static putApiForumSectionById<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PutApiForumSectionByIdData, ThrowOnError>) {
+    public static update<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PutApiForumSectionByIdData, ThrowOnError>) {
         return (options?.client ?? client).put<PutApiForumSectionByIdResponse, PutApiForumSectionByIdError, ThrowOnError>({
             ...options,
             url: '/api/forum/section/{id}'
@@ -1295,7 +1295,7 @@ export class ForumSectionService {
     /**
      * 板块分页数据
      */
-    public static getApiForumSectionPageAll<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiForumSectionPageAllData, ThrowOnError>) {
+    public static paginate<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiForumSectionPageAllData, ThrowOnError>) {
         return (options?.client ?? client).get<GetApiForumSectionPageAllResponse, GetApiForumSectionPageAllError, ThrowOnError>({
             ...options,
             url: '/api/forum/section/page/all'
@@ -1305,7 +1305,7 @@ export class ForumSectionService {
     /**
      * 登录人的板块分页数据
      */
-    public static getApiForumSectionPageSession<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiForumSectionPageSessionData, ThrowOnError>) {
+    public static paginateSession<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiForumSectionPageSessionData, ThrowOnError>) {
         return (options?.client ?? client).get<GetApiForumSectionPageSessionResponse, GetApiForumSectionPageSessionError, ThrowOnError>({
             ...options,
             url: '/api/forum/section/page/session'
@@ -1318,7 +1318,7 @@ export class FsService {
     /**
      * 新增服务
      */
-    public static postApiFs<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PostApiFsData, ThrowOnError>) {
+    public static create<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PostApiFsData, ThrowOnError>) {
         return (options?.client ?? client).post<PostApiFsResponse, PostApiFsError, ThrowOnError>({
             ...options,
             url: '/api/fs'
@@ -1328,7 +1328,7 @@ export class FsService {
     /**
      * 获取所有服务
      */
-    public static getApiFs<ThrowOnError extends boolean = false>(options?: OptionsLegacyParser<unknown, ThrowOnError>) {
+    public static getAll<ThrowOnError extends boolean = false>(options?: OptionsLegacyParser<unknown, ThrowOnError>) {
         return (options?.client ?? client).get<GetApiFsResponse, GetApiFsError, ThrowOnError>({
             ...options,
             url: '/api/fs'
@@ -1338,7 +1338,7 @@ export class FsService {
     /**
      * 获取子节点
      */
-    public static getApiFsChildrenById<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiFsChildrenByIdData, ThrowOnError>) {
+    public static getChildren<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiFsChildrenByIdData, ThrowOnError>) {
         return (options?.client ?? client).get<GetApiFsChildrenByIdResponse, GetApiFsChildrenByIdError, ThrowOnError>({
             ...options,
             url: '/api/fs/children/{id}'
@@ -1348,7 +1348,7 @@ export class FsService {
     /**
      * 获取指定id服务
      */
-    public static getApiFsById<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiFsByIdData, ThrowOnError>) {
+    public static get<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiFsByIdData, ThrowOnError>) {
         return (options?.client ?? client).get<GetApiFsByIdResponse, GetApiFsByIdError, ThrowOnError>({
             ...options,
             url: '/api/fs/{id}'
@@ -1358,7 +1358,7 @@ export class FsService {
     /**
      * 更新指定id服务
      */
-    public static patchApiFsById<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PatchApiFsByIdData, ThrowOnError>) {
+    public static update<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PatchApiFsByIdData, ThrowOnError>) {
         return (options?.client ?? client).patch<PatchApiFsByIdResponse, PatchApiFsByIdError, ThrowOnError>({
             ...options,
             url: '/api/fs/{id}'
@@ -1368,7 +1368,7 @@ export class FsService {
     /**
      * 删除服务
      */
-    public static deleteApiFsById<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<DeleteApiFsByIdData, ThrowOnError>) {
+    public static remove<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<DeleteApiFsByIdData, ThrowOnError>) {
         return (options?.client ?? client).delete<DeleteApiFsByIdResponse, DeleteApiFsByIdError, ThrowOnError>({
             ...options,
             url: '/api/fs/{id}'
@@ -1381,7 +1381,7 @@ export class InitializationService {
     /**
      * 创建超级管理员
      */
-    public static postApiInitializationCreateSuperAdmin<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PostApiInitializationCreateSuperAdminData, ThrowOnError>) {
+    public static createSuperAdmin<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PostApiInitializationCreateSuperAdminData, ThrowOnError>) {
         return (options?.client ?? client).post<PostApiInitializationCreateSuperAdminResponse, PostApiInitializationCreateSuperAdminError, ThrowOnError>({
             ...options,
             url: '/api/initialization/create-super-admin'
@@ -1394,7 +1394,7 @@ export class MallCartService {
     /**
      * 添加购物车
      */
-    public static postApiMallCart<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PostApiMallCartData, ThrowOnError>) {
+    public static add<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PostApiMallCartData, ThrowOnError>) {
         return (options?.client ?? client).post<PostApiMallCartResponse, PostApiMallCartError, ThrowOnError>({
             ...options,
             url: '/api/mall/cart'
@@ -1404,7 +1404,7 @@ export class MallCartService {
     /**
      * 获取用户购物车
      */
-    public static getApiMallCart<ThrowOnError extends boolean = false>(options?: OptionsLegacyParser<unknown, ThrowOnError>) {
+    public static getAll<ThrowOnError extends boolean = false>(options?: OptionsLegacyParser<unknown, ThrowOnError>) {
         return (options?.client ?? client).get<GetApiMallCartResponse, GetApiMallCartError, ThrowOnError>({
             ...options,
             url: '/api/mall/cart'
@@ -1414,7 +1414,7 @@ export class MallCartService {
     /**
      * 删除购物车
      */
-    public static deleteApiMallCartById<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<DeleteApiMallCartByIdData, ThrowOnError>) {
+    public static remove<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<DeleteApiMallCartByIdData, ThrowOnError>) {
         return (options?.client ?? client).delete<DeleteApiMallCartByIdResponse, DeleteApiMallCartByIdError, ThrowOnError>({
             ...options,
             url: '/api/mall/cart/{id}'
@@ -1424,7 +1424,7 @@ export class MallCartService {
     /**
      * 更新购物车
      */
-    public static putApiMallCartById<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PutApiMallCartByIdData, ThrowOnError>) {
+    public static update<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PutApiMallCartByIdData, ThrowOnError>) {
         return (options?.client ?? client).put<PutApiMallCartByIdResponse, PutApiMallCartByIdError, ThrowOnError>({
             ...options,
             url: '/api/mall/cart/{id}'
@@ -1434,7 +1434,7 @@ export class MallCartService {
     /**
      * 批量更新购物车
      */
-    public static putApiMallCartBatch<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PutApiMallCartBatchData, ThrowOnError>) {
+    public static batchUpdate<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PutApiMallCartBatchData, ThrowOnError>) {
         return (options?.client ?? client).put<PutApiMallCartBatchResponse, PutApiMallCartBatchError, ThrowOnError>({
             ...options,
             url: '/api/mall/cart/batch'
@@ -1447,7 +1447,7 @@ export class MallGoodService {
     /**
      * 创建商品
      */
-    public static postApiMallGood<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PostApiMallGoodData, ThrowOnError>) {
+    public static create<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PostApiMallGoodData, ThrowOnError>) {
         return (options?.client ?? client).post<PostApiMallGoodResponse, PostApiMallGoodError, ThrowOnError>({
             ...options,
             url: '/api/mall/good'
@@ -1457,7 +1457,7 @@ export class MallGoodService {
     /**
      * 获取所有商品数据
      */
-    public static getApiMallGood<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiMallGoodData, ThrowOnError>) {
+    public static getAll<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiMallGoodData, ThrowOnError>) {
         return (options?.client ?? client).get<GetApiMallGoodResponse, GetApiMallGoodError, ThrowOnError>({
             ...options,
             url: '/api/mall/good'
@@ -1467,7 +1467,7 @@ export class MallGoodService {
     /**
      * 删除商品
      */
-    public static deleteApiMallGoodById<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<DeleteApiMallGoodByIdData, ThrowOnError>) {
+    public static remove<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<DeleteApiMallGoodByIdData, ThrowOnError>) {
         return (options?.client ?? client).delete<DeleteApiMallGoodByIdResponse, DeleteApiMallGoodByIdError, ThrowOnError>({
             ...options,
             url: '/api/mall/good/{id}'
@@ -1477,7 +1477,7 @@ export class MallGoodService {
     /**
      * 更新商品
      */
-    public static putApiMallGoodById<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PutApiMallGoodByIdData, ThrowOnError>) {
+    public static update<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PutApiMallGoodByIdData, ThrowOnError>) {
         return (options?.client ?? client).put<PutApiMallGoodByIdResponse, PutApiMallGoodByIdError, ThrowOnError>({
             ...options,
             url: '/api/mall/good/{id}'
@@ -1487,7 +1487,7 @@ export class MallGoodService {
     /**
      * 获取id商品数据
      */
-    public static getApiMallGoodById<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiMallGoodByIdData, ThrowOnError>) {
+    public static get<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiMallGoodByIdData, ThrowOnError>) {
         return (options?.client ?? client).get<GetApiMallGoodByIdResponse, GetApiMallGoodByIdError, ThrowOnError>({
             ...options,
             url: '/api/mall/good/{id}'
@@ -1497,7 +1497,7 @@ export class MallGoodService {
     /**
      * 获取分页商品数据
      */
-    public static getApiMallGoodPaginate<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiMallGoodPaginateData, ThrowOnError>) {
+    public static paginate<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiMallGoodPaginateData, ThrowOnError>) {
         return (options?.client ?? client).get<GetApiMallGoodPaginateResponse, GetApiMallGoodPaginateError, ThrowOnError>({
             ...options,
             url: '/api/mall/good/paginate'
@@ -1510,7 +1510,7 @@ export class MallGoodCommentService {
     /**
      * 评论
      */
-    public static postApiMallGoodComment<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PostApiMallGoodCommentData, ThrowOnError>) {
+    public static create<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PostApiMallGoodCommentData, ThrowOnError>) {
         return (options?.client ?? client).post<PostApiMallGoodCommentResponse, PostApiMallGoodCommentError, ThrowOnError>({
             ...options,
             url: '/api/mall/good-comment'
@@ -1520,7 +1520,7 @@ export class MallGoodCommentService {
     /**
      * 删除评论
      */
-    public static deleteApiMallGoodCommentById<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<DeleteApiMallGoodCommentByIdData, ThrowOnError>) {
+    public static remove<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<DeleteApiMallGoodCommentByIdData, ThrowOnError>) {
         return (options?.client ?? client).delete<DeleteApiMallGoodCommentByIdResponse, DeleteApiMallGoodCommentByIdError, ThrowOnError>({
             ...options,
             url: '/api/mall/good-comment/{id}'
@@ -1530,7 +1530,7 @@ export class MallGoodCommentService {
     /**
      * 游标分页
      */
-    public static getApiMallGoodCommentPageByCursor<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiMallGoodCommentPageByCursorData, ThrowOnError>) {
+    public static paginateWidthCursor<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiMallGoodCommentPageByCursorData, ThrowOnError>) {
         return (options?.client ?? client).get<GetApiMallGoodCommentPageByCursorResponse, GetApiMallGoodCommentPageByCursorError, ThrowOnError>({
             ...options,
             url: '/api/mall/good-comment/pageByCursor'
@@ -1540,7 +1540,7 @@ export class MallGoodCommentService {
     /**
      * 分页
      */
-    public static getApiMallGoodCommentPage<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiMallGoodCommentPageData, ThrowOnError>) {
+    public static paginate<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiMallGoodCommentPageData, ThrowOnError>) {
         return (options?.client ?? client).get<GetApiMallGoodCommentPageResponse, GetApiMallGoodCommentPageError, ThrowOnError>({
             ...options,
             url: '/api/mall/good-comment/page'
@@ -1553,7 +1553,7 @@ export class MallGoodGroupService {
     /**
      * 创建商品分组
      */
-    public static postApiMallGoodGroup<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PostApiMallGoodGroupData, ThrowOnError>) {
+    public static create<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PostApiMallGoodGroupData, ThrowOnError>) {
         return (options?.client ?? client).post<PostApiMallGoodGroupResponse, PostApiMallGoodGroupError, ThrowOnError>({
             ...options,
             url: '/api/mall/good-group'
@@ -1563,7 +1563,7 @@ export class MallGoodGroupService {
     /**
      * 获取平铺商品分组数据
      */
-    public static getApiMallGoodGroup<ThrowOnError extends boolean = false>(options?: OptionsLegacyParser<unknown, ThrowOnError>) {
+    public static getAll<ThrowOnError extends boolean = false>(options?: OptionsLegacyParser<unknown, ThrowOnError>) {
         return (options?.client ?? client).get<GetApiMallGoodGroupResponse, GetApiMallGoodGroupError, ThrowOnError>({
             ...options,
             url: '/api/mall/good-group'
@@ -1573,7 +1573,7 @@ export class MallGoodGroupService {
     /**
      * 删除商品分组
      */
-    public static deleteApiMallGoodGroupById<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<DeleteApiMallGoodGroupByIdData, ThrowOnError>) {
+    public static remove<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<DeleteApiMallGoodGroupByIdData, ThrowOnError>) {
         return (options?.client ?? client).delete<DeleteApiMallGoodGroupByIdResponse, DeleteApiMallGoodGroupByIdError, ThrowOnError>({
             ...options,
             url: '/api/mall/good-group/{id}'
@@ -1583,7 +1583,7 @@ export class MallGoodGroupService {
     /**
      * 更新商品分组
      */
-    public static putApiMallGoodGroupById<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PutApiMallGoodGroupByIdData, ThrowOnError>) {
+    public static update<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PutApiMallGoodGroupByIdData, ThrowOnError>) {
         return (options?.client ?? client).put<PutApiMallGoodGroupByIdResponse, PutApiMallGoodGroupByIdError, ThrowOnError>({
             ...options,
             url: '/api/mall/good-group/{id}'
@@ -1593,7 +1593,7 @@ export class MallGoodGroupService {
     /**
      * 获取商品分组
      */
-    public static getApiMallGoodGroupById<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiMallGoodGroupByIdData, ThrowOnError>) {
+    public static get<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiMallGoodGroupByIdData, ThrowOnError>) {
         return (options?.client ?? client).get<GetApiMallGoodGroupByIdResponse, GetApiMallGoodGroupByIdError, ThrowOnError>({
             ...options,
             url: '/api/mall/good-group/{id}'
@@ -1603,7 +1603,7 @@ export class MallGoodGroupService {
     /**
      * 获取商品分组树
      */
-    public static getApiMallGoodGroupTree<ThrowOnError extends boolean = false>(options?: OptionsLegacyParser<unknown, ThrowOnError>) {
+    public static getTree<ThrowOnError extends boolean = false>(options?: OptionsLegacyParser<unknown, ThrowOnError>) {
         return (options?.client ?? client).get<GetApiMallGoodGroupTreeResponse, GetApiMallGoodGroupTreeError, ThrowOnError>({
             ...options,
             url: '/api/mall/good-group/tree'
@@ -1616,7 +1616,7 @@ export class MallGoodRelationService {
     /**
      * 创建关系
      */
-    public static postApiMallGoodRelation<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PostApiMallGoodRelationData, ThrowOnError>) {
+    public static create<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PostApiMallGoodRelationData, ThrowOnError>) {
         return (options?.client ?? client).post<PostApiMallGoodRelationResponse, PostApiMallGoodRelationError, ThrowOnError>({
             ...options,
             url: '/api/mall/good-relation'
@@ -1626,7 +1626,7 @@ export class MallGoodRelationService {
     /**
      * 删除关系
      */
-    public static deleteApiMallGoodRelationById<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<DeleteApiMallGoodRelationByIdData, ThrowOnError>) {
+    public static remove<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<DeleteApiMallGoodRelationByIdData, ThrowOnError>) {
         return (options?.client ?? client).delete<DeleteApiMallGoodRelationByIdResponse, DeleteApiMallGoodRelationByIdError, ThrowOnError>({
             ...options,
             url: '/api/mall/good-relation/{id}'
@@ -1636,7 +1636,7 @@ export class MallGoodRelationService {
     /**
      * 筛选一个关系
      */
-    public static getApiMallGoodRelationItem<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiMallGoodRelationItemData, ThrowOnError>) {
+    public static getWidthFilter<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiMallGoodRelationItemData, ThrowOnError>) {
         return (options?.client ?? client).get<GetApiMallGoodRelationItemResponse, GetApiMallGoodRelationItemError, ThrowOnError>({
             ...options,
             url: '/api/mall/good-relation/item'
@@ -1649,7 +1649,7 @@ export class MallGoodTagService {
     /**
      * 创建标签
      */
-    public static postApiMallGoodTag<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PostApiMallGoodTagData, ThrowOnError>) {
+    public static create<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PostApiMallGoodTagData, ThrowOnError>) {
         return (options?.client ?? client).post<PostApiMallGoodTagResponse, PostApiMallGoodTagError, ThrowOnError>({
             ...options,
             url: '/api/mall/good-tag'
@@ -1659,7 +1659,7 @@ export class MallGoodTagService {
     /**
      * 获取所有标签
      */
-    public static getApiMallGoodTag<ThrowOnError extends boolean = false>(options?: OptionsLegacyParser<unknown, ThrowOnError>) {
+    public static getAll<ThrowOnError extends boolean = false>(options?: OptionsLegacyParser<unknown, ThrowOnError>) {
         return (options?.client ?? client).get<GetApiMallGoodTagResponse, GetApiMallGoodTagError, ThrowOnError>({
             ...options,
             url: '/api/mall/good-tag'
@@ -1669,7 +1669,7 @@ export class MallGoodTagService {
     /**
      * 删除标签
      */
-    public static deleteApiMallGoodTagById<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<DeleteApiMallGoodTagByIdData, ThrowOnError>) {
+    public static remove<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<DeleteApiMallGoodTagByIdData, ThrowOnError>) {
         return (options?.client ?? client).delete<DeleteApiMallGoodTagByIdResponse, DeleteApiMallGoodTagByIdError, ThrowOnError>({
             ...options,
             url: '/api/mall/good-tag/{id}'
@@ -1679,7 +1679,7 @@ export class MallGoodTagService {
     /**
      * 更新标签
      */
-    public static putApiMallGoodTagById<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PutApiMallGoodTagByIdData, ThrowOnError>) {
+    public static remove<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PutApiMallGoodTagByIdData, ThrowOnError>) {
         return (options?.client ?? client).put<PutApiMallGoodTagByIdResponse, PutApiMallGoodTagByIdError, ThrowOnError>({
             ...options,
             url: '/api/mall/good-tag/{id}'
@@ -1689,7 +1689,7 @@ export class MallGoodTagService {
     /**
      * 获取标签
      */
-    public static getApiMallGoodTagById<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiMallGoodTagByIdData, ThrowOnError>) {
+    public static get<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiMallGoodTagByIdData, ThrowOnError>) {
         return (options?.client ?? client).get<GetApiMallGoodTagByIdResponse, GetApiMallGoodTagByIdError, ThrowOnError>({
             ...options,
             url: '/api/mall/good-tag/{id}'
@@ -1699,7 +1699,7 @@ export class MallGoodTagService {
     /**
      * 标签分页
      */
-    public static getApiMallGoodTagPage<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiMallGoodTagPageData, ThrowOnError>) {
+    public static paginate<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiMallGoodTagPageData, ThrowOnError>) {
         return (options?.client ?? client).get<GetApiMallGoodTagPageResponse, GetApiMallGoodTagPageError, ThrowOnError>({
             ...options,
             url: '/api/mall/good-tag/page'
@@ -1712,7 +1712,7 @@ export class MallOrderService {
     /**
      * 创建订单
      */
-    public static postApiMallOrder<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PostApiMallOrderData, ThrowOnError>) {
+    public static create<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PostApiMallOrderData, ThrowOnError>) {
         return (options?.client ?? client).post<PostApiMallOrderResponse, PostApiMallOrderError, ThrowOnError>({
             ...options,
             url: '/api/mall/order'
@@ -1722,7 +1722,7 @@ export class MallOrderService {
     /**
      * 订单登录用户游标分页
      */
-    public static getApiMallOrderPageByCursorSession<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiMallOrderPageByCursorSessionData, ThrowOnError>) {
+    public static paginateWidthCursorSession<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiMallOrderPageByCursorSessionData, ThrowOnError>) {
         return (options?.client ?? client).get<GetApiMallOrderPageByCursorSessionResponse, GetApiMallOrderPageByCursorSessionError, ThrowOnError>({
             ...options,
             url: '/api/mall/order/pageByCursor/session'
@@ -1732,7 +1732,7 @@ export class MallOrderService {
     /**
      * 订单分页
      */
-    public static getApiMallOrderPage<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiMallOrderPageData, ThrowOnError>) {
+    public static paginate<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiMallOrderPageData, ThrowOnError>) {
         return (options?.client ?? client).get<GetApiMallOrderPageResponse, GetApiMallOrderPageError, ThrowOnError>({
             ...options,
             url: '/api/mall/order/page'
@@ -1742,7 +1742,7 @@ export class MallOrderService {
     /**
      * 获取订单
      */
-    public static getApiMallOrderById<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiMallOrderByIdData, ThrowOnError>) {
+    public static get<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiMallOrderByIdData, ThrowOnError>) {
         return (options?.client ?? client).get<GetApiMallOrderByIdResponse, GetApiMallOrderByIdError, ThrowOnError>({
             ...options,
             url: '/api/mall/order/{id}'
@@ -1755,7 +1755,7 @@ export class MallShopService {
     /**
      * 创建店铺
      */
-    public static postApiMallShop<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PostApiMallShopData, ThrowOnError>) {
+    public static create<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PostApiMallShopData, ThrowOnError>) {
         return (options?.client ?? client).post<PostApiMallShopResponse, PostApiMallShopError, ThrowOnError>({
             ...options,
             url: '/api/mall/shop'
@@ -1765,7 +1765,7 @@ export class MallShopService {
     /**
      * 获取所有店铺
      */
-    public static getApiMallShop<ThrowOnError extends boolean = false>(options?: OptionsLegacyParser<unknown, ThrowOnError>) {
+    public static getAll<ThrowOnError extends boolean = false>(options?: OptionsLegacyParser<unknown, ThrowOnError>) {
         return (options?.client ?? client).get<GetApiMallShopResponse, GetApiMallShopError, ThrowOnError>({
             ...options,
             url: '/api/mall/shop'
@@ -1775,7 +1775,7 @@ export class MallShopService {
     /**
      * 删除店铺
      */
-    public static deleteApiMallShopById<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<DeleteApiMallShopByIdData, ThrowOnError>) {
+    public static remove<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<DeleteApiMallShopByIdData, ThrowOnError>) {
         return (options?.client ?? client).delete<DeleteApiMallShopByIdResponse, DeleteApiMallShopByIdError, ThrowOnError>({
             ...options,
             url: '/api/mall/shop/{id}'
@@ -1785,7 +1785,7 @@ export class MallShopService {
     /**
      * 更新店铺
      */
-    public static putApiMallShopById<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PutApiMallShopByIdData, ThrowOnError>) {
+    public static update<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PutApiMallShopByIdData, ThrowOnError>) {
         return (options?.client ?? client).put<PutApiMallShopByIdResponse, PutApiMallShopByIdError, ThrowOnError>({
             ...options,
             url: '/api/mall/shop/{id}'
@@ -1795,7 +1795,7 @@ export class MallShopService {
     /**
      * 获取单个店铺
      */
-    public static getApiMallShopById<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiMallShopByIdData, ThrowOnError>) {
+    public static get<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiMallShopByIdData, ThrowOnError>) {
         return (options?.client ?? client).get<GetApiMallShopByIdResponse, GetApiMallShopByIdError, ThrowOnError>({
             ...options,
             url: '/api/mall/shop/{id}'
@@ -1805,7 +1805,7 @@ export class MallShopService {
     /**
      * 获取分页数据
      */
-    public static getApiMallShopPaginate<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiMallShopPaginateData, ThrowOnError>) {
+    public static paginate<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiMallShopPaginateData, ThrowOnError>) {
         return (options?.client ?? client).get<GetApiMallShopPaginateResponse, GetApiMallShopPaginateError, ThrowOnError>({
             ...options,
             url: '/api/mall/shop/paginate'
@@ -1818,7 +1818,7 @@ export class ResourcesService {
     /**
      * 获取资源所有数据
      */
-    public static getApiResources<ThrowOnError extends boolean = false>(options?: OptionsLegacyParser<unknown, ThrowOnError>) {
+    public static getAll<ThrowOnError extends boolean = false>(options?: OptionsLegacyParser<unknown, ThrowOnError>) {
         return (options?.client ?? client).get<GetApiResourcesResponse, GetApiResourcesError, ThrowOnError>({
             ...options,
             url: '/api/resources'
@@ -1828,7 +1828,7 @@ export class ResourcesService {
     /**
      * 创建资源
      */
-    public static postApiResources<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PostApiResourcesData, ThrowOnError>) {
+    public static create<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PostApiResourcesData, ThrowOnError>) {
         return (options?.client ?? client).post<PostApiResourcesResponse, PostApiResourcesError, ThrowOnError>({
             ...options,
             url: '/api/resources'
@@ -1838,7 +1838,7 @@ export class ResourcesService {
     /**
      * 获取资源分页数据
      */
-    public static getApiResourcesPage<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiResourcesPageData, ThrowOnError>) {
+    public static paginate<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiResourcesPageData, ThrowOnError>) {
         return (options?.client ?? client).get<GetApiResourcesPageResponse, GetApiResourcesPageError, ThrowOnError>({
             ...options,
             url: '/api/resources/page'
@@ -1848,7 +1848,7 @@ export class ResourcesService {
     /**
      * 获取指定id资源数据
      */
-    public static getApiResourcesById<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiResourcesByIdData, ThrowOnError>) {
+    public static get<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiResourcesByIdData, ThrowOnError>) {
         return (options?.client ?? client).get<GetApiResourcesByIdResponse, GetApiResourcesByIdError, ThrowOnError>({
             ...options,
             url: '/api/resources/{id}'
@@ -1858,7 +1858,7 @@ export class ResourcesService {
     /**
      * 删除资源
      */
-    public static deleteApiResourcesById<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<DeleteApiResourcesByIdData, ThrowOnError>) {
+    public static remove<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<DeleteApiResourcesByIdData, ThrowOnError>) {
         return (options?.client ?? client).delete<DeleteApiResourcesByIdResponse, DeleteApiResourcesByIdError, ThrowOnError>({
             ...options,
             url: '/api/resources/{id}'
@@ -1868,7 +1868,7 @@ export class ResourcesService {
     /**
      * 更新指定资源的所有数据
      */
-    public static putApiResourcesById<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PutApiResourcesByIdData, ThrowOnError>) {
+    public static update<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PutApiResourcesByIdData, ThrowOnError>) {
         return (options?.client ?? client).put<PutApiResourcesByIdResponse, PutApiResourcesByIdError, ThrowOnError>({
             ...options,
             url: '/api/resources/{id}'
@@ -1881,7 +1881,7 @@ export class RolesService {
     /**
      * 获取所有角色数据
      */
-    public static getApiRoles<ThrowOnError extends boolean = false>(options?: OptionsLegacyParser<unknown, ThrowOnError>) {
+    public static getAll<ThrowOnError extends boolean = false>(options?: OptionsLegacyParser<unknown, ThrowOnError>) {
         return (options?.client ?? client).get<GetApiRolesResponse, GetApiRolesError, ThrowOnError>({
             ...options,
             url: '/api/roles'
@@ -1891,7 +1891,7 @@ export class RolesService {
     /**
      * 创建角色
      */
-    public static postApiRoles<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PostApiRolesData, ThrowOnError>) {
+    public static create<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PostApiRolesData, ThrowOnError>) {
         return (options?.client ?? client).post<PostApiRolesResponse, PostApiRolesError, ThrowOnError>({
             ...options,
             url: '/api/roles'
@@ -1901,7 +1901,7 @@ export class RolesService {
     /**
      * 获取分页角色数据
      */
-    public static getApiRolesPage<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiRolesPageData, ThrowOnError>) {
+    public static paginate<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiRolesPageData, ThrowOnError>) {
         return (options?.client ?? client).get<GetApiRolesPageResponse, GetApiRolesPageError, ThrowOnError>({
             ...options,
             url: '/api/roles/page'
@@ -1911,7 +1911,7 @@ export class RolesService {
     /**
      * 删除角色
      */
-    public static deleteApiRolesById<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<DeleteApiRolesByIdData, ThrowOnError>) {
+    public static remove<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<DeleteApiRolesByIdData, ThrowOnError>) {
         return (options?.client ?? client).delete<DeleteApiRolesByIdResponse, DeleteApiRolesByIdError, ThrowOnError>({
             ...options,
             url: '/api/roles/{id}'
@@ -1921,7 +1921,7 @@ export class RolesService {
     /**
      * 获取指定id角色信息
      */
-    public static getApiRolesById<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiRolesByIdData, ThrowOnError>) {
+    public static get<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiRolesByIdData, ThrowOnError>) {
         return (options?.client ?? client).get<GetApiRolesByIdResponse, GetApiRolesByIdError, ThrowOnError>({
             ...options,
             url: '/api/roles/{id}'
@@ -1931,7 +1931,7 @@ export class RolesService {
     /**
      * 更新指定id角色数据
      */
-    public static putApiRolesById<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PutApiRolesByIdData, ThrowOnError>) {
+    public static update<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PutApiRolesByIdData, ThrowOnError>) {
         return (options?.client ?? client).put<PutApiRolesByIdResponse, PutApiRolesByIdError, ThrowOnError>({
             ...options,
             url: '/api/roles/{id}'
@@ -1944,7 +1944,7 @@ export class SessionService {
     /**
      * 获取当前登录人用户信息
      */
-    public static getApiSessionUser<ThrowOnError extends boolean = false>(options?: OptionsLegacyParser<unknown, ThrowOnError>) {
+    public static getUser<ThrowOnError extends boolean = false>(options?: OptionsLegacyParser<unknown, ThrowOnError>) {
         return (options?.client ?? client).get<GetApiSessionUserResponse, GetApiSessionUserError, ThrowOnError>({
             ...options,
             url: '/api/session/user'
@@ -1954,7 +1954,7 @@ export class SessionService {
     /**
      * 获取当前登录人有权限的资源
      */
-    public static getApiSessionResources<ThrowOnError extends boolean = false>(options?: OptionsLegacyParser<unknown, ThrowOnError>) {
+    public static getResources<ThrowOnError extends boolean = false>(options?: OptionsLegacyParser<unknown, ThrowOnError>) {
         return (options?.client ?? client).get<GetApiSessionResourcesResponse, GetApiSessionResourcesError, ThrowOnError>({
             ...options,
             url: '/api/session/resources'
@@ -1967,7 +1967,7 @@ export class SettingService {
     /**
      * 批量获取配置key值
      */
-    public static getApiSettingByKeys<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiSettingByKeysData, ThrowOnError>) {
+    public static getItems<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiSettingByKeysData, ThrowOnError>) {
         return (options?.client ?? client).get<GetApiSettingByKeysResponse, GetApiSettingByKeysError, ThrowOnError>({
             ...options,
             url: '/api/setting/{keys}'
@@ -1977,7 +1977,7 @@ export class SettingService {
     /**
      * 设置获取配置key值
      */
-    public static postApiSetting<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PostApiSettingData, ThrowOnError>) {
+    public static setItems<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PostApiSettingData, ThrowOnError>) {
         return (options?.client ?? client).post<PostApiSettingResponse, PostApiSettingError, ThrowOnError>({
             ...options,
             url: '/api/setting'
@@ -1990,7 +1990,7 @@ export class SmsService {
     /**
      * sms测试
      */
-    public static postApiSmsTest<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PostApiSmsTestData, ThrowOnError>) {
+    public static test<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PostApiSmsTestData, ThrowOnError>) {
         return (options?.client ?? client).post<PostApiSmsTestResponse, PostApiSmsTestError, ThrowOnError>({
             ...options,
             url: '/api/sms/test'
@@ -2000,7 +2000,7 @@ export class SmsService {
     /**
      * 发送验证码
      */
-    public static postApiSmsByTypeByPhone<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PostApiSmsByTypeByPhoneData, ThrowOnError>) {
+    public static sendCode<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PostApiSmsByTypeByPhoneData, ThrowOnError>) {
         return (options?.client ?? client).post<PostApiSmsByTypeByPhoneResponse, PostApiSmsByTypeByPhoneError, ThrowOnError>({
             ...options,
             url: '/api/sms/{type}/{phone}'
@@ -2013,7 +2013,7 @@ export class UsersService {
     /**
      * 获取所有用户数据
      */
-    public static getApiUsers<ThrowOnError extends boolean = false>(options?: OptionsLegacyParser<unknown, ThrowOnError>) {
+    public static getAll<ThrowOnError extends boolean = false>(options?: OptionsLegacyParser<unknown, ThrowOnError>) {
         return (options?.client ?? client).get<GetApiUsersResponse, GetApiUsersError, ThrowOnError>({
             ...options,
             url: '/api/users'
@@ -2023,7 +2023,7 @@ export class UsersService {
     /**
      * 创建用户
      */
-    public static postApiUsers<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PostApiUsersData, ThrowOnError>) {
+    public static create<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PostApiUsersData, ThrowOnError>) {
         return (options?.client ?? client).post<PostApiUsersResponse, PostApiUsersError, ThrowOnError>({
             ...options,
             url: '/api/users'
@@ -2033,7 +2033,7 @@ export class UsersService {
     /**
      * 获取分页用户数据
      */
-    public static getApiUsersPage<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiUsersPageData, ThrowOnError>) {
+    public static paginate<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiUsersPageData, ThrowOnError>) {
         return (options?.client ?? client).get<GetApiUsersPageResponse, GetApiUsersPageError, ThrowOnError>({
             ...options,
             url: '/api/users/page'
@@ -2043,7 +2043,7 @@ export class UsersService {
     /**
      * 删除用户
      */
-    public static deleteApiUsersById<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<DeleteApiUsersByIdData, ThrowOnError>) {
+    public static remove<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<DeleteApiUsersByIdData, ThrowOnError>) {
         return (options?.client ?? client).delete<DeleteApiUsersByIdResponse, DeleteApiUsersByIdError, ThrowOnError>({
             ...options,
             url: '/api/users/{id}'
@@ -2053,7 +2053,7 @@ export class UsersService {
     /**
      * 获取指定id的用户数据
      */
-    public static getApiUsersById<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiUsersByIdData, ThrowOnError>) {
+    public static get<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiUsersByIdData, ThrowOnError>) {
         return (options?.client ?? client).get<GetApiUsersByIdResponse, GetApiUsersByIdError, ThrowOnError>({
             ...options,
             url: '/api/users/{id}'
@@ -2063,7 +2063,7 @@ export class UsersService {
     /**
      * 修改指定id的用户数据
      */
-    public static putApiUsersById<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PutApiUsersByIdData, ThrowOnError>) {
+    public static update<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PutApiUsersByIdData, ThrowOnError>) {
         return (options?.client ?? client).put<PutApiUsersByIdResponse, PutApiUsersByIdError, ThrowOnError>({
             ...options,
             url: '/api/users/{id}'
@@ -2073,7 +2073,7 @@ export class UsersService {
     /**
      * 当前登录用户注销账号
      */
-    public static deleteApiUsersSession<ThrowOnError extends boolean = false>(options?: OptionsLegacyParser<unknown, ThrowOnError>) {
+    public static removeSession<ThrowOnError extends boolean = false>(options?: OptionsLegacyParser<unknown, ThrowOnError>) {
         return (options?.client ?? client).delete<DeleteApiUsersSessionResponse, DeleteApiUsersSessionError, ThrowOnError>({
             ...options,
             url: '/api/users/session'
@@ -2083,7 +2083,7 @@ export class UsersService {
     /**
      * 绑定微信用户
      */
-    public static postApiUsersBindWeixinSession<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PostApiUsersBindWeixinSessionData, ThrowOnError>) {
+    public static bindWeixinSession<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PostApiUsersBindWeixinSessionData, ThrowOnError>) {
         return (options?.client ?? client).post<PostApiUsersBindWeixinSessionResponse, PostApiUsersBindWeixinSessionError, ThrowOnError>({
             ...options,
             url: '/api/users/bindWeixinSession'
@@ -2093,7 +2093,7 @@ export class UsersService {
     /**
      * 绑定手机号
      */
-    public static postApiUsersBindMobileSession<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PostApiUsersBindMobileSessionData, ThrowOnError>) {
+    public static bindMobileSession<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PostApiUsersBindMobileSessionData, ThrowOnError>) {
         return (options?.client ?? client).post<PostApiUsersBindMobileSessionResponse, PostApiUsersBindMobileSessionError, ThrowOnError>({
             ...options,
             url: '/api/users/bindMobileSession'
@@ -2103,7 +2103,7 @@ export class UsersService {
     /**
      * 绑定小程序手机号
      */
-    public static postApiUsersBindMpMobileSession<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PostApiUsersBindMpMobileSessionData, ThrowOnError>) {
+    public static bindMpMobileSession<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PostApiUsersBindMpMobileSessionData, ThrowOnError>) {
         return (options?.client ?? client).post<PostApiUsersBindMpMobileSessionResponse, PostApiUsersBindMpMobileSessionError, ThrowOnError>({
             ...options,
             url: '/api/users/bindMpMobileSession'
@@ -2113,7 +2113,7 @@ export class UsersService {
     /**
      * 绑定用户名
      */
-    public static postApiUsersBindUsernameSession<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PostApiUsersBindUsernameSessionData, ThrowOnError>) {
+    public static bindUsernameSession<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PostApiUsersBindUsernameSessionData, ThrowOnError>) {
         return (options?.client ?? client).post<PostApiUsersBindUsernameSessionResponse, PostApiUsersBindUsernameSessionError, ThrowOnError>({
             ...options,
             url: '/api/users/bindUsernameSession'
@@ -2126,7 +2126,7 @@ export class WeixinService {
     /**
      * 获取所有微信应用数据
      */
-    public static getApiWeixin<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiWeixinData, ThrowOnError>) {
+    public static getAll<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiWeixinData, ThrowOnError>) {
         return (options?.client ?? client).get<GetApiWeixinResponse, GetApiWeixinError, ThrowOnError>({
             ...options,
             url: '/api/weixin'
@@ -2136,7 +2136,7 @@ export class WeixinService {
     /**
      * 创建微信应用
      */
-    public static postApiWeixin<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PostApiWeixinData, ThrowOnError>) {
+    public static create<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PostApiWeixinData, ThrowOnError>) {
         return (options?.client ?? client).post<PostApiWeixinResponse, PostApiWeixinError, ThrowOnError>({
             ...options,
             url: '/api/weixin'
@@ -2146,7 +2146,7 @@ export class WeixinService {
     /**
      * 获取分页微信应用数据
      */
-    public static getApiWeixinPage<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiWeixinPageData, ThrowOnError>) {
+    public static paginate<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiWeixinPageData, ThrowOnError>) {
         return (options?.client ?? client).get<GetApiWeixinPageResponse, GetApiWeixinPageError, ThrowOnError>({
             ...options,
             url: '/api/weixin/page'
@@ -2156,7 +2156,7 @@ export class WeixinService {
     /**
      * 删除微信应用
      */
-    public static deleteApiWeixinById<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<DeleteApiWeixinByIdData, ThrowOnError>) {
+    public static remove<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<DeleteApiWeixinByIdData, ThrowOnError>) {
         return (options?.client ?? client).delete<DeleteApiWeixinByIdResponse, DeleteApiWeixinByIdError, ThrowOnError>({
             ...options,
             url: '/api/weixin/{id}'
@@ -2166,7 +2166,7 @@ export class WeixinService {
     /**
      * 获取指定id微信应用数据
      */
-    public static getApiWeixinById<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiWeixinByIdData, ThrowOnError>) {
+    public static get<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiWeixinByIdData, ThrowOnError>) {
         return (options?.client ?? client).get<GetApiWeixinByIdResponse, GetApiWeixinByIdError, ThrowOnError>({
             ...options,
             url: '/api/weixin/{id}'
@@ -2176,7 +2176,7 @@ export class WeixinService {
     /**
      * 更新指定id微信应用数据
      */
-    public static putApiWeixinById<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PutApiWeixinByIdData, ThrowOnError>) {
+    public static update<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PutApiWeixinByIdData, ThrowOnError>) {
         return (options?.client ?? client).put<PutApiWeixinByIdResponse, PutApiWeixinByIdError, ThrowOnError>({
             ...options,
             url: '/api/weixin/{id}'
@@ -2189,7 +2189,7 @@ export class WeixinMiniProgramService {
     /**
      * 获取手机号
      */
-    public static getApiWeixinPlatformMiniProgramGetPhoneNumberByAppid<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiWeixinPlatformMiniProgramGetPhoneNumberByAppidData, ThrowOnError>) {
+    public static getPhoneNumber<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiWeixinPlatformMiniProgramGetPhoneNumberByAppidData, ThrowOnError>) {
         return (options?.client ?? client).get<GetApiWeixinPlatformMiniProgramGetPhoneNumberByAppidResponse, GetApiWeixinPlatformMiniProgramGetPhoneNumberByAppidError, ThrowOnError>({
             ...options,
             url: '/api/weixin-platform/mini-program/getPhoneNumber/{appid}'
@@ -2199,7 +2199,7 @@ export class WeixinMiniProgramService {
     /**
      * code2Session
      */
-    public static getApiWeixinPlatformMiniProgramCode2SessionByAppid<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiWeixinPlatformMiniProgramCode2SessionByAppidData, ThrowOnError>) {
+    public static code2Session<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiWeixinPlatformMiniProgramCode2SessionByAppidData, ThrowOnError>) {
         return (options?.client ?? client).get<GetApiWeixinPlatformMiniProgramCode2SessionByAppidResponse, GetApiWeixinPlatformMiniProgramCode2SessionByAppidError, ThrowOnError>({
             ...options,
             url: '/api/weixin-platform/mini-program/code2Session/{appid}'
@@ -2212,7 +2212,7 @@ export class WeixinOfficialAccountService {
     /**
      * 获取accessToken
      */
-    public static getApiWeixinPlatformOfficialAccountGetAccessTokenByAppid<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiWeixinPlatformOfficialAccountGetAccessTokenByAppidData, ThrowOnError>) {
+    public static getAccessToken<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiWeixinPlatformOfficialAccountGetAccessTokenByAppidData, ThrowOnError>) {
         return (options?.client ?? client).get<GetApiWeixinPlatformOfficialAccountGetAccessTokenByAppidResponse, GetApiWeixinPlatformOfficialAccountGetAccessTokenByAppidError, ThrowOnError>({
             ...options,
             url: '/api/weixin-platform/official-account/getAccessToken/{appid}'
@@ -2222,7 +2222,7 @@ export class WeixinOfficialAccountService {
     /**
      * 获取公众号接收消息地址
      */
-    public static getApiWeixinPlatformOfficialAccountGetNotifyUrlByAppid<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiWeixinPlatformOfficialAccountGetNotifyUrlByAppidData, ThrowOnError>) {
+    public static getNotifyUrl<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiWeixinPlatformOfficialAccountGetNotifyUrlByAppidData, ThrowOnError>) {
         return (options?.client ?? client).get<GetApiWeixinPlatformOfficialAccountGetNotifyUrlByAppidResponse, GetApiWeixinPlatformOfficialAccountGetNotifyUrlByAppidError, ThrowOnError>({
             ...options,
             url: '/api/weixin-platform/official-account/getNotifyUrl/{appid}'
@@ -2232,7 +2232,7 @@ export class WeixinOfficialAccountService {
     /**
      * 获取jssdk 认证签名
      */
-    public static postApiWeixinPlatformOfficialAccountJssdkGetSignatureByAppid<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PostApiWeixinPlatformOfficialAccountJssdkGetSignatureByAppidData, ThrowOnError>) {
+    public static getJssdkSignature<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PostApiWeixinPlatformOfficialAccountJssdkGetSignatureByAppidData, ThrowOnError>) {
         return (options?.client ?? client).post<PostApiWeixinPlatformOfficialAccountJssdkGetSignatureByAppidResponse, PostApiWeixinPlatformOfficialAccountJssdkGetSignatureByAppidError, ThrowOnError>({
             ...options,
             url: '/api/weixin-platform/official-account/jssdk/get-signature/{appid}'
@@ -2242,7 +2242,7 @@ export class WeixinOfficialAccountService {
     /**
      * 获取所有模板列表
      */
-    public static getApiWeixinPlatformOfficialAccountTemplatesByAppid<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiWeixinPlatformOfficialAccountTemplatesByAppidData, ThrowOnError>) {
+    public static getTemplates<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiWeixinPlatformOfficialAccountTemplatesByAppidData, ThrowOnError>) {
         return (options?.client ?? client).get<GetApiWeixinPlatformOfficialAccountTemplatesByAppidResponse, GetApiWeixinPlatformOfficialAccountTemplatesByAppidError, ThrowOnError>({
             ...options,
             url: '/api/weixin-platform/official-account/templates/{appid}'
@@ -2252,7 +2252,7 @@ export class WeixinOfficialAccountService {
     /**
      * 删除模板
      */
-    public static deleteApiWeixinPlatformOfficialAccountTemplatesByIdByAppid<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<DeleteApiWeixinPlatformOfficialAccountTemplatesByIdByAppidData, ThrowOnError>) {
+    public static removeTemplate<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<DeleteApiWeixinPlatformOfficialAccountTemplatesByIdByAppidData, ThrowOnError>) {
         return (options?.client ?? client).delete<DeleteApiWeixinPlatformOfficialAccountTemplatesByIdByAppidResponse, DeleteApiWeixinPlatformOfficialAccountTemplatesByIdByAppidError, ThrowOnError>({
             ...options,
             url: '/api/weixin-platform/official-account/templates/{id}/{appid}'
@@ -2262,7 +2262,7 @@ export class WeixinOfficialAccountService {
     /**
      * 发送模板
      */
-    public static postApiWeixinPlatformOfficialAccountSendByAppid<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PostApiWeixinPlatformOfficialAccountSendByAppidData, ThrowOnError>) {
+    public static send<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PostApiWeixinPlatformOfficialAccountSendByAppidData, ThrowOnError>) {
         return (options?.client ?? client).post<PostApiWeixinPlatformOfficialAccountSendByAppidResponse, PostApiWeixinPlatformOfficialAccountSendByAppidError, ThrowOnError>({
             ...options,
             url: '/api/weixin-platform/official-account/send/{appid}'
@@ -2272,7 +2272,7 @@ export class WeixinOfficialAccountService {
     /**
      * 获取微信JSSDK支付参数(自动下单, 兼容小程序)
      */
-    public static postApiWeixinPlatformPayCenterPayParamsByAppidByMchid<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PostApiWeixinPlatformPayCenterPayParamsByAppidByMchidData, ThrowOnError>) {
+    public static getPayParams<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PostApiWeixinPlatformPayCenterPayParamsByAppidByMchidData, ThrowOnError>) {
         return (options?.client ?? client).post<PostApiWeixinPlatformPayCenterPayParamsByAppidByMchidResponse, PostApiWeixinPlatformPayCenterPayParamsByAppidByMchidError, ThrowOnError>({
             ...options,
             url: '/api/weixin-platform/pay-center/payParams/{appid}/{mchid}'
@@ -2285,7 +2285,7 @@ export class WeixinOfficialAccountConfigService {
     /**
      * 通过weixinId获取公众号配置
      */
-    public static getApiWeixinOfficialAccountConfigWeixinByWeixinId<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiWeixinOfficialAccountConfigWeixinByWeixinIdData, ThrowOnError>) {
+    public static getAndCreateByWeixin<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiWeixinOfficialAccountConfigWeixinByWeixinIdData, ThrowOnError>) {
         return (options?.client ?? client).get<GetApiWeixinOfficialAccountConfigWeixinByWeixinIdResponse, GetApiWeixinOfficialAccountConfigWeixinByWeixinIdError, ThrowOnError>({
             ...options,
             url: '/api/weixin/official-account-config/weixin/{weixinId}'
@@ -2295,7 +2295,7 @@ export class WeixinOfficialAccountConfigService {
     /**
      * 更新指定id的公众号配置
      */
-    public static putApiWeixinOfficialAccountConfigById<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PutApiWeixinOfficialAccountConfigByIdData, ThrowOnError>) {
+    public static update<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PutApiWeixinOfficialAccountConfigByIdData, ThrowOnError>) {
         return (options?.client ?? client).put<PutApiWeixinOfficialAccountConfigByIdResponse, PutApiWeixinOfficialAccountConfigByIdError, ThrowOnError>({
             ...options,
             url: '/api/weixin/official-account-config/{id}'
@@ -2305,14 +2305,14 @@ export class WeixinOfficialAccountConfigService {
 }
 
 export class WeixinOfficialAccountNotifyService {
-    public static postApiWeixinPlatformOfficialAccountNotifyByAppid<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PostApiWeixinPlatformOfficialAccountNotifyByAppidData, ThrowOnError>) {
+    public static WeixinOfficialAccountNotifyController_notify<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PostApiWeixinPlatformOfficialAccountNotifyByAppidData, ThrowOnError>) {
         return (options?.client ?? client).post<PostApiWeixinPlatformOfficialAccountNotifyByAppidResponse, PostApiWeixinPlatformOfficialAccountNotifyByAppidError, ThrowOnError>({
             ...options,
             url: '/api/weixin-platform/official-account/notify/{appid}'
         });
     }
     
-    public static getApiWeixinPlatformOfficialAccountNotifyByAppid<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiWeixinPlatformOfficialAccountNotifyByAppidData, ThrowOnError>) {
+    public static WeixinOfficialAccountNotifyController_checkSignature<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiWeixinPlatformOfficialAccountNotifyByAppidData, ThrowOnError>) {
         return (options?.client ?? client).get<GetApiWeixinPlatformOfficialAccountNotifyByAppidResponse, GetApiWeixinPlatformOfficialAccountNotifyByAppidError, ThrowOnError>({
             ...options,
             url: '/api/weixin-platform/official-account/notify/{appid}'
@@ -2322,14 +2322,14 @@ export class WeixinOfficialAccountNotifyService {
 }
 
 export class WeixinOfficialAccountOauthService {
-    public static getApiWeixinPlatformOfficialAccountOauthOauthJumpInfoByAppid<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiWeixinPlatformOfficialAccountOauthOauthJumpInfoByAppidData, ThrowOnError>) {
+    public static WeixinOfficialAccountOauthController_oauthJumpInfo<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiWeixinPlatformOfficialAccountOauthOauthJumpInfoByAppidData, ThrowOnError>) {
         return (options?.client ?? client).get<GetApiWeixinPlatformOfficialAccountOauthOauthJumpInfoByAppidResponse, GetApiWeixinPlatformOfficialAccountOauthOauthJumpInfoByAppidError, ThrowOnError>({
             ...options,
             url: '/api/weixin-platform/official-account-oauth/oauth-jump/info/{appid}'
         });
     }
     
-    public static getApiWeixinPlatformOfficialAccountOauthOauthJumpBaseByAppid<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiWeixinPlatformOfficialAccountOauthOauthJumpBaseByAppidData, ThrowOnError>) {
+    public static WeixinOfficialAccountOauthController_oauthJumpBase<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiWeixinPlatformOfficialAccountOauthOauthJumpBaseByAppidData, ThrowOnError>) {
         return (options?.client ?? client).get<GetApiWeixinPlatformOfficialAccountOauthOauthJumpBaseByAppidResponse, GetApiWeixinPlatformOfficialAccountOauthOauthJumpBaseByAppidError, ThrowOnError>({
             ...options,
             url: '/api/weixin-platform/official-account-oauth/oauth-jump/base/{appid}'
@@ -2342,7 +2342,7 @@ export class WeixinPayService {
     /**
      * 创建支付配置
      */
-    public static postApiWeixinPay<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PostApiWeixinPayData, ThrowOnError>) {
+    public static create<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PostApiWeixinPayData, ThrowOnError>) {
         return (options?.client ?? client).post<PostApiWeixinPayResponse, PostApiWeixinPayError, ThrowOnError>({
             ...options,
             url: '/api/weixin/pay'
@@ -2352,7 +2352,7 @@ export class WeixinPayService {
     /**
      * 获取所有数据
      */
-    public static getApiWeixinPay<ThrowOnError extends boolean = false>(options?: OptionsLegacyParser<unknown, ThrowOnError>) {
+    public static getAll<ThrowOnError extends boolean = false>(options?: OptionsLegacyParser<unknown, ThrowOnError>) {
         return (options?.client ?? client).get<GetApiWeixinPayResponse, GetApiWeixinPayError, ThrowOnError>({
             ...options,
             url: '/api/weixin/pay'
@@ -2362,7 +2362,7 @@ export class WeixinPayService {
     /**
      * 删除支付配置
      */
-    public static deleteApiWeixinPayById<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<DeleteApiWeixinPayByIdData, ThrowOnError>) {
+    public static remove<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<DeleteApiWeixinPayByIdData, ThrowOnError>) {
         return (options?.client ?? client).delete<DeleteApiWeixinPayByIdResponse, DeleteApiWeixinPayByIdError, ThrowOnError>({
             ...options,
             url: '/api/weixin/pay/{id}'
@@ -2372,7 +2372,7 @@ export class WeixinPayService {
     /**
      * 更新支付配置
      */
-    public static putApiWeixinPayById<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PutApiWeixinPayByIdData, ThrowOnError>) {
+    public static update<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<PutApiWeixinPayByIdData, ThrowOnError>) {
         return (options?.client ?? client).put<PutApiWeixinPayByIdResponse, PutApiWeixinPayByIdError, ThrowOnError>({
             ...options,
             url: '/api/weixin/pay/{id}'
@@ -2382,7 +2382,7 @@ export class WeixinPayService {
     /**
      * id数据
      */
-    public static getApiWeixinPayById<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiWeixinPayByIdData, ThrowOnError>) {
+    public static get<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiWeixinPayByIdData, ThrowOnError>) {
         return (options?.client ?? client).get<GetApiWeixinPayByIdResponse, GetApiWeixinPayByIdError, ThrowOnError>({
             ...options,
             url: '/api/weixin/pay/{id}'
@@ -2392,7 +2392,7 @@ export class WeixinPayService {
     /**
      * 分页
      */
-    public static getApiWeixinPayPage<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiWeixinPayPageData, ThrowOnError>) {
+    public static paginate<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiWeixinPayPageData, ThrowOnError>) {
         return (options?.client ?? client).get<GetApiWeixinPayPageResponse, GetApiWeixinPayPageError, ThrowOnError>({
             ...options,
             url: '/api/weixin/pay/page'
@@ -2402,7 +2402,7 @@ export class WeixinPayService {
 }
 
 export class WeixinPlatformUserService {
-    public static getApiWeixinPlatformUserPaginate<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiWeixinPlatformUserPaginateData, ThrowOnError>) {
+    public static paginate<ThrowOnError extends boolean = false>(options: OptionsLegacyParser<GetApiWeixinPlatformUserPaginateData, ThrowOnError>) {
         return (options?.client ?? client).get<GetApiWeixinPlatformUserPaginateResponse, GetApiWeixinPlatformUserPaginateError, ThrowOnError>({
             ...options,
             url: '/api/weixin-platform-user/paginate'

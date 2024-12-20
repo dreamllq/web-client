@@ -49,13 +49,15 @@ const paginationRef = ref();
 
 const fetchData = async (option: { pageNo:number, pageSize:number }) => {
   const res = await ForumSectionService.paginate({
-    pageNo: option.pageNo,
-    pageSize: option.pageSize,
-    name: filterData.name
+    query: {
+      pageNo: option.pageNo,
+      pageSize: option.pageSize,
+      name: filterData.name
+    }
   });
   return {
-    list: res.data.list,
-    total: res.data.count
+    list: res.data?.data.list,
+    total: res.data?.data.count
   };
 };
 
@@ -67,7 +69,7 @@ const onEdit = async ({ id }:{id:string}) => {
 
 const onDelete = async ({ id }:{id:string}) => {
   await ElMessageBox.confirm('确认删除吗?', '删除');
-  await ForumSectionService.remove({ id });
+  await ForumSectionService.remove({ path: { id } });
   ElMessage.success('删除成功');
   refresh();
 };

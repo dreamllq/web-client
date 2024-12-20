@@ -46,10 +46,10 @@ const dialogImageUrl = ref('');
 const dialogVisible = ref(false);
 
 const httpRequest = async (options: UploadRequestOptions) => {
-  let res = await FileService.uploadFile({ formData: { file: options.file } });
+  let res = await FileService.uploadFile({ body: { file: options.file } });
   return {
-    url: res.data.url,
-    name: res.data.id
+    url: res.data?.data.url,
+    name: res.data?.data.id
   };
 };
 

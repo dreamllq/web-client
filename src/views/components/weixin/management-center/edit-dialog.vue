@@ -39,7 +39,7 @@ const onSubmit = async () => {
   const data = await formRef.value!.getData();
 
   await WeixinService.update({
-    id,
+    path: { id },
     body: {
       appSecret: data.appSecret,
       appType: data.appType
@@ -71,11 +71,11 @@ const edit = async (data:{id:string}) => {
   dialogVisible.value = true;
 
   // TODO 接口调用
-  const res = await WeixinService.get({ id });
-  editDefaultData.value.name = res.data.name;
-  editDefaultData.value.appType = res.data.appType;
-  editDefaultData.value.appid = res.data.appid;
-  editDefaultData.value.appSecret = res.data.appSecret;
+  const res = await WeixinService.get({ path: { id } });
+  editDefaultData.value.name = res.data?.data.name;
+  editDefaultData.value.appType = res.data?.data.appType;
+  editDefaultData.value.appid = res.data?.data.appid;
+  editDefaultData.value.appSecret = res.data?.data.appSecret;
 
   loadingDataFlag.value = false;
   return deferred.promise;

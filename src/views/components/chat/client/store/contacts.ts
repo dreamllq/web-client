@@ -1,13 +1,13 @@
 import { ref, onMounted, computed } from 'vue';
 import { createGlobalState } from '@vueuse/core';
-import { ChatContactsService, ChatContacts } from '@/services/api';
+import { ChatContactsService, ChatContacts, ChatContactsTypeEnum } from '@/services/api';
 
 export const useContactsState = createGlobalState(
   () => {
     const list = ref<ChatContacts[]>([]);
 
-    const friendList = computed(() => list.value.filter(item => item.status === ChatContacts.status.PASSED));
-    const newFriendList = computed(() => list.value.filter(item => item.status !== ChatContacts.status.PASSED));
+    const friendList = computed(() => list.value.filter(item => item.status === ChatContactsTypeEnum.PASSED));
+    const newFriendList = computed(() => list.value.filter(item => item.status !== ChatContactsTypeEnum.PASSED));
     const currentSelect = ref<ChatContacts>();
 
     onMounted(async () => {
@@ -16,7 +16,7 @@ export const useContactsState = createGlobalState(
 
     const refresh = async () => {
       const res = await ChatContactsService.get();
-      list.value = res.data;
+      list.value = res.data?.data;
     };
 
     const addContacts = async (contactsId:string) => {
@@ -26,16 +26,16 @@ export const useContactsState = createGlobalState(
 
     const agree = async (id:string) => {
       await ChatContactsService.updateStatus({
-        id,
-        body: { status: ChatContacts.status.PASSED }
+        path: { id },
+        body: { status: ChatContactsTypeEnum.PASSED }
       });
       await refresh();
     };  
 
     const refuse = async (id:string) => {
       await ChatContactsService.updateStatus({
-        id,
-        body: { status: ChatContacts.status.REFUSE }
+        path: { id },
+        body: { status: ChatContactsTypeEnum.REFUSE }
       });
       await refresh();
     };

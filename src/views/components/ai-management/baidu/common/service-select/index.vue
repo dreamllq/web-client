@@ -29,7 +29,7 @@ const props = defineProps({
 const fetchData = async () => {
   const res = await AiBaiduServiceService.getAll();
 
-  return res.data.map(item => ({
+  return res.data.data.map(item => ({
     label: item.name,
     value: item.id
   }));

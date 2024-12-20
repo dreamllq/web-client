@@ -39,7 +39,7 @@ const onSubmit = async () => {
   
   // TODO 接口调用
   await WeixinOfficialAccountConfigService.update({
-    id,
+    path: { id },
     body: {
       checkSignature: data.checkSignature,
       encodingAesKey: data.encodingAesKey,
@@ -69,12 +69,12 @@ const edit = async (data:{ id:string }) => {
   deferred = new Deferred();
   dialogVisible.value = true;
 
-  const res = await WeixinOfficialAccountConfigService.getAndCreateByWeixin({ weixinId: data.id });
-  id = res.data.id;
+  const res = await WeixinOfficialAccountConfigService.getAndCreateByWeixin({ path: { weixinId: data.id } });
+  id = res.data?.data.id;
 
-  editDefaultData.value.token = res.data.token;
-  editDefaultData.value.encodingAesKey = res.data.encodingAesKey;
-  editDefaultData.value.checkSignature = res.data.checkSignature;
+  editDefaultData.value.token = res.data?.data.token;
+  editDefaultData.value.encodingAesKey = res.data?.data.encodingAesKey;
+  editDefaultData.value.checkSignature = res.data?.data.checkSignature;
 
   loadingDataFlag.value = false;
   return deferred.promise;

@@ -38,7 +38,7 @@ const onSubmit = async () => {
   const data = await formRef.value.getData();
 
   await UsersService.update({
-    id: editDefaultData.value.id,
+    path: { id: editDefaultData.value.id },
     body: {
       roleIds: data.roleIds,
       username: data.username,
@@ -76,12 +76,12 @@ const edit = async ({ id }) => {
   dialogVisible.value = true;
 
   // TODO 接口调用
-  const res = await UsersService.get({ id });
-  editDefaultData.value.username = res.data.username;
-  editDefaultData.value.roleIds = res.data.roles.map(role => role.id);
-  editDefaultData.value.nickName = res.data.nickName;
-  editDefaultData.value.mobile = res.data.mobile;
-  editDefaultData.value.headimg = res.data.headimg;
+  const res = await UsersService.get({ path: { id } });
+  editDefaultData.value.username = res.data?.data.username;
+  editDefaultData.value.roleIds = res.data?.data.roles.map(role => role.id);
+  editDefaultData.value.nickName = res.data?.data.nickName;
+  editDefaultData.value.mobile = res.data?.data.mobile;
+  editDefaultData.value.headimg = res.data?.data.headimg;
 
   loadingDataFlag.value = false;
   return deferred.promise;

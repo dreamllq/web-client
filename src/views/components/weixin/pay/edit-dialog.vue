@@ -39,7 +39,7 @@ const onSubmit = async () => {
   const data = await formRef.value!.getData();
 
   await WeixinPayService.update({
-    id,
+    path: { id },
     body: {
       mchid: data.mchid,
       name: data.name,
@@ -76,13 +76,13 @@ const edit = async (data:{ id:string }) => {
   dialogVisible.value = true;
 
   // TODO 接口调用
-  const res = await WeixinPayService.get({ id });
-  editDefaultData.name = res.data.name;
-  editDefaultData.mchid = res.data.mchid;
-  editDefaultData.partnerKey = res.data.partnerKey;
-  // editDefaultData.pfx = res.data.pfx;
-  editDefaultData.notifyUrl = res.data.notifyUrl;
-  editDefaultData.spbillCreateIp = res.data.spbillCreateIp;
+  const res = await WeixinPayService.get({ path: { id } });
+  editDefaultData.name = res.data?.data.name;
+  editDefaultData.mchid = res.data?.data.mchid;
+  editDefaultData.partnerKey = res.data?.data.partnerKey;
+  // editDefaultData.pfx = res.data?.data.pfx;
+  editDefaultData.notifyUrl = res.data?.data.notifyUrl;
+  editDefaultData.spbillCreateIp = res.data?.data.spbillCreateIp;
 
   loadingDataFlag.value = false;
   return deferred.promise;

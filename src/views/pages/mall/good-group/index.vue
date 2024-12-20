@@ -51,7 +51,7 @@ const onAdd = async () => {
 
 const onDelete = async () => {
   await ElMessageBox.confirm('确认删除吗?', '删除');
-  await MallGoodGroupService.remove({ id: currentGroupData.value.id });
+  await MallGoodGroupService.remove({ path: { id: currentGroupData.value.id } });
   ElMessage.success('删除成功');
   treeRef.value.refresh();
   currentGroupData.value = null;
@@ -64,8 +64,8 @@ const onCurrentChange = (data, node) => {
 
 const onEdit = async () => {
   await bizEdit.value.edit({ id: currentGroupData.value.id });
-  const res = await MallGoodGroupService.get({ id: currentGroupData.value.id });
-  currentGroupData.value = res.data;
+  const res = await MallGoodGroupService.get({ path: { id: currentGroupData.value.id } });
+  currentGroupData.value = res.data?.data;
   treeRef.value.refresh();
 };
 </script>

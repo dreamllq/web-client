@@ -39,10 +39,10 @@ const data = ref<{name: string, image: string, key: string}[]>([]);
 const addRef = ref();
 
 onMounted(async () => {
-  const res = await SettingService.getItems({ keys: ['MALL_HOME_CAROUSEL'] });
-  if (res.data[0]) {
+  const res = await SettingService.getItems({ path: { keys: ['MALL_HOME_CAROUSEL'] } });
+  if (res.data?.data[0]) {
     try {
-      data.value = JSON.parse(res.data[0].value);
+      data.value = JSON.parse(res.data?.data[0].value);
     } catch (e) {}
   }
 });

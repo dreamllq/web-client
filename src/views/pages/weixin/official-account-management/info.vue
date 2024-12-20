@@ -28,8 +28,8 @@ import { ref } from 'vue';
 const route = useRoute();
 const wxData = ref({});
 onMounted(async () => {
-  const res = await WeixinService.get({ id: route.query.wid as string });
-  wxData.value = res.data;
+  const res = await WeixinService.get({ path: { id: route.query.wid as string } });
+  wxData.value = res.data?.data;
 });
 </script>
 

@@ -33,7 +33,7 @@ const components = {
 const component = computed(() => components[layout.value]);
 
 onMounted(() => {
-  getPathInfoById(null);
+  getPathInfoById('null');
 });
 </script>
 

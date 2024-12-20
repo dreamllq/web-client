@@ -63,10 +63,10 @@ const paginationRef = ref();
 
 const fetchData = async (option: { pageNo:number, pageSize:number }) => {
   // TODO 接口调用
-  const res = await AiAliyunSessionService.paginate(option);
+  const res = await AiAliyunSessionService.paginate({ query: option });
   return {
-    list: res.data.list,
-    total: res.data.count
+    list: res.data?.data.list,
+    total: res.data?.data.count
   };
 };
 

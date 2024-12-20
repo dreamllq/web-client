@@ -48,12 +48,14 @@ const fetchData = async (option: { pageNo:number, pageSize:number }) => {
   // TODO 接口调用
   // const res: ResourcePaginateSuccessResult = await ResourcesService.paginate(option.pageSize, option.pageNo);
   const res = await WeixinPayService.paginate({
-    pageNo: option.pageNo,
-    pageSize: option.pageSize
+    query: {
+      pageNo: option.pageNo,
+      pageSize: option.pageSize
+    }
   });
   return {
-    list: res.data.list,
-    total: res.data.count
+    list: res.data?.data.list,
+    total: res.data?.data.count
   };
 };
 
@@ -65,7 +67,7 @@ const onEdit = async ({ id }) => {
 
 const onDelete = async ({ id }) => {
   await ElMessageBox.confirm('确认删除吗?', '删除');
-  await WeixinPayService.remove({ id });
+  await WeixinPayService.remove({ path: { id } });
   ElMessage.success('删除成功');
   refresh();
 };

@@ -36,9 +36,9 @@ const props = defineProps({
 });
 
 const fetchData = async () => {
-  const res = await WeixinService.getAll({ ...props.filter });
+  const res = await WeixinService.getAll({ query: { ...props.filter } });
 
-  return res.data.map(item => ({
+  return res.data.data.map(item => ({
     label: item.name,
     value: item.id
   }));

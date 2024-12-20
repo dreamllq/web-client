@@ -9,7 +9,7 @@
 </template>
 
 <script setup>
-import { ForumSectionService, MallShopService } from '@/services/api';
+import { ForumSectionService } from '@/services/api';
 import { BizSelect } from 'lc-vue-biz-select';
 
 const props = defineProps({
@@ -36,7 +36,7 @@ const props = defineProps({
 const fetchData = async () => {
   const res = await ForumSectionService.getAll();
 
-  return res.data.map(item => ({
+  return res.data.data.map(item => ({
     label: item.name,
     value: item.id
   }));

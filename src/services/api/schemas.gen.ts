@@ -3201,6 +3201,11 @@ export const MallGoodGroupGetAllResponseSchema = {
     required: ['code', 'message', 'data']
 } as const;
 
+export const ChatMessageTypeEnumSchema = {
+    type: 'string',
+    enum: ['unknown', 'text']
+} as const;
+
 export const ChatMessageCreateDtoSchema = {
     type: 'object',
     properties: {
@@ -3208,8 +3213,7 @@ export const ChatMessageCreateDtoSchema = {
             type: 'string'
         },
         type: {
-            type: 'string',
-            enum: ['unknown', 'text']
+            '$ref': '#/components/schemas/ChatMessageTypeEnum'
         },
         content: {
             type: 'string'
@@ -3219,6 +3223,11 @@ export const ChatMessageCreateDtoSchema = {
         }
     },
     required: ['id', 'type', 'content', 'contactsId']
+} as const;
+
+export const ChatContactsTypeEnumSchema = {
+    type: 'string',
+    enum: ['unknown', 'waiting_verification', 'can_pass', 'passed', 'refuse', 'refused']
 } as const;
 
 export const ChatContactsSchema = {
@@ -3234,8 +3243,7 @@ export const ChatContactsSchema = {
             '$ref': '#/components/schemas/User'
         },
         status: {
-            type: 'string',
-            enum: ['unknown', 'waiting_verification', 'can_pass', 'passed', 'refuse', 'refused']
+            '$ref': '#/components/schemas/ChatContactsTypeEnum'
         },
         createDate: {
             format: 'date-time',
@@ -3261,8 +3269,7 @@ export const ChatMessageSchema = {
             '$ref': '#/components/schemas/ChatContacts'
         },
         type: {
-            type: 'string',
-            enum: ['unknown', 'text']
+            '$ref': '#/components/schemas/ChatMessageTypeEnum'
         },
         content: {
             type: 'string'

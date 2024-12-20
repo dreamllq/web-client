@@ -10,14 +10,14 @@ export const usePathState = createGlobalState(
     const columnMap = ref<ColumnMap>({});
     const tree = ref({});
     const parentIdMap = ref<ParentIdMap>({});
-    const currentFId = ref<string | null>(null);
-    const currentFPathId = ref<string | null>(null);
+    const currentFId = ref<string | null>('null');
+    const currentFPathId = ref<string | null>('null');
     const fPathIdHistory = ref<(string|null)[]>([]);
 
     const column = computed<ColumnList>(() => {
       const list:ColumnItem[] = [];
       let cFId = currentFPathId.value;
-      while (cFId !== null) {
+      while (cFId !== 'null') {
         const cF = columnMap.value[cFId];
         list.unshift(cF);
         cFId = parentIdMap.value[cF.parentId!];
@@ -32,16 +32,16 @@ export const usePathState = createGlobalState(
       // const res = await FsService.get({ id });
       // const data = res.data;
       // map.value[data.id] = data;
-      const childRes = await FsService.getChildren({ id: id });
-      childrenMap.value[id] = childRes.data;
+      const childRes = await FsService.getChildren({ path: { id: id } });
+      childrenMap.value[id] = childRes.data?.data;
       fPathIdHistory.value.push(id);
       const columnItem:ColumnItem = {
         parentId: id,
-        list: childRes.data
+        list: childRes.data?.data
       };
       pushColumnItem(columnItem);
       console.log(column.value, columnMap.value);
-      childRes.data.forEach(item => {
+      childRes.data?.data.forEach(item => {
         parentIdMap.value[item.id] = id;
       });
     };
