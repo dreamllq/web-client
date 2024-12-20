@@ -8,7 +8,7 @@ export const init = async () => {
   const res = await SessionService.getUser();
   console.log(res);
   
-  user = res.data;
+  user = res.data.data;
 };
 
 export const getUser = () => user;
