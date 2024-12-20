@@ -7,8 +7,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "generate": "openapi --input http://127.0.0.1:3000/swagger-json --output ./src/services/api --client axios --useOptions",
-    "generate1": "openapi-ts"
+    "generate": "openapi-ts"
   },
   "dependencies": {
     "@ckeditor/ckeditor5-build-classic": "^37.0.0",
