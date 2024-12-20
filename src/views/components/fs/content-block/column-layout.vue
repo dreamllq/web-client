@@ -23,7 +23,7 @@
               selected: currentFId === f.id,
               path: column.find(item=>item.parentId === f.id)
             }'
-            @click.prevent.stop='selectF(f)'>
+            @click.prevent.stop='onSelectF(f)'>
             <el-icon :size='18'>
               <document />
             </el-icon>
@@ -62,6 +62,11 @@ const { push } = useNavigationState();
 const onEnterF = (f:F) => {
   push(currentFPathId.value);
   enterF(f);
+  selectF(f);
+};
+
+const onSelectF = (f:F) => {
+  currentFPathId.value = f.parent.id;
   selectF(f);
 };
 
