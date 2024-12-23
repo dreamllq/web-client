@@ -64,6 +64,7 @@ import { ColumnItem } from '../type';
 const { column, currentFPathId, enterF, currentFId, selectF, map } = usePathState();
 const { push } = useNavigationState();
 import { useBlockContextMenuState } from '../store/block-context-menu';
+import { download } from '@/services/download';
 const { show } = useBlockContextMenuState();
 
 const onClickBlock = (columnItem: ColumnItem) => {
@@ -89,12 +90,7 @@ const onSelectF = (f:F) => {
 const style = computed(() => ({ minWidth: `${301 * column.value.length}px` }));
 
 const downloadFile = async (f:F) => {
-  const file = await FileService.get({ path: { id: f.fileDetail.file.id } });
-  const res = await FileStaticService.view({
-    path: { id: f.fileDetail.file.id },
-    responseType: 'blob' 
-  });
-  FileSaver.saveAs(res.data as Blob, file.data?.data.originFileName);
+  download(f.fileDetail.file);
 };
 </script>
 

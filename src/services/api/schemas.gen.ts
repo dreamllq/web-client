@@ -4922,7 +4922,7 @@ export const PathTypeSchema = {
     enum: ['unknown', 'file', 'dir']
 } as const;
 
-export const FileDetailSchema = {
+export const FileDetailDtoSchema = {
     type: 'object',
     properties: {
         fileId: {
@@ -4946,10 +4946,33 @@ export const CreateFDtoSchema = {
             '$ref': '#/components/schemas/PathType'
         },
         fileDetail: {
-            '$ref': '#/components/schemas/FileDetail'
+            '$ref': '#/components/schemas/FileDetailDto'
         }
     },
     required: ['name', 'parentId', 'pathType']
+} as const;
+
+export const FileDetailSchema = {
+    type: 'object',
+    properties: {
+        id: {
+            type: 'string'
+        },
+        file: {
+            '$ref': '#/components/schemas/File'
+        },
+        createDate: {
+            format: 'date-time',
+            type: 'string',
+            description: '创建时间'
+        },
+        updateDate: {
+            format: 'date-time',
+            type: 'string',
+            description: '更新时间'
+        }
+    },
+    required: ['id', 'file', 'createDate', 'updateDate']
 } as const;
 
 export const FSchema = {
@@ -5043,7 +5066,7 @@ export const UpdateFDtoSchema = {
             '$ref': '#/components/schemas/PathType'
         },
         fileDetail: {
-            '$ref': '#/components/schemas/FileDetail'
+            '$ref': '#/components/schemas/FileDetailDto'
         }
     }
 } as const;
