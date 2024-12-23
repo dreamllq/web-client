@@ -1,7 +1,10 @@
 <template>
   <div class='column-layout' :style='style'>
     <template v-for='(columnItem, index) in column' :key='index'>
-      <div class='column-item'>
+      <div
+        class='column-item'
+        @click.prevent.stop='onClickBlock(columnItem)' 
+        @contextmenu.prevent.stop='(e)=> onContextmenu(e, columnItem)'>
         <template v-for='f in columnItem.list' :key='f.id'>
           <div
             v-if='f.pathType===PathType.DIR'
@@ -57,8 +60,21 @@ import { useNavigationState } from '../store/navigation';
 import { computed } from 'vue';
 import { TextTip } from 'lc-vue-text-tip';
 import * as FileSaver from 'file-saver';
+import { ColumnItem } from '../type';
 const { column, currentFPathId, enterF, currentFId, selectF, map } = usePathState();
 const { push } = useNavigationState();
+import { useBlockContextMenuState } from '../store/block-context-menu';
+const { show } = useBlockContextMenuState();
+
+const onClickBlock = (columnItem: ColumnItem) => {
+  currentFPathId.value = columnItem.parentId;
+  currentFId.value = columnItem.parentId;
+};
+
+const onContextmenu = (e, columnItem: ColumnItem) => {
+  show(e, columnItem.parentId);
+};
+
 const onEnterF = (f:F) => {
   push(currentFPathId.value);
   enterF(f);
@@ -86,7 +102,8 @@ const downloadFile = async (f:F) => {
 .column-layout{
   display: flex;
   height: 100%;
-  overflow: auto;
+  overflow-x: auto;
+  overflow-y: hidden;
 
   .column-item{
     width: 300px;
@@ -94,6 +111,7 @@ const downloadFile = async (f:F) => {
     height: 100%;
     padding: 4px 8px;
     box-sizing: border-box;
+    overflow-y: scroll;
 
     .f-item{
       cursor: pointer;

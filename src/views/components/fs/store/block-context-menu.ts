@@ -7,7 +7,7 @@ export const useBlockContextMenuState = createGlobalState(() => {
   const { currentFPathId, getPathInfoById } = usePathState();
   const isOpen = ref(false);
   const eventVal = ref({});
-  const file = ref({});
+  const triggerFId = ref<string | null>();
   const menus = ref([
     {
       label: '新建文件夹',
@@ -15,17 +15,18 @@ export const useBlockContextMenuState = createGlobalState(() => {
         await FsService.create({
           body: {
             name: '未命名文件夹',
-            parentId: currentFPathId.value!,
+            parentId: triggerFId.value ? triggerFId.value : currentFPathId.value!,
             pathType: PathType.DIR,
-            fileDetail: null
+            fileDetail: undefined
           }
         });
-        await getPathInfoById(currentFPathId.value!);
+        await getPathInfoById(triggerFId.value ? triggerFId.value : currentFPathId.value!);
       }
     }
   ]);
 
-  const show = async (e) => {
+  const show = async (e:any, fId:string | null) => {
+    triggerFId.value = fId;
     isOpen.value = false;
     await nextTick();
     isOpen.value = true;
@@ -37,7 +38,6 @@ export const useBlockContextMenuState = createGlobalState(() => {
     eventVal,
     menus,
     menusZIndex,
-    show,
-    file
+    show
   };
 });

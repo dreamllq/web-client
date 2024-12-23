@@ -981,9 +981,7 @@ export type CreateFDto = {
      * 路径类型
      */
     pathType: PathType;
-    fileDetail: {
-        [key: string]: unknown;
-    };
+    fileDetail?: FileDetail;
 };
 
 export type CreateResourceDto = {
@@ -1130,16 +1128,7 @@ export type FileBuffer = {
 };
 
 export type FileDetail = {
-    id: string;
-    file: File;
-    /**
-     * 创建时间
-     */
-    createDate: string;
-    /**
-     * 更新时间
-     */
-    updateDate: string;
+    fileId: string;
 };
 
 export type FileGetResponse = {
@@ -2150,9 +2139,7 @@ export type UpdateFDto = {
      * 路径类型
      */
     pathType?: PathType;
-    fileDetail?: {
-        [key: string]: unknown;
-    };
+    fileDetail?: FileDetail;
 };
 
 export type UpdateResourceDto = {
