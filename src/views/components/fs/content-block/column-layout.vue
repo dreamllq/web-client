@@ -65,11 +65,12 @@ const { column, currentFPathId, enterF, currentFId, selectF, map } = usePathStat
 const { push } = useNavigationState();
 import { useBlockContextMenuState } from '../store/block-context-menu';
 import { download } from '@/services/download';
-const { show } = useBlockContextMenuState();
+const { show, hide } = useBlockContextMenuState();
 
 const onClickBlock = (columnItem: ColumnItem) => {
   currentFPathId.value = columnItem.parentId;
   currentFId.value = columnItem.parentId;
+  hide();
 };
 
 const onContextmenu = (e, columnItem: ColumnItem) => {
