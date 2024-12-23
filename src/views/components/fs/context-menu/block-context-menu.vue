@@ -7,11 +7,11 @@
       :z-index='menusZIndex'
       has-icon />
 
-    <input
+    <!-- <input
       ref='fileInputRef'
       type='file'
       name='file'
-      @click.prevent.stop>
+      @click.prevent.stop> -->
   </div>
 </template>
 
