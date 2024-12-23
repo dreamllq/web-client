@@ -88,7 +88,7 @@ const onSelectF = (f:F) => {
   selectF(f);
 };
 
-const style = computed(() => ({ minWidth: `${301 * column.value.length}px` }));
+const style = computed(() => ({ minWidth: `${301 * (column.value.length + 1)}px` }));
 
 const downloadFile = async (f:F) => {
   download(f.fileDetail.file);
