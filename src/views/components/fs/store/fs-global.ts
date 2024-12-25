@@ -6,6 +6,12 @@ import { LAYOUT } from '../type';
 
 export const useFsGlobalState = createGlobalState(() => {
   const layout = ref(LAYOUT.COLUMN);
+  const previewVisible = ref(false);
+  const previewF = ref<F | null>(null);
 
-  return { layout };
+  return {
+    layout,
+    previewVisible,
+    previewF
+  };
 });

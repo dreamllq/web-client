@@ -6,6 +6,7 @@
     <!-- <icon-layout /> -->
     <component :is='component' />
     <block-context-menu />
+    <preview />
   </div>
 </template>
 
@@ -19,6 +20,7 @@ import BlockContextMenu from '../context-menu/block-context-menu.vue';
 import { useBlockContextMenuState } from '../store/block-context-menu';
 import { useFsGlobalState } from '../store/fs-global';
 import { LAYOUT } from '../type';
+import Preview from '../preview/index.vue';
 
 const { getPathInfoById, clearSelectF } = usePathState();
 const { show } = useBlockContextMenuState();

@@ -30,7 +30,7 @@
             <el-icon :size='18'>
               <document />
             </el-icon>
-            <text-tip :msg='f.name' style='flex: 1;overflow: hidden;padding-left: 4px;' />
+            <text-tip :msg='`${f.name}.${f.fileDetail?.file.ext}`' style='flex: 1;overflow: hidden;padding-left: 4px;' />
           </div>
         </template>
       </div>
@@ -65,7 +65,10 @@ const { column, currentFPathId, enterF, currentFId, selectF, map } = usePathStat
 const { push } = useNavigationState();
 import { useBlockContextMenuState } from '../store/block-context-menu';
 import { download } from '@/services/download';
+import { usePreview } from '../preview/hook';
 const { show, hide } = useBlockContextMenuState();
+
+usePreview();
 
 const onClickBlock = (columnItem: ColumnItem) => {
   currentFPathId.value = columnItem.parentId;
