@@ -1420,7 +1420,7 @@ export const FileSchema = {
             description: '更新时间'
         }
     },
-    required: ['id', 'name', 'originFileName', 'ext', 'content', 'createDate', 'updateDate']
+    required: ['id', 'name', 'originFileName', 'ext', 'createDate', 'updateDate']
 } as const;
 
 export const UploadFileInfoSchema = {
@@ -4972,7 +4972,7 @@ export const FileDetailSchema = {
             description: '更新时间'
         }
     },
-    required: ['id', 'file', 'createDate', 'updateDate']
+    required: ['id', 'createDate', 'updateDate']
 } as const;
 
 export const FSchema = {
@@ -5014,7 +5014,7 @@ export const FSchema = {
             description: '更新时间'
         }
     },
-    required: ['id', 'name', 'pathType', 'parent', 'children', 'fileDetail', 'creator', 'createDate', 'updateDate']
+    required: ['id', 'name', 'pathType', 'parent', 'children', 'createDate', 'updateDate']
 } as const;
 
 export const FGetAllResponseSchema = {

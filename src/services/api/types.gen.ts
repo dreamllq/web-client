@@ -1062,8 +1062,8 @@ export type F = {
     pathType: PathType;
     parent: F;
     children: Array<F>;
-    fileDetail: FileDetail;
-    creator: User;
+    fileDetail?: FileDetail;
+    creator?: User;
     /**
      * 创建时间
      */
@@ -1100,7 +1100,7 @@ export type File = {
      * 扩展名
      */
     ext: string;
-    content: FileBuffer;
+    content?: FileBuffer;
     /**
      * 创建时间
      */
@@ -1129,7 +1129,7 @@ export type FileBuffer = {
 
 export type FileDetail = {
     id: string;
-    file: File;
+    file?: File;
     /**
      * 创建时间
      */
