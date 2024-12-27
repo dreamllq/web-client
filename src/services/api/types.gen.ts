@@ -1100,6 +1100,10 @@ export type File = {
      * 扩展名
      */
     ext: string;
+    /**
+     * 空间大小
+     */
+    size: number;
     content?: FileBuffer;
     /**
      * 创建时间

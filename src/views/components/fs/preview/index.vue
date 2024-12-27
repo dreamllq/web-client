@@ -14,9 +14,10 @@
       <template v-if='previewF?.pathType === PathType.FILE'>
         <preview-image v-if='isImage(previewF?.fileDetail?.file?.ext!)' />
         <preview-excel v-else-if='isExcel(previewF?.fileDetail?.file?.ext!)' />
+        <preview-file v-else />
       </template>
       <template v-else>
-        {{ previewF }}
+        <preview-dir />
       </template>
     </template>
   </el-dialog>
@@ -26,6 +27,8 @@
 import { computed, ref } from 'vue';
 import { useFsGlobalState } from '../store/fs-global';
 import { isImage, isExcel } from '@/utils/validator';
+import PreviewFile from './preview-file.vue';
+import PreviewDir from './preview-dir.vue';
 import PreviewImage from './preview-image.vue';
 import PreviewExcel from './preview-excel.vue';
 import { PathType } from '@/services/api';

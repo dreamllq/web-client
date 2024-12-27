@@ -35,8 +35,6 @@ const currentSheet = computed(() => {
 provide('currentSheet', currentSheet);
 
 const setWorkbook = (wb: ExcelJS.Workbook) => {
-  console.log(wb);
-  
   workbook.value = wb;
 };
 

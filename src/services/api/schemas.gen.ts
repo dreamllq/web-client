@@ -1406,6 +1406,10 @@ export const FileSchema = {
             type: 'string',
             description: '扩展名'
         },
+        size: {
+            type: 'number',
+            description: '空间大小'
+        },
         content: {
             '$ref': '#/components/schemas/FileBuffer'
         },
@@ -1420,7 +1424,7 @@ export const FileSchema = {
             description: '更新时间'
         }
     },
-    required: ['id', 'name', 'originFileName', 'ext', 'createDate', 'updateDate']
+    required: ['id', 'name', 'originFileName', 'ext', 'size', 'createDate', 'updateDate']
 } as const;
 
 export const UploadFileInfoSchema = {

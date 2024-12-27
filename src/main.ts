@@ -8,12 +8,15 @@ import zhCn from 'element-plus/dist/locale/zh-cn.mjs';
 import 'normalize.css';
 import './styles/index.scss';
 import 'element-plus/dist/index.css';
-import { OpenAPI } from './services/api';
 import { getToken } from './services/token';
 import '@imengyu/vue3-context-menu/lib/vue3-context-menu.css';
 import ContextMenu from '@imengyu/vue3-context-menu';
+import { ModuleRegistry, ClientSideRowModelModule, themeQuartz, provideGlobalGridOptions, CellSelectionModule, themeBalham } from 'ag-grid-enterprise'; 
+// import { ModuleRegistry, ClientSideRowModelModule, themeQuartz, provideGlobalGridOptions } from 'ag-grid-community'; 
 
-// OpenAPI.TOKEN = getToken;
+ModuleRegistry.registerModules([ClientSideRowModelModule, CellSelectionModule]); 
+provideGlobalGridOptions({ theme: themeBalham });
+
 import { client } from './services/api/sdk.gen';
 import { AuthorizationError, HttpError, InterfaceError } from './services/error-definition';
 

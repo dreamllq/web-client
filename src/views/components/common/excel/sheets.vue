@@ -3,6 +3,7 @@
     <el-tabs
       v-model='activeSheet'
       type='card'
+      tab-position='bottom'
     >
       <template v-for='item in sheets' :key='item.sheetId'>
         <el-tab-pane :label='item.worksheet.name' :name='item.sheetId' />
