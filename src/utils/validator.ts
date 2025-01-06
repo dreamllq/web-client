@@ -15,3 +15,9 @@ export const isExcel = (ext?:string) => {
 
   return excelExt.includes(ext!);
 };
+
+export const isPdf = (ext?:string) => {
+  const exts = ['pdf'];
+
+  return exts.includes(ext!);
+};

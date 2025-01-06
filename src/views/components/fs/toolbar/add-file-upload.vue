@@ -9,6 +9,7 @@
   >
     <template #trigger>
       <el-button
+        ref='upButtonRef'
         type='primary'
         :icon='DocumentAdd'
         text />
@@ -22,12 +23,14 @@ import type { UploadProps, UploadRequestOptions } from 'element-plus';
 import { FileService, FsService, PathType } from '@/services/api';
 import { DocumentAdd } from '@element-plus/icons-vue';
 import { usePathState } from '../store/path';
+import { useBlockContextMenuState } from '../store/block-context-menu';
 
-const { currentFPathId, getPathInfoById } = usePathState();
+const { currentFPathId, getPathInfoById, currentFId } = usePathState();
 const upload = ref();
 const emit = defineEmits(['update:modelValue']);
 const fileInfo = ref();
-
+const upButtonRef = ref();
+const { triggerFId } = useBlockContextMenuState();
 
 const httpRequest = async (options: UploadRequestOptions) => {
   const res = await FileService.uploadFile({ body: { file: options.file } });
@@ -35,11 +38,11 @@ const httpRequest = async (options: UploadRequestOptions) => {
     body: {
       fileDetail: { fileId: res.data?.data.fileId },
       name: res.data?.data.entity.originFileName,
-      parentId: currentFPathId.value!,
+      parentId: triggerFId.value!,
       pathType: PathType.FILE
     }
   });
-  getPathInfoById(currentFPathId.value!);
+  getPathInfoById(triggerFId.value!);
   return res;
 };
 const handleAvatarSuccess: UploadProps['onSuccess'] = (response) => {
@@ -53,9 +56,7 @@ const handleError: UploadProps['onError'] = (error) => {
 };
 
 const click = () => {
-  console.log(upload.value);
-  
-  upload.value!.handleStart();
+  upButtonRef.value.ref.click();
 };
 
 defineExpose({ click });

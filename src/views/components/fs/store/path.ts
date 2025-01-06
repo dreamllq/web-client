@@ -1,4 +1,4 @@
-import { F, FsService } from '@/services/api';
+import { F, FsService, PathType } from '@/services/api';
 import { createGlobalState } from '@vueuse/core';
 import { computed, ref } from 'vue';
 import { ColumnList, ColumnItem, ColumnMap, ParentIdMap } from '../type';
@@ -6,17 +6,23 @@ import { ColumnList, ColumnItem, ColumnMap, ParentIdMap } from '../type';
 export const usePathState = createGlobalState(
   () => {
     const childrenMap = ref<{[index:string]: F[]}>({});
-    const map = ref<{[index:string]: F}>({});
+    const map = ref<{[index:string]: F}>({
+      'null': {
+        id: 'null',
+        pathType: PathType.DIR
+      } 
+    });
     const columnMap = ref<ColumnMap>({});
     const tree = ref({});
     const parentIdMap = ref<ParentIdMap>({});
     const currentFId = ref<string | null>('null');
     const currentFPathId = ref<string | null>('null');
     const fPathIdHistory = ref<(string|null)[]>([]);
+    const selectedFList = ref<string[]>([]);
 
     const column = computed<ColumnList>(() => {
       const list:ColumnItem[] = [];
-      let cFId = currentFPathId.value;
+      let cFId = currentFId.value;
       while (cFId !== 'null') {
         const cF = columnMap.value[cFId];
         list.unshift(cF);
@@ -24,7 +30,7 @@ export const usePathState = createGlobalState(
       }
 
       columnMap.value[cFId!] && list.unshift(columnMap.value[cFId!]);
-
+      list.pop();
       return list;
     });
 
@@ -40,7 +46,6 @@ export const usePathState = createGlobalState(
         list: childRes.data?.data
       };
       pushColumnItem(columnItem);
-      console.log(column.value, columnMap.value);
       childRes.data?.data.forEach(item => {
         parentIdMap.value[item.id] = id;
       });
@@ -67,9 +72,22 @@ export const usePathState = createGlobalState(
       // column.value.push(columnItem);
     };
 
-    const selectF = (f:F) => {
+    // 单击选择
+    const selectF = async (f:F) => {
+      await getPathInfoById(f.id);
       currentFId.value = f.id;
+      selectedFList.value = [f.id];
       map.value[f.id] = f;
+    };
+
+    // ctrl / cmd / shift 多选
+    const multipleSelectF = (f:F) => {
+      map.value[f.id] = f;
+      if (selectedFList.value.some(item => item === f.id)) {
+        selectedFList.value = selectedFList.value.filter(item => item !== f.id);
+      } else {
+        selectedFList.value = [...selectedFList.value, f.id];
+      }
     };
 
     const clearSelectF = () => {
@@ -91,8 +109,11 @@ export const usePathState = createGlobalState(
       map,
       column,
       selectF,
+      multipleSelectF,
+      selectedFList,
       clearSelectF,
-      enterF
+      enterF,
+      columnMap
     };
   }
 );

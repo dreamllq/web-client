@@ -1,6 +1,6 @@
 <template>
   <div>
-    <add-file-upload v-model='file' />
+    <!-- <add-file-upload v-model='file' /> -->
   </div>
 </template>
 

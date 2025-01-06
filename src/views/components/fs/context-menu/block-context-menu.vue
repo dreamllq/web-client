@@ -7,11 +7,7 @@
       :z-index='menusZIndex'
       has-icon />
 
-    <!-- <input
-      ref='fileInputRef'
-      type='file'
-      name='file'
-      @click.prevent.stop> -->
+    <add-file-upload ref='fileInputRef' />
   </div>
 </template>
 
@@ -21,6 +17,7 @@ import { Vue3Menus } from 'vue3-menus';
 import { useBlockContextMenuState } from '../store/block-context-menu';
 import { FsService, PathType } from '@/services/api';
 import { usePathState } from '../store/path';
+import AddFileUpload from '../toolbar/add-file-upload.vue';
 
 const { isOpen, menusZIndex, eventVal, triggerFId } = useBlockContextMenuState();
 const { currentFPathId, getPathInfoById } = usePathState();
