@@ -30,7 +30,7 @@ import { PropType, ref } from 'vue';
 import { TextTip } from 'lc-vue-text-tip';
 import { useFContextMenuState } from '../../store/f-context-menu';
 import { useOperateHook } from '../operate-hook';
-import RenameInput from './rename-input.vue';
+import RenameInput from '../../rename/rename-input.vue';
 
 const { column, selectedFList, renameF } = usePathState()!;
 const { show: showFContextMenu, triggerF } = useFContextMenuState()!;

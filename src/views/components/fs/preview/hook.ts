@@ -3,8 +3,8 @@ import { useFsGlobalState } from '../store/fs-global';
 import { onKeyUp } from '@vueuse/core';
 import { usePathState } from '../store/path';
 export const usePreview = () => {
-  const { previewVisible, previewF } = useFsGlobalState();
-  const { currentFId, map } = usePathState();
+  const { previewVisible, previewF } = useFsGlobalState()!;
+  const { currentFId, map } = usePathState()!;
 
   onKeyUp(' ', () => {
     if (previewVisible.value) {

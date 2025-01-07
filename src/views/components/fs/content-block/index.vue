@@ -1,7 +1,7 @@
 <template>
   <div
+    ref='contentRef'
     class='content-block-inner'>
-    <!-- <icon-layout /> -->
     <component :is='component' />
     <f-context-menu />
     <preview />
@@ -21,10 +21,13 @@ import { LAYOUT } from '../type';
 import Preview from '../preview/index.vue';
 import FContextMenu from '../context-menu/f-context-menu.vue';
 import { usePreview } from '../preview/hook';
+import { useRenameHook } from '../rename/hook';
 
 const { getPathInfoById } = usePathState()!;
 const { layout } = useFsGlobalState()!;
+const contentRef = ref<HTMLElement>();
 usePreview();
+useRenameHook();
 
 const components = {
   [LAYOUT.COLUMN]: ColumnLayout,

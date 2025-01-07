@@ -13,8 +13,8 @@
 
 <script setup lang="ts">
 import { onMounted, PropType, ref } from 'vue';
-import { usePathState } from '../../store/path';
 import { F, FsService } from '@/services/api';
+import { usePathState } from '../store/path';
 
 const { renameF, getPathInfoById } = usePathState()!;
 const inputRef = ref<HTMLInputElement>();
