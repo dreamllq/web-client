@@ -1,8 +1,8 @@
 import { F } from '@/services/api';
-import { createGlobalState } from '@vueuse/core';
+import { createInjectionState } from '@vueuse/core';
 import { nextTick, ref } from 'vue';
 
-export const useFContextMenuState = createGlobalState(() => {
+const [useProvideFContextMenuState, useFContextMenuState] = createInjectionState(() => {
   const isOpen = ref(false);
   const eventVal = ref({});
   const triggerF = ref<F | null>();
@@ -31,3 +31,5 @@ export const useFContextMenuState = createGlobalState(() => {
     hide
   };
 });
+
+export { useProvideFContextMenuState, useFContextMenuState };

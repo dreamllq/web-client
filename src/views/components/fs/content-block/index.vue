@@ -16,16 +16,14 @@ import ListLayout from './list-layout.vue';
 import ColumnLayout from './column-layout/index.vue';
 import { usePathState } from '../store/path';
 import BlockContextMenu from '../context-menu/block-context-menu.vue';
-import { useBlockContextMenuState } from '../store/block-context-menu';
 import { useFsGlobalState } from '../store/fs-global';
 import { LAYOUT } from '../type';
 import Preview from '../preview/index.vue';
 import FContextMenu from '../context-menu/f-context-menu.vue';
 import { usePreview } from '../preview/hook';
 
-const { getPathInfoById, clearSelectF } = usePathState();
-const { show } = useBlockContextMenuState();
-const { layout } = useFsGlobalState();
+const { getPathInfoById } = usePathState()!;
+const { layout } = useFsGlobalState()!;
 usePreview();
 
 const components = {

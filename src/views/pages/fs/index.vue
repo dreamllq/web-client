@@ -1,28 +1,31 @@
 <template>
-  <div class='fs-layout'>
-    <div class='aside'>
-      <div class='top-block' />
-      <div class='aside-content'>
-        2
-      </div>
-    </div>
-    <div class='right-container'>
-      <div class='fs-header'>
-        <div class='navigation-wrapper'>
-          <navigation />
-        </div>
-        <div class='toolbar-wrapper'>
-          <operation />
+  <page-provide>
+    <div class='fs-layout'>
+      <div class='aside'>
+        <div class='top-block' />
+        <div class='aside-content'>
+          2
         </div>
       </div>
-      <div class='content-container'>
-        <content-block />
+      <div class='right-container'>
+        <div class='fs-header'>
+          <div class='navigation-wrapper'>
+            <navigation />
+          </div>
+          <div class='toolbar-wrapper'>
+            <operation />
+          </div>
+        </div>
+        <div class='content-container'>
+          <content-block />
+        </div>
       </div>
     </div>
-  </div>
+  </page-provide>
 </template>
 
 <script setup lang="ts">
+import PageProvide from '@/views/components/fs/provide/page-provide.vue';
 import Navigation from '@/views/components/fs/navigation/index.vue';
 import ContentBlock from '@/views/components/fs/content-block/index.vue';
 import Operation from '@/views/components/fs/toolbar/operation.vue';

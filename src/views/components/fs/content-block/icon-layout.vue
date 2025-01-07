@@ -46,8 +46,8 @@ import { Folder } from '@element-plus/icons-vue';
 import { F, PathType } from '@/services/api';
 import { TextTip } from 'lc-vue-text-tip';
 
-const { childrenMap, currentFPathId, selectF, currentFId, enterF } = usePathState();
-const { push } = useNavigationState();
+const { childrenMap, currentFPathId, selectF, currentFId, enterF } = usePathState()!;
+const { push } = useNavigationState()!;
 
 const currentFList = computed(() => childrenMap.value[currentFPathId.value!] || []);
 

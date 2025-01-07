@@ -16,8 +16,8 @@ import { FsService, PathType } from '@/services/api';
 import { usePathState } from '../store/path';
 import { useFContextMenuState } from '../store/f-context-menu';
 
-const { isOpen, menusZIndex, eventVal, triggerF } = useFContextMenuState();
-const { currentFPathId, getPathInfoById, selectedFList, columnMap } = usePathState();
+const { isOpen, menusZIndex, eventVal, triggerF } = useFContextMenuState()!;
+const { currentFId, getPathInfoById, selectedFList, columnMap, renameF, selectF } = usePathState()!;
 
 const menus = ref([
   {
@@ -30,6 +30,12 @@ const menus = ref([
       }
       delete columnMap.value[triggerF.value!.parent.id];
       await getPathInfoById(triggerF.value!.parent.id);
+    }
+  },
+  {
+    label: '重新命名',
+    click: () => {
+      renameF.value = triggerF.value?.id;
     }
   }
 ]);

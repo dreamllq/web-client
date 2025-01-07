@@ -1,9 +1,9 @@
 import { F, FsService, PathType } from '@/services/api';
-import { createGlobalState } from '@vueuse/core';
+import { createInjectionState } from '@vueuse/core';
 import { computed, ref } from 'vue';
 import { ColumnList, ColumnItem, ColumnMap, ParentIdMap } from '../type';
 
-export const usePathState = createGlobalState(
+const [useProvidePathState, usePathState] = createInjectionState(
   () => {
     const childrenMap = ref<{[index:string]: F[]}>({});
     const map = ref<{[index:string]: F}>({
@@ -19,6 +19,7 @@ export const usePathState = createGlobalState(
     const currentFPathId = ref<string>('null');
     const fPathIdHistory = ref<(string)[]>([]);
     const selectedFList = ref<string[]>([]);
+    const renameF = ref<string|null>();
 
     const column = computed<ColumnList>(() => {
       const list:ColumnItem[] = [];
@@ -48,7 +49,7 @@ export const usePathState = createGlobalState(
     });
 
     const getPathInfoById = async (id:string) => {
-      const childRes = await FsService.getChildren({ path: { id: id } });
+      const childRes = await FsService.getChildren({ path: { id: id || 'null' } });
       childrenMap.value[id] = childRes.data!.data;
       fPathIdHistory.value.push(id);
       const columnItem:ColumnItem = {
@@ -138,7 +139,10 @@ export const usePathState = createGlobalState(
       selectedFList,
       clearSelectF,
       enterF,
-      columnMap
+      columnMap,
+      renameF
     };
   }
 );
+
+export { useProvidePathState, usePathState };

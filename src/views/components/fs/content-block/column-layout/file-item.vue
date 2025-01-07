@@ -14,8 +14,12 @@
     <el-icon :size='18'>
       <document />
     </el-icon>
-
-    <text-tip :msg='`${f.name}.${f.fileDetail?.file?.ext}`' style='flex: 1;overflow: hidden;padding-left: 4px;' />
+    <template v-if='renameF === f.id'>
+      <rename-input :f='f' style='margin-left: 4px;' />
+    </template>
+    <template v-else>
+      <text-tip :msg='`${f.name}.${f.fileDetail?.file?.ext}`' style='flex: 1;overflow: hidden;padding-left: 4px;' />
+    </template>
   </div>
 </template>
 
@@ -26,9 +30,10 @@ import { PropType, ref } from 'vue';
 import { TextTip } from 'lc-vue-text-tip';
 import { useFContextMenuState } from '../../store/f-context-menu';
 import { useOperateHook } from '../operate-hook';
+import RenameInput from './rename-input.vue';
 
-const { column, selectedFList } = usePathState();
-const { show: showFContextMenu, triggerF } = useFContextMenuState();
+const { column, selectedFList, renameF } = usePathState()!;
+const { show: showFContextMenu, triggerF } = useFContextMenuState()!;
 
 const { onSelectF, onMultipleSelectF, onShiftMultipleSelectF } = useOperateHook();
 
@@ -49,6 +54,7 @@ const name = ref('');
   padding: 2px 8px;
   box-sizing: border-box;
   display: flex;
+  align-items: center;
   width: 100%;
   border-radius: 4px;
   border: 2px solid transparent;

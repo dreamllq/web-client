@@ -1,10 +1,10 @@
 import { F, FsService } from '@/services/api';
-import { createGlobalState } from '@vueuse/core';
+import { createInjectionState } from '@vueuse/core';
 import { computed, ref } from 'vue';
 import { LAYOUT } from '../type';
 
 
-export const useFsGlobalState = createGlobalState(() => {
+const [useProvideFsGlobalState, useFsGlobalState] = createInjectionState(() => {
   const layout = ref(LAYOUT.COLUMN);
   const previewVisible = ref(false);
   const previewF = ref<F | null>(null);
@@ -15,3 +15,5 @@ export const useFsGlobalState = createGlobalState(() => {
     previewF
   };
 });
+
+export { useProvideFsGlobalState, useFsGlobalState };

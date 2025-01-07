@@ -1,8 +1,8 @@
 <template>
   <div
     class='column-item'
-    @click.prevent.stop='onClickBlock(columnItem)'
-    @contextmenu.prevent.stop='(e)=> onContextmenu(e, columnItem)'>
+    @click.prevent.stop='onClickBlock(columnItem.parentId!)'
+    @contextmenu.prevent.stop='(e)=> onContextmenu(e, columnItem.parentId!)'>
     <template v-for='f in columnItem.list' :key='f.id'>
       <dir-item v-if='f.pathType===PathType.DIR' :f='f' />
       <file-item v-if='f.pathType===PathType.FILE' :f='f' />
@@ -17,7 +17,6 @@ import { ColumnItem } from '../../type';
 import DirItem from './dir-item.vue';
 import FileItem from './file-item.vue';
 import { useOperateHook } from '../operate-hook';
-
 
 const { onContextmenu, onClickBlock } = useOperateHook();
 

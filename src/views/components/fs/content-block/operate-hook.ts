@@ -7,20 +7,20 @@ import { useFContextMenuState } from '../store/f-context-menu';
 
 export const useOperateHook = () => {
 
-  const { currentFPathId, enterF, currentFId, selectF, multipleSelectF, shiftMultipleSelectF, selectedFList } = usePathState();
-  const { push } = useNavigationState();
-  const { show, hide } = useBlockContextMenuState();
-  const { hide: hideFContextMenu } = useFContextMenuState();
-  const onClickBlock = (columnItem: ColumnItem) => {
-    currentFPathId.value = columnItem.parentId;
-    currentFId.value = columnItem.parentId;
-    selectedFList.value = [columnItem.parentId!];
+  const { currentFPathId, enterF, currentFId, selectF, multipleSelectF, shiftMultipleSelectF, selectedFList } = usePathState()!;
+  const { push } = useNavigationState()!;
+  const { show, hide } = useBlockContextMenuState()!;
+  const { hide: hideFContextMenu } = useFContextMenuState()!;
+  const onClickBlock = (id:string) => {
+    currentFPathId.value = id;
+    currentFId.value = id;
+    selectedFList.value = [id!];
     hide();
     hideFContextMenu();
   };
   
-  const onContextmenu = (e, columnItem: ColumnItem) => {
-    show(e, columnItem.parentId);
+  const onContextmenu = (e, id:string) => {
+    show(e, id);
   };
   
   const onEnterF = (f:F) => {
