@@ -21,10 +21,12 @@ import { useFsGlobalState } from '../store/fs-global';
 import { LAYOUT } from '../type';
 import Preview from '../preview/index.vue';
 import FContextMenu from '../context-menu/f-context-menu.vue';
+import { usePreview } from '../preview/hook';
 
 const { getPathInfoById, clearSelectF } = usePathState();
 const { show } = useBlockContextMenuState();
 const { layout } = useFsGlobalState();
+usePreview();
 
 const components = {
   [LAYOUT.COLUMN]: ColumnLayout,

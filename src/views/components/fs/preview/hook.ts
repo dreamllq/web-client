@@ -16,7 +16,6 @@ export const usePreview = () => {
       show();
     }
   });
-  onKeyUp('Shift', () => console.log('Shift key up'));
   const show = () => {
     
     previewVisible.value = true;

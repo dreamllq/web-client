@@ -17,23 +17,18 @@ import { usePathState } from '../store/path';
 import { useFContextMenuState } from '../store/f-context-menu';
 
 const { isOpen, menusZIndex, eventVal, triggerF } = useFContextMenuState();
-const { currentFPathId, getPathInfoById } = usePathState();
-
-const fileInputRef = ref();
+const { currentFPathId, getPathInfoById, selectedFList, columnMap } = usePathState();
 
 const menus = ref([
   {
     label: '删除',
     click: async () => {
-      await FsService.remove({ path: { id: triggerF.value!.id } });
-      // await FsService.create({
-      //   body: {
-      //     name: '未命名文件夹',
-      //     parentId: triggerFId.value ? triggerFId.value : currentFPathId.value!,
-      //     pathType: PathType.DIR,
-      //     fileDetail: undefined
-      //   }
-      // });
+      if (selectedFList.value.some(item => item === triggerF.value?.id)) {
+        await Promise.all(selectedFList.value.map(item => FsService.remove({ path: { id: item } })));        
+      } else {
+        await FsService.remove({ path: { id: triggerF.value!.id } });
+      }
+      delete columnMap.value[triggerF.value!.parent.id];
       await getPathInfoById(triggerF.value!.parent.id);
     }
   }

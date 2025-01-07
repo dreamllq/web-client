@@ -1,24 +1,20 @@
-import { F, FileService, FileStaticService, PathType } from '@/services/api';
+import { F } from '@/services/api';
 import { usePathState } from '../store/path';
 import { useNavigationState } from '../store/navigation';
-import { computed } from 'vue';
-import { TextTip } from 'lc-vue-text-tip';
-import * as FileSaver from 'file-saver';
 import { ColumnItem } from '../type';
 import { useBlockContextMenuState } from '../store/block-context-menu';
-import { download } from '@/services/download';
-import { usePreview } from '../preview/hook';
 import { useFContextMenuState } from '../store/f-context-menu';
 
 export const useOperateHook = () => {
 
-  const { column, currentFPathId, enterF, currentFId, selectF, map, multipleSelectF, selectedFList } = usePathState();
+  const { currentFPathId, enterF, currentFId, selectF, multipleSelectF, shiftMultipleSelectF, selectedFList } = usePathState();
   const { push } = useNavigationState();
   const { show, hide } = useBlockContextMenuState();
-  const { show: showFContextMenu, hide: hideFContextMenu, triggerF } = useFContextMenuState();
+  const { hide: hideFContextMenu } = useFContextMenuState();
   const onClickBlock = (columnItem: ColumnItem) => {
     currentFPathId.value = columnItem.parentId;
     currentFId.value = columnItem.parentId;
+    selectedFList.value = [columnItem.parentId!];
     hide();
     hideFContextMenu();
   };
@@ -30,11 +26,11 @@ export const useOperateHook = () => {
   const onEnterF = (f:F) => {
     push(currentFPathId.value);
     enterF(f);
-    selectF(f);
+    // selectF(f);
+    hideFContextMenu();
   };
   
   const onSelectF = (f:F) => {
-    // currentFPathId.value = f.parent.id;
     selectF(f);
     hideFContextMenu();
   };
@@ -44,11 +40,17 @@ export const useOperateHook = () => {
     multipleSelectF(f);
   };
 
+  const onShiftMultipleSelectF = (f:F) => {
+    hideFContextMenu();
+    shiftMultipleSelectF(f);
+  };
+
   return {
     onClickBlock,
     onContextmenu,
     onEnterF,
     onSelectF,
-    onMultipleSelectF
+    onMultipleSelectF,
+    onShiftMultipleSelectF
   };
 };

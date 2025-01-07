@@ -1,0 +1,23 @@
+{
+  "id": "4804436",
+  "name": "访达",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "4751476",
+      "name": "布局",
+      "font_class": "buju",
+      "unicode": "e6fd",
+      "unicode_decimal": 59133
+    },
+    {
+      "icon_id": "16824777",
+      "name": "分栏展开显示",
+      "font_class": "fenlanzhankaixianshi",
+      "unicode": "e724",
+      "unicode_decimal": 59172
+    }
+  ]
+}

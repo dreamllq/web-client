@@ -1,21 +1,13 @@
 <template>
-  <div>
+  <div style='padding-right: 12px;'>
     <!-- <add-file-upload v-model='file' /> -->
+    <layout-radio-group />
   </div>
 </template>
 
 <script setup lang="ts">
 import { ref } from 'vue';
-import addFileUpload from './add-file-upload.vue';
-
-const file = ref();
-const fileUpload = ref();
-
-const onAddDocument = () => {
-  console.log(fileUpload.value);
-  
-  fileUpload.value.click();
-};
+import LayoutRadioGroup from './layout-radio-group.vue';
 </script>
 
 <style scoped>

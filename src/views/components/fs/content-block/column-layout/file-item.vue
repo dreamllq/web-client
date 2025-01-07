@@ -9,10 +9,12 @@
     @click.exact.prevent.stop='onSelectF(f)'
     @contextmenu.prevent.stop='(e)=>showFContextMenu(e, f)'
     @click.meta.exact.stop.prevent='onMultipleSelectF(f)'
-    @click.ctrl.exact.stop.prevent='onMultipleSelectF(f)'>
+    @click.ctrl.exact.stop.prevent='onMultipleSelectF(f)'
+    @click.shift.exact.stop.prevent='onShiftMultipleSelectF(f)'>
     <el-icon :size='18'>
       <document />
     </el-icon>
+
     <text-tip :msg='`${f.name}.${f.fileDetail?.file?.ext}`' style='flex: 1;overflow: hidden;padding-left: 4px;' />
   </div>
 </template>
@@ -20,7 +22,7 @@
 <script setup lang="ts">
 import { F } from '@/services/api';
 import { usePathState } from '../../store/path';
-import { PropType } from 'vue';
+import { PropType, ref } from 'vue';
 import { TextTip } from 'lc-vue-text-tip';
 import { useFContextMenuState } from '../../store/f-context-menu';
 import { useOperateHook } from '../operate-hook';
@@ -28,7 +30,7 @@ import { useOperateHook } from '../operate-hook';
 const { column, selectedFList } = usePathState();
 const { show: showFContextMenu, triggerF } = useFContextMenuState();
 
-const { onSelectF, onMultipleSelectF } = useOperateHook();
+const { onSelectF, onMultipleSelectF, onShiftMultipleSelectF } = useOperateHook();
 
 defineProps({
   f: {
@@ -36,6 +38,9 @@ defineProps({
     required: true
   }
 });
+
+const isEdit = ref(false);
+const name = ref('');
 </script>
 
 <style scoped lang="scss">

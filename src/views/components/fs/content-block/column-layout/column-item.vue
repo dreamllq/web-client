@@ -1,7 +1,7 @@
 <template>
   <div
     class='column-item'
-    @click.prevent.stop 
+    @click.prevent.stop='onClickBlock(columnItem)'
     @contextmenu.prevent.stop='(e)=> onContextmenu(e, columnItem)'>
     <template v-for='f in columnItem.list' :key='f.id'>
       <dir-item v-if='f.pathType===PathType.DIR' :f='f' />
@@ -19,7 +19,7 @@ import FileItem from './file-item.vue';
 import { useOperateHook } from '../operate-hook';
 
 
-const { onContextmenu } = useOperateHook();
+const { onContextmenu, onClickBlock } = useOperateHook();
 
 defineProps({
   columnItem: {

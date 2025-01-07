@@ -6,10 +6,11 @@
       path: column.find(item=>item.parentId === f.id),
       "context-menu": f.id === triggerF?.id
     }'
-    @click.exact.prevent.stop='onSelectF(f)'
+    @click.exact.prevent.stop='onEnterF(f)'
     @contextmenu.prevent.stop='(e)=>showFContextMenu(e, f)'
     @click.meta.exact.stop.prevent='onMultipleSelectF(f)'
-    @click.ctrl.exact.stop.prevent='onMultipleSelectF(f)'>
+    @click.ctrl.exact.stop.prevent='onMultipleSelectF(f)'
+    @click.shift.exact.stop.prevent='onShiftMultipleSelectF(f)'>
     <el-icon :size='18'>
       <folder />
     </el-icon>
@@ -28,7 +29,7 @@ import { useOperateHook } from '../operate-hook';
 const { column, selectedFList } = usePathState();
 const { show: showFContextMenu, triggerF } = useFContextMenuState();
 
-const { onMultipleSelectF, onSelectF } = useOperateHook();
+const { onMultipleSelectF, onSelectF, onShiftMultipleSelectF, onEnterF } = useOperateHook();
 
 defineProps({
   f: {

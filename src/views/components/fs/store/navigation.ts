@@ -6,7 +6,7 @@ import { usePathState } from './path';
 
 export const useNavigationState = createGlobalState(
   () => {
-    const { currentFPathId, getPathInfoById } = usePathState();
+    const { currentFPathId, getPathInfoById, currentFId, selectedFList } = usePathState();
     const prevHistory = ref<(string | null)[]>([]);    
     const nextHistory = ref<(string | null)[]>([]);
     
@@ -22,6 +22,8 @@ export const useNavigationState = createGlobalState(
       nextHistory.value.push(currentFPathId.value!);
       await getPathInfoById(id!);
       currentFPathId.value = id!;
+      currentFId.value = id!;
+      selectedFList.value = [id!];
     };
 
     const forward = async () => {
@@ -29,6 +31,8 @@ export const useNavigationState = createGlobalState(
       prevHistory.value.push(currentFPathId.value!);
       await getPathInfoById(id!);
       currentFPathId.value = id!;
+      currentFId.value = id!;
+      selectedFList.value = [id!];
     };
 
     return {

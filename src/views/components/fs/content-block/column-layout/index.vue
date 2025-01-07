@@ -27,13 +27,9 @@ import { F, PathType } from '@/services/api';
 import { usePathState } from '../../store/path';
 import { computed } from 'vue';
 import { download } from '@/services/download';
-import { usePreview } from '../../preview/hook';
 import ColumnItemComponent from './column-item.vue';
 
 const { column, currentFId, map, columnMap } = usePathState();
-
-usePreview();
-
 
 const style = computed(() => ({ minWidth: `${301 * (column.value.length + 1)}px` }));
 
