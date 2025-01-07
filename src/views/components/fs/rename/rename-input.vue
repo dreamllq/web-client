@@ -34,12 +34,20 @@ onMounted(() => {
 });
 
 const onBlur = async () => {
+  if (name.value === props.f.name) {
+    renameF.value = null;
+    return;
+  }
   await save();
   renameF.value = null;
   await getPathInfoById(props.f.parent?.id);
 };
 
 const onEnter = async () => {
+  if (name.value === props.f.name) {
+    renameF.value = null;
+    return;
+  }
   await save();
   renameF.value = null;
   await getPathInfoById(props.f.parent?.id);

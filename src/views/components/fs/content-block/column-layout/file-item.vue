@@ -43,9 +43,6 @@ defineProps({
     required: true
   }
 });
-
-const isEdit = ref(false);
-const name = ref('');
 </script>
 
 <style scoped lang="scss">
