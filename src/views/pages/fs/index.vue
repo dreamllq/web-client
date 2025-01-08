@@ -4,7 +4,7 @@
       <div class='aside'>
         <div class='top-block' />
         <div class='aside-content'>
-          2
+          <favorite />
         </div>
       </div>
       <div class='right-container'>
@@ -29,6 +29,7 @@ import PageProvide from '@/views/components/fs/provide/page-provide.vue';
 import Navigation from '@/views/components/fs/navigation/index.vue';
 import ContentBlock from '@/views/components/fs/content-block/index.vue';
 import Operation from '@/views/components/fs/toolbar/operation.vue';
+import Favorite from '@/views/components/fs/favorite/index.vue';
 </script>
 
 <style scoped lang="scss">

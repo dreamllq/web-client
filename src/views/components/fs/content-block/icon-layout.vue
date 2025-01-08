@@ -9,7 +9,7 @@
           <el-icon
             style='cursor: pointer;'
             :size='40' 
-            :class='{selected: item.id === currentFId}'
+            :class='{selected: selectedFList.some(s=>s === item.id)}'
             @click.exact.prevent.stop='onSelectF(item)'
             @dblclick.exact.prevent.stop='onEnterF(item)'
             @contextmenu.prevent.stop='(e)=>onFContextMenu(e, item.id)'
@@ -21,7 +21,7 @@
         </div>
         <div
           class='item-name'
-          :class='{selected: item.id === currentFId}'
+          :class='{selected: selectedFList.some(s=>s === item.id)}'
           @click.exact.prevent.stop='onSelectF(item)'
           @dblclick.exact.prevent.stop='onEnterF(item)'
           @contextmenu.prevent.stop='(e)=>onFContextMenu(e, item.id)'
@@ -32,7 +32,11 @@
             <rename-input :f='item' />
           </template>
           <template v-else>
-            <text-tip :msg='item.name' placement='bottom' :lin-clamp='2' />
+            <text-tip
+              :msg='item.name'
+              placement='bottom'
+              :line-clamp='2'
+              :enterable='false' />
           </template>
         </div>
       </div>
@@ -41,7 +45,7 @@
           <el-icon
             style='cursor: pointer;'
             :size='40' 
-            :class='{selected: item.id === currentFId}'
+            :class='{selected: selectedFList.some(s=>s === item.id)}'
             @click.exact.prevent.stop='onSelectF(item)'
             @contextmenu.prevent.stop='(e)=>onFContextMenu(e, item.id)'
             @click.meta.exact.stop.prevent='onMultipleSelectF(item)'
@@ -52,7 +56,7 @@
         </div>
         <div
           class='item-name'
-          :class='{selected: item.id === currentFId}' 
+          :class='{selected: selectedFList.some(s=>s === item.id)}' 
           @click.exact.prevent.stop='onSelectF(item)'
           @contextmenu.prevent.stop='(e)=>onFContextMenu(e, item.id)'
           @click.meta.exact.stop.prevent='onMultipleSelectF(item)'
@@ -62,7 +66,11 @@
             <rename-input :f='item' />
           </template>
           <template v-else>
-            <text-tip :msg='`${item.name}.${item.fileDetail?.file?.ext}`' placement='bottom' :lin-clamp='2' />
+            <text-tip
+              :msg='`${item.name}.${item.fileDetail?.file?.ext}`'
+              placement='bottom'
+              :line-clamp='2'
+              :enterable='false' />
           </template>
         </div>
       </div>
@@ -79,7 +87,7 @@ import { TextTip } from 'lc-vue-text-tip';
 import { useOperateHook } from './operate-hook';
 import RenameInput from '../rename/rename-input.vue';
 
-const { childrenMap, currentFPathId, currentFId, renameF } = usePathState()!;
+const { childrenMap, currentFPathId, renameF, selectedFList } = usePathState()!;
 const { onMultipleSelectF, onSelectF, onShiftMultipleSelectF, onEnterF, onBlockContextmenu, onClickBlock, onFContextMenu } = useOperateHook();
 
 const currentFList = computed(() => childrenMap.value[currentFPathId.value!] || []);

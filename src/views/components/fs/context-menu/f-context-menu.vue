@@ -10,16 +10,18 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
+import { computed, ref } from 'vue';
 import { Vue3Menus } from 'vue3-menus';
-import { FsService } from '@/services/api';
+import { FsService, PathType } from '@/services/api';
 import { usePathState } from '../store/path';
 import { useFContextMenuState } from '../store/f-context-menu';
+import { useFavoriteState } from '../store/favorite';
 
 const { isOpen, menusZIndex, eventVal, triggerFId } = useFContextMenuState()!;
 const { getPathInfoById, selectedFList, columnMap, renameF, map } = usePathState()!;
+const { refreshList } = useFavoriteState()!;
 
-const menus = ref([
+const menus = computed(() => [
   {
     label: '删除',
     click: async () => {
@@ -37,7 +39,19 @@ const menus = ref([
     click: () => {
       renameF.value = triggerFId.value;
     }
-  }
+  },
+  ...(map.value[triggerFId.value!]?.pathType === PathType.DIR ? [
+    {
+      label: '收藏',
+      click: async () => {
+        await FsService.update({
+          path: { id: triggerFId.value! },
+          body: { favorite: true } 
+        });
+        await refreshList();
+      }
+    }
+  ] : [])
 ]);
 </script>
 

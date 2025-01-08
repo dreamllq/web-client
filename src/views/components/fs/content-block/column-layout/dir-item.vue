@@ -18,7 +18,7 @@
       <rename-input :f='f' style='margin-left: 4px;' />
     </template>
     <template v-else>
-      <text-tip :msg='f.name' style='flex: 1;overflow: hidden;padding-left: 4px;' />
+      <text-tip :msg='f.name' style='flex: 1;overflow: hidden;padding-left: 4px;' :enterable='false' />
     </template>
   </div>
 </template>
@@ -27,10 +27,10 @@
 import { F } from '@/services/api';
 import { usePathState } from '../../store/path';
 import { PropType, ref } from 'vue';
-import { TextTip } from 'lc-vue-text-tip';
 import { useFContextMenuState } from '../../store/f-context-menu';
 import { useOperateHook } from '../operate-hook';
 import RenameInput from '../../rename/rename-input.vue';
+import { TextTip } from 'lc-vue-text-tip';
 
 const { column, selectedFList, renameF } = usePathState()!;
 const { triggerFId } = useFContextMenuState()!;

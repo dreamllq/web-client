@@ -4942,6 +4942,9 @@ export const CreateFDtoSchema = {
         name: {
             type: 'string'
         },
+        favorite: {
+            type: 'boolean'
+        },
         parentId: {
             type: 'string'
         },
@@ -4988,6 +4991,9 @@ export const FSchema = {
         name: {
             type: 'string'
         },
+        favorite: {
+            type: 'boolean'
+        },
         pathType: {
             description: '路径类型',
             '$ref': '#/components/schemas/PathType'
@@ -5018,7 +5024,7 @@ export const FSchema = {
             description: '更新时间'
         }
     },
-    required: ['id', 'name', 'pathType', 'parent', 'children', 'createDate', 'updateDate']
+    required: ['id', 'name', 'favorite', 'pathType', 'parent', 'children', 'createDate', 'updateDate']
 } as const;
 
 export const FGetAllResponseSchema = {
@@ -5061,6 +5067,9 @@ export const UpdateFDtoSchema = {
     properties: {
         name: {
             type: 'string'
+        },
+        favorite: {
+            type: 'boolean'
         },
         parentId: {
             type: 'string'

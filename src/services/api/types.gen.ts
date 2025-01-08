@@ -976,6 +976,7 @@ export type CreateAiSessionDto = {
 
 export type CreateFDto = {
     name: string;
+    favorite?: boolean;
     parentId: string;
     /**
      * 路径类型
@@ -1056,6 +1057,7 @@ export type DeleteSuccessResult = {
 export type F = {
     id: string;
     name: string;
+    favorite: boolean;
     /**
      * 路径类型
      */
@@ -2151,6 +2153,7 @@ export type UpdateAiSessionDto = {
 
 export type UpdateFDto = {
     name?: string;
+    favorite?: boolean;
     parentId?: string;
     /**
      * 路径类型
@@ -3645,6 +3648,12 @@ export type PostApiFsData = {
 export type PostApiFsResponse = (InsertSuccessResult);
 
 export type PostApiFsError = unknown;
+
+export type GetApiFsData = {
+    query?: {
+        favorite?: string;
+    };
+};
 
 export type GetApiFsResponse = (FGetAllResponse);
 
@@ -5543,6 +5552,7 @@ export type $OpenApiTs = {
             };
         };
         get: {
+            req: GetApiFsData;
             res: {
                 '200': FGetAllResponse;
             };
