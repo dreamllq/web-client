@@ -1,5 +1,8 @@
 <template>
-  <div class='icon-layout'>
+  <div
+    class='icon-layout'
+    @click.prevent.stop='onClickBlock(currentFPathId)'
+    @contextmenu.prevent.stop='(e)=> onBlockContextmenu(e, currentFPathId)'>
     <template v-for='item in currentFList' :key='item.id'>
       <div v-if='item.pathType === PathType.DIR' class='icon-layout-item'>
         <div class='item-icon'>
@@ -7,17 +10,30 @@
             style='cursor: pointer;'
             :size='40' 
             :class='{selected: item.id === currentFId}'
-            @click.prevent.stop='selectF(item)'
-            @dblclick.prevent.stop='onEnterF(item)'>
+            @click.exact.prevent.stop='onSelectF(item)'
+            @dblclick.exact.prevent.stop='onEnterF(item)'
+            @contextmenu.prevent.stop='(e)=>onFContextMenu(e, item.id)'
+            @click.meta.exact.stop.prevent='onMultipleSelectF(item)'
+            @click.ctrl.exact.stop.prevent='onMultipleSelectF(item)'
+            @click.shift.exact.stop.prevent='onShiftMultipleSelectF(item)'>
             <folder />
           </el-icon>
         </div>
         <div
           class='item-name'
           :class='{selected: item.id === currentFId}'
-          @click.prevent.stop='selectF(item)'
-          @dblclick.prevent.stop='onEnterF(item)'>
-          <text-tip :msg='item.name' placement='top' />
+          @click.exact.prevent.stop='onSelectF(item)'
+          @dblclick.exact.prevent.stop='onEnterF(item)'
+          @contextmenu.prevent.stop='(e)=>onFContextMenu(e, item.id)'
+          @click.meta.exact.stop.prevent='onMultipleSelectF(item)'
+          @click.ctrl.exact.stop.prevent='onMultipleSelectF(item)'
+          @click.shift.exact.stop.prevent='onShiftMultipleSelectF(item)'>
+          <template v-if='renameF === item.id'>
+            <rename-input :f='item' />
+          </template>
+          <template v-else>
+            <text-tip :msg='item.name' placement='bottom' :lin-clamp='2' />
+          </template>
         </div>
       </div>
       <div v-if='item.pathType === PathType.FILE' class='icon-layout-item'>
@@ -26,12 +42,28 @@
             style='cursor: pointer;'
             :size='40' 
             :class='{selected: item.id === currentFId}'
-            @click.prevent.stop='selectF(item)'>
+            @click.exact.prevent.stop='onSelectF(item)'
+            @contextmenu.prevent.stop='(e)=>onFContextMenu(e, item.id)'
+            @click.meta.exact.stop.prevent='onMultipleSelectF(item)'
+            @click.ctrl.exact.stop.prevent='onMultipleSelectF(item)'
+            @click.shift.exact.stop.prevent='onShiftMultipleSelectF(item)'>
             <document />
           </el-icon>
         </div>
-        <div class='item-name' :class='{selected: item.id === currentFId}' @click.prevent.stop='selectF(item)'>
-          <text-tip :msg='item.name' placement='top' />
+        <div
+          class='item-name'
+          :class='{selected: item.id === currentFId}' 
+          @click.exact.prevent.stop='onSelectF(item)'
+          @contextmenu.prevent.stop='(e)=>onFContextMenu(e, item.id)'
+          @click.meta.exact.stop.prevent='onMultipleSelectF(item)'
+          @click.ctrl.exact.stop.prevent='onMultipleSelectF(item)'
+          @click.shift.exact.stop.prevent='onShiftMultipleSelectF(item)'>
+          <template v-if='renameF === item.id'>
+            <rename-input :f='item' />
+          </template>
+          <template v-else>
+            <text-tip :msg='`${item.name}.${item.fileDetail?.file?.ext}`' placement='bottom' :lin-clamp='2' />
+          </template>
         </div>
       </div>
     </template>
@@ -41,20 +73,16 @@
 <script setup lang="ts">
 import { computed } from 'vue';
 import { usePathState } from '../store/path';
-import { useNavigationState } from '../store/navigation';
 import { Folder } from '@element-plus/icons-vue';
 import { F, PathType } from '@/services/api';
 import { TextTip } from 'lc-vue-text-tip';
+import { useOperateHook } from './operate-hook';
+import RenameInput from '../rename/rename-input.vue';
 
-const { childrenMap, currentFPathId, selectF, currentFId, enterF } = usePathState()!;
-const { push } = useNavigationState()!;
+const { childrenMap, currentFPathId, currentFId, renameF } = usePathState()!;
+const { onMultipleSelectF, onSelectF, onShiftMultipleSelectF, onEnterF, onBlockContextmenu, onClickBlock, onFContextMenu } = useOperateHook();
 
 const currentFList = computed(() => childrenMap.value[currentFPathId.value!] || []);
-
-const onEnterF = (f:F) => {
-  push(currentFPathId.value);
-  enterF(f);
-};
 </script>
 
 <style scoped lang="scss">
@@ -63,6 +91,7 @@ const onEnterF = (f:F) => {
   flex-wrap: wrap;
   width: 100%;
   overflow: auto;
+  height: 100%;
 
   .icon-layout-item{
     width: 100px;

@@ -19,8 +19,8 @@ import { FsService, PathType } from '@/services/api';
 import { usePathState } from '../store/path';
 import AddFileUpload from '../toolbar/add-file-upload.vue';
 
-const { isOpen, menusZIndex, eventVal, triggerFId } = useBlockContextMenuState();
-const { currentFPathId, getPathInfoById } = usePathState();
+const { isOpen, menusZIndex, eventVal, triggerFId } = useBlockContextMenuState()!;
+const { currentFPathId, getPathInfoById } = usePathState()!;
 
 const fileInputRef = ref();
 
@@ -43,7 +43,6 @@ const menus = ref([
     label: '上传文件',
     click: async () => {
       fileInputRef.value.click();
-      console.log(fileInputRef.value);
     }
   }
 ]);

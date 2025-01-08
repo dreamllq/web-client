@@ -4,10 +4,10 @@
     :class='{
       selected: selectedFList.some(item=>item === f.id),
       path: column.find(item=>item.parentId === f.id),
-      "context-menu": f.id === triggerF?.id
+      "context-menu": f.id === triggerFId
     }'
     @click.exact.prevent.stop='onEnterF(f)'
-    @contextmenu.prevent.stop='(e)=>showFContextMenu(e, f)'
+    @contextmenu.prevent.stop='(e)=>onFContextMenu(e, f.id)'
     @click.meta.exact.stop.prevent='onMultipleSelectF(f)'
     @click.ctrl.exact.stop.prevent='onMultipleSelectF(f)'
     @click.shift.exact.stop.prevent='onShiftMultipleSelectF(f)'>
@@ -33,9 +33,9 @@ import { useOperateHook } from '../operate-hook';
 import RenameInput from '../../rename/rename-input.vue';
 
 const { column, selectedFList, renameF } = usePathState()!;
-const { show: showFContextMenu, triggerF } = useFContextMenuState()!;
+const { triggerFId } = useFContextMenuState()!;
 
-const { onMultipleSelectF, onSelectF, onShiftMultipleSelectF, onEnterF } = useOperateHook();
+const { onMultipleSelectF, onShiftMultipleSelectF, onEnterF, onFContextMenu } = useOperateHook();
 
 defineProps({
   f: {

@@ -5,9 +5,9 @@ import { nextTick, ref } from 'vue';
 const [useProvideFContextMenuState, useFContextMenuState] = createInjectionState(() => {
   const isOpen = ref(false);
   const eventVal = ref({});
-  const triggerF = ref<F | null>();
-  const show = async (e:any, f: F) => {
-    triggerF.value = f;
+  const triggerFId = ref<string | null>();
+  const show = async (e:any, fId:string | null) => {
+    triggerFId.value = fId;
     isOpen.value = false;
     await nextTick();
     isOpen.value = true;
@@ -15,7 +15,7 @@ const [useProvideFContextMenuState, useFContextMenuState] = createInjectionState
   };
   
   const hide = () => {
-    triggerF.value = null;
+    triggerFId.value = null;
     isOpen.value = false;
     eventVal.value = {};
   };
@@ -26,7 +26,7 @@ const [useProvideFContextMenuState, useFContextMenuState] = createInjectionState
     isOpen,
     eventVal,
     menusZIndex,
-    triggerF,
+    triggerFId,
     show,
     hide
   };

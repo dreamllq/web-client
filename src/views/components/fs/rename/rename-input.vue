@@ -1,5 +1,5 @@
 <template>
-  <input
+  <textarea
     ref='inputRef'
     v-model='name'
     type='text'
@@ -8,7 +8,8 @@
     @keydown.stop
     @key.stop
     @blur='onBlur'
-    @keyup.enter='onEnter'>
+    @keydown.enter.stop.prevent
+    @keyup.enter.stop.prevent='onEnter' />
 </template>
 
 <script setup lang="ts">
@@ -63,8 +64,9 @@ const save = async () => {
 
 <style scoped lang="scss">
 .rename-input {
-  width: 100%;
-  height: 100%;
+  width: calc(100% - 2px);
+  height: calc(100% - 2px);
   border: none;
+  box-sizing: border-box;
 }
 </style>

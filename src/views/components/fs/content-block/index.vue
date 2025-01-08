@@ -1,7 +1,10 @@
 <template>
   <div
     ref='contentRef'
-    class='content-block-inner'>
+    class='content-block-inner'
+    @keyup.stop
+    @keydown.stop
+    @key.stop>
     <component :is='component' />
     <f-context-menu />
     <preview />
