@@ -1,37 +1,37 @@
 <template>
-  <div class='column-layout' :style='style'>
-    <template v-for='(columnItem, index) in column' :key='index'>
-      <column-item-component :column-item='columnItem' />
-    </template>
-    <div v-if='map[currentFId!]?.pathType === PathType.FILE' class='column-item file-info' @click.prevent.stop>
-      <div>
-        <el-icon :size='40'>
-          <document />
-        </el-icon>
+  <provide>
+    <wrapper>
+      <column-list />
+      <div v-if='map[currentFId!]?.pathType === PathType.FILE' class='column-item file-info' @click.prevent.stop>
+        <div>
+          <el-icon :size='40'>
+            <document />
+          </el-icon>
+        </div>
+        <div class='name'>
+          {{ map[currentFId!].name }}.{{ map[currentFId!].fileDetail?.file?.ext }}
+        </div>
+        <div>
+          <el-button link type='primary' @click.prevent.stop='downloadFile(map[currentFId!])'>
+            下载
+          </el-button>
+        </div>
       </div>
-      <div class='name'>
-        {{ map[currentFId!].name }}.{{ map[currentFId!].fileDetail?.file?.ext }}
-      </div>
-      <div>
-        <el-button link type='primary' @click.prevent.stop='downloadFile(map[currentFId!])'>
-          下载
-        </el-button>
-      </div>
-    </div>
-    <column-item-component v-else-if='map[currentFId!]?.pathType === PathType.DIR && columnMap[currentFId!]' :column-item='columnMap[currentFId!]' />
-  </div>
+      <column-item-component v-else-if='map[currentFId!]?.pathType === PathType.DIR && columnMap[currentFId!]' :column-item='columnMap[currentFId!]' />
+    </wrapper>
+  </provide>
 </template>
 
 <script setup lang="ts">
 import { F, PathType } from '@/services/api';
 import { usePathState } from '../../store/path';
-import { computed } from 'vue';
 import { download } from '@/services/download';
+import ColumnList from './column-list.vue';
+import Provide from './provide.vue';
 import ColumnItemComponent from './column-item.vue';
+import Wrapper from './wrapper.vue';
 
-const { column, currentFId, map, columnMap } = usePathState()!;
-
-const style = computed(() => ({ minWidth: `${301 * (column.value.length + 1)}px` }));
+const { currentFId, map, columnMap } = usePathState()!;
 
 const downloadFile = async (f:F) => {
   download(f.fileDetail!.file!);

@@ -31,8 +31,10 @@ import { useFContextMenuState } from '../../store/f-context-menu';
 import { useOperateHook } from '../operate-hook';
 import RenameInput from '../../rename/rename-input.vue';
 import { TextTip } from 'lc-vue-text-tip';
+import { useColumnLayoutHook } from './hook';
 
-const { column, selectedFList, renameF } = usePathState()!;
+const { selectedFList, renameF } = usePathState()!;
+const { column } = useColumnLayoutHook();
 const { triggerFId } = useFContextMenuState()!;
 
 const { onMultipleSelectF, onShiftMultipleSelectF, onEnterF, onFContextMenu } = useOperateHook();

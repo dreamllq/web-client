@@ -26,8 +26,8 @@ import FContextMenu from '../context-menu/f-context-menu.vue';
 import { usePreview } from '../preview/hook';
 import { useRenameHook } from '../rename/hook';
 
-const { getPathInfoById } = usePathState()!;
-const { layout } = useFsGlobalState()!;
+const { getPathInfoById, currentFId, currentFPathId } = usePathState()!;
+const { layout, columnRootFId } = useFsGlobalState()!;
 const contentRef = ref<HTMLElement>();
 usePreview();
 useRenameHook();
@@ -41,7 +41,9 @@ const components = {
 const component = computed(() => components[layout.value]);
 
 onMounted(() => {
-  getPathInfoById('null');
+  currentFId.value = columnRootFId.value;
+  currentFPathId.value = columnRootFId.value;
+  getPathInfoById(columnRootFId.value);
 });
 </script>
 

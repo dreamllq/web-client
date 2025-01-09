@@ -6,12 +6,7 @@ import { ColumnList, ColumnItem, ColumnMap, ParentIdMap } from '../type';
 const [useProvidePathState, usePathState] = createInjectionState(
   () => {
     const childrenMap = ref<{[index:string]: F[]}>({});
-    const map = ref<{[index:string]: F}>({
-      'null': {
-        id: 'null',
-        pathType: PathType.DIR
-      } 
-    });
+    const map = ref<{[index:string]: F}>({});
     const columnMap = ref<ColumnMap>({});
     const tree = ref({});
     const parentIdMap = ref<ParentIdMap>({});
@@ -21,34 +16,16 @@ const [useProvidePathState, usePathState] = createInjectionState(
     const selectedFList = ref<string[]>([]);
     const renameF = ref<string|null>();
 
-    const column = computed<ColumnList>(() => {
-      const list:ColumnItem[] = [];
-      let cFId = currentFPathId.value;
-
-      if (cFId === 'null') {
-        return [];
-      }
-
-      // 初始化展示目录范围
-      if (map.value[currentFId.value]?.pathType === PathType.FILE) {
-        cFId = parentIdMap.value[currentFId.value];
-      } else if (map.value[cFId].pathType === PathType.DIR) {
-        cFId = parentIdMap.value[cFId] || 'null';
-      }
-
-      while (cFId !== 'null') {
-        const cF = columnMap.value[cFId];
-        list.unshift(cF);
-        cFId = parentIdMap.value[cF.parentId!];
-      }
-
-      columnMap.value[cFId!] && list.unshift(columnMap.value[cFId!]);
-      console.log(list.map(item => item.parentId));
-      
-      return list;
-    });
-
     const getPathInfoById = async (id:string) => {
+      if (id !== 'null') {
+        const fRes = await FsService.get({ path: { id: id || 'null' } });
+        map.value[fRes.data!.data.id] = fRes.data!.data;
+      } else {
+        map.value['null'] = {
+          id: 'null',
+          pathType: PathType.DIR
+        };
+      }
       const childRes = await FsService.getChildren({ path: { id: id || 'null' } });
       childrenMap.value[id] = childRes.data!.data;
       fPathIdHistory.value.push(id);
@@ -129,10 +106,10 @@ const [useProvidePathState, usePathState] = createInjectionState(
     return {
       currentFId,
       currentFPathId,
+      parentIdMap,
       getPathInfoById,
       childrenMap,
       map,
-      column,
       selectF,
       multipleSelectF,
       shiftMultipleSelectF,
