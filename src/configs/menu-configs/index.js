@@ -40,7 +40,21 @@ export default [
   {
     key: 'bi',
     label: 'BI',
-    icon: 'Setting'
+    icon: 'Setting',
+    children: [
+      {
+        'key': 'bi-data',
+        'label': '数据管理'
+      },
+      {
+        'key': 'bi-chart',
+        'label': '图表管理'
+      },
+      {
+        'key': 'bi-view',
+        'label': '视图管理'
+      }
+    ]
   },
   {
     'key': 'weixin',

@@ -5083,3 +5083,137 @@ export const UpdateFDtoSchema = {
         }
     }
 } as const;
+
+export const BiDataMetaSchema = {
+    type: 'object',
+    properties: {
+        id: {
+            type: 'string'
+        },
+        name: {
+            type: 'string',
+            description: '名称'
+        },
+        desc: {
+            type: 'string',
+            description: '描述'
+        },
+        creator: {
+            '$ref': '#/components/schemas/User'
+        },
+        createDate: {
+            format: 'date-time',
+            type: 'string',
+            description: '创建时间'
+        },
+        updateDate: {
+            format: 'date-time',
+            type: 'string',
+            description: '更新时间'
+        }
+    },
+    required: ['id', 'name', 'desc', 'creator', 'createDate', 'updateDate']
+} as const;
+
+export const BiDataMetaGetAllResponseSchema = {
+    type: 'object',
+    properties: {
+        code: {
+            type: 'number'
+        },
+        data: {
+            type: 'array',
+            items: {
+                '$ref': '#/components/schemas/BiDataMeta'
+            }
+        }
+    },
+    required: ['code', 'data']
+} as const;
+
+export const BiDataMetaGetResponseSchema = {
+    type: 'object',
+    properties: {
+        code: {
+            type: 'number'
+        },
+        data: {
+            '$ref': '#/components/schemas/BiDataMeta'
+        }
+    },
+    required: ['code', 'data']
+} as const;
+
+export const CreateBiDataMetaDtoSchema = {
+    type: 'object',
+    properties: {
+        name: {
+            type: 'string'
+        },
+        desc: {
+            type: 'string'
+        }
+    },
+    required: ['name', 'desc']
+} as const;
+
+export const UpdateBiDataMetaDtoSchema = {
+    type: 'object',
+    properties: {
+        name: {
+            type: 'string'
+        },
+        desc: {
+            type: 'string'
+        }
+    }
+} as const;
+
+export const BiDataMetaPaginatePageSchema = {
+    type: 'object',
+    properties: {
+        list: {
+            type: 'array',
+            items: {
+                '$ref': '#/components/schemas/BiDataMeta'
+            }
+        },
+        count: {
+            type: 'number'
+        }
+    },
+    required: ['list', 'count']
+} as const;
+
+export const BiDataMetaPaginateResponseSchema = {
+    type: 'object',
+    properties: {
+        code: {
+            type: 'number'
+        },
+        data: {
+            '$ref': '#/components/schemas/BiDataMetaPaginatePage'
+        }
+    },
+    required: ['code', 'data']
+} as const;
+
+export const CreateBiChartMetaDtoSchema = {
+    type: 'object',
+    properties: {}
+} as const;
+
+export const UpdateBiChartMetaDtoSchema = {
+    type: 'object',
+    properties: {}
+} as const;
+
+export const CreateBiViewMetaDtoSchema = {
+    type: 'object',
+    properties: {}
+} as const;
+
+export const UpdateBiViewMetaDtoSchema = {
+    type: 'object',
+    properties: {}
+} as const;
