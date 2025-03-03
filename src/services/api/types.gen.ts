@@ -695,6 +695,7 @@ export type BiDataMeta = {
      */
     desc: string;
     structs: Array<BiDataStruct>;
+    rule: BiDataRule;
     creator: User;
     /**
      * 创建时间
@@ -725,6 +726,39 @@ export type BiDataMetaPaginateResponse = {
     code: number;
     data: BiDataMetaPaginatePage;
 };
+
+export type BiDataRule = {
+    id: string;
+    /**
+     * 类型
+     */
+    type: BiDataRuleType;
+    excelFile: File;
+    /**
+     * sql
+     */
+    sql: string;
+    meta: BiDataMeta;
+    /**
+     * 创建时间
+     */
+    createDate: string;
+    /**
+     * 更新时间
+     */
+    updateDate: string;
+};
+
+export type BiDataRuleGetResponse = {
+    code: number;
+    data: BiDataRule;
+};
+
+export enum BiDataRuleType {
+    EXCEL = 'EXCEL',
+    SQL = 'SQL',
+    API = 'API'
+}
 
 export type BiDataStruct = {
     id: string;
@@ -1075,6 +1109,12 @@ export type CreateBiChartMetaDto = {
 export type CreateBiDataMetaDto = {
     name: string;
     desc: string;
+};
+
+export type CreateBiDataRuleDto = {
+    type: BiDataRuleType;
+    excelFile: File;
+    sql: string;
 };
 
 export type CreateBiDataStructDto = {
@@ -2274,6 +2314,12 @@ export type UpdateBiDataMetaDto = {
     desc?: string;
 };
 
+export type UpdateBiDataRuleDto = {
+    type?: BiDataRuleType;
+    excelFile?: File;
+    sql?: string;
+};
+
 export type UpdateBiDataStructDto = {
     type?: BiDataStructType;
     name?: string;
@@ -3335,6 +3381,38 @@ export type PutApiBiDataStructByIdData = {
 export type PutApiBiDataStructByIdResponse = (SuccessResult);
 
 export type PutApiBiDataStructByIdError = unknown;
+
+export type GetApiBiDataMetaByMetaIdRuleData = {
+    path: {
+        id: unknown;
+    };
+};
+
+export type GetApiBiDataMetaByMetaIdRuleResponse = (BiDataRuleGetResponse);
+
+export type GetApiBiDataMetaByMetaIdRuleError = unknown;
+
+export type PostApiBiDataMetaByMetaIdRuleData = {
+    body: CreateBiDataRuleDto;
+    path: {
+        metaId: string;
+    };
+};
+
+export type PostApiBiDataMetaByMetaIdRuleResponse = (SuccessResult);
+
+export type PostApiBiDataMetaByMetaIdRuleError = unknown;
+
+export type PutApiBiDataRuleByIdData = {
+    body: UpdateBiDataRuleDto;
+    path: {
+        id: unknown;
+    };
+};
+
+export type PutApiBiDataRuleByIdResponse = (SuccessResult);
+
+export type PutApiBiDataRuleByIdError = unknown;
 
 export type PostApiChatContactsData = {
     body: ChatContactsCreateDto;
@@ -5530,6 +5608,28 @@ export type $OpenApiTs = {
         };
         put: {
             req: PutApiBiDataStructByIdData;
+            res: {
+                '200': SuccessResult;
+            };
+        };
+    };
+    '/api/bi/data/meta/{metaId}/rule': {
+        get: {
+            req: GetApiBiDataMetaByMetaIdRuleData;
+            res: {
+                '200': BiDataRuleGetResponse;
+            };
+        };
+        post: {
+            req: PostApiBiDataMetaByMetaIdRuleData;
+            res: {
+                '200': SuccessResult;
+            };
+        };
+    };
+    '/api/bi/data/rule/{id}': {
+        put: {
+            req: PutApiBiDataRuleByIdData;
             res: {
                 '200': SuccessResult;
             };

@@ -5128,6 +5128,45 @@ export const BiDataStructSchema = {
     required: ['id', 'type', 'name', 'group', 'desc', 'meta', 'createDate', 'updateDate']
 } as const;
 
+export const BiDataRuleTypeSchema = {
+    type: 'string',
+    enum: ['EXCEL', 'SQL', 'API']
+} as const;
+
+export const BiDataRuleSchema = {
+    type: 'object',
+    properties: {
+        id: {
+            type: 'string'
+        },
+        type: {
+            description: '类型',
+            '$ref': '#/components/schemas/BiDataRuleType'
+        },
+        excelFile: {
+            '$ref': '#/components/schemas/File'
+        },
+        sql: {
+            type: 'string',
+            description: 'sql'
+        },
+        meta: {
+            '$ref': '#/components/schemas/BiDataMeta'
+        },
+        createDate: {
+            format: 'date-time',
+            type: 'string',
+            description: '创建时间'
+        },
+        updateDate: {
+            format: 'date-time',
+            type: 'string',
+            description: '更新时间'
+        }
+    },
+    required: ['id', 'type', 'excelFile', 'sql', 'meta', 'createDate', 'updateDate']
+} as const;
+
 export const BiDataMetaSchema = {
     type: 'object',
     properties: {
@@ -5148,6 +5187,9 @@ export const BiDataMetaSchema = {
                 '$ref': '#/components/schemas/BiDataStruct'
             }
         },
+        rule: {
+            '$ref': '#/components/schemas/BiDataRule'
+        },
         creator: {
             '$ref': '#/components/schemas/User'
         },
@@ -5162,7 +5204,7 @@ export const BiDataMetaSchema = {
             description: '更新时间'
         }
     },
-    required: ['id', 'name', 'desc', 'structs', 'creator', 'createDate', 'updateDate']
+    required: ['id', 'name', 'desc', 'structs', 'rule', 'creator', 'createDate', 'updateDate']
 } as const;
 
 export const BiDataMetaGetAllResponseSchema = {
@@ -5309,6 +5351,50 @@ export const UpdateBiDataStructDtoSchema = {
             type: 'string'
         },
         desc: {
+            type: 'string'
+        }
+    }
+} as const;
+
+export const BiDataRuleGetResponseSchema = {
+    type: 'object',
+    properties: {
+        code: {
+            type: 'number'
+        },
+        data: {
+            '$ref': '#/components/schemas/BiDataRule'
+        }
+    },
+    required: ['code', 'data']
+} as const;
+
+export const CreateBiDataRuleDtoSchema = {
+    type: 'object',
+    properties: {
+        type: {
+            '$ref': '#/components/schemas/BiDataRuleType'
+        },
+        excelFile: {
+            '$ref': '#/components/schemas/File'
+        },
+        sql: {
+            type: 'string'
+        }
+    },
+    required: ['type', 'excelFile', 'sql']
+} as const;
+
+export const UpdateBiDataRuleDtoSchema = {
+    type: 'object',
+    properties: {
+        type: {
+            '$ref': '#/components/schemas/BiDataRuleType'
+        },
+        excelFile: {
+            '$ref': '#/components/schemas/File'
+        },
+        sql: {
             type: 'string'
         }
     }
