@@ -694,6 +694,7 @@ export type BiDataMeta = {
      * 描述
      */
     desc: string;
+    structs: Array<BiDataStruct>;
     creator: User;
     /**
      * 创建时间
@@ -724,6 +725,58 @@ export type BiDataMetaPaginateResponse = {
     code: number;
     data: BiDataMetaPaginatePage;
 };
+
+export type BiDataStruct = {
+    id: string;
+    /**
+     * 操作类型
+     */
+    type: BiDataStructType;
+    /**
+     * 字段名
+     */
+    name: string;
+    /**
+     * 字段分组
+     */
+    group: string;
+    /**
+     * 字段说明
+     */
+    desc: string;
+    meta: BiDataMeta;
+    /**
+     * 创建时间
+     */
+    createDate: string;
+    /**
+     * 更新时间
+     */
+    updateDate: string;
+};
+
+export type BiDataStructGetAllResponse = {
+    code: number;
+    data: Array<BiDataStruct>;
+};
+
+export type BiDataStructGetResponse = {
+    code: number;
+    data: BiDataStruct;
+};
+
+export enum BiDataStructType {
+    TEXT = 'TEXT',
+    NUMBER = 'NUMBER',
+    DATE = 'DATE',
+    TIME = 'TIME',
+    DATETIME = 'DATETIME',
+    BOOLEAN = 'BOOLEAN',
+    OBJECT = 'OBJECT',
+    ARRAY = 'ARRAY',
+    NULL = 'NULL',
+    UNKNOWN = 'UNKNOWN'
+}
 
 export type Buffer = {
     [key: string]: unknown;
@@ -1021,6 +1074,13 @@ export type CreateBiChartMetaDto = {
 
 export type CreateBiDataMetaDto = {
     name: string;
+    desc: string;
+};
+
+export type CreateBiDataStructDto = {
+    type: BiDataStructType;
+    name: string;
+    group: string;
     desc: string;
 };
 
@@ -2214,6 +2274,13 @@ export type UpdateBiDataMetaDto = {
     desc?: string;
 };
 
+export type UpdateBiDataStructDto = {
+    type?: BiDataStructType;
+    name?: string;
+    group?: string;
+    desc?: string;
+};
+
 export type UpdateBiViewMetaDto = {
     [key: string]: unknown;
 };
@@ -3222,6 +3289,52 @@ export type GetApiBiDataMetaPageAllData = {
 export type GetApiBiDataMetaPageAllResponse = (BiDataMetaPaginateResponse);
 
 export type GetApiBiDataMetaPageAllError = unknown;
+
+export type GetApiBiDataMetaByMetaIdStructResponse = (BiDataStructGetAllResponse);
+
+export type GetApiBiDataMetaByMetaIdStructError = unknown;
+
+export type PostApiBiDataMetaByMetaIdStructData = {
+    body: CreateBiDataStructDto;
+    path: {
+        metaId: string;
+    };
+};
+
+export type PostApiBiDataMetaByMetaIdStructResponse = (SuccessResult);
+
+export type PostApiBiDataMetaByMetaIdStructError = unknown;
+
+export type GetApiBiDataStructByIdData = {
+    path: {
+        id: unknown;
+    };
+};
+
+export type GetApiBiDataStructByIdResponse = (BiDataStructGetResponse);
+
+export type GetApiBiDataStructByIdError = unknown;
+
+export type DeleteApiBiDataStructByIdData = {
+    path: {
+        id: unknown;
+    };
+};
+
+export type DeleteApiBiDataStructByIdResponse = (SuccessResult);
+
+export type DeleteApiBiDataStructByIdError = unknown;
+
+export type PutApiBiDataStructByIdData = {
+    body: UpdateBiDataStructDto;
+    path: {
+        id: unknown;
+    };
+};
+
+export type PutApiBiDataStructByIdResponse = (SuccessResult);
+
+export type PutApiBiDataStructByIdError = unknown;
 
 export type PostApiChatContactsData = {
     body: ChatContactsCreateDto;
@@ -5348,7 +5461,7 @@ export type $OpenApiTs = {
             };
         };
     };
-    '/api/bi/data-meta': {
+    '/api/bi/data/meta': {
         get: {
             res: {
                 '200': BiDataMetaGetAllResponse;
@@ -5361,7 +5474,7 @@ export type $OpenApiTs = {
             };
         };
     };
-    '/api/bi/data-meta/{id}': {
+    '/api/bi/data/meta/{id}': {
         get: {
             req: GetApiBiDataMetaByIdData;
             res: {
@@ -5381,11 +5494,44 @@ export type $OpenApiTs = {
             };
         };
     };
-    '/api/bi/data-meta/page/all': {
+    '/api/bi/data/meta/page/all': {
         get: {
             req: GetApiBiDataMetaPageAllData;
             res: {
                 '200': BiDataMetaPaginateResponse;
+            };
+        };
+    };
+    '/api/bi/data/meta/{metaId}/struct': {
+        get: {
+            res: {
+                '200': BiDataStructGetAllResponse;
+            };
+        };
+        post: {
+            req: PostApiBiDataMetaByMetaIdStructData;
+            res: {
+                '200': SuccessResult;
+            };
+        };
+    };
+    '/api/bi/data/struct/{id}': {
+        get: {
+            req: GetApiBiDataStructByIdData;
+            res: {
+                '200': BiDataStructGetResponse;
+            };
+        };
+        delete: {
+            req: DeleteApiBiDataStructByIdData;
+            res: {
+                '200': SuccessResult;
+            };
+        };
+        put: {
+            req: PutApiBiDataStructByIdData;
+            res: {
+                '200': SuccessResult;
             };
         };
     };

@@ -5084,6 +5084,50 @@ export const UpdateFDtoSchema = {
     }
 } as const;
 
+export const BiDataStructTypeSchema = {
+    type: 'string',
+    enum: ['TEXT', 'NUMBER', 'DATE', 'TIME', 'DATETIME', 'BOOLEAN', 'OBJECT', 'ARRAY', 'NULL', 'UNKNOWN']
+} as const;
+
+export const BiDataStructSchema = {
+    type: 'object',
+    properties: {
+        id: {
+            type: 'string'
+        },
+        type: {
+            description: '操作类型',
+            '$ref': '#/components/schemas/BiDataStructType'
+        },
+        name: {
+            type: 'string',
+            description: '字段名'
+        },
+        group: {
+            type: 'string',
+            description: '字段分组'
+        },
+        desc: {
+            type: 'string',
+            description: '字段说明'
+        },
+        meta: {
+            '$ref': '#/components/schemas/BiDataMeta'
+        },
+        createDate: {
+            format: 'date-time',
+            type: 'string',
+            description: '创建时间'
+        },
+        updateDate: {
+            format: 'date-time',
+            type: 'string',
+            description: '更新时间'
+        }
+    },
+    required: ['id', 'type', 'name', 'group', 'desc', 'meta', 'createDate', 'updateDate']
+} as const;
+
 export const BiDataMetaSchema = {
     type: 'object',
     properties: {
@@ -5097,6 +5141,12 @@ export const BiDataMetaSchema = {
         desc: {
             type: 'string',
             description: '描述'
+        },
+        structs: {
+            type: 'array',
+            items: {
+                '$ref': '#/components/schemas/BiDataStruct'
+            }
         },
         creator: {
             '$ref': '#/components/schemas/User'
@@ -5112,7 +5162,7 @@ export const BiDataMetaSchema = {
             description: '更新时间'
         }
     },
-    required: ['id', 'name', 'desc', 'creator', 'createDate', 'updateDate']
+    required: ['id', 'name', 'desc', 'structs', 'creator', 'createDate', 'updateDate']
 } as const;
 
 export const BiDataMetaGetAllResponseSchema = {
@@ -5196,6 +5246,72 @@ export const BiDataMetaPaginateResponseSchema = {
         }
     },
     required: ['code', 'data']
+} as const;
+
+export const BiDataStructGetAllResponseSchema = {
+    type: 'object',
+    properties: {
+        code: {
+            type: 'number'
+        },
+        data: {
+            type: 'array',
+            items: {
+                '$ref': '#/components/schemas/BiDataStruct'
+            }
+        }
+    },
+    required: ['code', 'data']
+} as const;
+
+export const BiDataStructGetResponseSchema = {
+    type: 'object',
+    properties: {
+        code: {
+            type: 'number'
+        },
+        data: {
+            '$ref': '#/components/schemas/BiDataStruct'
+        }
+    },
+    required: ['code', 'data']
+} as const;
+
+export const CreateBiDataStructDtoSchema = {
+    type: 'object',
+    properties: {
+        type: {
+            '$ref': '#/components/schemas/BiDataStructType'
+        },
+        name: {
+            type: 'string'
+        },
+        group: {
+            type: 'string'
+        },
+        desc: {
+            type: 'string'
+        }
+    },
+    required: ['type', 'name', 'group', 'desc']
+} as const;
+
+export const UpdateBiDataStructDtoSchema = {
+    type: 'object',
+    properties: {
+        type: {
+            '$ref': '#/components/schemas/BiDataStructType'
+        },
+        name: {
+            type: 'string'
+        },
+        group: {
+            type: 'string'
+        },
+        desc: {
+            type: 'string'
+        }
+    }
 } as const;
 
 export const CreateBiChartMetaDtoSchema = {

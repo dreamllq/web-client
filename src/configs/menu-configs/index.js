@@ -44,7 +44,8 @@ export default [
     children: [
       {
         'key': 'bi-data',
-        'label': '数据管理'
+        'label': '数据管理',
+        subPages: ['bi-data-setting']
       },
       {
         'key': 'bi-chart',

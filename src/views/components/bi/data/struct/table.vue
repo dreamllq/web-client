@@ -1,5 +1,9 @@
 <template>
-  <auto-pagination ref='paginationRef' :fetch-data='fetchData' auto-init>
+  <auto-pagination
+    ref='paginationRef'
+    :fetch-data='fetchData'
+    auto-init
+    no-pagination>
     <template #default='{data, indexMethod}'>
       <auto-height-wrapper>
         <template #default='{size}'>
@@ -10,14 +14,18 @@
               width='60'
               label='序号' />
             <el-table-column
-              prop='id'
-              label='ID' />
+              prop='type'
+              label='字段类型' 
+              :formatter='(row, col, val)=> BI_DATA_STRUCT_TYPE_LIST.find(item=>item.value === val)?.label' />
             <el-table-column
               prop='name'
-              label='名称' />
+              label='字段名' />
+            <el-table-column
+              prop='group'
+              label='字段分组' />
             <el-table-column
               prop='desc'
-              label='描述' />
+              label='字段说明' />
             <el-table-column
               prop='createDate'
               label='创建时间' />
@@ -28,9 +36,6 @@
                 </el-button>
                 <el-button link type='danger' @click='onDelete(row)'>
                   删除
-                </el-button>
-                <el-button link type='primary' @click='onSetting(row)'>
-                  配置
                 </el-button>
               </template>
             </el-table-column>
@@ -48,25 +53,21 @@ import { AutoHeightWrapper } from 'lc-vue-auto-height-wrapper';
 import { ref, onMounted } from 'vue';
 import { ElMessageBox, ElMessage } from 'element-plus';
 import BizEditDialog from './edit-dialog.vue';
-import { BiDataMeta, BiDataMetaService } from '@/services/api';
-import { useRouter } from 'vue-router';
+import { BiDataStructService } from '@/services/api';
+import { useRoute, useRouter } from 'vue-router';
+import { BI_DATA_STRUCT_TYPE_LIST } from './constants/bi-data-struct-type';
 
 const router = useRouter();
+const route = useRoute();
 
 let filterData: {name?: string} = {};
 const paginationRef = ref();
 
-const fetchData = async (option: { pageNo:number, pageSize:number }) => {
-  const res = await BiDataMetaService.paginate({
-    query: {
-      pageNo: option.pageNo,
-      pageSize: option.pageSize,
-      name: filterData.name
-    }
-  });
+const fetchData = async () => {
+  const res = await BiDataStructService.getAll({ path: { metaId: route.query.id as string } });
   return {
-    list: res.data?.data.list,
-    total: res.data?.data.count
+    list: res.data?.data,
+    total: res.data?.data.length
   };
 };
 
@@ -81,13 +82,6 @@ const onDelete = async ({ id }:{id:string}) => {
   await BiDataMetaService.remove({ path: { id } });
   ElMessage.success('删除成功');
   refresh();
-};
-
-const onSetting = (row:BiDataMeta) => {
-  router.push({
-    name: 'bi-data-setting',
-    query: { id: row.id }
-  });
 };
 
 const filter = (data:{name:string}) => {
