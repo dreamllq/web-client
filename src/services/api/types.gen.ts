@@ -812,6 +812,11 @@ export enum BiDataStructType {
     UNKNOWN = 'UNKNOWN'
 }
 
+export type BiDataViewGetResponse = {
+    code: number;
+    data: DataView;
+};
+
 export type Buffer = {
     [key: string]: unknown;
 };
@@ -925,6 +930,10 @@ export type ChatSessionGetResponse = {
     code: number;
     message: string;
     data: Array<ChatSession>;
+};
+
+export type Column = {
+    [key: string]: unknown;
 };
 
 export type CreateAiAliyunAccountDto = {
@@ -1199,6 +1208,11 @@ export type CreateUsersDto = {
      * 角色列表
      */
     roleIds?: Array<(string)>;
+};
+
+export type DataView = {
+    columns: Array<Column>;
+    data: Array<(string)>;
 };
 
 export type DeleteSuccessResult = {
@@ -3360,7 +3374,7 @@ export type PostApiBiDataMetaByMetaIdRuleError = unknown;
 export type PutApiBiDataRuleByIdData = {
     body: UpdateBiDataRuleDto;
     path: {
-        id: unknown;
+        id: string;
     };
 };
 
@@ -3413,6 +3427,16 @@ export type PutApiBiDataStructByIdData = {
 export type PutApiBiDataStructByIdResponse = (SuccessResult);
 
 export type PutApiBiDataStructByIdError = unknown;
+
+export type GetApiBiDataViewByMetaIdData = {
+    path: {
+        metaId: string;
+    };
+};
+
+export type GetApiBiDataViewByMetaIdResponse = (BiDataViewGetResponse);
+
+export type GetApiBiDataViewByMetaIdError = unknown;
 
 export type PostApiChatContactsData = {
     body: ChatContactsCreateDto;
@@ -5632,6 +5656,14 @@ export type $OpenApiTs = {
             req: PutApiBiDataStructByIdData;
             res: {
                 '200': SuccessResult;
+            };
+        };
+    };
+    '/api/bi/data/view/{metaId}': {
+        get: {
+            req: GetApiBiDataViewByMetaIdData;
+            res: {
+                '200': BiDataViewGetResponse;
             };
         };
     };

@@ -5400,6 +5400,43 @@ export const UpdateBiDataRuleDtoSchema = {
     }
 } as const;
 
+export const ColumnSchema = {
+    type: 'object',
+    properties: {}
+} as const;
+
+export const DataViewSchema = {
+    type: 'object',
+    properties: {
+        columns: {
+            type: 'array',
+            items: {
+                '$ref': '#/components/schemas/Column'
+            }
+        },
+        data: {
+            type: 'array',
+            items: {
+                type: 'string'
+            }
+        }
+    },
+    required: ['columns', 'data']
+} as const;
+
+export const BiDataViewGetResponseSchema = {
+    type: 'object',
+    properties: {
+        code: {
+            type: 'number'
+        },
+        data: {
+            '$ref': '#/components/schemas/DataView'
+        }
+    },
+    required: ['code', 'data']
+} as const;
+
 export const CreateBiChartMetaDtoSchema = {
     type: 'object',
     properties: {}
