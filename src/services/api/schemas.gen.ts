@@ -5417,7 +5417,7 @@ export const DataViewSchema = {
         data: {
             type: 'array',
             items: {
-                type: 'string'
+                type: 'object'
             }
         }
     },
@@ -5437,14 +5437,137 @@ export const BiDataViewGetResponseSchema = {
     required: ['code', 'data']
 } as const;
 
+export const BiChartMetaSchema = {
+    type: 'object',
+    properties: {
+        id: {
+            type: 'string'
+        },
+        name: {
+            type: 'string',
+            description: '名称'
+        },
+        desc: {
+            type: 'string',
+            description: '描述'
+        },
+        data: {
+            '$ref': '#/components/schemas/BiDataMeta'
+        },
+        creator: {
+            '$ref': '#/components/schemas/User'
+        },
+        createDate: {
+            format: 'date-time',
+            type: 'string',
+            description: '创建时间'
+        },
+        updateDate: {
+            format: 'date-time',
+            type: 'string',
+            description: '更新时间'
+        }
+    },
+    required: ['id', 'name', 'desc', 'data', 'creator', 'createDate', 'updateDate']
+} as const;
+
+export const BiChartMetaGetAllResponseSchema = {
+    type: 'object',
+    properties: {
+        code: {
+            type: 'number'
+        },
+        data: {
+            type: 'array',
+            items: {
+                '$ref': '#/components/schemas/BiChartMeta'
+            }
+        }
+    },
+    required: ['code', 'data']
+} as const;
+
+export const BiChartMetaGetResponseSchema = {
+    type: 'object',
+    properties: {
+        code: {
+            type: 'number'
+        },
+        data: {
+            '$ref': '#/components/schemas/BiChartMeta'
+        }
+    },
+    required: ['code', 'data']
+} as const;
+
+export const DataMetaSchema = {
+    type: 'object',
+    properties: {
+        id: {
+            type: 'string'
+        }
+    },
+    required: ['id']
+} as const;
+
 export const CreateBiChartMetaDtoSchema = {
     type: 'object',
-    properties: {}
+    properties: {
+        name: {
+            type: 'string'
+        },
+        desc: {
+            type: 'string'
+        },
+        data: {
+            '$ref': '#/components/schemas/DataMeta'
+        }
+    },
+    required: ['name', 'desc', 'data']
 } as const;
 
 export const UpdateBiChartMetaDtoSchema = {
     type: 'object',
-    properties: {}
+    properties: {
+        name: {
+            type: 'string'
+        },
+        desc: {
+            type: 'string'
+        },
+        data: {
+            '$ref': '#/components/schemas/DataMeta'
+        }
+    }
+} as const;
+
+export const BiChartMetaPaginatePageSchema = {
+    type: 'object',
+    properties: {
+        list: {
+            type: 'array',
+            items: {
+                '$ref': '#/components/schemas/BiChartMeta'
+            }
+        },
+        count: {
+            type: 'number'
+        }
+    },
+    required: ['list', 'count']
+} as const;
+
+export const BiChartMetaPaginateResponseSchema = {
+    type: 'object',
+    properties: {
+        code: {
+            type: 'number'
+        },
+        data: {
+            '$ref': '#/components/schemas/BiChartMetaPaginatePage'
+        }
+    },
+    required: ['code', 'data']
 } as const;
 
 export const CreateBiViewMetaDtoSchema = {

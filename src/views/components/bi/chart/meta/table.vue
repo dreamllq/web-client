@@ -11,12 +11,15 @@
               label='序号' />
             <el-table-column
               prop='id'
-              label='ID'
+              label='ID' 
               width='100'
               show-overflow-tooltip />
             <el-table-column
               prop='name'
               label='名称' />
+            <el-table-column
+              prop='data.name'
+              label='数据' />
             <el-table-column
               prop='desc'
               label='描述' />
@@ -50,7 +53,7 @@ import { AutoHeightWrapper } from 'lc-vue-auto-height-wrapper';
 import { ref, onMounted } from 'vue';
 import { ElMessageBox, ElMessage } from 'element-plus';
 import BizEditDialog from './edit-dialog.vue';
-import { BiDataMeta, BiDataMetaService } from '@/services/api';
+import { BiChartMetaService, BiChartMeta } from '@/services/api';
 import { useRouter } from 'vue-router';
 
 const router = useRouter();
@@ -59,7 +62,7 @@ let filterData: {name?: string} = {};
 const paginationRef = ref();
 
 const fetchData = async (option: { pageNo:number, pageSize:number }) => {
-  const res = await BiDataMetaService.paginate({
+  const res = await BiChartMetaService.paginate({
     query: {
       pageNo: option.pageNo,
       pageSize: option.pageSize,
@@ -80,16 +83,16 @@ const onEdit = async ({ id }:{id:string}) => {
 
 const onDelete = async ({ id }:{id:string}) => {
   await ElMessageBox.confirm('确认删除吗?', '删除');
-  await BiDataMetaService.remove({ path: { id } });
+  await BiChartMetaService.remove({ path: { id } });
   ElMessage.success('删除成功');
   refresh();
 };
 
-const onSetting = (row:BiDataMeta) => {
-  router.push({
-    name: 'bi-data-setting',
-    query: { id: row.id }
-  });
+const onSetting = (row:BiChartMeta) => {
+  // router.push({
+  //   name: 'bi-data-setting',
+  //   query: { id: row.id }
+  // });
 };
 
 const filter = (data:{name:string}) => {

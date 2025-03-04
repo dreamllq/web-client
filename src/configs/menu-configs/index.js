@@ -40,7 +40,7 @@ export default [
   {
     key: 'bi',
     label: 'BI',
-    icon: 'Setting',
+    icon: 'DataLine',
     children: [
       {
         'key': 'bi-data',
