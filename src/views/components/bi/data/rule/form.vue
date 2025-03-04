@@ -42,7 +42,7 @@ const props = defineProps({
 const form = ref<Partial<BiDataRule>>({
   type: props.defaultData.type || BiDataRuleType.EXCEL,
   excelFile: undefined,
-  sql: ''
+  sql: props.defaultData.sql || ''
 });
 
 const rules = reactive<FormRules>({});
@@ -51,7 +51,13 @@ const formRef = ref<FormInstance>();
 
 const getData = async () => {
   await formRef.value!.validate();
-  return cloneDeep(form.value);
+  console.log(form.value);
+  
+  return {
+    type: form.value.type,
+    sql: form.value.type === BiDataRuleType.SQL ? form.value.sql : undefined,
+    excelFile: form.value.type === BiDataRuleType.EXCEL ? { id: form.value.excelFile?.entity.id } : undefined
+  };
 };
 
 defineExpose({ getData });

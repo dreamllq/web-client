@@ -3336,6 +3336,38 @@ export type GetApiBiDataMetaPageAllResponse = (BiDataMetaPaginateResponse);
 
 export type GetApiBiDataMetaPageAllError = unknown;
 
+export type GetApiBiDataMetaByMetaIdRuleData = {
+    path: {
+        metaId: unknown;
+    };
+};
+
+export type GetApiBiDataMetaByMetaIdRuleResponse = (BiDataRuleGetResponse);
+
+export type GetApiBiDataMetaByMetaIdRuleError = unknown;
+
+export type PostApiBiDataMetaByMetaIdRuleData = {
+    body: CreateBiDataRuleDto;
+    path: {
+        metaId: string;
+    };
+};
+
+export type PostApiBiDataMetaByMetaIdRuleResponse = (SuccessResult);
+
+export type PostApiBiDataMetaByMetaIdRuleError = unknown;
+
+export type PutApiBiDataRuleByIdData = {
+    body: UpdateBiDataRuleDto;
+    path: {
+        id: unknown;
+    };
+};
+
+export type PutApiBiDataRuleByIdResponse = (SuccessResult);
+
+export type PutApiBiDataRuleByIdError = unknown;
+
 export type GetApiBiDataMetaByMetaIdStructResponse = (BiDataStructGetAllResponse);
 
 export type GetApiBiDataMetaByMetaIdStructError = unknown;
@@ -3381,38 +3413,6 @@ export type PutApiBiDataStructByIdData = {
 export type PutApiBiDataStructByIdResponse = (SuccessResult);
 
 export type PutApiBiDataStructByIdError = unknown;
-
-export type GetApiBiDataMetaByMetaIdRuleData = {
-    path: {
-        id: unknown;
-    };
-};
-
-export type GetApiBiDataMetaByMetaIdRuleResponse = (BiDataRuleGetResponse);
-
-export type GetApiBiDataMetaByMetaIdRuleError = unknown;
-
-export type PostApiBiDataMetaByMetaIdRuleData = {
-    body: CreateBiDataRuleDto;
-    path: {
-        metaId: string;
-    };
-};
-
-export type PostApiBiDataMetaByMetaIdRuleResponse = (SuccessResult);
-
-export type PostApiBiDataMetaByMetaIdRuleError = unknown;
-
-export type PutApiBiDataRuleByIdData = {
-    body: UpdateBiDataRuleDto;
-    path: {
-        id: unknown;
-    };
-};
-
-export type PutApiBiDataRuleByIdResponse = (SuccessResult);
-
-export type PutApiBiDataRuleByIdError = unknown;
 
 export type PostApiChatContactsData = {
     body: ChatContactsCreateDto;
@@ -5580,6 +5580,28 @@ export type $OpenApiTs = {
             };
         };
     };
+    '/api/bi/data/meta/{metaId}/rule': {
+        get: {
+            req: GetApiBiDataMetaByMetaIdRuleData;
+            res: {
+                '200': BiDataRuleGetResponse;
+            };
+        };
+        post: {
+            req: PostApiBiDataMetaByMetaIdRuleData;
+            res: {
+                '200': SuccessResult;
+            };
+        };
+    };
+    '/api/bi/data/rule/{id}': {
+        put: {
+            req: PutApiBiDataRuleByIdData;
+            res: {
+                '200': SuccessResult;
+            };
+        };
+    };
     '/api/bi/data/meta/{metaId}/struct': {
         get: {
             res: {
@@ -5608,28 +5630,6 @@ export type $OpenApiTs = {
         };
         put: {
             req: PutApiBiDataStructByIdData;
-            res: {
-                '200': SuccessResult;
-            };
-        };
-    };
-    '/api/bi/data/meta/{metaId}/rule': {
-        get: {
-            req: GetApiBiDataMetaByMetaIdRuleData;
-            res: {
-                '200': BiDataRuleGetResponse;
-            };
-        };
-        post: {
-            req: PostApiBiDataMetaByMetaIdRuleData;
-            res: {
-                '200': SuccessResult;
-            };
-        };
-    };
-    '/api/bi/data/rule/{id}': {
-        put: {
-            req: PutApiBiDataRuleByIdData;
             res: {
                 '200': SuccessResult;
             };
