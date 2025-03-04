@@ -89,10 +89,10 @@ const onDelete = async ({ id }:{id:string}) => {
 };
 
 const onSetting = (row:BiChartMeta) => {
-  // router.push({
-  //   name: 'bi-data-setting',
-  //   query: { id: row.id }
-  // });
+  router.push({
+    name: 'bi-chart-setting',
+    query: { id: row.id }
+  });
 };
 
 const filter = (data:{name:string}) => {

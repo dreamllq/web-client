@@ -5400,9 +5400,20 @@ export const UpdateBiDataRuleDtoSchema = {
     }
 } as const;
 
-export const ColumnSchema = {
+export const BiDataViewColumnSchema = {
     type: 'object',
-    properties: {}
+    properties: {
+        field: {
+            type: 'string'
+        },
+        headerName: {
+            type: 'string'
+        },
+        struct: {
+            '$ref': '#/components/schemas/BiDataStruct'
+        }
+    },
+    required: ['field', 'headerName', 'struct']
 } as const;
 
 export const DataViewSchema = {
@@ -5411,7 +5422,7 @@ export const DataViewSchema = {
         columns: {
             type: 'array',
             items: {
-                '$ref': '#/components/schemas/Column'
+                '$ref': '#/components/schemas/BiDataViewColumn'
             }
         },
         data: {

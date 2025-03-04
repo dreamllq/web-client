@@ -49,7 +49,8 @@ export default [
       },
       {
         'key': 'bi-chart',
-        'label': '图表管理'
+        'label': '图表管理',
+        subPages: ['bi-chart-setting']
       },
       {
         'key': 'bi-view',

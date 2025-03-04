@@ -854,6 +854,12 @@ export enum BiDataStructType {
     UNKNOWN = 'UNKNOWN'
 }
 
+export type BiDataViewColumn = {
+    field: string;
+    headerName: string;
+    struct: BiDataStruct;
+};
+
 export type BiDataViewGetResponse = {
     code: number;
     data: DataView;
@@ -972,10 +978,6 @@ export type ChatSessionGetResponse = {
     code: number;
     message: string;
     data: Array<ChatSession>;
-};
-
-export type Column = {
-    [key: string]: unknown;
 };
 
 export type CreateAiAliyunAccountDto = {
@@ -1259,7 +1261,7 @@ export type DataMeta = {
 };
 
 export type DataView = {
-    columns: Array<Column>;
+    columns: Array<BiDataViewColumn>;
     data: Array<{
         [key: string]: unknown;
     }>;
