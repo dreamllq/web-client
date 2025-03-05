@@ -1,0 +1,27 @@
+@font-face {
+  font-family: "iconfontbi"; /* Project id 4846635 */
+  src: url('iconfont.woff2?t=1741139865832') format('woff2'),
+       url('iconfont.woff?t=1741139865832') format('woff'),
+       url('iconfont.ttf?t=1741139865832') format('truetype');
+}
+
+.iconfontbi {
+  font-family: "iconfontbi" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-bi-tubiao-bingtu:before {
+  content: "\eb95";
+}
+
+.icon-bi-tubiao-zhexiantu:before {
+  content: "\eb96";
+}
+
+.icon-bi-tubiao-zhuzhuangtu:before {
+  content: "\eb97";
+}
+
