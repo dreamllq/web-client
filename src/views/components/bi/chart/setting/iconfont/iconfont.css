@@ -1,8 +1,8 @@
 @font-face {
   font-family: "iconfontbi"; /* Project id 4846635 */
-  src: url('iconfont.woff2?t=1741139865832') format('woff2'),
-       url('iconfont.woff?t=1741139865832') format('woff'),
-       url('iconfont.ttf?t=1741139865832') format('truetype');
+  src: url('iconfont.woff2?t=1741315140936') format('woff2'),
+       url('iconfont.woff?t=1741315140936') format('woff'),
+       url('iconfont.ttf?t=1741315140936') format('truetype');
 }
 
 .iconfontbi {
@@ -11,6 +11,18 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-bi-t:before {
+  content: "\e659";
+}
+
+.icon-bi-clock:before {
+  content: "\e66a";
+}
+
+.icon-bi-jinghao:before {
+  content: "\e7a4";
 }
 
 .icon-bi-tubiao-bingtu:before {

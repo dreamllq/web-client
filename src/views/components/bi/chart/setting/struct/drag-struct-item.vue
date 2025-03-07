@@ -24,8 +24,8 @@ const props = defineProps({
 });
 
 const style = computed(() => ({
-  top: structDragging.value === true && structDraggingInfo.value.struct?.field === props.item.field ? `${structDraggingInfo.value.y}px` : '-9999px',
-  left: structDragging.value === true && structDraggingInfo.value.struct?.field === props.item.field ? `${structDraggingInfo.value.x}px` : '-9999px'
+  top: structDragging.value === true && structDraggingInfo.value.struct?.field === props.item.field ? `${structDraggingInfo.value.y - 15}px` : '-9999px',
+  left: structDragging.value === true && structDraggingInfo.value.struct?.field === props.item.field ? `${structDraggingInfo.value.x - 20}px` : '-9999px'
 }));
 </script>
 
@@ -42,5 +42,8 @@ const style = computed(() => ({
     background-color: #fff;
     pointer-events: none;
     z-index: 1;
+    font-size: 14px;
+    color: #333;
+    user-select: none;
   }
 </style>

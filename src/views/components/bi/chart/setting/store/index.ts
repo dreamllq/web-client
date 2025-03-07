@@ -10,7 +10,7 @@ const [useProvideBiChartSettingStore, useBiChartSettingStore] = createInjectionS
   const biDataStructs = ref<BiDataStruct[]>([]);
   const columns = ref<BiDataViewColumn[]>([]);
   const data = ref<any[]>([]);
-  const chartType = ref<ChartType>();
+  const chartType = ref<ChartType>(ChartType.Pie);
   const dimensions = ref<BiDataViewColumn[]>([]); //  维度
   const measures = ref<BiDataViewColumn[]>([]); // 度量
   const structDragging = ref(false);
@@ -31,6 +31,7 @@ const [useProvideBiChartSettingStore, useBiChartSettingStore] = createInjectionS
       structDraggingInfo.value.y = y.value;
     }
   }, { deep: true });
+
 
   const init = async () => {
     ready.value = false;

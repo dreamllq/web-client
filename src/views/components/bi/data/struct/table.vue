@@ -79,7 +79,7 @@ const onEdit = async ({ id }:{id:string}) => {
 
 const onDelete = async ({ id }:{id:string}) => {
   await ElMessageBox.confirm('确认删除吗?', '删除');
-  await BiDataMetaService.remove({ path: { id } });
+  await BiDataStructService.remove({ path: { id } });
   ElMessage.success('删除成功');
   refresh();
 };
