@@ -1,8 +1,9 @@
-import { BiChartMetaService, BiDataMetaService, BiDataStruct, BiDataViewColumn, BiDataViewService } from '@/services/api';
+import { BiChartMetaService, BiChartSettingService, BiDataMetaService, BiDataStruct, BiDataViewColumn, BiDataViewService } from '@/services/api';
 import { createInjectionState } from '@vueuse/core';
 import { ref, watch } from 'vue';
 import { ChartType } from '../constants/type';
 import { useMouse } from '@vueuse/core';
+import { toArray, toPlainObject } from 'lodash';
 
 const [useProvideBiChartSettingStore, useBiChartSettingStore] = createInjectionState((chartMateId:string) => {
   const ready = ref(false);
@@ -10,6 +11,7 @@ const [useProvideBiChartSettingStore, useBiChartSettingStore] = createInjectionS
   const biDataStructs = ref<BiDataStruct[]>([]);
   const columns = ref<BiDataViewColumn[]>([]);
   const data = ref<any[]>([]);
+  const biChartSettingId = ref<string>();
   const chartType = ref<ChartType>(ChartType.Pie);
   const dimensions = ref<BiDataViewColumn[]>([]); //  维度
   const measures = ref<BiDataViewColumn[]>([]); // 度量
@@ -46,20 +48,43 @@ const [useProvideBiChartSettingStore, useBiChartSettingStore] = createInjectionS
     columns.value = biDataViewRes.data!.data.columns;
     data.value = biDataViewRes.data!.data.data;
 
+    const biChartSettingRes = await BiChartSettingService.get({ path: { metaId: chartMateId } });
+    biChartSettingId.value = biChartSettingRes.data?.data?.id;
+    const { config } = biChartSettingRes.data?.data || {};
+    if (config) {
+      try {
+        const configObj = JSON.parse(config);
+        chartType.value = configObj.chartType;
+        dimensions.value = configObj.dimensions;
+        measures.value = configObj.measures;
+      } catch (e) {
+        console.error(e);
+      }
+    }
+
     ready.value = true;
   };
 
   init();
+
+  const toJson = () => ({
+    chartType: chartType.value,
+    dimensions: JSON.parse(JSON.stringify(dimensions.value)),
+    measures: JSON.parse(JSON.stringify(measures.value))
+  });
   
   return {
+    chartMateId,
     ready,
     columns,
     data,
+    biChartSettingId,
     chartType,
     dimensions,
     measures,
     structDragging,
-    structDraggingInfo
+    structDraggingInfo,
+    toJson
   };
 });
 

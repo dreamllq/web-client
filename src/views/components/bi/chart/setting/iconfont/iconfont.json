@@ -6,6 +6,13 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "1002704",
+      "name": "星号",
+      "font_class": "jiufuqianbaoicon14",
+      "unicode": "e69b",
+      "unicode_decimal": 59035
+    },
+    {
       "icon_id": "11349268",
       "name": "t",
       "font_class": "t",

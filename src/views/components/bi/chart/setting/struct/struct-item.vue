@@ -26,10 +26,11 @@ const props = defineProps({
   }
 });
 
-const iconClass:Record<BiDataStructType, string> = {
+const iconClass:Record<BiDataStructType | 'undefined', string> = {
   [BiDataStructType.TEXT]: 'icon-bi-t',
   [BiDataStructType.NUMBER]: 'icon-bi-jinghao',
-  [BiDataStructType.DATE]: 'icon-bi-clock'
+  [BiDataStructType.DATE]: 'icon-bi-clock',
+  'undefined': 'icon-bi-jiufuqianbaoicon14'
 };
 
 const onMouseDown = (e: MouseEvent) => {

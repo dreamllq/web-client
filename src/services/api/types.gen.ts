@@ -695,6 +695,7 @@ export type BiChartMeta = {
      */
     desc: string;
     data: BiDataMeta;
+    chartSetting: BiChartSetting;
     creator: User;
     /**
      * 创建时间
@@ -724,6 +725,28 @@ export type BiChartMetaPaginatePage = {
 export type BiChartMetaPaginateResponse = {
     code: number;
     data: BiChartMetaPaginatePage;
+};
+
+export type BiChartSetting = {
+    id: string;
+    /**
+     * 配置
+     */
+    config: string;
+    chartMeta: BiChartMeta;
+    /**
+     * 创建时间
+     */
+    createDate: string;
+    /**
+     * 更新时间
+     */
+    updateDate: string;
+};
+
+export type BiChartSettingGetResponse = {
+    code: number;
+    data: BiChartSetting;
 };
 
 export type BiDataMeta = {
@@ -1159,6 +1182,10 @@ export type CreateBiChartMetaDto = {
     name: string;
     desc: string;
     data: DataMeta;
+};
+
+export type CreateBiChartSettingDto = {
+    config: string;
 };
 
 export type CreateBiDataMetaDto = {
@@ -2377,6 +2404,10 @@ export type UpdateBiChartMetaDto = {
     data?: DataMeta;
 };
 
+export type UpdateBiChartSettingDto = {
+    config?: string;
+};
+
 export type UpdateBiDataMetaDto = {
     name?: string;
     desc?: string;
@@ -3403,6 +3434,38 @@ export type GetApiBiChartMetaPageAllData = {
 export type GetApiBiChartMetaPageAllResponse = (BiChartMetaPaginateResponse);
 
 export type GetApiBiChartMetaPageAllError = unknown;
+
+export type GetApiBiChartMetaByMetaIdSettingData = {
+    path: {
+        metaId: unknown;
+    };
+};
+
+export type GetApiBiChartMetaByMetaIdSettingResponse = (BiChartSettingGetResponse);
+
+export type GetApiBiChartMetaByMetaIdSettingError = unknown;
+
+export type PostApiBiChartMetaByMetaIdSettingData = {
+    body: CreateBiChartSettingDto;
+    path: {
+        metaId: unknown;
+    };
+};
+
+export type PostApiBiChartMetaByMetaIdSettingResponse = (SuccessResult);
+
+export type PostApiBiChartMetaByMetaIdSettingError = unknown;
+
+export type PutApiBiChartSettingByIdData = {
+    body: UpdateBiChartSettingDto;
+    path: {
+        id: unknown;
+    };
+};
+
+export type PutApiBiChartSettingByIdResponse = (SuccessResult);
+
+export type PutApiBiChartSettingByIdError = unknown;
 
 export type GetApiBiDataMetaResponse = (BiDataMetaGetAllResponse);
 
@@ -5667,6 +5730,28 @@ export type $OpenApiTs = {
             req: GetApiBiChartMetaPageAllData;
             res: {
                 '200': BiChartMetaPaginateResponse;
+            };
+        };
+    };
+    '/api/bi/chart/meta/{metaId}/setting': {
+        get: {
+            req: GetApiBiChartMetaByMetaIdSettingData;
+            res: {
+                '200': BiChartSettingGetResponse;
+            };
+        };
+        post: {
+            req: PostApiBiChartMetaByMetaIdSettingData;
+            res: {
+                '200': SuccessResult;
+            };
+        };
+    };
+    '/api/bi/chart/setting/{id}': {
+        put: {
+            req: PutApiBiChartSettingByIdData;
+            res: {
+                '200': SuccessResult;
             };
         };
     };

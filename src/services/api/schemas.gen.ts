@@ -5448,6 +5448,33 @@ export const BiDataViewGetResponseSchema = {
     required: ['code', 'data']
 } as const;
 
+export const BiChartSettingSchema = {
+    type: 'object',
+    properties: {
+        id: {
+            type: 'string'
+        },
+        config: {
+            type: 'string',
+            description: '配置'
+        },
+        chartMeta: {
+            '$ref': '#/components/schemas/BiChartMeta'
+        },
+        createDate: {
+            format: 'date-time',
+            type: 'string',
+            description: '创建时间'
+        },
+        updateDate: {
+            format: 'date-time',
+            type: 'string',
+            description: '更新时间'
+        }
+    },
+    required: ['id', 'config', 'chartMeta', 'createDate', 'updateDate']
+} as const;
+
 export const BiChartMetaSchema = {
     type: 'object',
     properties: {
@@ -5465,6 +5492,9 @@ export const BiChartMetaSchema = {
         data: {
             '$ref': '#/components/schemas/BiDataMeta'
         },
+        chartSetting: {
+            '$ref': '#/components/schemas/BiChartSetting'
+        },
         creator: {
             '$ref': '#/components/schemas/User'
         },
@@ -5479,7 +5509,7 @@ export const BiChartMetaSchema = {
             description: '更新时间'
         }
     },
-    required: ['id', 'name', 'desc', 'data', 'creator', 'createDate', 'updateDate']
+    required: ['id', 'name', 'desc', 'data', 'chartSetting', 'creator', 'createDate', 'updateDate']
 } as const;
 
 export const BiChartMetaGetAllResponseSchema = {
@@ -5579,6 +5609,38 @@ export const BiChartMetaPaginateResponseSchema = {
         }
     },
     required: ['code', 'data']
+} as const;
+
+export const BiChartSettingGetResponseSchema = {
+    type: 'object',
+    properties: {
+        code: {
+            type: 'number'
+        },
+        data: {
+            '$ref': '#/components/schemas/BiChartSetting'
+        }
+    },
+    required: ['code', 'data']
+} as const;
+
+export const CreateBiChartSettingDtoSchema = {
+    type: 'object',
+    properties: {
+        config: {
+            type: 'string'
+        }
+    },
+    required: ['config']
+} as const;
+
+export const UpdateBiChartSettingDtoSchema = {
+    type: 'object',
+    properties: {
+        config: {
+            type: 'string'
+        }
+    }
 } as const;
 
 export const CreateBiViewMetaDtoSchema = {

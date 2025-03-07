@@ -1,8 +1,8 @@
 @font-face {
   font-family: "iconfontbi"; /* Project id 4846635 */
-  src: url('iconfont.woff2?t=1741315140936') format('woff2'),
-       url('iconfont.woff?t=1741315140936') format('woff'),
-       url('iconfont.ttf?t=1741315140936') format('truetype');
+  src: url('iconfont.woff2?t=1741318263975') format('woff2'),
+       url('iconfont.woff?t=1741318263975') format('woff'),
+       url('iconfont.ttf?t=1741318263975') format('truetype');
 }
 
 .iconfontbi {
@@ -11,6 +11,10 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-bi-jiufuqianbaoicon14:before {
+  content: "\e69b";
 }
 
 .icon-bi-t:before {

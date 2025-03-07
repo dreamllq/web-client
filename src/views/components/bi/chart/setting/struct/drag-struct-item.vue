@@ -33,8 +33,6 @@ const style = computed(() => ({
   .drag-struct-item {
     position: fixed;
     width: 100px;
-    height: 30px;
-    line-height: 30px;
     border: 1px solid var(--el-border-color);
     border-radius: 4px;
     cursor: pointer;
@@ -45,5 +43,9 @@ const style = computed(() => ({
     font-size: 14px;
     color: #333;
     user-select: none;
+    padding: 8px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    box-sizing: border-box;
   }
 </style>
