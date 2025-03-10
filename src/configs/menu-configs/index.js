@@ -54,7 +54,8 @@ export default [
       },
       {
         'key': 'bi-view',
-        'label': '视图管理'
+        'label': '视图管理',
+        subPages: ['bi-view-setting']
       }
     ]
   },

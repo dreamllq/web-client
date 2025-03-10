@@ -26,7 +26,7 @@ import SingleUploadFile from '@/views/components/common/single-upload-file.vue';
 
 const props = defineProps({
   defaultData: {
-    type: Object as PropType<Partial<BiDataRule>>,
+    type: Object as PropType<Partial<BiDataRule | null>>,
     default: () => ({})
   },
   disabledKeys: {
@@ -40,9 +40,9 @@ const props = defineProps({
 });
 
 const form = ref<Partial<BiDataRule>>({
-  type: props.defaultData.type || BiDataRuleType.EXCEL,
+  type: props.defaultData?.type || BiDataRuleType.EXCEL,
   excelFile: undefined,
-  sql: props.defaultData.sql || ''
+  sql: props.defaultData?.sql || ''
 });
 
 const rules = reactive<FormRules>({});

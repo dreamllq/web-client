@@ -888,6 +888,47 @@ export type BiDataViewGetResponse = {
     data: DataView;
 };
 
+export type BiViewMeta = {
+    id: string;
+    /**
+     * 名称
+     */
+    name: string;
+    /**
+     * 描述
+     */
+    desc: string;
+    creator: User;
+    /**
+     * 创建时间
+     */
+    createDate: string;
+    /**
+     * 更新时间
+     */
+    updateDate: string;
+};
+
+export type BiViewMetaGetAllResponse = {
+    code: number;
+    data: Array<BiViewMeta>;
+};
+
+export type BiViewMetaGetResponse = {
+    code: number;
+    data: BiViewMeta;
+};
+
+export type BiViewMetaPaginatePage = {
+    list: Array<BiViewMeta>;
+    count: number;
+};
+
+export type BiViewMetaPaginateResponse = {
+    code: number;
+    data: BiViewMetaPaginatePage;
+};
+
 export type Buffer = {
     [key: string]: unknown;
 };
@@ -1207,7 +1248,8 @@ export type CreateBiDataStructDto = {
 };
 
 export type CreateBiViewMetaDto = {
-    [key: string]: unknown;
+    name: string;
+    desc: string;
 };
 
 export type CreateFDto = {
@@ -2427,7 +2469,8 @@ export type UpdateBiDataStructDto = {
 };
 
 export type UpdateBiViewMetaDto = {
-    [key: string]: unknown;
+    name?: string;
+    desc?: string;
 };
 
 export type UpdateFDto = {
@@ -3610,6 +3653,61 @@ export type GetApiBiDataViewByMetaIdResponse = (BiDataViewGetResponse);
 
 export type GetApiBiDataViewByMetaIdError = unknown;
 
+export type GetApiBiViewMetaResponse = (BiViewMetaGetAllResponse);
+
+export type GetApiBiViewMetaError = unknown;
+
+export type PostApiBiViewMetaData = {
+    body: CreateBiViewMetaDto;
+};
+
+export type PostApiBiViewMetaResponse = (SuccessResult);
+
+export type PostApiBiViewMetaError = unknown;
+
+export type GetApiBiViewMetaByIdData = {
+    path: {
+        id: unknown;
+    };
+};
+
+export type GetApiBiViewMetaByIdResponse = (BiViewMetaGetResponse);
+
+export type GetApiBiViewMetaByIdError = unknown;
+
+export type DeleteApiBiViewMetaByIdData = {
+    path: {
+        id: unknown;
+    };
+};
+
+export type DeleteApiBiViewMetaByIdResponse = (SuccessResult);
+
+export type DeleteApiBiViewMetaByIdError = unknown;
+
+export type PutApiBiViewMetaByIdData = {
+    body: UpdateBiViewMetaDto;
+    path: {
+        id: unknown;
+    };
+};
+
+export type PutApiBiViewMetaByIdResponse = (SuccessResult);
+
+export type PutApiBiViewMetaByIdError = unknown;
+
+export type GetApiBiViewMetaPageAllData = {
+    query: {
+        name?: string;
+        pageNo: number;
+        pageSize: number;
+    };
+};
+
+export type GetApiBiViewMetaPageAllResponse = (BiViewMetaPaginateResponse);
+
+export type GetApiBiViewMetaPageAllError = unknown;
+
 export type PostApiChatContactsData = {
     body: ChatContactsCreateDto;
 };
@@ -3739,49 +3837,6 @@ export type DeleteApiAiSessionByIdData = {
 export type DeleteApiAiSessionByIdResponse = (unknown);
 
 export type DeleteApiAiSessionByIdError = unknown;
-
-export type PostApiBiViewMetaData = {
-    body: CreateBiViewMetaDto;
-};
-
-export type PostApiBiViewMetaResponse = (unknown);
-
-export type PostApiBiViewMetaError = unknown;
-
-export type GetApiBiViewMetaResponse = (unknown);
-
-export type GetApiBiViewMetaError = unknown;
-
-export type GetApiBiViewMetaByIdData = {
-    path: {
-        id: string;
-    };
-};
-
-export type GetApiBiViewMetaByIdResponse = (unknown);
-
-export type GetApiBiViewMetaByIdError = unknown;
-
-export type PatchApiBiViewMetaByIdData = {
-    body: UpdateBiViewMetaDto;
-    path: {
-        id: string;
-    };
-};
-
-export type PatchApiBiViewMetaByIdResponse = (unknown);
-
-export type PatchApiBiViewMetaByIdError = unknown;
-
-export type DeleteApiBiViewMetaByIdData = {
-    path: {
-        id: string;
-    };
-};
-
-export type DeleteApiBiViewMetaByIdResponse = (unknown);
-
-export type DeleteApiBiViewMetaByIdError = unknown;
 
 export type PostApiFileUploadData = {
     body: FileUploadDto;
@@ -5859,6 +5914,47 @@ export type $OpenApiTs = {
             };
         };
     };
+    '/api/bi/view/meta': {
+        get: {
+            res: {
+                '200': BiViewMetaGetAllResponse;
+            };
+        };
+        post: {
+            req: PostApiBiViewMetaData;
+            res: {
+                '200': SuccessResult;
+            };
+        };
+    };
+    '/api/bi/view/meta/{id}': {
+        get: {
+            req: GetApiBiViewMetaByIdData;
+            res: {
+                '200': BiViewMetaGetResponse;
+            };
+        };
+        delete: {
+            req: DeleteApiBiViewMetaByIdData;
+            res: {
+                '200': SuccessResult;
+            };
+        };
+        put: {
+            req: PutApiBiViewMetaByIdData;
+            res: {
+                '200': SuccessResult;
+            };
+        };
+    };
+    '/api/bi/view/meta/page/all': {
+        get: {
+            req: GetApiBiViewMetaPageAllData;
+            res: {
+                '200': BiViewMetaPaginateResponse;
+            };
+        };
+    };
     '/api/chat/contacts': {
         post: {
             req: PostApiChatContactsData;
@@ -5972,39 +6068,6 @@ export type $OpenApiTs = {
         };
         delete: {
             req: DeleteApiAiSessionByIdData;
-            res: {
-                '200': unknown;
-            };
-        };
-    };
-    '/api/bi-view-meta': {
-        post: {
-            req: PostApiBiViewMetaData;
-            res: {
-                '201': unknown;
-            };
-        };
-        get: {
-            res: {
-                '200': unknown;
-            };
-        };
-    };
-    '/api/bi-view-meta/{id}': {
-        get: {
-            req: GetApiBiViewMetaByIdData;
-            res: {
-                '200': unknown;
-            };
-        };
-        patch: {
-            req: PatchApiBiViewMetaByIdData;
-            res: {
-                '200': unknown;
-            };
-        };
-        delete: {
-            req: DeleteApiBiViewMetaByIdData;
             res: {
                 '200': unknown;
             };
