@@ -5,9 +5,22 @@
 <script setup lang="ts">
 import { BiChartSettingService } from '@/services/api';
 import { useBiChartSettingStore } from './store';
+import { onBeforeUnmount, onMounted } from 'vue';
 
+const { toJson, biChartSettingId, chartMateId, structDragging } = useBiChartSettingStore()!;
 
-const { toJson, biChartSettingId, chartMateId } = useBiChartSettingStore()!;
+onMounted(() => {
+  addEventListener('mouseup', onMouseUp);
+});
+
+onBeforeUnmount(() => {
+  removeEventListener('mouseup', onMouseUp);
+});
+
+const onMouseUp = () => {
+  structDragging.value = false;
+};
+
 const save = async () => {
   console.log(toJson());
   const config = toJson();

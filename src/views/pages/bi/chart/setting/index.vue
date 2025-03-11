@@ -1,16 +1,16 @@
 <template>
   <bi-chart-setting-root>
-    <el-container direction='vertical'>
-      <el-header height='auto' style='padding: 0 0 8px 0;'>
-        <el-button type='primary' @click='onSave'>
-          保存
-        </el-button>
-        <el-button @click='onDataView'>
-          数据预览
-        </el-button>
-      </el-header>
-      <el-main style='padding: 0;'>
-        <bi-chart-setting-wrapper ref='wrapperRef'>
+    <bi-chart-setting-wrapper ref='wrapperRef'>
+      <el-container direction='vertical'>
+        <el-header height='auto' style='padding: 0 0 8px 0;'>
+          <el-button type='primary' @click='onSave'>
+            保存
+          </el-button>
+          <el-button @click='onDataView'>
+            数据预览
+          </el-button>
+        </el-header>
+        <el-main style='padding: 0;'>
           <el-container style='border: 1px solid var(--el-border-color);'>
             <el-aside width='200px' style='border-right: 1px solid var(--el-border-color);'>
               <bi-data-struct />
@@ -36,9 +36,9 @@
               </el-container>
             </el-main>
           </el-container>
-        </bi-chart-setting-wrapper>
-      </el-main>
-    </el-container>
+        </el-main>
+      </el-container>
+    </bi-chart-setting-wrapper>
     <bi-data-view ref='dataViewRef' />
   </bi-chart-setting-root>
 </template>
