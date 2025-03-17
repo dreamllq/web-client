@@ -21,8 +21,6 @@ import { useBiChartSettingStore } from '../store';
 
 const { measures, structDragging, structDraggingInfo } = useBiChartSettingStore()!;
 const onMouseUp = () => {
-  console.log(111);
-  
   if (structDragging.value === true) {
     structDragging.value = false;
     measures.value.push(structDraggingInfo.value.struct!);
