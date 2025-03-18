@@ -11,11 +11,10 @@
 
 <script setup lang="ts">
 import { useResizeObserver } from '@vueuse/core';
-import { PropType, ref } from 'vue';
 import { useBiViewSettingStore } from '../store';
-import { GridLayout } from '../type';
+import { onMounted, ref } from 'vue';
 
-const { setColWidth, updateDraggingItem, drag, drop, cols, rowHeight } = useBiViewSettingStore()!;
+const { containerWidth, updateDraggingItem, drag, drop, cols, rowHeight } = useBiViewSettingStore()!;
 const gridLayoutRef = ref<HTMLElement>();
 
 const props = defineProps({
@@ -29,13 +28,15 @@ const props = defineProps({
   }
 });
 
-cols.value = props.cols;
-rowHeight.value = props.rowHeight;
+onMounted(() => {
+  cols.value = props.cols;
+  rowHeight.value = props.rowHeight;
+});
 
 useResizeObserver(gridLayoutRef, (entries) => {
   const entry = entries[0];
   const { width } = entry.contentRect;
-  setColWidth(width);
+  containerWidth.value = width;
 });
 </script>
 

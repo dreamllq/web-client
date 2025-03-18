@@ -6,8 +6,18 @@
 
 import { BiViewSettingService } from '@/services/api';
 import { useBiViewSettingStore } from '@/views/components/bi/view/setting/store';
+import { ref } from 'vue';
 
-const { toJson, biViewSettingId, viewMateId, ready } = useBiViewSettingStore()!;
+const { toJson, viewMateId } = useBiViewSettingStore()!;
+const ready = ref(false);
+const biViewSettingId = ref();
+const init = async () => {
+  const biViewSettingRes = await BiViewSettingService.get({ path: { metaId: viewMateId } });
+  biViewSettingId.value = biViewSettingRes.data?.data?.id;
+  ready.value = true;
+};
+
+init();
 const save = async () => {
   console.log(biViewSettingId.value, toJson());
   const config = toJson();

@@ -4,12 +4,11 @@ import { GridLayout, GridLayoutItem } from '../type';
 import { computedLayout } from '../utils/computed-layout';
 import { cloneDeep, debounce } from 'lodash';
 import dom from './dom';
-import { BiViewSettingService } from '@/services/api';
 
 const [useProvideBiViewSettingStore, useBiViewSettingStore] = createInjectionState((viewMateId:string) => {
-  const biViewSettingId = ref();
   const cols = ref(12);
-  const colWidth = ref(0);
+  const containerWidth = ref(0);
+  const colWidth = computed(() => containerWidth.value / cols.value);
   const rowHeight = ref(150);
   const layout = ref<GridLayout>([]);
   const ready = ref(false);
@@ -30,10 +29,6 @@ const [useProvideBiViewSettingStore, useBiViewSettingStore] = createInjectionSta
   const draggingTempLayout = ref<GridLayout>([]);
 
   const dragItem = ref<GridLayoutItem>();
-
-  const setColWidth = (containerWidth:number) => {
-    colWidth.value = containerWidth / cols.value;
-  };
 
   const addLayoutItem = (item: GridLayoutItem) => {
     layout.value.push(item);
@@ -128,35 +123,16 @@ const [useProvideBiViewSettingStore, useBiViewSettingStore] = createInjectionSta
     layout: JSON.parse(JSON.stringify(layout.value))
   });
 
-  const init = async () => {
-    const biViewSettingRes = await BiViewSettingService.get({ path: { metaId: viewMateId } });
-    biViewSettingId.value = biViewSettingRes.data?.data?.id;
-    // const { config } = biViewSettingRes.data?.data || {};
-    // if (config) {
-    //   try {
-    //     const configObj = JSON.parse(config);
-    //     cols.value = configObj.cols;
-    //     rowHeight.value = configObj.rowHeight;
-    //     layout.value = configObj.layout;
-    //   } catch (e) {
-    //     console.error(e);
-    //   }
-    // }
-    ready.value = true;
-  };
-
-  init();
   
   return {
     viewMateId,
-    biViewSettingId,
     layout,
     cols,
     colWidth,
     rowHeight,
     ready,
     addLayoutItem,
-    setColWidth,
+    containerWidth,
     dragOptions,
     updateDraggingItem,
     drag,
