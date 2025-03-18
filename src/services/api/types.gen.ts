@@ -929,6 +929,28 @@ export type BiViewMetaPaginateResponse = {
     data: BiViewMetaPaginatePage;
 };
 
+export type BiViewSetting = {
+    id: string;
+    /**
+     * 配置
+     */
+    config: string;
+    viewMeta: BiViewMeta;
+    /**
+     * 创建时间
+     */
+    createDate: string;
+    /**
+     * 更新时间
+     */
+    updateDate: string;
+};
+
+export type BiViewSettingGetResponse = {
+    code: number;
+    data: BiViewSetting;
+};
+
 export type Buffer = {
     [key: string]: unknown;
 };
@@ -1250,6 +1272,10 @@ export type CreateBiDataStructDto = {
 export type CreateBiViewMetaDto = {
     name: string;
     desc: string;
+};
+
+export type CreateBiViewSettingDto = {
+    config: string;
 };
 
 export type CreateFDto = {
@@ -2471,6 +2497,10 @@ export type UpdateBiDataStructDto = {
 export type UpdateBiViewMetaDto = {
     name?: string;
     desc?: string;
+};
+
+export type UpdateBiViewSettingDto = {
+    config?: string;
 };
 
 export type UpdateFDto = {
@@ -3707,6 +3737,38 @@ export type GetApiBiViewMetaPageAllData = {
 export type GetApiBiViewMetaPageAllResponse = (BiViewMetaPaginateResponse);
 
 export type GetApiBiViewMetaPageAllError = unknown;
+
+export type GetApiBiViewMetaByMetaIdSettingData = {
+    path: {
+        metaId: unknown;
+    };
+};
+
+export type GetApiBiViewMetaByMetaIdSettingResponse = (BiViewSettingGetResponse);
+
+export type GetApiBiViewMetaByMetaIdSettingError = unknown;
+
+export type PostApiBiViewMetaByMetaIdSettingData = {
+    body: CreateBiViewSettingDto;
+    path: {
+        metaId: unknown;
+    };
+};
+
+export type PostApiBiViewMetaByMetaIdSettingResponse = (SuccessResult);
+
+export type PostApiBiViewMetaByMetaIdSettingError = unknown;
+
+export type PutApiBiViewSettingByIdData = {
+    body: UpdateBiViewSettingDto;
+    path: {
+        id: unknown;
+    };
+};
+
+export type PutApiBiViewSettingByIdResponse = (SuccessResult);
+
+export type PutApiBiViewSettingByIdError = unknown;
 
 export type PostApiChatContactsData = {
     body: ChatContactsCreateDto;
@@ -5952,6 +6014,28 @@ export type $OpenApiTs = {
             req: GetApiBiViewMetaPageAllData;
             res: {
                 '200': BiViewMetaPaginateResponse;
+            };
+        };
+    };
+    '/api/bi/view/meta/{metaId}/setting': {
+        get: {
+            req: GetApiBiViewMetaByMetaIdSettingData;
+            res: {
+                '200': BiViewSettingGetResponse;
+            };
+        };
+        post: {
+            req: PostApiBiViewMetaByMetaIdSettingData;
+            res: {
+                '200': SuccessResult;
+            };
+        };
+    };
+    '/api/bi/view/setting/{id}': {
+        put: {
+            req: PutApiBiViewSettingByIdData;
+            res: {
+                '200': SuccessResult;
             };
         };
     };

@@ -12,7 +12,7 @@
       <span>{{ position }}</span>
       <p>{{ dragging }}</p>
       <slot />
-      <resize-area :uuid='uuid' />
+      <resize-area v-if='!position.static' :uuid='uuid' />
     </div>
   </template>
 </template>

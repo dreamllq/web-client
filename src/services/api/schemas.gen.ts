@@ -5756,3 +5756,62 @@ export const BiViewMetaPaginateResponseSchema = {
     },
     required: ['code', 'data']
 } as const;
+
+export const BiViewSettingSchema = {
+    type: 'object',
+    properties: {
+        id: {
+            type: 'string'
+        },
+        config: {
+            type: 'string',
+            description: '配置'
+        },
+        viewMeta: {
+            '$ref': '#/components/schemas/BiViewMeta'
+        },
+        createDate: {
+            format: 'date-time',
+            type: 'string',
+            description: '创建时间'
+        },
+        updateDate: {
+            format: 'date-time',
+            type: 'string',
+            description: '更新时间'
+        }
+    },
+    required: ['id', 'config', 'viewMeta', 'createDate', 'updateDate']
+} as const;
+
+export const BiViewSettingGetResponseSchema = {
+    type: 'object',
+    properties: {
+        code: {
+            type: 'number'
+        },
+        data: {
+            '$ref': '#/components/schemas/BiViewSetting'
+        }
+    },
+    required: ['code', 'data']
+} as const;
+
+export const CreateBiViewSettingDtoSchema = {
+    type: 'object',
+    properties: {
+        config: {
+            type: 'string'
+        }
+    },
+    required: ['config']
+} as const;
+
+export const UpdateBiViewSettingDtoSchema = {
+    type: 'object',
+    properties: {
+        config: {
+            type: 'string'
+        }
+    }
+} as const;

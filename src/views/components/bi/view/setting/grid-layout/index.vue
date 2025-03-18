@@ -15,8 +15,22 @@ import { PropType, ref } from 'vue';
 import { useBiViewSettingStore } from '../store';
 import { GridLayout } from '../type';
 
-const { setColWidth, updateDraggingItem, drag, drop } = useBiViewSettingStore()!;
+const { setColWidth, updateDraggingItem, drag, drop, cols, rowHeight } = useBiViewSettingStore()!;
 const gridLayoutRef = ref<HTMLElement>();
+
+const props = defineProps({
+  cols: {
+    type: Number,
+    default: 12
+  },
+  rowHeight: {
+    type: Number,
+    default: 50
+  }
+});
+
+cols.value = props.cols;
+rowHeight.value = props.rowHeight;
 
 useResizeObserver(gridLayoutRef, (entries) => {
   const entry = entries[0];

@@ -1,3 +1,7 @@
+export type BizData = {
+  id: string
+}
+
 export type GridLayoutItem = {
   uuid:string,
   x: number,
@@ -5,7 +9,8 @@ export type GridLayoutItem = {
   w: number,
   h: number,
   dragging:boolean,
-  static?:boolean
+  static?:boolean,
+  bizData?:BizData
 }
 
 export type GridLayout = GridLayoutItem[]
