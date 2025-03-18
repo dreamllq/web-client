@@ -13,6 +13,7 @@
       <p>{{ dragging }}</p>
       <slot />
       <resize-area v-if='!position.static' :uuid='uuid' />
+      <delete-button :uuid='uuid' />
     </div>
   </template>
 </template>
@@ -22,6 +23,7 @@ import { computed, ref } from 'vue';
 import { useBiViewSettingStore } from '../store';
 import { v4 as uuidv4 } from 'uuid';
 import ResizeArea from './resize-area.vue';
+import DeleteButton from './delete-button.vue';
 
 const props = defineProps({
   x: {

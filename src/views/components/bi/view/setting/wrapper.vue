@@ -19,7 +19,6 @@ const init = async () => {
 
 init();
 const save = async () => {
-  console.log(biViewSettingId.value, toJson());
   const config = toJson();
 
   if (biViewSettingId.value) {
@@ -33,18 +32,6 @@ const save = async () => {
       body: { config: JSON.stringify(config) }
     });
   }
-
-  // if (biChartSettingId.value) {
-  //   await BiChartSettingService.update({
-  //     path: { id: biChartSettingId.value },
-  //     body: { config: JSON.stringify(config) }
-  //   });
-  // } else {
-  //   await BiChartSettingService.create({
-  //     path: { metaId: chartMateId },
-  //     body: { config: JSON.stringify(config) }
-  //   });
-  // }
 };
 
 defineExpose({ save });

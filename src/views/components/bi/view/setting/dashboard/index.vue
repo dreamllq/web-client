@@ -30,7 +30,6 @@ const rowHeight = ref();
 const ready = ref(false);
 const init = async () => {
   const biViewSettingRes = await BiViewSettingService.get({ path: { metaId: route.query.id as string } });
-  // biViewSettingId.value = biViewSettingRes.data?.data?.id;
   const { config } = biViewSettingRes.data?.data || {};
   if (config) {
     try {
