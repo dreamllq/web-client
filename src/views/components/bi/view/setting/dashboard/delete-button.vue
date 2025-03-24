@@ -1,5 +1,5 @@
 <template>
-  <div class='item-delete-button' @click.prevent.stop='onClick'>
+  <div class='item-delete-button' @click.prevent.stop='onClick' @mousedown.stop>
     <el-icon size='20'>
       <circle-close />
     </el-icon>
@@ -8,7 +8,10 @@
 
 <script setup lang="ts">
 
-const onClick = () => {};
+const emits = defineEmits(['click']);
+const onClick = (e) => {
+  emits('click', e);
+};
 </script>
 
 <style scoped style="scss">

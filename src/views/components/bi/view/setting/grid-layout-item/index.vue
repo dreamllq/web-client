@@ -1,7 +1,7 @@
 <template>
   <template v-if='position'>
     <div v-if='dragging' class='grid-layout-item dragging' :style='style'>
-      <slot />
+      <div />
     </div>
     <div
       class='grid-layout-item'
@@ -9,11 +9,8 @@
       data-type='layout-item'
       data-biz='grid'
       :style='dragging ? dragOptions.style : style'>
-      <span>{{ position }}</span>
-      <p>{{ dragging }}</p>
       <slot />
       <resize-area v-if='!position.static' :uuid='uuid' />
-      <delete-button :uuid='uuid' />
     </div>
   </template>
 </template>
@@ -23,7 +20,6 @@ import { computed, ref } from 'vue';
 import { useBiViewSettingStore } from '../store';
 import { v4 as uuidv4 } from 'uuid';
 import ResizeArea from './resize-area.vue';
-import DeleteButton from './delete-button.vue';
 
 const props = defineProps({
   x: {
@@ -45,6 +41,10 @@ const props = defineProps({
   static: {
     type: Boolean,
     default: false
+  },
+  bizData: {
+    type: Object,
+    default: () => ({})
   }
 });
 
@@ -58,7 +58,8 @@ addLayoutItem({
   h: props.h,
   dragging: false,
   static: props.static,
-  uuid: uuid 
+  uuid: uuid,
+  bizData: props.bizData
 });
 
 const position = computed(() => layout.value.find(item => item.uuid === uuid));
@@ -76,9 +77,14 @@ const style = computed(() => (position.value ? {
 <style scoped lang="scss">
 .grid-layout-item{
   position: absolute;
-  border: 1px solid;
   background-color: #fff;
   top: 0;
   left: 0;
+  overflow: hidden;
+
+  &.dragging{
+    background-color: var(--el-fill-color);
+    border-radius: 4px;
+  }
 }
 </style>

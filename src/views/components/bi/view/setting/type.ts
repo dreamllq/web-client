@@ -1,5 +1,5 @@
 export type BizData = {
-  id: string
+  chartMetaId?: string
 }
 
 export type GridLayoutItem = {
