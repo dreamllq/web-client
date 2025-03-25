@@ -898,6 +898,7 @@ export type BiViewMeta = {
      * 描述
      */
     desc: string;
+    viewSetting: BiViewSetting;
     creator: User;
     /**
      * 创建时间
@@ -4369,6 +4370,16 @@ export type DeleteApiFsByIdResponse = (DeleteSuccessResult);
 
 export type DeleteApiFsByIdError = unknown;
 
+export type PostApiFsByIdData = {
+    path: {
+        id: string;
+    };
+};
+
+export type PostApiFsByIdResponse = (SuccessResult);
+
+export type PostApiFsByIdError = unknown;
+
 export type PostApiInitializationCreateSuperAdminData = {
     body: CreateSuperAdminDto;
 };
@@ -6482,6 +6493,12 @@ export type $OpenApiTs = {
             req: DeleteApiFsByIdData;
             res: {
                 '200': DeleteSuccessResult;
+            };
+        };
+        post: {
+            req: PostApiFsByIdData;
+            res: {
+                '200': SuccessResult;
             };
         };
     };

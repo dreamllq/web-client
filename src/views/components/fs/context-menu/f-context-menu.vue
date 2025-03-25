@@ -51,6 +51,16 @@ const menus = computed(() => [
         await refreshList();
       }
     }
+  ] : []),
+  ...(map.value[triggerFId.value!]?.pathType === PathType.FILE ? [
+    {
+      label: '解压',
+      disabled: map.value[triggerFId.value!].fileDetail?.file?.ext !== 'zip',
+      click: async () => {
+        await FsService.unzip({ path: { id: triggerFId.value! } });
+        await refreshList();
+      }
+    }
   ] : [])
 ]);
 </script>

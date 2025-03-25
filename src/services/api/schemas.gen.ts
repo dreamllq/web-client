@@ -5643,6 +5643,33 @@ export const UpdateBiChartSettingDtoSchema = {
     }
 } as const;
 
+export const BiViewSettingSchema = {
+    type: 'object',
+    properties: {
+        id: {
+            type: 'string'
+        },
+        config: {
+            type: 'string',
+            description: '配置'
+        },
+        viewMeta: {
+            '$ref': '#/components/schemas/BiViewMeta'
+        },
+        createDate: {
+            format: 'date-time',
+            type: 'string',
+            description: '创建时间'
+        },
+        updateDate: {
+            format: 'date-time',
+            type: 'string',
+            description: '更新时间'
+        }
+    },
+    required: ['id', 'config', 'viewMeta', 'createDate', 'updateDate']
+} as const;
+
 export const BiViewMetaSchema = {
     type: 'object',
     properties: {
@@ -5656,6 +5683,9 @@ export const BiViewMetaSchema = {
         desc: {
             type: 'string',
             description: '描述'
+        },
+        viewSetting: {
+            '$ref': '#/components/schemas/BiViewSetting'
         },
         creator: {
             '$ref': '#/components/schemas/User'
@@ -5671,7 +5701,7 @@ export const BiViewMetaSchema = {
             description: '更新时间'
         }
     },
-    required: ['id', 'name', 'desc', 'creator', 'createDate', 'updateDate']
+    required: ['id', 'name', 'desc', 'viewSetting', 'creator', 'createDate', 'updateDate']
 } as const;
 
 export const BiViewMetaGetAllResponseSchema = {
@@ -5755,33 +5785,6 @@ export const BiViewMetaPaginateResponseSchema = {
         }
     },
     required: ['code', 'data']
-} as const;
-
-export const BiViewSettingSchema = {
-    type: 'object',
-    properties: {
-        id: {
-            type: 'string'
-        },
-        config: {
-            type: 'string',
-            description: '配置'
-        },
-        viewMeta: {
-            '$ref': '#/components/schemas/BiViewMeta'
-        },
-        createDate: {
-            format: 'date-time',
-            type: 'string',
-            description: '创建时间'
-        },
-        updateDate: {
-            format: 'date-time',
-            type: 'string',
-            description: '更新时间'
-        }
-    },
-    required: ['id', 'config', 'viewMeta', 'createDate', 'updateDate']
 } as const;
 
 export const BiViewSettingGetResponseSchema = {
